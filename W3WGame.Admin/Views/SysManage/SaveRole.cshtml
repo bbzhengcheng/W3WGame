@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "保存角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var menuList = (List<RoleMenuModel>)ViewData["MenuList"];
+    var powerList = (List<RolePowerModel>)ViewData["PowerList"];
+}
+@using W3WGame.Admin.Controllers.SysManage.ViewModels
+@model SaveUserRoleModel 
+<link href="../../Scripts/jquery-validation-engine/css/validationEngine.jquery.css"
+    rel="stylesheet" type="text/css" />
+<link href="../../Scripts/jquery-treeTable/stylesheets/jquery.treeTable.css" rel="stylesheet"
+    type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/jquery.validationEngine.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/languages/jquery.validationEngine-zh_CN.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/jquery-treeTable/javascripts/jquery.treeTable.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#treeTable').treeTable();
+        $("#form1").validationEngine();
+    })
+</script>
+<div class="right_box_card">
+    <ul>
+        <li class="right_box_card1"><a href="#">保存角色</a></li>
+    </ul>
+</div>
+@using (Html.BeginForm("SaveRole", "SysManage", FormMethod.Post, new { id = "form1", @class = "formular" }))
+{
+    @Html.HiddenFor(c => c.RoleId) 
+    <fieldset style="width: 700px;">
+        <label>
+            <span>角色名称</span>
+            @Html.TextBoxFor(c => c.RoleName, new { @class = "validate[required] text-input" })
+        </label>
+        <ul style="line-height: 24px; margin-top: 20px;">
+            @foreach (var item in menuList.Where(c => c.ParentId == 0))
+            {
+           
+                <li><input type="checkbox" name="MenuId" value="@item.MenuId" @if(item.IsSelected)
+                                                                {
+                                                                    <text>checked="checked"</text>
+                                                                }/> @item.MenuName
+                    @if (powerList.Any(c => c.MenuId == item.MenuId))
+                    {
+                        <text>权限:</text>
+                    }
+                    @foreach (var power in powerList.Where(c => c.MenuId == item.MenuId))
+                    {
+                       <input type="checkbox" name="PowerId" value="@power.PowerId" @if (power.IsSelected)
+                                                                    {
+                                                                    <text>checked="checked"</text>
+                                                                    }/>
+                        @power.PowerName
+                    }
+                </li>   
+                <ul style="margin-left: 30px">
+                    @foreach (var child in menuList.Where(c => c.ParentId == item.MenuId))
+                    {
+                        <li><input type="checkbox" name="MenuId" value="@child.MenuId" @if (child.IsSelected)
+                                                                         {
+                                                                    <text>checked="checked"</text>
+                                                                         }/> @child.MenuName
+                            @if (powerList.Any(c => c.MenuId == child.MenuId))
+                            {
+                                <label style="margin-left: 20px;" class="red">
+                                    权限</label>
+                            }
+                            @foreach (var power in powerList.Where(c => c.MenuId == child.MenuId))
+                            {
+                                <input type="checkbox" name="PowerId" value="@power.PowerId" @if (power.IsSelected)
+                                                                                             {
+                                                                    <text>checked="checked"</text>
+                                                                                             }/>
+                                @power.PowerName
+                                <text>&nbsp;&nbsp;&nbsp;</text>
+                            }
+                        </li> 
+                    }
+                </ul>
+            }
+        </ul>
+        <input type="submit" value="保存" class="submit" />
+    </fieldset>  
+}

@@ -1,0 +1,1660 @@
+﻿@{
+    Layout = "~/Views/Shared/_WebLayout.cshtml";
+}
+
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/d5v1_pc.css" />
+    <script type="text/javascript" src="/public/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/public/javascripts/seajs/sea.js"></script>
+    <script type="text/javascript" src="/public/javascripts/seajs/config.js"></script>
+    <script type="text/javascript" src="/public/pc/pop-box.js"></script>
+
+
+    <!--[if IE 6]>
+	<script language="javascript" type="text/javascript" src="/public/javascripts/ie6_png.js"></script>
+	<script language="javascript" type="text/javascript">
+		DD_belatedPNG.fix(".png");
+	</script>
+	<![endif]-->
+
+
+    <!-- top begin -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            var notice = GetRowCookie("creditnotice");
+            notice = decodeURIComponent(notice);
+            if (notice != '' && notice != 'null') {
+                var defaultDomain = '';
+                var noticeArray = notice.split('|');
+                if (noticeArray.length > 1) {
+                    notice = noticeArray[0] + '<span class=\"key\">' + noticeArray[1] + '</span>';
+                }
+                SetCookie('creditnotice', '', 0, '/', '9game.cn');
+                showTips(notice, 3000);
+            }
+        })
+
+        function showTips(message, timeout) {
+            $(".prompt-mask").html(message);
+            $(".public-mask").show();
+            setTimeout(function () {
+                $(".public-mask").animate({
+                    opacity: "0"
+                }, { duration: 900, complete: function () {
+                    $(".public-mask").hide();
+                }
+                });
+            }, timeout)
+        }
+    </script>
+
+
+    <!-- main begin -->
+    <div class="main-mod">
+        <!--页面模块·面包屑-->
+        <div class="crumbs">
+            <a href="http://ka.9game.cn/">九游发号中心</a> &gt; <a href="/game/index_1.html">全部游戏发号</a>
+            &gt; <a href="/game/544266_-5_1.html ">陆战之王</a> &gt; [陆战之王]独家封测登录激活码
+        </div>
+        <script type="text/javascript" src="/public/pc/verifymobile.js"></script>
+        <script type="text/javascript" src="/public/pc/follow.js"></script>
+        <script type="text/javascript" src="/public/pc/personal/detail.js"></script>
+        <input type="hidden" id="mobileVerifyUrl" value="/user/verify.html">
+        <input type="hidden" id="cancelUrl" value="/follow/cancel.html">
+        <input type="hidden" id="noticeUrl" value="/follow/notice.html">
+        <input type="hidden" id="followUrl" value="/follow/follow.html">
+        <input type="hidden" id="sceneId" value="1409284742836041991">
+        <input type="hidden" id="kaId" value="1409284728836041972">
+        <input type="hidden" id="gameId" value="544266">
+        <input type="hidden" id="price" value="0">
+        <script type="text/javascript">
+            var getSuccess = false; //领号成功标记	
+            var bookSuccess = false; //预号成功标记
+
+            var pc_app_url = "http://app.9game.cn/"; //提供给detail.js中领号成功弹窗使用
+            $(function () {
+
+                //验证码相关事件
+                initValid();
+
+                //先隐藏实时播报
+                //$("#kaLog").hide();
+
+                //领号,':kaId',':price',':uc_param_str'
+                var currentPageUrl = encodeURI(encodeURI(document.location.href));
+
+                //领号确认
+                $("#confirmLink").click(function (event) {
+                    $("#confirmPopBox").show();
+                    event.preventDefault();
+                });
+
+                $("#confirmSub1,#getLink").click(function (event) {
+                    $("#confirmPopBox").hide();
+                    $.ajax({
+                        url: '/personal/get.html?requestType=ajax&id=1409284742836041991&kaId=1409284728836041972&price=0&currentPageUrl=' + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var resJson = $.parseJSON($.trim(result));
+                            if (resJson.status == "success") {
+                                var codeList = resJson.parameterList;
+                                var htmlStr = "<div class='code-box cf'><div class='code-copy code-pop'>";
+                                //号部分
+                                for (var i = 0; i < codeList.length; i++) {
+                                    htmlStr += codeList[i] + " ";
+                                }
+                                htmlStr += "</div>";
+                                if (codeList.length == 1) {
+                                    htmlStr += "<a href='javascript:void(0)' id='copyLink2' rel='" + resJson.parameterList2 + "' onclick='codeCopy($(this))' class='y-copy-btn em'>复制卡号</a>";
+                                    htmlStr += "<a href='javascript:void(0)' class='code-t em' onclick=\"showCode('')\">二维码扫描</a></div>"
+                                    htmlStr += "<div id='codeCon' class='codeCon' style='display:none;'>";
+                                    htmlStr += "<img src='/qr?content=" + resJson.qrCodeStr + "'></div>";
+                                }
+                                var client9ling;
+                                var lingcontent;
+                                //提示语相关--开始
+                                if (resJson.gameDownloadUrl != null) {	//gameDownloadUrl != null
+                                    client9ling = "<a href='###' onclick='javascript:download9game();'>" +
+							"<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
+
+                                    var gameId = document.getElementById('gameId').value;
+                                    var clientMsg = "";
+                                    if (gameId != null && gameId != "" && gameId > 0) {
+                                        clientMsg = "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
+                                    }
+
+
+                                    lingcontent = "<div>" + clientMsg + "</div>";
+
+
+                                }
+                                else {	//gameDownloadUrl == null
+                                    var gameId = document.getElementById('gameId').value;
+                                    var clientMsg = "";
+                                    if (gameId != null && gameId != "" && gameId > 0) {
+                                        clientMsg = "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
+                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>" +
+									"<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
+                                    } else {
+                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'></a>";
+                                    }
+
+
+                                    lingcontent = "<div>" + clientMsg + "</div>";
+
+                                }
+                                //提示语相关--结束
+                                $("#9clientDowloadling").html(client9ling);
+                                $("#lingcontent").html(lingcontent);
+                                $("#fetch_con").html(htmlStr);
+                                $("#fechPopBox").show();
+                                getSuccess = true;
+                            } else if (resJson.status == "credentialGot") {
+                                var codeList = resJson.parameterList;
+                                var htmlStr = "<div class='code-box cf'><div class='code-copy code-pop'>";
+
+                                for (var i = 0; i < codeList.length; i++) {
+                                    htmlStr += codeList[i] + " ";
+                                }
+                                htmlStr += "</div>";
+
+                                //只有一个码的情况才显示二维码
+                                if (codeList.length == 1) {
+                                    htmlStr += "<a href='javascript:void(0)' id='copyLink2' rel='" + resJson.parameterList2 + "' onclick='codeCopy($(this))' class='y-copy-btn em'>复制卡号</a>";
+                                    htmlStr += "<a href='javascript:void(0)' class='code-t em' onclick=\"showCode('')\">二维码扫描</a></div>"
+                                    htmlStr += "<div id='codeCon' class='codeCon' style='display:none;'>";
+                                    htmlStr += "<img src='/qr?content=" + resJson.qrCodeStr + "'></div>";
+                                }
+
+                                //title
+                                $("#credentialGot_title").html("您已使用手机领取过这个号：");
+
+                                $("#credentialGot_con").html(htmlStr);
+                                $("#credentialGotPopBox").show();
+                                getSuccess = true;
+                            } else if (resJson.status == "mobileNoBind") {
+                                var from = resJson.pageForm;
+                                messageBindMobile(true, from);
+                            } else if (resJson.status == "failure"
+						  && resJson.loginUrl != null) {
+                                window.location = resJson.loginUrl;
+                            } else if (resJson.status == "needValidCode") {	//需要跑验证码
+                                document.getElementById('validCode').src = "/validCode?time=" + new Date().getTime();
+                                document.getElementById('validCodeText').value = '';
+                                showCodeErrorHint(false);
+                                $('#codeBox').show();
+                            } else {
+                                $("#hint_msg").empty().html(resJson.message).show();
+                                $("#messageBox").show();
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                });
+
+
+                //中转
+                $("#confirmSub0,#requestLink").click(function (event) {
+                    $("#confirmPopBox").hide();
+                    $.ajax({
+                        url: "/personal/request.html?requestType=ajax&id=1409284742836041991&currentPageUrl=" + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var resJson = $.parseJSON(result);
+                            if (resJson.status == "failure"
+						  && resJson.loginUrl != null) {
+                                window.location = resJson.loginUrl;
+                            } else if (resJson.status == "failure") {
+                                $("#hint_msg").empty().html(resJson.message).show();
+                                $("#messageBox").show();
+                            } else if (resJson.status == "credentialGot") {
+                                var formHtml = "";
+                                var transitParam = resJson.transitParam.split(',');
+                                var transitContent = resJson.transitContent.split('\t');
+                                for (var i = 0; i < transitParam.length; i++) {
+                                    formHtml += "<p><span class='label'>" + transitParam[i] + "：</span>";
+                                    formHtml += "<input type='text' name='param_args' class='input' readonly='readonly' value=" + transitContent[i] + " /></p>";
+                                }
+                                $("#requestCredentialForm").html(formHtml);
+                                $("#requestPopCredentialBox").show();
+                                $("#requestCredentialErrMsg").remove();
+                                //设置隐藏参数
+                                $("#actionUrl").val(resJson.actionUrl);
+                                $("#kaId").val(resJson.kaId);
+                                $("#kaboxId").val(resJson.kaboxId);
+                                $("#paramter").val(resJson.paramter);
+                            } else if (resJson.status == "mobileNoBind") {
+                                var from = resJson.pageForm;
+                                messageBindMobile(true, from);
+                            } else {
+                                var formHtml = "";
+                                for (var i = 0; i < resJson.elements.length; i++) {
+                                    formHtml += "<p><span class='label'>" + resJson.elements[i] + ":</span>";
+                                    formHtml += "<input type='text' name='param_args' class='input'/></p>";
+                                }
+                                $("#requestForm").html(formHtml);
+                                $("#requestPopBox").show();
+                                $("#requestErrMsg").remove();
+                                //设置隐藏参数
+                                $("#actionUrl").val(resJson.actionUrl);
+                                $("#kaId").val(resJson.kaId);
+                                $("#kaboxId").val(resJson.kaboxId);
+                                $("#paramter").val(resJson.paramter);
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                });
+
+                //中转提交
+                $("#submitLink").click(function (event) {
+                    if (validate()) {
+                        var parameter = $("#paramter").val();
+                        var actionUrl = $("#actionUrl").val();
+                        var param_args = "";
+                        var paramArgsValue = ""; //单纯的值
+                        var valid = true;
+                        var blockCount = 0; //有多少个输入框
+                        $("input[name='param_args']").each(function () {
+                            if ($(this).val() != "") {
+                                param_args += "&param_args=" + $(this).val();
+                                paramArgsValue += $(this).val();
+                                blockCount++;
+                            } else {
+                                valid = false;
+                            }
+
+                        });
+                        if (!valid) {
+                            return false;
+                        }
+                        //去掉多少个\t符号
+                        var maxLength = 50 - (blockCount - 1) * 2;
+                        if (paramArgsValue.length > maxLength) {
+                            $("#requestErrMsg").remove();
+                            $(this).parent().parent().append("<div id='requestErrMsg' style='color:red'>提交的信息长度不能大于" + maxLength + "，请修改后再提交。</div>");
+                            return false;
+                        }
+                        $.ajax({
+                            url: actionUrl,
+                            type: 'POST',
+                            data: "&requestType=ajax&id=1409284742836041991&kaId=" + $("#kaId").val() + "&paramter=" + parameter + param_args,
+                            success: function (result) {
+                                var resJson = $.parseJSON($.trim(result));
+                                if (resJson.status == "failure"
+					  && resJson.loginUrl != null) {
+                                    window.location = resJson.loginUrl;
+                                } else {
+                                    $("div.code-box").empty().html(resJson.message).show();
+                                    $("div.playNum").hide();
+                                    $("#requestPopBox").hide();
+                                    getSuccess = true;
+                                    //刷新
+                                    $("span.close").click();
+                                }
+                            }
+                        });
+                    }
+                    event.preventDefault();
+                });
+
+                //预号
+                $("#bookLink").click(function (event) {
+                    $.ajax({
+                        url: "/personal/book.html?requestType=ajax&id=1409284742836041991&currentPageUrl=" + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var resJson = $.parseJSON($.trim(result));
+                            if (resJson.status == "failure"
+					  && resJson.loginUrl != null) {
+                                window.location = resJson.loginUrl;
+                            } else if (resJson.status == "failure") {
+                                $("#hint_msg").empty().html(resJson.message).show();
+                                $("#messageBox").show();
+                            } else if (resJson.needClient == 0) {
+                                //是否需要短信提醒
+                                var msg = "预订成功！您将拥有提前30分钟领号的特权，并可在第一时间获取站内消息";
+                                //qq提醒url
+                                var qqClockUrl = "http://qzs.qq.com/snsapp/app/bee/widget/open.htm";
+                                qqClockUrl += "#content=" + encodeURIComponent("您好，" + resJson.sceneName + "即将开始领取，请前往九游获取礼包");
+                                qqClockUrl += "&time=" + resJson.qqClockTime;
+                                qqClockUrl += "&advance=15";
+                                qqClockUrl += "&&url=" + resJson.qqClockTargetUrl;
+
+                                bookSuccess = true;
+                                if (resJson.isSms) {	//场景允许发送信息(是否需要短信提醒)
+                                    msg += "，您还可以选择接收站外消息提醒：";
+                                    msg += "<p>1.<a href='###' onclick='javascript:smsBinding();' class='link'>免费手机短信</a></p>";
+                                    msg += "<p>2.<a href='" + qqClockUrl + "' class='link' target='_blank'>接收QQ消息提醒</a>";
+                                    $("#bookPopTitle").html(msg);
+                                    $("#bookPopBox").show();
+                                } else if (resJson.gameDownloadUrl != null) {  //是否开放下载
+                                    var msg = "<p>• 您已获得提前30分钟领号的特权，抢号快人一步！请留意站内消息提醒</p>";
+
+                                    var gameId = document.getElementById('gameId').value;
+                                    if (gameId != null && gameId != "" && gameId > 0) {
+                                        msg += "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
+
+                                        var client9 = "<a href='###' onclick='javascript:download9game();'>"
+								+ "<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
+                                        $("#9clientDowload").html(client9);
+                                    }
+                                    $("#clientbookPopTitle").html(msg);
+                                    $("#clientbookPopBox").show();
+                                } else { //其他场景
+                                    var msg = "<p>• 您已获得提前30分钟领号的特权，抢号快人一步！</p>";
+                                    msg += "<p>• 使用九游游戏中心，礼包上架早知道，更有专属福利等着你</p>";
+                                    var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>"
+							+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
+                                    $("#clientbookPopTitle").html(msg);
+                                    $("#9clientDowload").html(client9);
+                                    $("#clientbookPopBox").show();
+                                }
+                            } else {
+                                var msg = "• 恭喜您获得提前30分钟领号的特权！该号";
+                                var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>"
+						+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
+                                msg += "<span><em class='org'>需要使用九游游戏中心进行领取</em>，</span>";
+                                msg += "提前下载和安装，抢号可以快人一步哦！";
+                                bookSuccess = true;
+                                $("#clientbookPopTitle").html(msg);
+                                $("#9clientDowload").html(client9);
+                                $("#clientbookPopBox").show();
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                });
+
+                //绑定手机-记录该用户的通知状态
+                $("#mobileCheckBind").click(function (event) {
+                    $.ajax({
+                        url: "/personal/notice.html?requestType=ajax&operation=bind&id=1409284742836041991&currentPageUrl=" + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var resJson = $.parseJSON($.trim(result));
+                            if (resJson.status == "success") {
+                                $('#mobileCheckBox').hide();
+                                $("#bookPopTitle").html(resJson.message);
+                                $("#bookPopBox").show();
+                            } else if (resJson.status == "failure"
+						  && resJson.loginUrl != null) {
+                                window.location = resJson.loginUrl;
+                            } else {
+                                $("#mobileChangeTitle").html(resJson.message);
+                                $('#mobileCheckButton').hide();
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                });
+
+                //淘号
+                $("#taoLink").click(function (event) {
+                    $.ajax({
+                        url: "/personal/tao.html?requestType=ajax&id=1409284742836041991&kaId=1409284728836041972&currentPageUrl=" + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var resJson = $.parseJSON($.trim(result));
+                            if (resJson.status == "success") {
+                                if (resJson.codeList != "") {
+                                    var codeList = resJson.codeList;
+                                    var codeList2 = resJson.codeList2;
+                                    var qrCodeList = resJson.qrCodeList;
+                                    var codeStr = "";
+                                    for (var i = 0; i < codeList.length; i++) {
+                                        codeStr += "<div class='code-box cf'>";
+                                        codeStr += "<div class='code-copy code-pop'>";
+                                        codeStr += codeList[i];
+                                        codeStr += "</div>";
+
+                                        //等于1个发放参数的，全部复制
+                                        if (codeList[i].split(":").length == 2) {
+                                            codeStr += "<a href='javascript:void(0)' onclick='codeCopy($(this));' rel='" + codeList2[i] + "' class='y-copy-btn'>复制卡号</a>";
+                                            codeStr += "<a href='javascript:void(0)' class='code-t em' onclick='showCode(" + i + ")'>二维码扫描</a></div>"
+                                            codeStr += "<div id='codeCon" + i + "' class='codeCon' style='display:none;'>";
+                                            codeStr += "<img src='/qr?content=" + qrCodeList[i] + "'></div>";
+                                        } else {
+                                            codeStr += "</div>";
+                                        }
+                                    }
+
+                                    //添加一段特殊的逻辑处理
+                                    var isCopy = resJson.isCopy;
+                                    if (isCopy == "true") {
+                                        var gameId = resJson.gameId;
+                                        $("#taoIsCopy").html("• 淘号太烦？！加入九游公会，即有资格领取该款发号！<a href='http://gh.9game.cn/SearchList.aspx?searchType=3&keyword=" + gameId + "&text=ka_lbth_jr' class='link' target='_blank'>点击这里>></a>");
+                                    }
+
+                                    var taoagain = "<a href='###' onclick='javascript:taoagain();'>"
+								+ "<span class='l-gray'></span><span class='c-gray'>再淘一次</span><span class='r-gray'></span></a>";
+                                    var client9tao = "<a href='/redirect?a3=pc_tao_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank' class='closeLink'>"
+									+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
+                                    $("#taoagain").html(taoagain);
+                                    $("#9clientDowloadtao").html(client9tao);
+
+                                    //添加特殊处理结束
+                                    $("#taoContent").html(codeStr);
+                                    $("#qrCodeStr").val(resJson.qrCodeStr);
+                                    $("#taoPopBox").show();
+                                } else if (resJson.status == "failure"
+						  && resJson.loginUrl != null) {
+                                    window.location = resJson.loginUrl;
+                                } else {
+                                    var message = "亲，差一点就成功了，请";
+                                    message += "<a href='javascript:void(0)' onclick='document.location.reload();' >重新尝试</a>喔！";
+                                    $("div.code-box").empty().html(message).show();
+                                    $("div.playNum").hide();
+                                }
+
+                            } else {
+                                $("div.code-box").empty().html(resJson.message).show();
+                                $("div.playNum").hide();
+
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                    return false;
+                });
+
+                //下载游戏链接点击
+                $("[data-tag='downloadLink']").click(function (event) {
+                    $.ajax({
+                        url: "http://ka.9game.cn/game/download.html?gameId=544266&amp;?requestType=ajax&currentPageUrl=" + currentPageUrl,
+                        type: 'GET',
+                        success: function (result) {
+                            var length = result.length;
+                            if (length == 0) {
+                                $("#hint_msg").empty().html("抱歉，该游戏暂无下载！");
+                                $("#messageBox").show();
+                            }
+                            else if (length == 1 && result[0].platformId == 2) {
+                                var gameinfo = "";
+                                var title = "";
+                                title += "<div class='title-mask'>";
+                                title += "<span class='name-title'>" + '陆战之王' + "</span>";
+                                title += "<span class='close-mask closeMod'></span></div>";
+                                gameinfo += "<div class='down-con-mod'>";
+                                gameinfo += "<a href='" + result[0].downUrl + "?text=btn_ka_" + '544266' + "_pc_detail" + "' class='popup-down-mod'>";
+                                gameinfo += "<p class='name'>" + result[0].name + "</p>";
+                                gameinfo += "<p class='size'>" + result[0].humanSize + "M" + "</p></a></div>";
+                                $("#gameName1").empty().html(title);
+                                $("#popup-android1").empty().html(gameinfo);
+                                $("#downloadBoxAndroid").show();
+                            } else if (length == 1 && result[0].platformId == 3) {
+                                var gameinfo = "";
+                                var title = "";
+                                title += "<div class='title-mask'>";
+                                title += "<span class='name-title'>" + '陆战之王' + "</span>";
+                                title += "<span class='close-mask closeMod'></span></div>";
+                                gameinfo += "<div class='down-con-mod'>";
+                                gameinfo += "<a href='" + result[0].downUrl + "?text=btn_ka_" + '544266' + "_pc_detail" + "' class='popup-down-mod'>";
+                                gameinfo += "<p class='name'>" + result[0].name + "</p>";
+                                gameinfo += "<p class='size'>" + result[0].humanSize + "M" + "</p></a></div>";
+                                $("#gameName3").empty().html(title);
+                                $("#popup-ios2").empty().html(gameinfo);
+                                $("#downloadBoxIOS").show();
+                            } else if (length == 2) {
+                                var gameinfo = "";
+                                var title = "";
+                                var gameinfoIos = "";
+                                title += "<div class='title-mask'>";
+                                title += "<span class='name-title'>" + '陆战之王' + "</span>";
+                                title += "<span class='close-mask closeMod'></span></div>";
+                                gameinfo += "<div class='down-con-mod'>";
+                                gameinfo += "<a href='" + result[0].downUrl + "?text=btn_ka_" + '544266' + "_pc_detail" + "' class='popup-down-mod'>";
+                                gameinfo += "<p class='name'>" + result[0].name + "</p>";
+                                gameinfo += "<p class='size'>" + result[0].humanSize + "M" + "</p></a></div>";
+                                gameinfoIos += "<div class='down-con-mod'>";
+                                gameinfoIos += "<a href='" + result[1].downUrl + "?text=btn_ka_" + '544266' + "_pc_detail" + "' class='popup-down-mod'>";
+                                gameinfoIos += "<p class='name'>" + result[1].name + "</p>";
+                                gameinfoIos += "<p class='size'>" + result[1].humanSize + "M" + "</p></a></div>";
+                                $("#gameName2").empty().html(title);
+                                $("#popup-android2").empty().html(gameinfo);
+                                $("#popup-ios").empty().html(gameinfoIos);
+                                $("#downloadBoxAndroidIOS").show();
+                            }
+                        }
+                    });
+                    event.preventDefault();
+                    return false;
+                });
+
+                //生成二维码
+                $("#codeLink1").click(function (event) {
+                    $("#codeImg").attr("src", "/qr?content=");
+                    $("#qrCodeBox").show();
+                    event.preventDefault();
+                });
+
+                //生成二维码
+                $("#codeLink").click(function (event) {
+                    $("#codeImg").attr("src", "/qr?content=" + $("#qrCodeStr").val());
+                    $("#qrCodeBox").show();
+                    event.preventDefault();
+                });
+
+                //关闭
+                $("span.close").click(function () {
+                    //见detail.js
+                    hideAllBox();
+                    //如果领号成功了且号只运行领一次，关闭提示框的时候，刷新当前页面
+                    var sceneSole = "1";
+
+                    if (getSuccess && sceneSole == "1") {
+                        window.location.reload();
+                    }
+
+                    if (bookSuccess) {
+                        window.location.reload();
+                    }
+
+                });
+
+                $("a.closeLink").click(function (event) {
+                    //见detail.js
+                    hideAllBox();
+                    //如果领号成功了且号只运行领一次，关闭提示框的时候，刷新当前页面
+                    var sceneSole = "1";
+                    if (getSuccess && sceneSole == "1") {
+                        window.location.reload();
+                    }
+                    if (bookSuccess) {
+                        window.location.reload();
+                    }
+                    event.preventDefault();
+                });
+
+                //实时播报滚动--lh在js中搞了
+                //inRealTime(".hot-box", ".hot-gift-list"); 
+            });
+
+
+            var reg = /^\s*$/;
+            function validate() {
+                var elem = document.getElementsByName("param_args");
+                for (var i = 0; i < elem.length; i++) {
+                    if (elem[i].type == "text") {
+                        if (reg.test(elem[i].value)) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            function closeWin() {
+                $("#messageBox").hide();
+            }
+
+            //消息链接中的绑定手机按钮
+            function messageBindMobile(doNotice, from) {
+                //清空初始值
+                $("#mobile").val("");
+                $("#mobile-err").empty();
+                $("#verifycode").val("");
+                $("#vercode-err").empty();
+                $("#mobileCheckBox").hide();
+                $("#messageBox").hide();
+
+                //分析绑定手机的状况，方便智能显示提示语。
+                if (from == "get" || from == "request") {
+                    $("#mobileVerifyMsg").html("就差一步啦，领号前需要验证手机号码");
+                } else if (from == "notice") {
+                    $("#mobileVerifyMsg").html("接收短信提醒需要验证手机号码");
+                } else if (from == "changeMobile") {
+                    $("#mobileVerifyMsg").html("验证通过后，您将使用新验证的手机号码接收提醒");
+                } else {
+                    $("#mobileVerifyMsg").html("接收短信提醒需要验证手机号码");
+                }
+
+                $("#mobileVerifyBox").show();
+
+                if (doNotice != true) {
+                    notifyBookNotice();
+                }
+            }
+
+            //通知页面已点击换绑或绑定手机页面
+            function notifyBookNotice() {
+                $.ajax({
+                    url: "/personal/changeMobile.html?requestType=ajax&id=1409284742836041991&currentPageUrl=" + currentPageUrl,
+                    type: 'GET',
+                    success: function (result) {
+                    }
+                });
+            }
+
+            var codeCopy = function (obj) {
+                var code = obj.attr('rel');
+                try {
+                    if (window.clipboardData.setData("Text", code)) {
+                        alert("已复制到剪贴板");
+                    }
+                    else {
+                        var t = window.prompt("请按Ctrl+C快捷键进行复制!", code);
+                    }
+                }
+                catch (ex) {
+                    var t = window.prompt("请按Ctrl+C快捷键进行复制!", code);
+                }
+            };
+
+            function showCode(n) {
+                if ($("#codeCon" + n).is(":hidden")) {
+                    $("#codeCon" + n).show();
+                }
+                else {
+                    $("#codeCon" + n).hide();
+                }
+            }
+
+            //PC弹窗下载游戏
+            function download9game() {
+                hideAllBox();
+                var sceneSole = "1";
+                if (bookSuccess) {
+                    $("#bookLink").hide();
+                    $("#ybookLink").show();
+                    $("#bookNote").hide();
+                }
+                $("[data-tag='downloadLink']").click();
+            }
+
+            //PC再淘一次
+            function taoagain() {
+                hideAllBox();
+                $("#taoLink").click();
+            }
+
+            //手机绑定检查
+            function smsBinding() {
+                var currentPageUrl = encodeURI(encodeURI(document.location.href));
+                $.ajax({
+                    url: "/personal/notice.html?requestType=ajax&id=1409284742836041991&operation=check&currentPageUrl=" + currentPageUrl,
+                    type: 'GET',
+                    success: function (result) {
+                        var resJson = $.parseJSON($.trim(result));
+                        $('#bookPopBox').hide();
+                        $("#mobileChangeTitle").html(resJson.message);
+                        if (resJson.status == "success") {
+                            $('#mobileCheckBox').show();
+                            console.log('success');
+                        } else if (resJson.status == "failure"
+						  && resJson.loginUrl != null) {
+                            window.location = resJson.loginUrl;
+                        } else if (resJson.status == "nobind") {
+                            console.log('nobind');
+                            $('#mobileCheckBind').hide();
+                            //不再弹这个窗， 弹输入手机的窗口
+                            //$('#mobileCheckNoBind').show();
+                            messageBindMobile();
+                        }
+                        else {/*需要登录*/
+                            $('#mobileCheckButton').hide();
+                        }
+                        //$('#mobileCheckBox').show();
+                    }
+                });
+                event.preventDefault();
+            }
+            //-->
+        </script>
+        <input type="hidden" id="id" value="" />
+        <input type="hidden" id="paramter" value="" />
+        <input type="hidden" id="kaboxId" value="" />
+        <input type="hidden" id="kaId" value="" />
+        <input type="hidden" id="actionUrl" value="" />
+        <input type="hidden" id="qrCodeStr" value="" />
+        <input type="hidden" id="copyCodeStr" value="" />
+        <!-- main begin -->
+        <!--详情页总共分三部分，此处切为上、中、下  -->
+        <!-- game-info -->
+        <div class="mod-game-box">
+            <img src="http://image.game.uc.cn/2014/9/15/9911543.jpg" alt="陆战之王礼包" class="game-img">
+            <div class="game-all-way">
+                <h1 class="name">
+                    [陆战之王]独家封测登录激活码</h1>
+                <span class="num-game"></span><span class="follow-info"><span id="followDiv"><a href="javascript:void(0);"
+                    id="followLink" class="btn-white-high"><i class="add-ico"></i>礼包提醒</a> </span>
+                </span>
+                <div class="game-list-way">
+                    <a href="http://www.9game.cn/lzzw/" target="_blank">进入专区</a>| <a href="http://bbs.9game.cn/forum-2976-1.html"
+                        target="_blank">进入论坛</a>| <a href="javascript:void(0)" data-tag="downloadLink"><i
+                            class="down-ico"></i>下载游戏 </a>
+                </div>
+            </div>
+            <div class="game-info-box">
+                <!-- 个人场景,会有各种status的状态显示 -->
+                <!-- 领号 -->
+                <p>
+                    <span class="label">剩余情况：</span> <span class="prog-bar"><em class="proging" style="width: 22%;">
+                    </em></span><span>剩余 <em class="org">
+                        <!-- 正常场景计算剩余率 -->
+                        22% </em></span>
+                </p>
+                <div class="mod-code-box" style="display: none">
+                    <a href="javascript:void(0)" id="copyLink" onclick="codeCopy($(this))" class="tao-gift-btn">
+                        复制卡号</a> <a href="###" id="codeLink" class="yu-gift-btn">二维码扫描</a>
+                </div>
+                <!-- 场景正常 -->
+                <!-- 个人场景,会有各种status的状态显示 -->
+                <!-- 增加一个暂停状态判断 -->
+                <p>
+                    <a href="javascript:void(0)" id="getLink" class="ling-gift-btn">领号 </a>
+                </p>
+            </div>
+        </div>
+        <div class="game-down-box">
+            <i class="down-cute"></i><i class="down-cute"></i>
+            <div>
+                <strong>下载</strong> <a href="javascript:void(0)" data-tag="downloadLink" class="org">
+                    九游《陆战之王》游戏客户端</a>，礼包领取更方便！快下一个吧~~\(≧▽≦)/~ <a href="javascript:void(0)" data-tag="downloadLink"
+                        class="game-down-btn"><i class="down-white-ico"></i>立即下载</a>
+            </div>
+        </div>
+        <div class="grid-mod">
+            <!-- main -->
+            <div class="col-main">
+                <div class="main-wrap">
+                    <!-- detail -->
+                    <div class="detail-box">
+                        <div class="title-detail-mod">
+                            <ul class="title-list tab-list">
+                                <li class="on">激活码说明</li><i class="flg"></i>
+                                <li>使用方法</li>
+                            </ul>
+                        </div>
+                        <div class="tab-info-box">
+                            <div class="tab-main">
+                                <div class="info">
+                                    <div style="font-family: Arial, Verdana; font-size: 10pt; font-style: normal; font-variant: normal;
+                                        font-weight: normal; line-height: normal;">
+                                        <div>
+                                            <font face="Arial, Verdana" size="2">正式开测后，使用激活码可登录《陆战之王》优先体验游戏。</font></div>
+                                        <div>
+                                            <font face="Arial, Verdana" size="2">开测时间：</font><span style="font-size: small;">9月17日开启九游独家删档封测！</span></div>
+                                    </div>
+                                    <div style="font-family: Arial, Verdana; font-size: 10pt; font-style: normal; font-variant: normal;
+                                        font-weight: normal; line-height: normal;">
+                                        <span style="font-size: small;">
+                                            <br>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2"><b>《陆战之王》真男人的专属游戏！</b></font></div>
+                                    <div>
+                                        <span style="font-family: Arial, Verdana; font-size: small;">1、首款即时战斗二战卡牌游戏；</span></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">2、上百辆史实战车，精确的数据，还原最真实的二战坦克战；</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">3、精致的画面，写实的音效，将您带入热血沸腾的战场；&nbsp;</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">4、经典的战役模式，带领战车部队，纵横欧洲大陆，书写欧洲战争的史诗篇章；</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">5、天梯赛等众多 PVP活动，让您领略到排兵布阵，指点沙场乐趣；</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">6、集结好友，组建工会，加入城市战争，体验工会之间的百团大战；</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">7、最热血的战斗，最惨烈的战场，最男人的游戏，尽在《陆战之王》！</font></div>
+                                    <div>
+                                        <font face="Arial, Verdana" size="2">
+                                            <br>
+                                        </font>
+                                    </div>
+                                    <br>
+                                    <!-- 个人场景 -->
+                                    <p>
+                                        <strong>使用期限：</strong><span class="red">2014-09-17 10:00 至 2014-09-30 00:00</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="tab-main fn-none">
+                                <div class="info">
+                                    <p>
+                                        该激活码只能用于九游版《陆战之王》，请先 <a href="javascript:void(0)" data-tag="downloadLink">下载游戏</a>
+                                    </p>
+                                    <p>
+                                        成功安装游戏可使用激活码登录游戏！</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title-detail-mod">
+                            <div class="title-way">
+                                <h3 class="title-subs">
+                                    热门推荐</h3>
+                                <a href="http://www.9game.cn/lzzw/" class="more-col" target="_blank">更多</a>
+                            </div>
+                            <div class="title-way">
+                                <h3 class="title-subs">
+                                    论坛热帖</h3>
+                                <a href="http://bbs.9game.cn/forum-2976-1.html" class="more-col" target="_blank">更多</a>
+                            </div>
+                        </div>
+                        <div class="list-clean">
+                            <div class="game-data-normal">
+                                哎呀，公告还在路上</div>
+                            <!-- 没数据的情况下 -->
+                            <ul class="mod-game-list">
+                                <li><a href="http://bbs.9game.cn/thread-6796002-1-1.html" target="_blank">【陆战闪退问题收集专贴】</a>
+                                </li>
+                                <li><a href="http://bbs.9game.cn/thread-6793049-1-1.html" target="_blank">【陆战之王】独家封测送充值卡千U点！截图秀出你的坦克战</a>
+                                </li>
+                                <li><a href="http://bbs.9game.cn/thread-6785429-1-1.html" target="_blank">《陆战之王》公会争霸
+                                    送10000U点+充值卡</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sub -->
+            <div class="col-sub">
+                <div class="sub-box">
+                    <!-- title -->
+                    <div class="title-sub-mod">
+                        <h4 class="title-sub">
+                            更多礼包</h4>
+                        <a href="/game/544266_-5_1.html" class="more-sub">更多</a>
+                    </div>
+                    <!-- list -->
+                    <ul class="mod-gift-list">
+                        <li><a href="/personal/1411010202763917677.html" class="info-row">[陆战之王]独家封测高级礼包</a>
+                            <span class="org-gift-ico">淘</span> </li>
+                        <li><a href="/personal/1410852485763424550.html" class="info-row">[陆战之王]独家封测新手礼包</a>
+                            <span class="org-gift-ico">淘</span> </li>
+                        <li><a href="/personal/1410852589763427518.html" class="info-row">[陆战之王]独家封测特权礼包</a>
+                            <span class="green-gift-ico">领</span> </li>
+                    </ul>
+                    <!-- 实时播报开始 -->
+                    <!-- <div class="column mbNone" id="kaLog"> -->
+                    <div class="title-sub-mod">
+                        <h4 class="title-sub">
+                            大家都在抢</h4>
+                    </div>
+                    <div id="newWarp" class="hot-box">
+                        <ul id="nowIssue" class="hot-gift-list">
+                            <li>
+                                <div class="name-box">
+                                    <a href="javascript:void(0)">&nbsp;&quot;九游玩家372254246&quot;</a> <span class="times">
+                                        &nbsp;刚刚</span>
+                                </div>
+                                <p class="gfit-info">
+                                    领取了<a href="/personal/1409284742836041991.html">&nbsp;[陆战之王]独家封测登录激活码</a>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="name-box">
+                                    <a href="javascript:void(0)">&nbsp;&quot;Adele小贺:&quot;</a> <span class="times">&nbsp;2分钟前</span>
+                                </div>
+                                <p class="gfit-info">
+                                    领取了<a href="/personal/1409284742836041991.html">&nbsp;[陆战之王]独家封测登录激活码</a>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="name-box">
+                                    <a href="javascript:void(0)">&nbsp;&quot;九游玩家363069987&quot;</a> <span class="times">
+                                        &nbsp;5分钟前</span>
+                                </div>
+                                <p class="gfit-info">
+                                    领取了<a href="/personal/1409284742836041991.html">&nbsp;[陆战之王]独家封测登录激活码</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- </div>			 -->
+                    <!-- 实时播报结束 -->
+                </div>
+            </div>
+        </div>
+        <!-- main end -->
+        <script>
+            seajs.use('/public/javascripts/uglib/app/gift-detail.js');
+        </script>
+    </div>
+    <!-- pc popbox -->
+    <!-- 弹出层统一放在这里，include到PC_MAIN.html -->
+    <!-- 公共消息提示窗口 -->
+    <div id="messageBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="hint_msg">
+                    </p>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar" id="resultDiv">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-org"></span><span
+                                class="c-org">关闭</span> <span class="r-org"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop 中转领号验证-->
+    <div id="requestPopCredentialBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        您已经获取过这个号：</p>
+                    <form class="form-elem" id="requestCredentialForm">
+                    </form>
+                    <div id="requestCredentialErrMsg">
+                    </div>
+                    <div class="post cf">
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">关闭</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop 中转-->
+    <div id="requestPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        请输入您的信息，我们将会把奖励发放到您的游戏账户：</p>
+                    <form class="form-elem" id="requestForm">
+                    </form>
+                    <div id="requestErrMsg">
+                    </div>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" id="submitLink"><span class="l-org"></span><span class="c-org">
+                                提交</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="confirmPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        领取该发号需要扣除0铜币，确定继续吗？</p>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" id="confirmSub1"><span class="l-org"></span><span class="c-org">
+                                确定</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 防刷弹出窗口 -->
+    <div id="credentialGotPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="credentialGot_title">
+                        您已使用手机领取过这个号：
+                    </p>
+                    <div id="credentialGot_con">
+                    </div>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-org"></span><span class="c-org">
+                                关闭</span> <span class="r-org"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 领号窗口 -->
+    <div id="fechPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">领号成功</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        太棒了，礼包到手了！请复制使用：
+                    </p>
+                    <div id="fetch_con">
+                    </div>
+                    <div id="lingcontent">
+                    </div>
+                    <div class="post cf">
+                        <div class="org-box orgo-mar" id="9clientDowloadling">
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">关闭</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop 淘号结果-->
+    <div id="taoPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">淘号成功</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        恭喜您淘号成功，请复制使用：</p>
+                    <div id="taoContent">
+                    </div>
+                    <div>
+                        <p>
+                            • 淘到的号不保证一定能兑换，请多尝试。</p>
+                        <p>
+                            • 使用九游游戏中心可保存淘号记录，用号更便捷。</p>
+                        <p>
+                            <span id="taoIsCopy"></span>
+                        </p>
+                    </div>
+                    <div class="post cf">
+                        <div class="gray-box cf" id="taoagain">
+                        </div>
+                        <div class="gray-box cf" id="9clientDowloadtao">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop 二维码-->
+    <div id="qrCodeBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">二维码</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <img id="codeImg" src="/public/images/9game_default.jpg" border="0" alt="">
+                </div>
+                <div class="post cf">
+                    <div class="org-box cf org-mar">
+                        <a href="javascript:void(0)" class="closeLink"><span class="l-org"></span><span class="c-org">
+                            关闭</span> <span class="r-org"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop 公会礼包-->
+    <div id="guildPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="guildPopTitle">
+                    </p>
+                    <form class="form-elem" id="guildForm" action="/guild/result.html" method="post">
+                    <p id="guildPopForm">
+                    </p>
+                    </form>
+                    <p class="c-title" id="guildInputMsg">
+                    </p>
+                    <!-- btns begin -->
+                    <div class="post cf" id="guildButton">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" id="submitNumber"><span class="l-org"></span><span class="c-org">
+                                确定</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                    <div class="post cf" id="guildButtonOk" style="display: none">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" onclick="$('#guildPopBox').hide()"><span class="l-org">
+                            </span><span class="c-org">确定</span> <span class="r-org"></span></a>
+                        </div>
+                    </div>
+                    <!-- 公会礼包自动审批 begin -->
+                    <div class="show-info" id="guildReclaimAlert" style="display: none">
+                        <p>
+                            <font color='black'>【温馨提示】</font></p>
+                        <p class="show-info" id="guildReclaimPopBoxRate">
+                        </p>
+                    </div>
+                    <div class="post cf" id="isAutoAuditButton" style="display: none">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" id="mngGuildKa" target="_blank"><span class="l-org"></span>
+                                <span class="c-org">管理礼包</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0)" id="goGuildKaList"><span class="l-gray"></span><span
+                                class="c-gray">返回公会礼包列表</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                    <!-- btns end -->
+                    <div class="show-info" id="guildAlert">
+                        <p>
+                            <font color='black'>【温馨提示】</font></p>
+                        <p class="show-info" id="guildPopBoxRate">
+                        </p>
+                        <p class="c-gray">
+                            分配率=分配给成员的量/申号获得总量</p>
+                        <p class="c-gray">
+                            请按需申请，分配率低于80%会被拒绝申请。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 公会领号窗口 -->
+    <div id="guildGetPopbox" style='display: none'>
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <div class="page-pop-list">
+                        <p id="guildGetMsg">
+                        </p>
+                    </div>
+                    <ul id="guildList" class="guild-list-mod">
+                    </ul>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0)" class="closeLink"><span class="l-org"></span><span class="c-org">
+                                关闭</span> <span class="r-org"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 关注游戏成功 -->
+    <div id="followPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="followMsg">
+                    </p>
+                    <div class="post cf">
+                        <div class="org-box orgo-mar">
+                            <a href="javascript:void(0);" id="followSubmit" value="1"><span class="l-org"></span>
+                                <span class="c-org" id="followBtn"></span><span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 关注游戏结果 -->
+    <div id="followResultPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content" id="followResultContent">
+                    <p class="c-title" id="followResultMsg">
+                    </p>
+                    <div class="post cf">
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">关闭</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 取消关注 -->
+    <div id="cancelFollowPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="cancelFollowMsg">
+                    </p>
+                    <div class="post cf">
+                        <div id="cancelFollowSubmit" class="org-box orgo-mar">
+                            <a href="javascript:void(0);"><span class="l-org"></span><span class="c-org">是</span>
+                                <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">否</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 预订成功后，场景允许发送短信 -->
+    <div id="bookPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="bookPopTitle">
+                    </p>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-org"></span><span
+                                class="c-org">关闭</span> <span class="r-org"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 预订成功后，客户端下载、不需要短信提醒（包括开放下载和未开放下载）场景 -->
+    <div id="clientbookPopBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">预订成功</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="clientbookPopTitle">
+                    </p>
+                    <div class="post cf">
+                        <div class="org-box orgo-mar" id="9clientDowload">
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">关闭</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 预订成功后，场景不允许发送短信 -->
+    <div id="mobileCheckBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title" id="mobileChangeTitle">
+                    </p>
+                    <div class="post cf" id="mobileCheckButton">
+                        <div class="org-box orgo-mar">
+                            <a href="javascript:void(0);" id="mobileNoBind"><span class="l-org"></span><span
+                                class="c-org" id="mobileCheckBind" onclick="notifyBookNotice();">确定</span> <span
+                                    class="c-org" id="mobileCheckNoBind" style="display: none" onclick="messageBindMobile();">
+                                    绑定手机并接收短信提醒</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 存号箱弹出层 -->
+    <div style="display: none;" id="show1">
+        <!-- pop -->
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭" id="close1"></span>
+                </div>
+                <div class="pop-content">
+                    <p class="c-title">
+                        请提交您的角色信息，我们将会稍后将奖励发到您游戏账户中</p>
+                    <form id="form-elem" class="form-elem">
+                    </form>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0);" id="a_ref"><span class="l-org"></span><span class="c-org">
+                                提交</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" id="a_cen"><span class="l-gray"></span><span class="c-gray">
+                                取消</span> <span class="r-gray"></span></a>
+                        </div>
+                        <span style="color: red;" id="org_msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="show2" style="display: none;">
+        <!-- pop -->
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭" id="close2"></span>
+                </div>
+                <div class="pop-content">
+                    <p class="c-title">
+                        您提交的信息如下，请核对是否无误：</p>
+                    <form action="/personal/doSubmit.html" id="form_id" method="post">
+                    <input type="hidden" id="id" name="id" value="" />
+                    <input type="hidden" id="paramter" name="paramter" value="" />
+                    <input type="hidden" id="kaboxId" name="kaboxId" value="" />
+                    <input type="hidden" id="kaId" name="kaId" value="" />
+                    <div id="post-info" class="post-info">
+                    </div>
+                    </form>
+                    <div class="post cf">
+                        <div class="org-box org-mar">
+                            <a href="javascript:void(0);" id="a_com"><span class="l-org"></span><span class="c-org">
+                                确认</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box">
+                            <a href="javascript:void(0);" id="a_upd"><span class="l-gray"></span><span class="c-gray">
+                                修改</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 验证手机号弹出层 -->
+    <div id="mobileVerifyBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <div class="pop-verify">
+                        <div>
+                            <span class="fail-ico"></span><span id="mobileVerifyMsg">接收短信提醒需要验证手机号码</span>
+                        </div>
+                        <form class="vertif-form">
+                        <div class="phone-box">
+                            <span>手机号:</span>
+                            <input type="text" name="mobile" id="mobile" value="" class="phone-input">
+                        </div>
+                        <div class="red" id="mobile-err">
+                        </div>
+                        <div class="phone-box">
+                            <span>验证码:</span>
+                            <input type="text" name="verifycode" id="verifycode" value="" class="verify-infput">
+                            <input type="hidden" name="captcha" id="captcha" value="9u">
+                            <div class="gray-box" id="getCodeDiv">
+                                <a href="javascript:void(0);" id="getVerifyCode"><span class="l-gray"></span><span
+                                    class="c-gray" id="btnGetVCode">获取验证码</span> <span class="r-gray"></span></a>
+                            </div>
+                            <a href="javascript:void(0);" class="gray-btnHight" id="getCodeAgainDiv" style="display: none">
+                            </a>
+                        </div>
+                        <div class="red" id="vercode-err">
+                        </div>
+                        </form>
+                        <p class="gray-low">
+                            <span id="mobile-alert" style="display: none;">如果超过60秒都没有收到验证码请重新获取</span></p>
+                        <div class="post cf">
+                            <div class="org-box cf org-mar">
+                                <a href="javascript:void(0);" id="submitVerifyCode"><span class="l-org"></span><span
+                                    class="c-org">提交</span> <span class="r-org"></span></a>
+                            </div>
+                            <div class="gray-box cf">
+                                <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                    class="c-gray">取消</span> <span class="r-gray"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 下载多包的弹出框 -->
+    <div id="downloadBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content popup">
+                    <div class="little-tit">
+                        <p class="title-popseo">
+                            安卓平台下载</p>
+                    </div>
+                    <div id="popup-android">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="downloadBoxAndroid" class="page-box-mod">
+        <div class="page-mask-mod">
+        </div>
+        <iframe class="pop-iframe"></iframe>
+        <div class="page-wrap-mask">
+            <div class="page-main-mask">
+                <div id="gameName1">
+                </div>
+                <div class="pop-content game-pop-mask">
+                    <div class="little-title">
+                        <p>
+                            安卓平台下载</p>
+                    </div>
+                    <div id="popup-android1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="downloadBoxIOS" class="page-box-mod">
+        <div class="page-mask-mod">
+        </div>
+        <iframe class="pop-iframe"></iframe>
+        <div class="page-wrap-mask">
+            <div class="page-main-mask">
+                <div id="gameName3">
+                </div>
+                <div class="pop-content game-pop-mask">
+                    <div class="little-title">
+                        <p>
+                            苹果平台下载</p>
+                    </div>
+                    <div id="popup-ios2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="downloadBoxAndroidIOS" class="page-box-mod">
+        <div class="page-mask-mod">
+        </div>
+        <iframe class="pop-iframe"></iframe>
+        <div class="page-wrap-mask">
+            <div class="page-main-mask">
+                <div id="gameName2">
+                </div>
+                <div class="pop-content game-pop-mask">
+                    <div class="little-title">
+                        <p>
+                            安卓平台下载</p>
+                    </div>
+                    <div id="popup-android2">
+                    </div>
+                    <div class="little-title">
+                        <p>
+                            苹果平台下载</p>
+                    </div>
+                    <div id="popup-ios">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--include到popwin.html -->
+    <!-- 验证码 -->
+    <div id="codeBox" style="display: none">
+        <div class="pop-box">
+        </div>
+        <div class="pop-wrap">
+            <!-- main -->
+            <div class="pop-main">
+                <!-- header -->
+                <div class="pop-title">
+                    <strong class="fl-l">提示</strong> <span class="close" title="关闭"></span>
+                </div>
+                <!-- content -->
+                <div class="pop-content">
+                    <p class="c-title">
+                        领号前需输入验证码：</p>
+                    <div class="form-elem">
+                        <p>
+                            <input type="text" value="" id="validCodeText" class="input sort">
+                            <img src="/public/images/load.png" id="validCode" class="check-pic">
+                            <a href="javascript:void(0);" id="validCodeA" class="check-next">换一张</a>
+                        </p>
+                        <p class="red codeError" id="errorHint" style="display: none">
+                            验证码输入错误，请重新输入</p>
+                    </div>
+                    <div class="post cf">
+                        <div class="org-box cf org-mar">
+                            <a href="javascript:void(0);" id="postValidCode"><span class="l-org"></span><span
+                                class="c-org">确定</span> <span class="r-org"></span></a>
+                        </div>
+                        <div class="gray-box cf">
+                            <a href="javascript:void(0);" class="closeLink"><span class="l-gray"></span><span
+                                class="c-gray">取消</span> <span class="r-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

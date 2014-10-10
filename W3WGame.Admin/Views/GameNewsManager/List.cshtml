@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "新闻管理";
+}
+@using W3WGame.Core.Enums
+@using WangFramework.Extensions
+@using WangFramework.Utility
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Entities.GameNews>
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="../../Scripts/AdminCommon.js" type="text/javascript"></script>
+<script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".box").colorbox({
+            iframe: true,
+            width: 950,
+            height: 850,
+            onClosed: function () {
+                window.location.reload();
+            }
+        });
+    });
+</script>
+<div class="right_box_card">
+    <ul>
+        <li class="right_box_card1"><a href="@Url.Action("List", "GameNewsManager")">新闻管理</a></li>
+    </ul>
+</div>
+<div style="line-height: 40px;">
+    <p class="avatar_btn">
+        <a href="@Url.Action("Save", "GameNewsManager")" class="box" id="lnkAdd">新增</a>
+    </p>
+</div>
+<div>
+    @using (Html.BeginForm("List", "GameNewsManager", FormMethod.Get))
+    {
+        <table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+            cellpadding="0">
+            <tr height="40px">
+                <td>
+                    平台：@Html.DropDownList("platId", ViewData["newsplatform"] as List<SelectListItem>, new { @class = "text-input" })&nbsp;&nbsp;
+                </td>
+                <td>
+                    新闻类型：@Html.DropDownList("newstype", ViewData["newstypelist"] as List<SelectListItem>, new { @class = "text-input" })&nbsp;&nbsp;
+                </td>
+                <td>
+                    是否显示首页：@Html.DropDownList("isDisplayHome", true.ToSelectList())
+
+                </td>
+                <td>
+                   是否平台新闻：@Html.DropDownList("isWeb", true.ToSelectList())
+
+                </td>
+                <td>
+                    <input type="submit" value="查找" class="submit" style="float: left; width: 80px;" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+    cellpadding="0">
+    <tr height="30" class="tab_title">
+        <td>
+            ID
+        </td>
+        <td>
+            游戏ID
+        </td>
+        <td>
+            新闻类型
+        </td>
+        <td>
+            新闻标题
+        </td>
+        <td>
+            是否显示在首页
+        </td>
+        <td>
+            是否平台新闻
+        </td>
+        <td>
+            点击次数
+        </td>
+        <td>
+            创建时间
+        </td>
+        <td>
+            创建人
+        </td>
+        <td>
+            操作
+        </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr height="35" class="tab_td1">
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.GameID
+            </td>
+            <td>
+                @(((NewsTypeEnum)item.NewsType).ToDescriptionName())
+            </td>
+            <td>
+                @Utils.LeftString(item.Title, 10)
+            </td>
+            <td>
+                @item.IsDisplayHomePage
+            </td>
+            <td>
+                @item.IsWeb
+            </td>
+            <td>
+                @item.ClickCount
+            </td>
+            <td>
+                @item.CreateDate
+            </td>
+            <td>
+                @item.CreatePeople
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Save", "GameNewsManager", new { id = item.ID }, new { @class = "box" })
+                <a href="#" onclick="DeletePost('/GameNewsManager/Delete', { id: @item.ID})">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+<div style="padding: 10px;">
+    @Html.Pager(Model)
+</div>

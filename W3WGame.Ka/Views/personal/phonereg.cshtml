@@ -1,0 +1,241 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UC帐号注册</title>
+<meta name="description" content="UC优视是中国领先的移动互联网软件技术及应用服务提供商，提供的核心产品UC浏览器是一款全球领先的智能手机浏览器，拥有独创的U3内核和云端技术，完美地支持HTML5应用，具有智能、极速、安全、易扩展等特性，让您在阅资讯、读小说、看视频、上微博、玩游戏、网上购物等都能享受最流畅的移动互联网体验；UC优视旗下的产品有：UC浏览器,来电通,UC乐园,UC桌面,UC影音,UC迅雷,UC保险箱,UC快拍,UC网盘等。">
+<meta name="keywords" content="uc,ucweb,uc浏览器,手机浏览器,来电通,uc桌面,uc影音,uc迅雷,uc乐园,uc保险箱,uc快拍,UC网盘,手机上网,手机播放器,手机天气预报软件,手机资讯,手机桌面">
+<meta name="robots" content="all"/>
+<meta name="Copyright" content="UC优视"/>
+<meta property="qc:admins" content="244435573016705665363673137" />
+<link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css"/>
+</head>
+<body>
+<div class="header">
+	<!-- 头部 -->
+	<div id="dHeader" class="header-cont">
+		<!-- 返回首页面链接 -->
+		<div id="dHomeLink" class="btn"><a href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2" class="btn_home">返回首页</a></div>
+		<!-- logo -->
+		<div id="dLogo">
+			<h1 class="logo">
+				<a id="logoImg" href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2">
+					<img src="/img/logo_uc_835043c.gif" width="174" height="72" title="" class="changelogo" client_id="102" staticResourceBaseUri='/' appName="九游"/>
+				</a>
+			</h1>
+		</div>
+	  	<div class="header-title">UC帐号是UC各业务通行的帐号。<br/>拥有UC帐号，你就可以玩转UC！</div>
+	</div>
+</div>
+
+
+<div class="wrap cls">
+	<!--左边菜单-->
+	<div class="menu" id="menu">
+		<ul class="menulist">
+			<li id="mobileTab" class="on">
+				<div class="reg">
+					<img src="/img/mobile_s_171bc37.gif">
+					手机注册
+				</div>
+			</li>
+			<li id="emailTab" onclick="javascript:location.href='http://api.open.uc.cn/cas/register?register_type=email&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc&display=pc'">
+				<div class="reg">
+					<img src="/img/email_93ecd16.gif"> 
+					邮箱注册
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--左边菜单end-->
+	
+	<div class="cont" id="cont">
+		<!-- 登录链接提示 -->
+		<div id="dLoginNotice" class="tip">提示：如果你已有UC帐号，请直接&nbsp;
+				<a href="http://api.open.uc.cn/cas/login?client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">登录</a>
+	</div>
+				
+		<!-- 公告 -->
+		
+	
+		
+		<!-- 通用错误提示 -->
+	 	<div id="dMessageError" style="padding:0px 0px 15px 78px">
+      		      	</div>	
+	    
+	    <!-- 表单 -->
+	    <div id="dForm">
+		    <form id="dRegisterForm" action="https://api.open.uc.cn/cas/register/commit?register_type=mobile&uc_param_str=einisivelafrpfmibiup" method="post" autocomplete="off">
+				<!-- 回传参数 -->
+		        <input type="hidden" id="client_id" name="client_id" value="102" />
+			    <input type="hidden" name="redirect_uri" value="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2" />
+				<input type="hidden" name="target_client_id" value="" />
+			    <input type="hidden" name="target_redirect_uri" value="" />
+			    <input type="hidden" name="display" id="display" value="pc" />
+	    	
+				<ul class="reglist">
+					<!-- 帐号 -->
+					<li id="dRegisterName" class="mar">
+						<div>
+							<span class="text">手机号码</span> 
+				      		<span class="enter"><input type="text" onblur="vaildRegisterName('http://api.open.uc.cn/cas/', '/', 'mobile')" id="registerName" name="registerName" value="" maxlength="11" class="changetips" placeholder="请输入手机号码" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+				      	</div>
+				      	
+				      	<!-- 帐号错误提示 -->
+				      	<div id="dRegisterNameError" class="error-tips"></div>
+					</li>
+										
+					<!-- 密码 -->
+					<li id="dPassword" class="mar">
+				      	<div>
+							<span class="text">设置密码</span> 
+				      		<span class="enter"><input type="password" onkeyup="passStrong('/','zh_pc')" onblur="validPwd('/')" maxlength="20" id="password" name="password" value="" class="changetips" placeholder="6-20位,区分大小写" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+				      	</div>
+				      	
+				      	<!-- 密码错误提示 -->
+					    <div id="dPasswordError" class="error-tips"></div>
+					</li>
+					
+					<!-- 密码安全强度 -->
+					<li id="dPasswordLevel" class="s">
+						<p class="level_0"></p>
+					</li>
+					
+					<!-- 确认密码 -->
+					<li id="dConfirmPassword" class="mar">
+						<div>
+							<span class="text">确认密码</span> 
+				      		<span class="enter"><input type="password" onblur="validConfirmPwd('/')" maxlength="20" id="confirmPassword" name="confirmPassword" value="" class="changetips" placeholder="6-20位,区分大小写" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+						</div>
+						
+				      	<!-- 确认密码错误提示 -->
+					    <div id="dConfirmPasswordError" class="error-tips"></div>
+					</li>
+					
+					<!-- 验证码 -->
+					<li id="dCaptcha" class="mar cls">
+						<span class="text">验&nbsp;证&nbsp;码</span>
+						<div class="valide-box">
+							<span class="enter1"> 
+								<input onblur="validCaptcha('http://api.open.uc.cn/cas/', '/', 'mobileRegister')" maxlength="4" size="4" type="text" name="captchaVal" id="captchaVal" class="changetips" placeholder="请输入结果" imageName="input_register_bg_1_992d8a2" imageErrorName="input_register_bg_1_error_2c08e39" staticResourceBaseUri="/"/>
+							</span>
+							<span id="captchaImg" style="margin-left: 38px;">
+								<img src="http://api.open.uc.cn/cas/commonjson/captcha?captchaId=140c25a5-2b60-4037-b54b-38d18bf25ca2&uc_param_str=einisivelafrpfmibiup&display=pc"/>
+								<input type="hidden" id="captchaId" name="captchaId" value="140c25a5-2b60-4037-b54b-38d18bf25ca2" />
+							</span> 
+							<span style="cursor:pointer;margin-left: 9px;"><a onclick="refreshCatcha('http://api.open.uc.cn/cas/')">换一张</a></span>
+						</div>
+						
+				        <!-- 验证码错误提示 -->
+				        <div id="dCaptchaValError" class="error-tips"></div>
+					</li>
+					
+					
+					<!-- 短信验证码倒计时 -->
+					<li id="dMsgSendNotice" style="margin-bottom:0px;display:none">
+						<span class="text1">若长时间未收到短信验证码,<font id="countDown" class="orange"></font>秒后可重新验证和获取短信验证码</span>
+					</li>
+					
+					<li id="dMsgIvr" style="margin-bottom:5px;display:none">
+						
+<span class="text1">一直未收到?请拨打020-66311312获取</span>
+					</li>
+					
+					<!-- 短信验证码 -->
+					<li id="dMobileCode">
+						<div>
+							<span class="text">短信验证码</span>
+							<span class="enter1"><input onchange="validMobileCode('/');" id="mobileCode" name="mobileCode" type="text" maxlength="8" class="changetips" placeholder="短信验证码" imageName="input_register_bg_1_992d8a2" imageErrorName="input_register_bg_1_error_2c08e39" staticResourceBaseUri="/"/></span>
+							<span id="dGetCodeBtn"><button type="button" id="getCodeBtn" casBaseUri="http://api.open.uc.cn/cas/" staticResourceBaseUri="/" class="btn_code" style="cursor:default">获取短信验证码</button></span>
+						</div>
+						 
+				      	<!-- 短信验证码错误提示 -->
+				      	<div id="dMobileCodeError" class="error-tips"></div>
+					</li>
+					
+					
+					<!-- 协议 -->
+					<li id="dAgreement" class="s">
+	<p>
+		<span class="check">
+			<input type="checkbox" id="agreement" name="agreement" checked="checked" value="1" onclick="validAgreement('/')"/>
+		</span>
+		<span>
+			&nbsp;我已阅读并同意
+						<a href="//img0.u.ucfly.com/uop/sso/public/html/terms_zh.html">UC帐号服务协议</a>
+											</span>
+	</p>
+	<!-- 确认密码错误提示 -->
+	<div id="dAgreementError" class="error-tips" style="margin: -30px 0px 10px 329px"></div>
+</li>				</ul>
+	
+				<!-- 注册按钮区 -->
+				<div id="dButton" class="reg_f">
+					<input type="button" style="cursor:pointer" onclick="submitRegForm('http://api.open.uc.cn/cas/', '/', 'mobile')" id="submit_btn" class="btn_reg" alt="注册" value="注册"/>
+				</div>
+			</form>
+		</div>
+		
+  		<!-- 更多业务 -->
+<div id="dFooter">
+	<div class="business pd cls">
+	  <div class="business-title"><a href="http://www.uc.cn/product/index.shtml" target="_black">更多&gt;&gt;</a>更多UC业务：</div>
+	  <ul class="business-ul cls">
+	    <li><img src="/img/icon_ucbrowser_c8bc2c1.jpg" width="50" height="50" title="UC浏览器">
+	      <div>
+	        <h3>UC浏览器</h3>
+	        登录手机UC浏览器，体验极速、智能的UC服务。</div>
+	    </li>
+	    <li><img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="九游">
+	      <div>
+	        <h3>九游</h3>
+	        上九游，玩游戏，尽享游戏带来的无限快乐。</div>
+	    </li>
+	    <li><img src="/img/icon_uccloud_2ef2813.jpg" width="50" height="50" title="UC云">
+	      <div>
+	        <h3>UC云</h3>
+	        云存储，云同步，云下载，UC云服务随时随地伴你行。</div>
+	    </li>
+	  </ul>
+	</div>
+	
+</div>	</div>	
+</div>
+<!-- 底部 -->
+<div id="dFooter" class="footer">
+	<p><a href="http://www.uc.cn" target="_black">UC官网</a> | <a href="http://www.uc.cn/product/index.shtml" target="_black">UC产品</a> | <a href="http://feedback.uc.cn/self_service/web/index" target="_black">帮助中心</a> | <a href="http://feedback.uc.cn/feedback/web/index?instance=usercenter" target="_black">意见反馈</a></p>
+	<p>UC优视 2009-2013 © 版权所有</p>
+</div>
+
+<script type="text/javascript">
+    window.onload = function () {
+        isSendMsg();
+    }
+
+    /* 
+    $(window).click(function(e){	
+	
+    if(captchaFlag) {
+    if($("#dMsgSendNotice").css("display") != "none") {
+    return;
+    }
+
+    if(!registerNameFlag) {
+    registerNameFlag = vaildRegisterName('http://api.open.uc.cn/cas/', '/','mobile')
+    }
+    if(registerNameFlag) {
+    showBtn();
+    }  else {
+    offShow();
+    }
+    }
+    }); */
+
+</script>
+
+<!-- pc手机注册页面统计 -->
+
+</body>
+
+</html>

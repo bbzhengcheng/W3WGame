@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "文件管理器";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        
+        @if (Request["inputId"] != null)
+        {
+            <text>
+            $(".chooseFile").click(function () {
+                var fileUrl = $(this).attr("fileUrl"); 
+                parent.$.fn.colorbox.close(); 
+                parent.$('#fileInput' + @Request["inputId"]).val(fileUrl); 
+            });
+            </text>
+        } 
+    })
+</script>
+@model PagedList<W3WGame.Admin.Controllers.Uploads.ViewModels.FileUploadLogModel>
+<div class="wrap">
+    <div class="right_box_card">
+        <ul>
+            <li class="right_box_card1"><a href="#">文件管理器</a></li>
+        </ul>
+    </div>
+    @using (Html.BeginForm("UploadFile", "Uploads", FormMethod.Post, new { id = "form1", enctype = "multipart/form-data" }))
+    {
+        <input type="file" id="file1" name="file1" />
+        <input type="submit" value="上传文件" />
+    }
+    <div style="margin-top: 10px;">
+        <table width="100%">
+            <tr style="height: 40px;">
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        @using (Html.BeginForm("FileList", "Uploads", FormMethod.Get))
+        {
+            <table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+                cellpadding="0">
+                <tr>
+                    <td>
+                        文件名称：@Html.TextBox("fileName", ViewData["fileName"], new { @class = "tab_input" })
+                    </td>
+                    <td>
+                        <input type="submit" value="查找" class="submit" style="float: left; width: 80px;" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+        cellpadding="0">
+        <tr height="30" class="tab_title">
+            <td>
+                ID
+            </td>
+            <td>
+                文件
+            </td>
+            <td>
+                上传时间
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr height="35" class="tab_td1">
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    <a href="@item.FileUrl" target="_blank">@item.FileName</a>
+                </td>
+                <td>
+                    @item.CreateDate
+                </td>
+                <td>
+                    <a href="javascript:void(0);" fileUrl="@item.FileUrl" class="chooseFile">选择</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <div style="padding: 10px;">
+        @Html.Pager(Model)
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "图片管理器";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        
+        @if (Request["inputId"] != null)
+        {
+            <text>
+            $(".lnkImage").click(function () {
+                var imagePath = $(this).attr("ImagePath");
+                parent.$.fn.colorbox.close();
+                parent.$('#imageHidden' + @Request["inputId"]).val(imagePath);
+                parent.$('#image' + @Request["inputId"]).attr("src",imagePath);
+            });
+            </text>
+        } 
+    })
+</script>
+@model PagedList<W3WGame.Admin.Controllers.Uploads.ViewModels.GoodsImgUploadLogModel>
+<div class="wrap">
+    <div class="right_box_card">
+        <ul>
+            <li class="right_box_card1"><a href="#">图片管理器</a></li>
+        </ul>
+    </div>
+    @using (Html.BeginForm("UploadGoodsImg", "Uploads", FormMethod.Post, new { id = "form1", enctype = "multipart/form-data" }))
+    {
+        <input type="file" id="file1" name="file1" />
+        <input type="submit" value="上传图片" />
+    }
+    <div style="margin-top: 10px;">
+        <table width="100%">
+            <tr style="height: 40px;">
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <ul style="float: left">
+        @foreach (var item in Model)
+        {
+            <li style="float: left">
+                <div style="width: 180px; height: 180px; overflow: hidden; text-align: center">
+                    <a href="###" class="lnkImage" ImagePath="@item.ImgUrl" title="@item.ImgUrl">
+                        <img src="@item.ImgUrl" style="width:160px; height: 160px;" />
+                    </a>
+                </div>
+            </li>
+        }
+    </ul>
+   
+<div style="padding:10px;">
+    @Html.Pager(Model)
+</div>
+</div>

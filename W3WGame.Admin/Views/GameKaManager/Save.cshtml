@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "保存游戏卡";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WangFramework.Extensions
+@model W3WGame.Admin.Controllers.GameKaManager.ViewModels.SaveGameKa
+<link href="../../Scripts/jquery-validation-engine/css/template.css" rel="stylesheet"
+    type="text/css" />
+<link href="../../Scripts/jquery-validation-engine/css/validationEngine.jquery.css"
+    rel="stylesheet" type="text/css" />
+<link href="../../Scripts/kindeditor-4.1.4/themes/default/default.css" rel="stylesheet"
+    type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/jquery.validationEngine.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/languages/jquery.validationEngine-zh_CN.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/kindeditor-4.1.4/kindeditor-min.js" type="text/javascript"></script>
+<script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#form1").validationEngine();
+       loadServer();
+        $('#ServerID').val("@Model.ServerID");
+       
+        $("#GameID").change(function() {
+            loadServer();
+
+        });
+       
+    });
+    function loadServer() {
+        var gameid = $('#GameID');
+        var serverlist = $('#ServerID');
+
+        var gameid = gameid.val();
+        serverlist.empty();
+        $.ajax({
+            async: false,
+            url: "@Url.Action("GetServerList","GameServersManager")",
+            type: "GET",
+            data:{gameid:gameid},
+            success: function(data) {
+                 $.each(data, function (i, item) {
+                $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo(serverlist);
+            });
+            }
+        });
+            
+       
+
+    }
+
+    
+</script>
+<div class="wrap">
+    <div class="right_box_card">
+        <ul>
+            <li class="right_box_card1"><a href="#">保存游戏卡</a></li>
+        </ul>
+    </div>
+    <div>
+        <div style="color: red;">
+        </div>
+        @using (Html.BeginForm("Save", "GameKaManager", FormMethod.Post, new { @class = "formular", id = "form1", enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(c => c.ID)
+            <table class="enter_tab" width="100%" border="0" cellpadding="0" cellspacing="0">
+              
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.KaType)
+                    </td>
+                    <td class="entry_tab_td2">
+                       @Html.DropDownList("KaType", ViewBag.KaTypeList as List<SelectListItem>, new { @class = "text-input" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.KaTitle)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.KaTitle, new { @class = "validate[required] text-input", style = "width=240px;" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.Count)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.Count, new { @class = "validate[required] text-input", style = "width=240px;" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.GameID)
+                    </td>
+                    <td class="entry_tab_td2">
+                      @Html.DropDownList("GameID", ViewData["gamelist"] as List<SelectListItem>, new { @class = "text-input" })&nbsp;&nbsp;
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.ServerID)
+                    </td>
+                    <td class="entry_tab_td2">
+                       @Html.DropDownList("ServerID", new List<SelectListItem>())
+                    </td>
+                </tr>
+              
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.StartDate)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.StartDate, new { @class = "validate[required] text-input",onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ,style = "width=240px;" })
+                    </td>
+                </tr>
+                  <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.EndDate)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.EndDate, new { @class = "validate[required] text-input",onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})", style = "width=240px;" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.IsDisplayHome)
+                    </td>
+                    <td class="entry_tab_td2">
+                      @Html.DropDownListFor(c => c.IsDisplayHome, true.ToSelectList())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="line-height: 30px;">@Html.ValidationSummary()
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="保存" class="submit" style="width: 100px; height: 30px;" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table> 
+        }
+    </div>
+</div>

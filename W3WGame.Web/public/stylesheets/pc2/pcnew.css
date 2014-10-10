@@ -1,0 +1,3720 @@
+@charset "UTF-8";
+div, p, a {
+  color: #333;
+}
+
+a:hover {
+  color: #f60;
+}
+
+body, input, button, select, textarea, table {
+  font: 12px Arial,'微软雅黑';
+}
+
+/* scss 定义 begin */
+/* 固定变量 */
+body {
+  font: 12px/1.5 '微软雅黑';
+}
+
+/* 背景 */
+/* 超出隐藏 */
+/* 按钮渐变 */
+/* 圆角背景 */
+/* scss 定义 end */
+/* css begin */
+/* 头部 */
+.header {
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #dbdbdb;
+  height: 33px;
+  /* 头部 左侧 */
+  /* 头部 右侧 */
+}
+.header .contorl {
+  left: 0;
+  position: absolute;
+  z-index: 11;
+}
+.header .contorl li {
+  font-size: 12px;
+  float: left;
+  line-height: 33px;
+  color: #c6c6c6;
+}
+.header .contorl li a {
+  margin: 0 8px;
+}
+.header .contorl li a:hover {
+  color: #f60;
+  text-decoration: none;
+}
+.header .contorl li .h-con {
+  margin: 0 8px;
+  color: #000;
+  display: inline;
+}
+.header .contorl li h1 {
+  font-size: 12px;
+  line-height: 33px;
+  display: inline;
+  font-weight: 400;
+}
+.header .share {
+  right: 0;
+  position: absolute;
+  z-index: 11;
+}
+.header .share li {
+  font-size: 12px;
+  float: left;
+  line-height: 31px;
+  color: #c6c6c6;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+}
+.header .share li.seo-nav {
+  background-position: 0 100px;
+  position: relative;
+  width: 54px;
+  /* 头部 弹出层 */
+}
+.header .share li.seo-nav a {
+  padding: 0 12px;
+  border: 1px solid #e9e9e9;
+  position: relative;
+  z-index: 1000;
+}
+.header .share li.seo-nav a.current, .header .share li.seo-nav a:hover {
+  background: #fff;
+  border-color: #d9d9d9;
+  border-bottom-color: #fff;
+  height: 32px;
+}
+.header .share li.seo-nav .seo-nav-list {
+  padding: 15px 0;
+  position: absolute;
+  top: 33px;
+  right: 5px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  z-index: 500;
+  display: none;
+}
+.header .share li.seo-nav .seo-nav-list .list {
+  float: left;
+  width: 100px;
+  border-right: 1px dotted #e9e9e9;
+}
+.header .share li.seo-nav .seo-nav-list .list li {
+  height: 28px;
+  line-height: 28px;
+  color: #333;
+  float: none;
+  background: none;
+  text-align: center;
+  overflow: hidden;
+}
+.header .share li.seo-nav .seo-nav-list .list li a {
+  float: none;
+  display: inline-block;
+  height: 28px;
+  width: 84px;
+  padding: 0;
+  text-align: center;
+  border: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.header .share li.seo-nav .seo-nav-list .list li a:hover {
+  background-color: #ff8a00;
+  color: #fff;
+}
+.header .share li.seo-nav .seo-nav-list .list.last {
+  border-right: 0;
+}
+.header .share li.seo-nav .seo-nav-list .list .tit {
+  cursor: default;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: \5FAE\8F6F\96C5\9ED1;
+}
+.header .share li.seo-nav .seo-nav-list .list .tit a:hover {
+  background-color: #fff;
+  color: #f60;
+}
+.header .share li.weibo {
+  background-position: -171px 8px;
+}
+.header .share li.wechat {
+  background-position: -171px -33px;
+  border: 1px solid #e9e9e9;
+  position: relative;
+}
+.header .share li.wechat .code {
+  padding: 15px;
+  position: absolute;
+  top: 33px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  z-index: 1;
+  display: none;
+}
+.header .share li.wechat .code img {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.header .share li.wechat.current, .header .share li.wechat:hover {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  border-bottom-color: #fff;
+}
+.header .share li a {
+  border-top: 1px solid #e9e9e9;
+  padding: 0 15px 0 31px;
+}
+.header .share li a:hover {
+  color: #f60;
+  text-decoration: none;
+}
+
+/* 底部 */
+.footer {
+  padding: 15px 0;
+  margin-top: 0;
+  border-top: 1px solid #f5f5f5;
+}
+
+.footer, .footer p {
+  color: #808080;
+}
+
+.footer a {
+  color: #666;
+}
+
+/* 主导航 */
+.nav {
+  height: 90px;
+  background: url("http://www.9game.cn/public/images/pc/pc_new/head_bg.jpg") repeat 0 0;
+  min-width: 990px;
+}
+.nav .nav-main {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+}
+.nav .logo {
+  height: 72px;
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+}
+.nav .logo img {
+  height: 100%;
+}
+.nav .nav-list {
+  float: right;
+  width: 328px;
+  height: 75px;
+  margin-top: 8px;
+}
+.nav .nav-list a {
+  width: 75px;
+  height: 75px;
+  display: block;
+  float: left;
+  margin-right: 8px;
+}
+.nav .nav-list a p {
+  padding-top: 48px;
+  line-height: 26px;
+  color: #979797;
+  text-align: center;
+  font-weight: 700;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+}
+.nav .nav-list a.android p {
+  background-position: 22px -100px;
+}
+.nav .nav-list a.apple p {
+  background-position: -146px -100px;
+}
+.nav .nav-list a.mobile p {
+  background-position: 25px -172px;
+}
+.nav .nav-list a.bbs {
+  margin-right: 0;
+}
+.nav .nav-list a.bbs p {
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -145px -176px;
+}
+.nav .nav-list a:hover {
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -63px -108px;
+}
+.nav .nav-list a:hover p {
+  color: #bdbdbd;
+}
+
+/* 搜索 */
+.search {
+  background-color: #4a4a4a;
+  min-width: 1000px;
+  height: 44px;
+}
+.search .search-main {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.search-con {
+  float: left;
+  width: 450px;
+  height: 32px;
+  margin: 6px 30px 0 0;
+  _margin-right: 0px;
+  position: relative;
+  z-index: 1;
+}
+.search-con .search-type {
+  width: 80px;
+  height: 100%;
+  float: left;
+  position: relative;
+  color: #666;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #ebebeb;
+  background-position: 63px -241px;
+  text-indent: 15px;
+  line-height: 30px;
+  font-size: 14px;
+  font-family: \5FAE\8F6F\96C5\9ED1;
+  cursor: pointer;
+}
+.search-con .search-type span {
+  display: block;
+  height: 100%;
+}
+.search-con .search-type.current {
+  background-position: -126px -242px;
+}
+.search-con .search-list {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  padding: 5px;
+  display: none;
+  z-index: 100;
+}
+.search-con .search-list li {
+  width: 68px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  text-indent: 0;
+}
+.search-con .search-list li:hover, .search-con .search-list li.current {
+  background-color: #ff8a00;
+  color: #fff;
+}
+.search-con .search-text {
+  width: 288px;
+  height: 32px;
+  border: 0;
+  text-indent: 5px;
+  float: left;
+  *line-height: 32px;
+  line-height: 32px\0;
+  color: #a8a8a8;
+}
+.search-con .search-sub {
+  width: 82px;
+  height: 32px;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  font-family: \5FAE\8F6F\96C5\9ED1;
+  line-height: 20px;
+  float: left;
+  cursor: pointer;
+  letter-spacing: 4px;
+  text-align: left;
+  text-indent: 30px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #f60;
+  background-position: -82px -193px;
+}
+.search-con .search-sub:hover {
+  background-color: #ff8a00;
+}
+.search-con .result-list {
+  width: 266px;
+  position: absolute;
+  left: 80px;
+  top: 32px;
+  padding: 0 10px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  display: none;
+  overflow: hidden;
+}
+.search-con .result-list li {
+  color: #333;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 5px 0;
+  overflow: hidden;
+  text-indent: 5px;
+  cursor: pointer;
+}
+.search-con .result-list li.current {
+  background-color: #ff8a00;
+  color: #fff;
+}
+.search-con .result-list li.current a {
+  display: block;
+  color: #fff;
+}
+
+.hot-search {
+  width: 500px;
+  _width: 450px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+.hot-search .name {
+  color: #bcbcbc;
+  line-height: 42px;
+  font-weight: 700;
+}
+.hot-search a {
+  color: #a5a5a5;
+  margin: 0 5px;
+}
+.hot-search a:hover {
+  text-decoration: underline;
+}
+
+/* 面包屑 */
+.page-break {
+  margin-bottom: 10px;
+  color: #999;
+  line-height: 12px;
+}
+.page-break a {
+  padding: 0 4px;
+}
+.page-break a:hover {
+  text-decoration: underline;
+}
+.page-break span {
+  color: #999;
+  padding: 0 4px;
+}
+.page-break h1 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+}
+.page-break.padding {
+  padding-left: 10px;
+}
+
+/* 公用样式 */
+.popup_of {
+  overflow: hidden;
+}
+
+h1.index {
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  text-indent: -99px;
+}
+
+.main-con {
+  width: 990px;
+  padding: 10px 5px 0 5px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+}
+
+.main-con.big {
+  padding: 10px 10px 0 10px;
+  background: #fff;
+}
+
+.box, .box-text {
+  zoom: 1;
+}
+.box:after, .box-text:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+.box.mar-box, .box.android-game {
+  margin-bottom: 15px;
+}
+
+.box-title {
+  height: 35px;
+  border-bottom: 2px solid #ebebeb;
+  position: relative;
+}
+.box-title .inset-h, .box-title h1, .box-title h2, .box-title h3, .box-title p {
+  position: absolute;
+  display: inline-block;
+  padding: 0 15px;
+  left: 0;
+  top: 0;
+  line-height: 35px;
+  font-weight: 700;
+  border-bottom: 2px solid #f60;
+  font-size: 20px;
+  cursor: default;
+}
+.box-title .inset-h h1 {
+  position: static;
+  color: #666;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  line-height: 35px;
+  font-size: 18px;
+  cursor: default;
+  font-weight: 400;
+  margin-left: 5px;
+  border-bottom: 0;
+  padding: 0;
+}
+.box-title h2, .box-title h3, .box-title p {
+  display: inline-block;
+  _zoom: 1;
+  *display: inline;
+}
+.box-title .more {
+  float: right;
+  margin: 8px 10px 0 0;
+  font-size: 14px;
+}
+.box-title .more:hover {
+  text-decoration: underline;
+}
+.box-title .double-more {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.box-title .double-more a {
+  color: #333;
+  display: inline-block;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  padding: 0 10px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 0;
+}
+.box-title .double-more a.last {
+  border-right: 0;
+}
+.box-title .double-more a:hover {
+  color: #f60;
+}
+
+.tag-tit {
+  height: 35px;
+  border-bottom: 2px solid #ebebeb;
+  background-color: #f5f5f5;
+}
+.tag-tit .tag-tit-ul, .tag-tit .tag-tit-ul2 {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+.tag-tit .tag-tit-ul li, .tag-tit .tag-tit-ul2 li {
+  height: 100%;
+  float: left;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 35px;
+  cursor: pointer;
+}
+.tag-tit .tag-tit-ul li.current, .tag-tit .tag-tit-ul2 li.current {
+  color: #f60;
+  border-bottom: 2px solid #f60;
+}
+.tag-tit .tag-tit-ul li.current a, .tag-tit .tag-tit-ul2 li.current a {
+  color: #f60;
+}
+.tag-tit .tag-tit-ul li:hover, .tag-tit .tag-tit-ul2 li:hover {
+  color: #f60;
+}
+.tag-tit .tag-tit-ul li:hover a, .tag-tit .tag-tit-ul2 li:hover a {
+  color: #f60;
+}
+.tag-tit .more {
+  float: right;
+  margin: 8px 10px 0 0;
+  font-size: 14px;
+}
+.tag-tit .more:hover {
+  text-decoration: underline;
+}
+.tag-tit .more a {
+  display: none;
+}
+.tag-tit .more a.current {
+  display: block;
+}
+
+.tag-tit .tag-tit-ul2 li {
+  text-align: center;
+  line-height: 16px;
+  padding: 0;
+}
+.tag-tit .tag-tit-ul2 li .name {
+  padding: 0 15px;
+  display: inline-block;
+  height: 16px;
+  border-right: 1px solid #d9d9d9;
+  margin-top: 10px;
+}
+.tag-tit .tag-tit-ul2 li.last .name {
+  border-right: 0;
+}
+
+.little-tit {
+  position: relative;
+  height: 30px;
+}
+.little-tit h1, .little-tit h2, .little-tit h3, .little-tit p {
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+  left: 15px;
+  top: 10px;
+  font-size: 16px;
+  line-height: 16px;
+  border-left: 2px solid #f60;
+  cursor: default;
+}
+.little-tit h1, .little-tit h2, .little-tit h3 {
+  display: inline-block;
+  _zoom: 1;
+  *display: inline;
+}
+.little-tit .more {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  font-size: 14px;
+}
+.little-tit .more:hover {
+  text-decoration: underline;
+}
+
+/* 游戏列表 */
+.game-ul-list {
+  zoom: 1;
+}
+.game-ul-list:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.game-ul-list li {
+  padding: 10px;
+  width: 90px;
+  float: left;
+  margin: 0 10px 5px 0;
+}
+.game-ul-list li a.info {
+  display: block;
+  width: 90px;
+  position: relative;
+  cursor: pointer;
+}
+.game-ul-list li a.info img {
+  width: 90px;
+  height: 90px;
+  display: block;
+}
+.game-ul-list li a.info p {
+  width: 90px;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.game-ul-list li a.info:hover p {
+  color: #f60;
+}
+.game-ul-list li a.down {
+  display: block;
+  width: 66px;
+  height: 23px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 23px;
+  background: #fafafa;
+  background: -moz-linear-gradient(top, white, #fafafa);
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  background: -ms-linear-gradient(top, white, #fafafa);
+  background: -o-linear-gradient(top, white, #fafafa);
+}
+.game-ul-list li a.down:hover {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+  font-weight: 700;
+}
+.game-ul-list li:hover {
+  background-color: #f5f5f5;
+}
+.game-ul-list li:hover p {
+  color: #f60;
+}
+.game-ul-list li:hover a.down {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+}
+.game-ul-list li.last {
+  margin-right: 0;
+}
+
+.radius90 {
+  width: 90px;
+  height: 90px;
+  display: block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.radius120 {
+  width: 120px;
+  height: 120px;
+  display: block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background-repeat: no-repeat;
+  background-position: 0 -330px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.radius140 {
+  width: 140px;
+  height: 140px;
+  display: block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background-repeat: no-repeat;
+  background-position: 0 -185px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 游戏广告 */
+.speard-con {
+  z-index: 1;
+  margin-bottom: 10px;
+}
+.speard-con .speard400 {
+  width: 300px;
+  height: 100%;
+  margin-right: 1px;
+  float: left;
+}
+.speard-con .speard195 {
+  width: 195px;
+  height: 100%;
+  margin-right: 1px;
+  float: left;
+}
+.speard-con .speard192 {
+  width: 192px;
+  height: 100%;
+  float: left;
+}
+.speard-con a.img1 {
+  height: 400px;
+}
+.speard-con a.img2 {
+  height: 259px;
+  margin-bottom: 1px;
+}
+.speard-con a.img3 {
+  height: 140px;
+}
+.speard-con a.img4 {
+  height: 144px;
+  margin-bottom: 1px;
+}
+.speard-con a.img5 {
+  height: 255px;
+}
+.speard-con a {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.speard-con a img {
+  _float: left;
+}
+.speard-con a .meng {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  background: url("http://www.9game.cn/public/images/pc/pc_new/meng.png") repeat-x left bottom;
+  _background: url("http://www.9game.cn/public/images/pc/pc_new/meng.gif") repeat-x left bottom;
+  z-index: 200;
+  cursor: pointer;
+}
+.speard-con a .meng .meng-con {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.speard-con a .meng .tit {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+}
+.speard-con a .meng .tit2 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  padding: 20px 0;
+  text-align: center;
+}
+.speard-con a .meng .text {
+  padding: 10px;
+  color: #dad9d9;
+  line-height: 22px;
+  text-indent: 2em;
+}
+.speard-con a .meng.meng2 {
+  background: url("http://www.9game.cn/public/images/pc/pc_new/meng2.png") repeat-x left bottom;
+  _background: url("http://www.9game.cn/public/images/pc/pc_new/meng2.gif") repeat-x left bottom;
+}
+
+/* 副导航 */
+.sec-nav {
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: #4a4a4a;
+}
+.sec-nav li {
+  width: 198px;
+  float: left;
+}
+.sec-nav li a {
+  display: block;
+  height: 100%;
+  border-right: 1px solid #5b5b5b;
+  color: #dbdbdb;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+.sec-nav li a:hover {
+  background-color: #f60;
+  color: #fff;
+  border-color: #f60;
+}
+.sec-nav li.last a {
+  border-right: 0;
+}
+
+/* 推荐游戏 */
+.game-recom {
+  margin-bottom: 30px;
+}
+.game-recom .recom-con {
+  height: 26px;
+  padding: 8px 0;
+  border-bottom: 1px dotted #ebebeb;
+  overflow: hidden;
+}
+.game-recom .recom-con .name {
+  display: inline-block;
+  width: 80px;
+  height: 26px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 26px;
+  text-indent: 8px;
+  font-weight: 700;
+  cursor: default;
+}
+.game-recom .recom-con .name.phone {
+  background-position: 0 0;
+}
+.game-recom .recom-con .name.android {
+  background-position: 0 -33px;
+}
+.game-recom .recom-con .name.apple {
+  background-position: 0 -68px;
+}
+.game-recom .recom-con a {
+  font-size: 14px;
+  padding: 0 12px;
+  line-height: 14px;
+  height: 14px;
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #ebebeb;
+}
+.game-recom .recom-con a.last {
+  border-right: 0;
+}
+.game-recom .recom-con a.hot {
+  color: #f00;
+}
+.game-recom .recom-con a:hover {
+  text-decoration: underline;
+}
+
+.game-recom.ol-recom {
+  margin-bottom: 10px;
+}
+.game-recom.ol-recom .name {
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  font-size: 14px;
+  line-height: 26px;
+  text-indent: 10px;
+  color: #333;
+  font-weight: 700;
+  cursor: default;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: 0 -424px;
+}
+
+/* 热门网游 */
+.game-con-5 {
+  width: 600px;
+  float: left;
+}
+.game-con-5 .box-text {
+  padding: 10px 0 0 6px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.game-con-8 .game-ul-list {
+  padding: 10px 0 10px 5px;
+}
+.game-con-8 .game-ul-list li {
+  margin: 0 15px 0 0;
+}
+.game-con-8 .game-ul-list li.last {
+  margin-right: 0;
+}
+
+/* 开测表 */
+.open-test {
+  width: 378px;
+  float: right;
+}
+.open-test .box-text {
+  height: 510px;
+  overflow: hidden;
+  position: relative;
+}
+.open-test table {
+  width: 100%;
+  text-align: center;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.open-test table th {
+  background-color: #fdfdfd;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: default;
+  color: #666;
+}
+.open-test table th.time {
+  width: 55px;
+}
+.open-test table th.name {
+  width: 130px;
+}
+.open-test table th.static {
+  width: 105px;
+}
+.open-test table th.down {
+  width: 44px;
+}
+.open-test table td {
+  height: 38px;
+  line-height: 38px;
+  border-bottom: 1px dotted #ebebeb;
+  font-size: 14px;
+}
+.open-test table td a.btn {
+  display: block;
+  margin: 1px auto;
+  width: 23px;
+  height: 23px;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #f2f2f2;
+}
+.open-test table td a.name {
+  text-align: center;
+  display: block;
+  width: 130px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.open-test table td a.name:hover {
+  text-decoration: underline;
+}
+.open-test table td a.home {
+  background-position: -127px 2px;
+}
+.open-test table td a.home:hover {
+  background-position: -89px 2px;
+  background-color: #ff8a00;
+}
+.open-test table td a.down {
+  background-position: -88px -80px;
+}
+.open-test table td a.down:hover {
+  background-position: -88px -37px;
+  background-color: #a3ce0e;
+}
+.open-test table.current {
+  display: block;
+}
+
+/* 安卓游戏 */
+.android-game .box-text {
+  height: 400px;
+}
+
+.apple-game {
+  margin-bottom: 20px;
+}
+.apple-game .box-text {
+  height: 210px;
+  overflow: hidden;
+}
+.apple-game .game-style {
+  padding: 21px 0 11px 15px;
+  *padding: 21px 0 21px 15px;
+}
+.apple-game .game-style a:hover {
+  background: #cde2fc;
+  color: #5f7999;
+}
+.apple-game .game-style a.big {
+  color: #83a7d4;
+}
+.apple-game .game-style a.big:hover {
+  background: #cde2fc;
+  color: #5f7999;
+}
+
+.game-style {
+  width: 225px;
+  padding: 15px 0 5px 15px;
+  *padding: 15px 0 15px 15px;
+  float: left;
+  background-color: #f5f5f5;
+}
+.game-style a {
+  display: inline-block;
+  float: left;
+  width: 100px;
+  height: 45px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+  zoom: 1;
+}
+.game-style a:hover {
+  color: #637f00;
+  background-color: #d9f37d;
+}
+.game-style a.big {
+  overflow: hidden;
+  font-size: 20px;
+  height: 100px;
+  color: #a3ce0e;
+  line-height: 100px;
+}
+.game-style a.big:hover {
+  color: #637f00;
+}
+
+.suggest-con {
+  width: 722px;
+  padding-top: 15px;
+  float: right;
+  overflow: hidden;
+}
+
+.pc-game-3 {
+  width: 360px;
+  height: 200px;
+  border: 1px solid #f5f5f5;
+  border-width: 0 1px 1px 0;
+  float: left;
+}
+.pc-game-3 .game-ul-list {
+  padding-left: 10px;
+}
+.pc-game-3 .game-ul-list li {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.pc-game-3.sec {
+  border-right: 0;
+}
+
+.pc-game-3.thir {
+  border-bottom: 0;
+}
+
+.pc-game-3.last {
+  border-bottom: 0;
+  border-right: 0;
+}
+
+/* 游戏资讯 */
+.game-news {
+  margin-bottom: 25px;
+}
+.game-news .box-text {
+  padding: 10px 0;
+  height: 250px;
+}
+.game-news .news-con {
+  width: 329px;
+  height: 260px;
+  float: left;
+  border-right: 1px solid #f5f5f5;
+}
+.game-news .news-con.last {
+  border-right: 0;
+}
+
+.news-list {
+  padding: 5px 0 0 15px;
+}
+.news-list li {
+  padding-left: 15px;
+  line-height: 28px;
+  *line-height: 25px;
+  _line-height: 28px;
+  overflow: hidden;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -196px -284px;
+}
+.news-list li a {
+  display: inline-block;
+  float: left;
+  max-width: 80%;
+  *width: 80%;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.news-list li a:hover {
+  text-decoration: underline;
+}
+.news-list li .date {
+  font-size: 12px;
+  color: #999;
+  float: right;
+  margin-right: 10px;
+}
+.news-list li a.remine {
+  display: inline-block;
+  width: 56px;
+  height: 23px;
+  line-height: 24px;
+  text-indent: 25px;
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+  float: right;
+  margin-right: 2px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -88px -426px;
+  background-color: #f2f2f2;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.news-list li a.remine:hover {
+  background-position: -138px -426px;
+  background-color: #50c0ff;
+  color: #fff;
+}
+
+/* 友情链接 */
+.friend-link {
+  margin-bottom: 10px;
+}
+.friend-link .box-text {
+  padding: 10px 0;
+}
+
+.link-con {
+  display: none;
+}
+.link-con a {
+  display: inline-block;
+  padding: 0 6px;
+  margin: 5px 0;
+  border-right: 1px solid #dbdbdb;
+  line-height: 14px;
+  height: 14px;
+}
+.link-con a:hover {
+  text-decoration: underline;
+}
+.link-con a.last {
+  border-right: 0;
+}
+.link-con.current {
+  display: block;
+}
+
+/*弹窗.*/
+/** @NAME:CSS STYLE
+		@TYPE:功能插件样式表
+	*/
+*:focus {
+  outline: none;
+  -moz-outline: none;
+}
+
+/*遮罩层*/
+.popupArea {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #666;
+  z-index: 1000;
+  display: none;
+}
+
+html {
+  _background-image: url(about:blank);
+  /* 阻止闪动 in IE6 , 把空文件换成about:blank , 减少请求 */
+  _background-attachment: fixed;
+}
+
+* html .popupArea {
+  position: absolute;
+  bottom: auto;
+  top: expression(eval(document.documentElement.scrollTop));
+  z-index: 99999;
+}
+
+* html .popupArea {
+  position: absolute;
+  bottom: auto;
+  top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+
+.opaBg {
+  overflow-y: auto;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  _background: #000;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000');
+  width: 100%;
+  height: 100%;
+}
+
+:root .opaBg {
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#00000000');
+}
+
+#pb_box {
+  position: absolute;
+  width: 1000px;
+  height: 100%;
+}
+
+/*弹出窗口*/
+.popup {
+  width: 460px;
+  padding-bottom: 10px;
+  left: 50%;
+  top: 50%;
+  margin-left: -230px;
+  margin-top: -250px;
+  position: absolute;
+  background: #fff;
+}
+
+.close {
+  width: 35px;
+  height: 35px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -144px -273px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  text-indent: -999em;
+  z-index: 11;
+}
+
+html, body {
+  _height: 100%;
+}
+
+.popup .box-title {
+  height: 39px;
+  margin-bottom: 5px;
+}
+.popup .box-title p {
+  height: 39px;
+  line-height: 39px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.popup .little-tit p {
+  font-weight: 700;
+}
+
+.popup .down-con {
+  width: 430px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-bottom: 1px dotted #ebebeb;
+}
+.popup a.popup-down {
+  height: 48px;
+  display: block;
+  border: 1px solid #ccc;
+  padding-top: 5px;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fafafa;
+  background: -moz-linear-gradient(top, white, #fafafa);
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  background: -ms-linear-gradient(top, white, #fafafa);
+  background: -o-linear-gradient(top, white, #fafafa);
+}
+.popup a.popup-down .name {
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+}
+.popup a.popup-down .size {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 12px;
+}
+.popup a.popup-down:hover {
+  background: #ff8a00;
+}
+.popup a.popup-down:hover .name {
+  color: #fff;
+}
+.popup a.popup-down:hover .size {
+  color: #ffeddc;
+}
+
+/* 找游戏 -- 游戏分类 */
+.game-classify {
+  margin-bottom: 25px;
+}
+
+.classify {
+  padding: 15px 0 10px 0;
+  border-bottom: 1px dotted #ebebeb;
+  overflow: hidden;
+  zoom: 1;
+}
+.classify.last {
+  border-bottom: 1px solid #ebebeb;
+}
+.classify:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.classify .name {
+  width: 90px;
+  float: left;
+  color: #666;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.classify .type {
+  width: 890px;
+  float: left;
+}
+.classify .type a {
+  display: inline-block;
+  padding: 0 8px;
+  margin: 2px 0;
+  font-size: 14px;
+  line-height: 25px;
+}
+.classify .type a:hover {
+  text-decoration: underline;
+}
+.classify .type a.current {
+  background: #ff8a00;
+  color: #fff;
+}
+.classify .type a.current:hover {
+  text-decoration: none;
+}
+
+/* 找游戏 -- 游戏卡片 */
+.game-poker-con {
+  padding: 15px 0 0 10px;
+}
+
+.game-poker {
+  zoom: 1;
+  *margin-bottom: 20px;
+  _margin-bottom: 0;
+}
+.game-poker:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.game-poker li {
+  width: 176px;
+  padding: 14px 0;
+  border: 1px solid #f5f5f5;
+  text-align: center;
+  position: relative;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.game-poker li a.info {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.game-poker li a.info img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px auto;
+}
+.game-poker li a.info p {
+  width: 166px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.game-poker li a.info .radius120 {
+  left: 28px;
+  _left: 0;
+}
+.game-poker li a.info:hover {
+  cursor: pointer;
+}
+.game-poker li a.info:hover p {
+  color: #f60;
+}
+.game-poker li .type {
+  color: #999;
+  line-height: 22px;
+  cursor: default;
+}
+.game-poker li .fav {
+  margin: 3px 0 10px 0;
+  height: 15px;
+  cursor: default;
+}
+.game-poker li .fav .good, .game-poker li .fav .bad {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+}
+.game-poker li .fav .good {
+  background-position: -23px -283px;
+}
+.game-poker li .fav .bad {
+  background-position: -50px -283px;
+}
+.game-poker li .down {
+  display: block;
+  width: 86px;
+  height: 28px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 28px;
+  background: #fafafa;
+  background: -moz-linear-gradient(top, white, #fafafa);
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  background: -ms-linear-gradient(top, white, #fafafa);
+  background: -o-linear-gradient(top, white, #fafafa);
+}
+.game-poker li .down:hover {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+  font-weight: 700;
+}
+.game-poker li:hover {
+  background: #f5f5f5;
+}
+.game-poker li:hover .info p {
+  color: #f60;
+}
+.game-poker li:hover .down {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+}
+.game-poker li.last {
+  margin-right: 10px;
+}
+
+/* 分页 */
+.page-change {
+  text-align: center;
+  position: relative;
+  height: 28px;
+  padding-bottom: 20px;
+}
+.page-change .change {
+  width: 78px;
+  height: 28px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  line-height: 28px;
+  font-size: 14px;
+  background: #fafafa;
+  background: -moz-linear-gradient(top, white, #fafafa);
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  background: -ms-linear-gradient(top, white, #fafafa);
+  background: -o-linear-gradient(top, white, #fafafa);
+}
+.page-change a.change:hover {
+  color: #fff;
+  background: #ff8a00;
+  border-color: #ff8a00;
+}
+.page-change span.change {
+  background: #f5f5f5;
+  color: #999;
+  border-color: #f5f5f5;
+  cursor: default;
+}
+.page-change .now {
+  height: 28px;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0 20px 0 10px;
+  line-height: 28px;
+  cursor: pointer;
+  position: relative;
+}
+.page-change .now.current, .page-change .now:hover {
+  color: #336fc1;
+}
+.page-change .now.current i, .page-change .now:hover i {
+  background-position: -90px -254px;
+}
+.page-change .now i {
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  right: 4px;
+  top: 8px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -191px -252px;
+}
+.page-change .page-change-list {
+  width: 80px;
+  padding: 10px 6px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  margin-left: 50%;
+  position: absolute;
+  left: -47px;
+  bottom: 58px;
+  display: none;
+}
+.page-change .page-change-list li {
+  height: 22px;
+}
+.page-change .page-change-list a, .page-change .page-change-list span {
+  line-height: 22px;
+  display: block;
+}
+.page-change .page-change-list a:hover {
+  background: #ff8a00;
+  color: #fff;
+}
+.page-change .page-change-list span {
+  background: #f5f5f5;
+  color: #666;
+  cursor: default;
+}
+
+/* 页面加载 */
+.page-load, .page-unload {
+  text-align: center;
+  height: 28px;
+  line-height: 28px;
+  padding-bottom: 20px;
+}
+.page-load img, .page-unload img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.page-load a.page-reload, .page-unload a.page-reload {
+  margin: 0 4px;
+  color: #f60;
+}
+.page-load a.page-reload:hover, .page-unload a.page-reload:hover {
+  text-decoration: underline;
+}
+.page-load a.page-reload.more, .page-unload a.page-reload.more {
+  color: #333;
+}
+.page-load a.page-reload.more:hover, .page-unload a.page-reload.more:hover {
+  color: #f60;
+  text-decoration: underline;
+}
+
+.page-unload {
+  display: none;
+}
+
+.high-light-f60 {
+  color: #f60 !important;
+}
+
+/* 搜索结果列表 */
+.search-result-list {
+  margin-bottom: 20px;
+}
+.search-result-list li {
+  height: 120px;
+  padding: 15px 0;
+  border-bottom: 1px dotted #ebebeb;
+  position: relative;
+  margin-top: -1px;
+}
+.search-result-list li .game-ico {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 0 15px;
+  float: left;
+}
+.search-result-list li .game-ico img {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.search-result-list li .info {
+  width: 720px;
+  height: 120px;
+  float: left;
+}
+.search-result-list li .info .tit {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34px;
+}
+.search-result-list li .info .tit a:hover {
+  text-decoration: underline;
+}
+.search-result-list li .info .android, .search-result-list li .info .apple {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  margin-left: 5px;
+  vertical-align: middle;
+  _margin-top: 12px;
+}
+.search-result-list li .info .android {
+  background-position: -110px -320px;
+}
+.search-result-list li .info .apple {
+  background-position: -138px -320px;
+}
+.search-result-list li .info .text {
+  height: 48px;
+  color: #666;
+  text-indent: 2em;
+  line-height: 24px;
+  font-size: 14px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.search-result-list li .info .text a {
+  color: #666;
+}
+.search-result-list li .info .type {
+  color: #999;
+}
+.search-result-list li .down {
+  display: inline-block;
+  width: 86px;
+  height: 28px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #fafafa;
+  background: -moz-linear-gradient(top, white, #fafafa);
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  background: -ms-linear-gradient(top, white, #fafafa);
+  background: -o-linear-gradient(top, white, #fafafa);
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  line-height: 28px;
+  font-size: 14px;
+  text-align: center;
+}
+.search-result-list li .down:hover {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+  font-weight: 700;
+}
+.search-result-list li:hover {
+  background: #f2f2f2;
+}
+.search-result-list li:hover .down {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff;
+}
+.search-result-list li a {
+  _display: block;
+}
+.search-result-list li a:hover {
+  cursor: pointer;
+}
+.search-result-list li a:hover .tit {
+  color: #f60;
+}
+.search-result-list li a:hover .text {
+  text-decoration: underline;
+}
+
+/* 回到顶部 */
+.to-top {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  _display: none;
+  border: 1px solid #ececec;
+  position: fixed;
+  left: 50%;
+  margin-left: 505px;
+  bottom: 20px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #fdfdfd;
+  background-position: -38px -303px;
+}
+.to-top:hover {
+  background-color: #ff8a00;
+  background-position: 8px -302px;
+  border-color: #ff8a00;
+}
+
+/* 资讯列表 */
+.left-con-728 {
+  width: 700px;
+  padding: 0 14px;
+  margin-bottom: 15px;
+  float: left;
+  border: 1px solid #ebebeb;
+}
+
+.right-con-250 {
+  width: 250px;
+  float: right;
+}
+.right-con-250 .side-rank {
+  float: none;
+}
+.right-con-250 .side-rank {
+  margin-bottom: 15px;
+}
+.right-con-250 .game-style {
+  width: auto;
+}
+.right-con-250 .game-style a {
+  width: 105px;
+}
+.right-con-250 .game-style a:hover {
+  background: #ff8a00;
+  color: #fff;
+}
+
+.news-list-con {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 20px;
+}
+.news-list-con li {
+  padding: 10px;
+  border-bottom: 1px dotted #ebebeb;
+}
+.news-list-con li .title {
+  height: 28px;
+  line-height: 28px;
+  margin-bottom: 10px;
+  *margin-bottom: 5px;
+}
+.news-list-con li .title .name {
+  width: 75%;
+  font-size: 18px;
+  font-weight: 700;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.news-list-con li .title .name a:hover {
+  text-decoration: underline;
+}
+.news-list-con li .title .time {
+  float: right;
+  color: #999;
+}
+.news-list-con li .text {
+  color: #666;
+  line-height: 24px;
+  text-indent: 2em;
+  height: 72px;
+  overflow: hidden;
+}
+.news-list-con li.last {
+  border-bottom: 0;
+}
+.news-list-con li:hover {
+  background: #f5f5f5;
+}
+.news-list-con li a {
+  _display: block;
+}
+.news-list-con li a:hover .name {
+  color: #f60;
+  text-decoration: underline;
+}
+.news-list-con li a:hover .text {
+  text-decoration: underline;
+}
+
+/* 九游客户端下载 */
+.right-banner {
+  margin-bottom: 15px;
+}
+.right-banner .banner-img {
+  display: block;
+  width: 100px;
+  height: 70px;
+}
+
+/* 网游频道--导航 */
+.sub-nav .ol-nav {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+.sub-nav .ol-nav a {
+  float: left;
+  width: 124px;
+  _width: 123px;
+  height: 44px;
+  font-size: 18px;
+  color: #fff;
+  line-height: 44px;
+  text-align: center;
+  display: block;
+  border-right: 1px solid #5b5b5b;
+}
+.sub-nav .ol-nav a:hover, .sub-nav .ol-nav a.active {
+  width: 124px;
+  _width: 123px;
+  background: #ff6600;
+  border-right: 1px solid #ff6600;
+}
+.sub-nav .ol-nav a h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.sub-nav .ol-nav a.last {
+  border-right: 0;
+}
+
+/* 焦点图 */
+.ol-popul {
+  margin-bottom: 30px;
+}
+
+.focus-con {
+  width: 600px;
+  float: left;
+}
+.focus-con .focus-img-con {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  *position: relative;
+}
+.focus-con .focus-img-con .focus-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.focus-con .focus-img-con .focus-img li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.focus-con .focus-img-con .focus-img li.current {
+  display: block;
+}
+.focus-con .focus-img-con .focus-img li a {
+  display: block;
+}
+.focus-con .focus-img-con .focus-img li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.focus-con .focus-img-con .focus-img li .text {
+  width: 100%;
+  height: 38px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  line-height: 38px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+}
+.focus-con .focus-ctrl-con {
+  width: 100%;
+  height: 65px;
+  position: relative;
+}
+.focus-con .focus-ctrl-con .focus-ctrl {
+  width: 555px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 0 23px;
+}
+.focus-con .focus-ctrl-con .focus-ctrl ul {
+  height: 65px;
+  position: relative;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li {
+  width: 105px;
+  margin-right: 7px;
+  float: left;
+  position: relative;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li a {
+  padding-top: 5px;
+  display: block;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li img {
+  display: block;
+  width: 105px;
+  height: 60px;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li .meng {
+  display: block;
+  width: 105px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  _display: none;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: Alpha(opacity=50);
+  z-index: 10;
+  cursor: pointer;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li.current a, .focus-con .focus-ctrl-con .focus-ctrl li a:hover {
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -48px -475px;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li.current img, .focus-con .focus-ctrl-con .focus-ctrl li a:hover img {
+  width: 105px;
+  height: 58px;
+  border: 1px solid #f60;
+}
+.focus-con .focus-ctrl-con .focus-ctrl li.current .meng {
+  display: none;
+}
+.focus-con .focus-ctrl-con .btn {
+  width: 18px;
+  height: 60px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #999;
+}
+.focus-con .focus-ctrl-con .btn:hover {
+  background-color: #ff8a00;
+}
+.focus-con .focus-ctrl-con .btn.no {
+  background-color: #f5f5f5;
+}
+.focus-con .focus-ctrl-con .prev.no {
+  background-position: -153px -430px;
+}
+.focus-con .focus-ctrl-con .next.no {
+  background-position: -182px -430px;
+}
+.focus-con .focus-ctrl-con .prev {
+  left: 0;
+  background-position: -68px -430px;
+}
+.focus-con .focus-ctrl-con .next {
+  right: 0;
+  background-position: -115px -430px;
+}
+
+/* 网游频道--热门新闻 */
+.ol-hotnews-con {
+  width: 364px;
+  padding: 5px 7px 0 7px;
+  border: 1px solid #ebebeb;
+  float: right;
+}
+.ol-hotnews-con .tit {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 48px;
+  color: #f60;
+  border-bottom: 1px dotted #ebebeb;
+  margin-bottom: 3px;
+}
+.ol-hotnews-con .tit a {
+  color: #f60;
+}
+.ol-hotnews-con .tit a:hover {
+  text-decoration: underline;
+}
+
+.hotnews-list {
+  margin-bottom: 6px;
+}
+.hotnews-list li {
+  line-height: 28px;
+  *line-height: 24px;
+  font-size: 14px;
+  height: 28px;
+  *height: 24px;
+  overflow: hidden;
+}
+.hotnews-list li .type {
+  display: inline-block;
+  padding-right: 10px;
+  line-height: 14px;
+  float: left;
+  margin-top: 6px;
+  border-right: 1px solid #d0d0d0;
+}
+.hotnews-list li a {
+  width: 270px;
+  display: inline-block;
+  padding-left: 10px;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.hotnews-list li a:hover {
+  text-decoration: underline;
+}
+.hotnews-list li .date {
+  display: inline-block;
+  color: #999;
+  float: right;
+  font-size: 12px;
+}
+
+.ol-chanel .box-text {
+  height: 460px;
+}
+.ol-chanel .game-con-6 {
+  width: 590px;
+  margin-top: 25px;
+}
+.ol-chanel .game-con-6 .box-con-5 a:hover {
+  background: #54aede;
+  color: #fff;
+}
+
+/* 网游首页背景 */
+a.ol-topbg-link {
+  position: absolute;
+  top: 168px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+a.ol-topbg-link img {
+  position: relative;
+  display: block;
+  left: 50%;
+  top: 0;
+  margin-left: -960px;
+  width: 1920px;
+}
+
+/* 网游--游戏详情页 */
+.game-detail-info .info-con-250 {
+  float: left;
+  background: #fff;
+}
+.game-detail-info .info-con-250.active {
+  position: fixed;
+  _position: relative;
+  top: 44px;
+}
+.game-detail-info .info-con-730 {
+  float: right;
+}
+
+/* 网游--游戏详情页左侧 */
+.info-con-250 {
+  width: 248px;
+  border: 1px solid #fff;
+  /* 网游--游戏详情页 游戏logo */
+  /* 网游--游戏详情页 下载 */
+  /* 网游--游戏详情页 游戏大小 */
+}
+.info-con-250 .game-logo {
+  margin-bottom: 10px;
+}
+.info-con-250 .game-logo .logo {
+  width: 140px;
+  height: 140px;
+  margin: 15px auto 10px auto;
+  position: relative;
+}
+.info-con-250 .game-logo .logo img {
+  width: 140px;
+  height: 140px;
+}
+.info-con-250 .game-logo .logo.logo90 {
+  width: 90px;
+  height: 90px;
+}
+.info-con-250 .game-logo .logo.logo90 img {
+  width: 90px;
+  height: 90px;
+}
+.info-con-250 .game-logo .logo.logo120 {
+  width: 120px;
+  height: 120px;
+}
+.info-con-250 .game-logo .logo.logo120 img {
+  width: 120px;
+  height: 120px;
+}
+.info-con-250 .game-logo .name {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 28px;
+  padding: 0 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.info-con-250 .game-info-down .tag-tit .tag-tit-ul2 {
+  width: 100%;
+}
+.info-con-250 .game-info-down .tag-tit .tag-tit-ul2 li {
+  width: 50%;
+  padding: 0;
+}
+.info-con-250 .game-info-down .tag-tit .tag-tit-ul2 li .name {
+  display: block;
+  padding: 0;
+}
+.info-con-250 .game-info-down .context-con li {
+  display: none;
+}
+.info-con-250 .game-info-down .context-con li .down {
+  display: block;
+  width: 210px;
+  height: 45px;
+  margin: 15px auto;
+  font-size: 18px;
+  line-height: 45px;
+  color: #fff;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  -moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.info-con-250 .game-info-down .context-con li .down.android {
+  background-color: #7acc29;
+  text-indent: 62px;
+  background-position: -146px -519px;
+}
+.info-con-250 .game-info-down .context-con li .down.android:hover {
+  background-color: #a3ce0e;
+}
+.info-con-250 .game-info-down .context-con li .down.ios1 {
+  background-color: #83a7d4;
+  text-indent: 80px;
+  background-position: -127px -564px;
+}
+.info-con-250 .game-info-down .context-con li .down.ios1:hover {
+  background-color: #528fcc;
+}
+.info-con-250 .game-info-down .context-con li .down.ios2 {
+  background-color: #54aede;
+  text-indent: 80px;
+  background-position: -127px -564px;
+}
+.info-con-250 .game-info-down .context-con li .down.ios2:hover {
+  background-color: #2996cc;
+}
+.info-con-250 .game-info-down .context-con li .down.android.no, .info-con-250 .game-info-down .context-con li .down.ios1.no, .info-con-250 .game-info-down .context-con li .down.ios2.no {
+  background-color: #b4b4b4;
+  cursor: default;
+}
+.info-con-250 .game-info-down .context-con li .down.android.no:hover, .info-con-250 .game-info-down .context-con li .down.ios1.no:hover, .info-con-250 .game-info-down .context-con li .down.ios2.no:hover {
+  background-color: #b4b4b4;
+}
+.info-con-250 .game-info-down .context-con li .side-info {
+  padding-left: 19px;
+  zoom: 1;
+  *margin-bottom: 10px;
+}
+.info-con-250 .game-info-down .context-con li .side-info:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.info-con-250 .game-info-down .context-con li .side-info p {
+  width: 50%;
+  *width: 49%;
+  height: 12px;
+  float: left;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #666;
+}
+.info-con-250 .game-info-down .context-con li .side-info p span {
+  color: #999;
+}
+.info-con-250 .game-info-down .context-con li .side-info p.long {
+  width: 95%;
+}
+.info-con-250 .game-info-down .context-con li.current {
+  display: block;
+}
+.info-con-250 .side-info-nav {
+  background: #f7f7f7;
+}
+.info-con-250 .side-info-nav a {
+  display: block;
+  height: 38px;
+  border-top: 1px solid #ebebeb;
+  line-height: 38px;
+  font-size: 16px;
+  text-align: center;
+}
+.info-con-250 .side-info-nav a:hover, .info-con-250 .side-info-nav a.current {
+  color: #fff;
+  background: #ff8a00;
+}
+
+/* 网游--游戏详情页右侧 */
+.info-con-730 {
+  width: 728px;
+  border: 1px solid #ebebeb;
+  margin-bottom: 15px;
+}
+.info-con-730 .little-notice {
+  height: 26px;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 20px 25px;
+  overflow: hidden;
+  position: relative;
+  background: #fff9f3;
+}
+.info-con-730 .little-notice ul {
+  position: relative;
+}
+.info-con-730 .little-notice .name {
+  padding-left: 30px;
+  color: #f60;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -178px -495px;
+}
+
+/* 右侧--游戏截图 */
+.game-pic-con {
+  position: relative;
+  width: 630px;
+  margin: 0 auto 20px auto;
+}
+
+.game-pic-con .pic-con {
+  width: 480px;
+  height: 320px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.game-pic-con .game-pic {
+  width: 1000%;
+  height: 100%;
+  position: relative;
+}
+
+.game-pic-con .game-pic li {
+  width: 480px;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+
+.game-pic-con .game-pic li img {
+  height: 100%;
+  cursor: pointer;
+}
+
+.game-pic-con .pic-ctrl {
+  width: 480px;
+  height: 8px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.game-pic-con .pic-ctrl a {
+  width: 25%;
+  *width: 24.5%;
+  height: 5px;
+  margin-right: 2px;
+  display: inline-block;
+  border-bottom: 3px solid #e6e6e6;
+}
+
+.game-pic-con .pic-ctrl a.on, .game-pic-con .pic-ctrl a:hover {
+  border-color: #f60;
+}
+
+.game-pic-con .btn {
+  width: 50px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  background: url("http://www.9game.cn/public/images/pc/pc_new/pic_btn.png") no-repeat 100px 100px;
+  _background: url("http://www.9game.cn/public/images/pc/pc_new/pic_btn.gif") no-repeat 100px 100px;
+  cursor: pointer;
+}
+
+.game-pic-con .btn.pic-prev {
+  left: 0;
+  top: 100px;
+  background-position: -325px 15px;
+}
+
+.game-pic-con .btn.pic-next {
+  right: 0;
+  top: 100px;
+  background-position: -404px 15px;
+}
+
+.game-pic-con .pic-prev.no {
+  background-position: 0 15px;
+}
+
+.game-pic-con .pic-next.no {
+  background-position: -87px 15px;
+}
+
+.game-pic-con .pic-prev.current {
+  background-position: -169px 15px;
+}
+
+.game-pic-con .pic-next.current {
+  background-position: -253px 15px;
+}
+
+/* 网游--游戏详情页  简介 */
+.info-con {
+  margin: 0 14px;
+}
+.info-con.current {
+  display: block;
+}
+.info-con .little-tit {
+  border-bottom: 1px solid #f5f5f5;
+  height: 36px;
+}
+.info-con .little-tit h1, .info-con .little-tit h2, .info-con .little-tit h3, .info-con .little-tit p {
+  left: 0;
+}
+.info-con .little-tit .more {
+  right: 0;
+  top: 10px;
+}
+.info-con .news-list {
+  padding: 0;
+}
+.info-con .news-list li {
+  line-height: 40px;
+  border-bottom: 1px dotted #ebebeb;
+  background-position: -196px -279px;
+}
+.info-con .news-list li .date {
+  margin-right: 2px;
+}
+.info-con .news-list li.last {
+  border-bottom: 1px solid #ebebeb;
+}
+.info-con .game-text {
+  margin: 15px 0;
+}
+.info-con .game-text p {
+  font-size: 14px;
+  color: #666;
+  text-indent: 2em;
+  line-height: 24px;
+}
+.info-con .game-gift {
+  margin-bottom: 15px;
+}
+.info-con .game-gift .news-list li {
+  background: none;
+  padding-left: 0;
+}
+.info-con .game-gift .news-list li .remine {
+  margin-top: 8px;
+}
+.info-con .game-guys {
+  margin-bottom: 15px;
+}
+.info-con .game-guys .novice-contex {
+  border-bottom: 1px solid #f5f5f5;
+}
+.info-con .game-guys .novice-contex a {
+  width: 95px;
+  _width: 90px;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+  display: inline-block;
+  border-right: 1px solid #d4d4d4;
+  font-size: 14px;
+  line-height: 14px;
+}
+.info-con .game-guys .novice-contex a:hover {
+  color: #f60;
+  text-decoration: underline;
+}
+.info-con .game-guys .novice-contex a.last {
+  border-right: 0;
+}
+.info-con .game-list {
+  margin-bottom: 15px;
+}
+.info-con .game-ul-list li {
+  margin-right: 5px;
+}
+
+/* 网游--游戏详情页  评论 */
+.comment-con {
+  margin: 0 14px;
+  display: none;
+  /* 游戏评论数据 */
+  /* 评论列表 */
+}
+.comment-con.current {
+  display: block;
+}
+.comment-con .little-tit {
+  border-bottom: 1px solid #f5f5f5;
+  height: 36px;
+}
+.comment-con .little-tit h1, .comment-con .little-tit h2, .comment-con .little-tit h3, .comment-con .little-tit p {
+  left: 0;
+}
+.comment-con .little-tit .more {
+  margin-right: 2px;
+}
+.comment-con .comment-data {
+  height: 125px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.comment-con .comment-data .scroe-con {
+  width: 130px;
+  float: left;
+}
+.comment-con .comment-data .scroe-con .scroe {
+  font-size: 74px;
+  line-height: 84px;
+  font-weight: 700;
+  color: #f60;
+}
+.comment-con .comment-data .star-scroe-con {
+  height: 18px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.comment-con .comment-data .star-scroe-con span {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 5px;
+  float: left;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+}
+.comment-con .comment-data .star-scroe-con .good {
+  background-position: 0 -281px;
+}
+.comment-con .comment-data .star-scroe-con .bad {
+  background-position: -108px -281px;
+}
+.comment-con .comment-data .star-scroe-con .soso {
+  background-position: -178px -360px;
+}
+.comment-con .comment-data .time {
+  font-size: 12px;
+  line-height: 12px;
+  color: #999;
+}
+.comment-con .comment-data .player-comment {
+  width: 555px;
+  margin-top: 20px;
+  float: right;
+}
+.comment-con .comment-data .player-comment .text {
+  display: block;
+  width: 528px;
+  height: 42px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ebebeb;
+}
+.comment-con .comment-data .sub-con {
+  height: 30px;
+  float: right;
+}
+.comment-con .comment-data .sub-con .name {
+  line-height: 18px;
+  color: #666;
+  font-size: 14px;
+  float: left;
+  margin-top: 6px;
+}
+.comment-con .comment-data .sub-con .star-scroe-con {
+  margin: 6px 15px 0 0;
+  float: left;
+}
+.comment-con .comment-data .sub-con .star-scroe-con span {
+  margin-right: 3px;
+  cursor: pointer;
+}
+.comment-con .comment-data .sub-con .scroe-sub {
+  width: 98px;
+  height: 28px;
+  display: inline-block;
+  float: left;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+  color: #333;
+  letter-spacing: 10px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+.comment-con .comment-data .sub-con .scroe-sub:hover {
+  background: #ff8a00;
+  color: #fff;
+  border-color: #f60;
+}
+.comment-con .comment-data .limit {
+  float: left;
+  width: 230px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  color: #999;
+}
+.comment-con .comment-data .limit span {
+  margin: 0 4px;
+  color: #666;
+}
+.comment-con .comment-data .limit span.high {
+  color: #f00;
+}
+.comment-con .comment-list {
+  margin-bottom: 20px;
+}
+.comment-con .comment-list li {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.comment-con .comment-list li .text {
+  line-height: 24px;
+  font-size: 14px;
+  color: #666;
+  width: 88%;
+  word-wrap: break-word;
+}
+.comment-con .comment-list li .from {
+  line-height: 22px;
+  font-size: 12px;
+  color: #999;
+}
+.comment-con .comment-list li .like {
+  height: 20px;
+  padding-left: 20px;
+  line-height: 20px;
+  color: #999;
+  position: absolute;
+  right: 4px;
+  top: 15px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: 0 -546px;
+  cursor: pointer;
+}
+.comment-con .comment-list li .like.current {
+  background-position: 0 -577px;
+  color: #f60;
+}
+.comment-con .comment-list li .like:hover {
+  background-position: 0 -577px;
+}
+.comment-con .comment-list li.last {
+  border-bottom: 1px solid #ebebeb;
+}
+
+/* 网游列表页面 */
+.ol-list-con .info-con-730 {
+  float: left;
+}
+.ol-list-con .info-con-730 .box-text {
+  padding: 0 15px;
+}
+.ol-list-con .info-con-250 {
+  float: right;
+}
+.ol-list-con .classify {
+  padding: 10px 0 5px 0;
+}
+.ol-list-con .classify .type {
+  width: auto;
+}
+.ol-list-con .novice-contex {
+  border-bottom: 1px solid #f5f5f5;
+}
+.ol-list-con .novice-contex a {
+  width: 95px;
+  _width: 90px;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+  display: inline-block;
+  border-right: 1px solid #d4d4d4;
+  font-size: 14px;
+  line-height: 14px;
+}
+.ol-list-con .novice-contex a:hover {
+  color: #f60;
+  text-decoration: underline;
+}
+.ol-list-con .novice-contex a.last {
+  border-right: 0;
+}
+.ol-list-con .news-list-con {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.ol-list-con .page-change {
+  display: block;
+}
+.ol-list-con .game-ul-list {
+  padding: 0 4px;
+  _padding: 0 3px;
+  border-bottom: 1px solid #ebebeb;
+}
+.ol-list-con .game-ul-list li {
+  margin: 5px;
+}
+
+/* 背景 */
+/* 圆角背景 */
+.mar-top30 {
+  margin-top: 30px;
+}
+
+.mar-top20 {
+  margin-top: 20px;
+}
+
+.mar-bot20 {
+  margin-bottom: 20px;
+}
+
+.mar-bot30 {
+  margin-bottom: 30px;
+}
+
+.mar-right20 {
+  margin-right: 20px;
+}
+
+.padd-top10 {
+  padding-top: 10px;
+}
+
+/* 90x90 临时样式 */
+.width90 li a.info img {
+  width: 90px;
+  height: 90px;
+}
+.width90 li a.info .radius90 {
+  left: 43px;
+}
+
+.width90 li .game-ico {
+  width: 90px;
+  height: 90px;
+  margin-top: 9px;
+}
+.width90 li .game-ico img {
+  display: block;
+  width: 90px;
+  height: 90px;
+}
+
+.icon-android, .icon-iphone {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -160px -315px;
+}
+
+.icon-iphone {
+  background-position: -179px -315px;
+}
+
+.nav .nav-main .search-main {
+  float: right;
+  margin-top: 10px;
+  width: 450px;
+}
+.nav .nav-main .search-main .search-text {
+  width: 368px;
+}
+.nav .nav-main .search-main .hot-search {
+  width: 450px;
+}
+.nav .nav-main .search-main .result-list {
+  left: 0;
+  width: 346px;
+}
+
+.sub-nav {
+  background-color: #4a4a4a;
+  min-width: 1000px;
+  height: 44px;
+}
+.sub-nav .sub-main {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+}
+.sub-nav .sub-main a {
+  float: left;
+  width: 164px;
+  _width: 163px;
+  height: 44px;
+  font-size: 18px;
+  color: #fff;
+  line-height: 44px;
+  text-align: center;
+  display: block;
+  border-right: 1px solid #5b5b5b;
+}
+.sub-nav .sub-main a.last {
+  border-right: none;
+}
+.sub-nav .sub-main a.active, .sub-nav .sub-main a:hover {
+  width: 164px;
+  _width: 163px;
+  background: #ff6600;
+  border-right: 1px solid #ff6600;
+}
+.sub-nav .sub-main a h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.sub-nav .sub-main-ip a {
+  width: 197px;
+  _width: 196px;
+}
+.sub-nav .sub-main-ip a.last {
+  border-right: none;
+}
+.sub-nav .sub-main-ip a.active, .sub-nav .sub-main-ip a:hover {
+  width: 197px;
+  _width: 196px;
+  background: #ff6600;
+  border-right: 1px solid #ff6600;
+}
+
+.game-con-3 .box-text, .game-con-6 .box-text {
+  padding: 10px 0 0 6px;
+  overflow: hidden;
+}
+
+.game-con-6 {
+  float: left;
+  width: 720px;
+}
+.game-con-6 .box-text {
+  height: 510px;
+}
+.game-con-6 .box-con-5 {
+  height: 90px;
+  overflow: hidden;
+}
+.game-con-6 .box-con-5:after {
+  clear: both;
+}
+.game-con-6 .box-title-vertical {
+  float: left;
+  height: 90px;
+  margin-right: 10px;
+  _margin-right: 5px;
+  border-left: 2px solid #ff6600;
+  overflow: hidden;
+}
+.game-con-6 .box-title-vertical h2 {
+  width: 18px;
+  _width: 9px;
+  float: left;
+  font-size: 20px;
+  letter-spacing: 20px;
+  _letter-spacing: 10px;
+  padding: 4px 10px 0 9px;
+  _padding: 6px 0 0 9px;
+  line-height: 21px;
+}
+.game-con-6 .box-con-5 a {
+  float: left;
+  display: block;
+  font-size: 16px;
+  display: block;
+  width: 126px;
+  height: 40px;
+  margin: 0 10px 10px 0;
+  _margin: 0 8px 10px 0;
+  line-height: 40px;
+  text-align: center;
+  background: #f5f5f5;
+}
+.game-con-6 .box-con-5 a.last {
+  margin-right: 0;
+}
+.game-con-6 .box-con-5 a:hover {
+  background: #d9f37d;
+  color: #637f00;
+}
+.game-con-6 .box-con-5-ip a:hover {
+  background: #cde2fc;
+  color: #333;
+}
+
+.game-con-3 {
+  float: left;
+  width: 350px;
+  margin-right: 20px;
+}
+.game-con-3 .box-text {
+  height: 170px;
+}
+.game-con-3 .game-ul-list li {
+  margin-right: 5px;
+}
+
+.game-con-3.last, .game-ul-list li.last {
+  margin-right: 0;
+}
+
+.side-rank {
+  width: 250px;
+  float: left;
+}
+.side-rank .box-text {
+  height: 530px;
+  overflow: hidden;
+}
+
+.side-rank-list {
+  zoom: 1;
+}
+.side-rank-list:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.side-rank-list li {
+  float: left;
+  width: 100%;
+  display: block;
+  height: 52px;
+  border-bottom: 1px dotted #ebebeb;
+}
+.side-rank-list li:hover {
+  background: #f7f7f7;
+  border-bottom: none;
+  height: 53px;
+}
+.side-rank-list li .radius32 {
+  width: 32px;
+  height: 32px;
+  background: url("http://www.9game.cn/public/images/pc/pc_new/img_radius.png") no-repeat 0 -150px;
+  _background: url("http://www.9game.cn/public/images/pc/pc_new/img_radius.gif") no-repeat 0 -150px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.side-rank-list li a.btn {
+  float: left;
+  display: block;
+  margin: 1px auto;
+  width: 23px;
+  height: 23px;
+  margin-top: 15px;
+  border-radius: 3px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #f2f2f2;
+}
+.side-rank-list li a.down {
+  background-position: -89px -80px;
+}
+.side-rank-list li:hover a.down {
+  background-position: -89px -37px;
+  background-color: #a3ce0e;
+}
+.side-rank-list li a.down:hover {
+  background-position: -89px -37px;
+  background-color: #a3ce0e;
+}
+.side-rank-list li a.down-ip {
+  background-position: -128px -60px;
+}
+.side-rank-list li:hover a.down-ip {
+  background-position: -88px -37px;
+  background-color: #83a7d4;
+}
+.side-rank-list li a.down-ip:hover {
+  background-position: -88px -37px;
+  background-color: #83a7d4;
+}
+.side-rank-list li a.side-rank-info {
+  float: left;
+  width: 160px;
+  padding: 10px 0 0 0;
+  margin-right: 14px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.side-rank-list li a.side-rank-info img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+.side-rank-list li a.side-rank-info p {
+  font-size: 14px;
+  display: inline-block;
+  width: 112px;
+  margin-top: 7px;
+  *margin-top: 5px;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.side-rank-list li a.side-rank-info:hover p {
+  color: #ff6600;
+}
+
+.side-rank-num {
+  float: left;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+  background: #cccccc;
+  display: inline-block;
+  margin: 18px 15px 0 10px;
+}
+
+.first .side-rank-num {
+  background: #ff6600;
+}
+
+.second .side-rank-num {
+  background: #ff9000;
+}
+
+.third .side-rank-num {
+  background: #ffc000;
+}
+
+.box-title-rank h3 {
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: normal;
+  margin-left: 10px;
+  border-left: 2px solid #f60;
+  line-height: 16px;
+  padding: 0 0 0 8px;
+}
+
+.game-rank-con {
+  margin: 10px 0 0 10px;
+}
+
+.corner-first, .corner-second, .corner-third {
+  width: 55px;
+  height: 55px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  z-index: 100;
+}
+
+.corner-first {
+  background-position: 0 -345px;
+}
+
+.corner-second {
+  background-position: -55px -345px;
+}
+
+.corner-third {
+  background-position: -110px -345px;
+}
+
+.topic-con {
+  padding: 0 0 15px 10px;
+  border-bottom: 1px solid #ebebeb;
+}
+.topic-con a {
+  float: left;
+  display: block;
+  border: 1px solid #fff;
+  width: 235px;
+  height: 176px;
+  overflow: hidden;
+  margin: 0 6px 0 0;
+}
+.topic-con a:hover {
+  border: 1px solid #ff6600;
+}
+.topic-con a img {
+  width: 100%;
+}
+
+.noserult {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.noresult-con {
+  width: 440px;
+  margin: 10% auto 10% auto;
+  background: url("http://www.9game.cn/public/images/pc/pc_new/no_result.png") left top no-repeat;
+}
+.noresult-con h4, .noresult-con p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin: 0 0 0 130px;
+}
+.noresult-con p {
+  font-weight: normal;
+  line-height: 24px;
+}
+.noresult-con .c-orange {
+  color: #f60;
+}
+
+/*开服开测*/
+.hot-promo {
+  margin: 14px 0 30px 14px;
+}
+.hot-promo a {
+  float: left;
+  display: block;
+  width: 310px;
+  height: 235px;
+  margin: 0 14px 0 0;
+  overflow: hidden;
+  border: 1px solid #fff;
+}
+.hot-promo a img {
+  width: 100%;
+}
+.hot-promo a:hover {
+  border: 1px solid #ff6600;
+}
+.hot-promo a.last {
+  margin-right: 0;
+}
+
+.open-test-con table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.open-test-con table thead th {
+  height: 32px;
+  color: #666;
+  border-bottom: 1px solid #f5f5f5;
+  background: #fdfdfd;
+  text-align: center;
+  font-size: 14px;
+}
+.open-test-con table tbody tr {
+  border-bottom: 1px dotted #ebebeb;
+}
+.open-test-con table tbody td {
+  font-size: 14px;
+  height: 39px;
+  text-align: center;
+  color: #666;
+}
+.open-test-con table tbody td .time {
+  color: #999;
+  margin-left: 10px;
+}
+.open-test-con table tbody td a {
+  width: 196px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.open-test-con table tbody td a:hover {
+  text-decoration: underline;
+}
+.open-test-con table tbody td a.sbtn {
+  display: inline-block;
+  width: 56px;
+  height: 23px;
+  margin-top: 3px;
+  line-height: 24px;
+  text-indent: 18px;
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-color: #f2f2f2;
+}
+.open-test-con table tbody td a.icon-home {
+  background-position: -124px 2px;
+}
+.open-test-con table tbody td a.icon-home:hover {
+  background-position: -86px 2px;
+  background-color: #ff8a00;
+  color: #fff;
+}
+.open-test-con table tbody td a.icon-down {
+  background-position: -86px -80px;
+  text-indent: 12px;
+}
+.open-test-con table tbody td a.icon-down:hover {
+  background-position: -85px -38px;
+  background-color: #a3ce0e;
+  color: #fff;
+}
+.open-test-con table tbody td a.icon-qq {
+  background-position: -88px -426px;
+}
+.open-test-con table tbody td a.icon-qq:hover {
+  background-position: -138px -426px;
+  background-color: #50c0ff;
+  color: #fff;
+}
+
+/* 出错页面 */
+.error-con {
+  position: relative;
+}
+
+.con-404 {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  margin: 5% 0 0 -200px;
+  text-align: center;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/404.png) center no-repeat;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/404.gif) center no-repeat;
+}
+.con-404 p {
+  margin-top: 270px;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+.con-404 .home {
+  display: inline-block;
+  margin-top: 45px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: 0 -486px;
+  padding: 0 0 0 20px;
+  margin-right: 22px;
+}
+.con-404 .home:hover {
+  background-position: 0 -509px;
+}
+.con-404 .goback {
+  margin-top: 45px;
+  display: inline-block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: -72px -486px;
+  padding: 0 0 0 20px;
+}
+.con-404 .goback:hover {
+  background-position: -73px -509px;
+}
+
+/* 游戏资质\联系我们 */
+.about-con {
+  padding: 20px 15px;
+  border: 1px solid #ebebeb;
+}
+.about-con h4 {
+  font-size: 16px;
+  color: #666;
+}
+.about-con p {
+  font-size: 14px;
+  color: #666;
+  line-height: 28px;
+  padding: 0 0 15px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ebebeb;
+}
+.about-con p span {
+  display: inline-block;
+  color: #999;
+  margin-top: 5px;
+}
+.about-con p em {
+  color: #999;
+  font-style: normal;
+}
+.about-con p textarea {
+  width: 100%;
+  line-height: 28px;
+  height: 28px;
+  text-indent: 10px;
+}
+.about-con p.last {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/*网站地图*/
+.sidemap-con {
+  margin-top: 8px;
+}
+
+.sidemap-list {
+  margin: 10px 10px 0 10px;
+  border-top: 1px solid #f5f5f5;
+  padding-left: 14px;
+}
+.sidemap-list a {
+  font-size: 14px;
+  margin: 15px 30px 20px 0;
+  line-height: 14px;
+  height: 14px;
+  display: inline-block;
+}
+.sidemap-list a:hover {
+  text-decoration: underline;
+}
+
+/* 资讯详情页 */
+.page-header {
+  text-align: center;
+  margin: 30px 0 20px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.page-header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.page-header .meta {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 14px;
+}
+.page-header .meta span {
+  padding: 0 18px;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  border-bottom: 1px dotted #ebebeb;
+}
+.post-content p {
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.post-content img {
+  margin-bottom: 10px;
+  max-width: 480px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.post-content .share-con {
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  height: 30px;
+}
+
+.icon-share-qq, .icon-share-sina, .icon-share-qqweibo {
+  display: inline-block;
+  padding-left: 20px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: 0 -610px;
+  line-height: 16px;
+  margin-right: 12px;
+}
+
+.icon-share-sina {
+  background-position: -65px -610px;
+}
+
+.icon-share-qqweibo {
+  background-position: 0 -634px;
+}
+
+.icon-share-more {
+  background-position: -85px -634px;
+}
+
+.similar-con .little-tit {
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+}
+.similar-con .little-tit h2 {
+  left: 0;
+  margin: 10px 0;
+}
+.similar-con .noborder {
+  border: none;
+}
+
+.similar-con-list {
+  color: #f60;
+  zoom: 1;
+}
+.similar-con-list:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.similar-con-list.mar-right0 {
+  margin-right: 0;
+}
+.similar-con-list li {
+  float: left;
+  width: 46%;
+  height: 39px;
+  margin-right: 35px;
+  line-height: 39px;
+  padding-left: 8px;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background-position: 0 -654px;
+  border-bottom: 1px dotted #ebebeb;
+  zoom: 1;
+}
+.similar-con-list li.right {
+  margin-right: 0;
+}
+.similar-con-list li:after {
+  content: '';
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+.similar-con-list li span {
+  color: #999;
+  float: right;
+  font-size: 14px;
+}
+.similar-con-list li a {
+  float: left;
+  color: #333;
+  width: 236px;
+  font-size: 14px;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.similar-con-list li a:hover {
+  color: #f60;
+}
+.similar-con-list li.last {
+  border-bottom: none;
+}
+
+.similar-contain {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.border {
+  margin-bottom: 30px;
+  border: 1px solid #ebebeb;
+}
+
+/* 大图弹窗 */
+.big-img-bg {
+  width: 960px;
+  height: 640px;
+  background: #000;
+  margin: -320px 0 0 -480px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+/* 查看大图 */
+.iLook-bg {
+  background: #000;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 500;
+}
+
+.iLook-img-wrap {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 800px;
+  display: none;
+  border-top-right-radius: 16px;
+  z-index: 600;
+}
+
+.iLook-img-wrap .big-next,
+.iLook-img-wrap .big-prev {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 50%;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  top: 30px;
+  background-color: #ccc;
+}
+
+.iLook-img-wrap .big-prev {
+  left: 0px;
+  cursor: url(http://121.14.161.189:7080/upload/hhm/pc_new/pic_prev.cur), auto;
+}
+
+.iLook-img-wrap .big-next {
+  right: 0px;
+  cursor: url(http://121.14.161.189:7080/upload/hhm/pc_new/pic_next.cur), auto;
+}
+
+.iLook-img-wrap .protagonist {
+  display: none;
+  position: absolute;
+}
+
+.iLook-img-wrap .close {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background: url(http://www.9game.cn/public/images/pc/pc_new/close.png) no-repeat 0 0;
+  _background: url(http://www.9game.cn/public/images/pc/pc_new/close.gif) no-repeat 0 0;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.iLook-img-wrap .loading {
+  position: absolute;
+  margin-left: -14px;
+  margin-top: -40px;
+  left: 50%;
+  top: 50%;
+}
+
+.iLook-img-wrap .preview-wrap {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 70px;
+  background: #2f2f2f;
+}
+
+.iLook-img-wrap .previewPrev, .iLook-img-wrap .previewNext {
+  height: 70px;
+  width: 15px;
+  line-height: 70px;
+  position: absolute;
+  border-right: 1px solid #222;
+  display: block;
+  text-decoration: none;
+  color: #696969;
+  text-align: center;
+}
+
+.iLook-img-wrap .previewPrev:hover, .iLook-img-wrap .previewNext:hover {
+  color: #fff;
+}
+
+.iLook-img-wrap .previewPrev {
+  left: 0px;
+  border-right: 1px solid #222;
+}
+
+.iLook-img-wrap .previewNext {
+  right: 0px;
+  border-left: 1px solid #222;
+}
+
+.iLook-img-wrap .iLookPreviewCentre {
+  width: 965px;
+  position: absolute;
+  left: 16px;
+  height: 70px;
+  border-left: 1px solid #484848;
+  border-right: 1px solid #484848;
+  overflow: hidden;
+}
+
+.iLookPreviewCentre ul {
+  height: 56px;
+  top: 7px;
+  position: absolute;
+  margin-left: 7px;
+  display: none;
+}
+
+.iLookPreviewCentre li {
+  float: left;
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-right: 4px;
+  margin-bottom: 5px;
+}
+
+.iLookPreviewCentre a {
+  display: inline-block;
+  border: 2px solid #2f2f2f;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.iLookPreviewCentre .on,
+.iLookPreviewCentre a:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  border-color: #f60;
+  text-decoration: none;
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+.iLookPreviewCentre img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+}
+
+/*游戏详情页banner*/
+.big-newbanner {
+  margin-bottom: 10px;
+}
+.big-newbanner img {
+  display: block;
+  width: 100%;
+}

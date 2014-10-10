@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* 今日开服 */
+.today-new-server { padding-top: 10px; border-top: 1px solid #ebebeb; }
+.today-new-server .box-title .time { position: absolute; left: 105px; bottom: 6px; font-size: 14px; color: #f60; }
+.today-new-server .box-title .server-more { position: absolute; right: 0; top: 3px; display: block; width: 80px; height: 26px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 64px -248px; _background: url(http://www.9game.cn/public/images/pc/pc_new/lit_icon.gif) no-repeat 64px -248px; background-color: #ff8a00; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; line-height: 25px; color: #fff; text-indent: 5px; font-size: 14px; }
+.today-new-server .box-title .server-more:hover { text-decoration: underline; }
+
+.today-server-list { margin-bottom: 25px; border-left: 1px solid #f5f5f5; border-bottom: 1px dotted #f5f5f5; background: #fdfdfd; padding-left: 4px; }
+.today-server-list li { height: 90px; padding: 15px 0 15px; position: relative; border-bottom: 1px dotted #ebebeb; border-left: 1px solid #f7f7f7; background: #fff; }
+.today-server-list li:hover { background: #fafafa; }
+.today-server-list li:hover .tit, .today-server-list li:hover .tit a { color: #f60; }
+.today-server-list li.last { border-bottom: none; }
+.today-server-list li.timeli { padding: 35px 0 15px; }
+.today-server-list .pic { width: 90px; margin: 0 15px; float: left; position: relative; _cursor: pointer; }
+.today-server-list .pic img { width: 90px; height: 90px; }
+.today-server-list .time { height: 18px; padding-left: 26px; color: #666; line-height: 18px; position: absolute; font-size: 14px; left: -13px; top: 9px; background: url(../../../../images/pc/pc_new/newgame_icon.png) no-repeat -72px -194px; }
+.today-server-list .right-text { width: 830px; _width: 820px; margin-top: 10px; float: left; }
+.today-server-list .right-text .tit { font-size: 18px; line-height: 18px; margin-bottom: 26px; vertical-align: middle; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.today-server-list .right-text .tit a:hover { text-decoration: underline; }
+.today-server-list .right-text .text { width: 420px; height: 44px; overflow: hidden; color: #666; font-size: 14px; line-height: 24px; margin-bottom: 10px; cursor: default; }
+.today-server-list .right-text .text a { color: #666; }
+.today-server-list .right-text .type { width: 420px; color: #999; font-size: 14px; cursor: default; }
+.today-server-list .right-text .type .name { color: #0050b4; font-style: normal; }
+.today-server-list .right-text .type .type-con { margin-right: 20px; }
+.today-server-list .right-text .type .org { color: #f80; font-style: normal; }
+.today-server-list .right-text .type .na { color: #666; }
+.today-server-list .right-text .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; }
+.today-server-list .right-text .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; }
+.today-server-list .other-btn { width: 310px; height: 36px; overflow: hidden; position: absolute; top: 58px; right: 0; }
+.today-server-list .other-btn .btn { width: 88px; height: 34px; display: block; margin-right: 10px; border: 1px solid #ccc; line-height: 34px; text-align: center; font-size: 16px; float: left; background: #fafafa; background: -moz-linear-gradient(top, white, #fafafa); background: -webkit-linear-gradient(top, white, #fafafa); background: -ms-linear-gradient(top, white, #fafafa); background: -o-linear-gradient(top, white, #fafafa); -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.today-server-list .other-btn .btn:hover { color: #fff; }
+.today-server-list .other-btn .no { border-color: #f3f3f3; background: #f3f3f3; color: #a6a6a6; cursor: default; }
+.today-server-list .other-btn .no:hover { color: #a6a6a6; }
+.today-server-list .other-btn .green { color: #a3ce0e; }
+.today-server-list .other-btn .green:hover { border-color: #a3ce0e; background: #a3ce0e; }
+.today-server-list .other-btn .red { color: #ff622b; }
+.today-server-list .other-btn .red:hover { border-color: #ff622b; background: #ff622b; }
+.today-server-list .other-btn .orange { color: #ff8a00; }
+.today-server-list .other-btn .orange:hover { border-color: #ff8a00; background: #ff8a00; }
+.today-server-list .other-btn .blue { color: #50c0ff; }
+.today-server-list .other-btn .blue:hover { border-color: #50c0ff; background: #50c0ff; }
+
+/* 今日开测 */
+.open-test-con { margin-bottom: 25px; }
+.open-test-con table { width: 100%; }
+.open-test-con table th { height: 32px; color: #666; border-bottom: 1px solid #f5f5f5; background: #fdfdfd; text-align: center; font-size: 14px; }
+.open-test-con .timetr { width: 100px; }
+.open-test-con .nametr { width: auto; }
+.open-test-con .stattr { width: 120px; }
+.open-test-con .typetr { width: 96px; }
+.open-test-con .btntr { width: 100px; }
+.open-test-con .des-table { padding-left: 4px; border-left: 1px solid #f5f5f5; background: #fdfdfd; }
+.open-test-con .des-table .day { height: 30px; line-height: 30px; text-indent: 38px; cursor: default; margin-left: -13px; }
+.open-test-con .des-table tr { border-top: 1px dotted #ebebeb; border-bottom: none; }
+.open-test-con .radius32 { width: 32px; height: 32px; background: url("../../../../images/pc/pc_new/img_radius.png") no-repeat 0 -150px; _background: url("../../../../images/pc/pc_new/img_radius.gif") no-repeat 0 -150px; position: absolute; top: 0; left: 0; }
+.open-test-con .des-table1 { border-left: 1px solid #f7f7f7; background: #fff; border-bottom: 1px dotted #ebebeb; }
+.open-test-con .des-table1 .day { color: #fff; background: url(../../../../images/pc/pc_new/open_server_day.png) no-repeat 0 3px; }
+.open-test-con .des-table2 { border-left: 1px solid #f7f7f7; background: #fff; border-bottom: 1px dotted #ebebeb; }
+.open-test-con .des-table2 .day { color: #666; background: url(../../../../images/pc/pc_new/open_server_day.png) no-repeat 0 -47px; }
+.open-test-con .img { width: 32px; height: 32px; display: block; float: left; margin: 9px 10px 0 0; position: relative; }
+.open-test-con .img img { width: 32px; height: 32px; display: block; }
+.open-test-con table tr { border-bottom: 1px solid #ebebeb; }
+.open-test-con table tr:hover { background: #f7f7f7; }
+.open-test-con table td { font-size: 14px; height: 49px; text-align: center; color: #666; }
+.open-test-con table .time { color: #666; display: block; text-indent: -10px; }
+.open-test-con table .name { width: 184px; display: inline-block; line-height: 49px; float: left; margin-right: 5px; }
+.open-test-con table .hot { cursor: default; }
+.open-test-con table .hot .up { padding-right: 14px; margin-right: 4px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right 4px; }
+.open-test-con table .hot .mid { margin-right: 4px; padding-right: 14px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right -35px; }
+.open-test-con table .hot .low { margin-right: 4px; padding-right: 14px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right -69px; }
+.open-test-con table .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; float: left; margin-top: 19px; }
+.open-test-con table .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; float: left; margin-top: 19px; }
+.open-test-con table td a { width: 196px; display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.open-test-con table td a:hover { text-decoration: underline; }
+.open-test-con table .sbtn { display: inline-block; width: 76px; height: 23px; margin-top: 3px; line-height: 24px; text-indent: 18px; font-size: 12px; color: #666; text-decoration: none; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/lit_icon.gif) no-repeat 100px 100px; background-color: #f2f2f2; }
+.open-test-con table .sbtn:hover { text-decoration: none; }
+.open-test-con table .icon-gift { background-position: 4px -52px; }
+.open-test-con table .icon-gift:hover { background-position: 4px -25px; background-color: #ff622b; color: #fff; }
+.open-test-con table .icon-gift-no { background-position: 3px -75px; text-indent: 12px; cursor: default; }
+.open-test-con table .icon-down { background: #f2f2f2 url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat 6px -149px; text-indent: 12px; }
+.open-test-con table .icon-down:hover { background-position: 6px -107px; transition: all 200ms; -moz-transition: all 200ms; -webkit-transition: all 200ms; -o-transition: all 200ms; background-color: #a3ce0e; color: #fff; }
+.open-test-con table .icon-down-no { background-position: 2px -97px; text-indent: 12px; cursor: default; }
+.open-test-con table .icon-home { background-position: 4px -433px; text-indent: 12px; }
+.open-test-con table .icon-home:hover { background-position: 4px -461px; background-color: #ff8a00; color: #fff; }
+.open-test-con table .icon-home-no { background-position: 4px -488px; text-indent: 12px; cursor: default; }
+.open-test-con table .icon-qq { background-position: 6px -277px; }
+.open-test-con table .icon-qq:hover { background-position: 6px -307px; background-color: #50c0ff; color: #fff; }
+
+/* 今日开测 */
+/* 友情链接 */
+.friend-link { margin-bottom: 10px; }
+.friend-link .box-text { padding: 10px 0; }
+
+.link-con { display: none; }
+.link-con a { display: inline-block; padding: 0 6px; margin: 5px 0; border-right: 1px solid #dbdbdb; line-height: 14px; height: 14px; }
+.link-con a:hover { text-decoration: underline; }
+.link-con a.last { border-right: 0; }
+.link-con.current { display: block; }
+
+/* 友情链接 */

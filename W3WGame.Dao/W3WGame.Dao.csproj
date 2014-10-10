@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2AC62E3-0142-4AB0-863B-EF2DDF47660E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3WGame.Dao</RootNamespace>
+    <AssemblyName>W3WGame.Dao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Daos\AccountInfoDao.cs" />
+    <Compile Include="Daos\ADConfigDao.cs" />
+    <Compile Include="Daos\AdminMenuDao.cs" />
+    <Compile Include="Daos\AdminPowerDao.cs" />
+    <Compile Include="Daos\AdminRoleMenuDao.cs" />
+    <Compile Include="Daos\AdminRolePowerDao.cs" />
+    <Compile Include="Daos\AdminUserDao.cs" />
+    <Compile Include="Daos\AdminUserRoleDao.cs" />
+    <Compile Include="Daos\FriendLinkDao.cs" />
+    <Compile Include="Daos\GameKaDao.cs" />
+    <Compile Include="Daos\GameKaDetailDao.cs" />
+    <Compile Include="Daos\GameNewsDao.cs" />
+    <Compile Include="Daos\GameServersDao.cs" />
+    <Compile Include="Daos\MobilGameDao.cs" />
+    <Compile Include="Daos\VoucherHistoryDao.cs" />
+    <Compile Include="Daos\WebLoginLogDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WangFramework\WangFramework\WangFramework.csproj">
+      <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
+      <Name>WangFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Core\W3WGame.Core.csproj">
+      <Project>{6A87C312-B6FE-4799-961B-5AAAA6F701F5}</Project>
+      <Name>W3WGame.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

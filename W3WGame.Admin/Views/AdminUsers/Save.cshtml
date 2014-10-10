@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "保存新用户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model W3WGame.Admin.Controllers.AdminUsers.ViewModels.SaveAdminUserModel
+<link href="../../Scripts/jquery-validation-engine/css/template.css" rel="stylesheet"
+    type="text/css" />
+<link href="../../Scripts/jquery-validation-engine/css/validationEngine.jquery.css"
+    rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/jquery.validationEngine.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/languages/jquery.validationEngine-zh_CN.js"
+    type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#form1").validationEngine();
+    })
+</script>
+<div class="right_box_card">
+    <ul>
+        <li class="right_box_card1"><a href="#">保存新用户</a></li>
+    </ul>
+</div>
+@using (Html.BeginForm("Save", "AdminUsers", FormMethod.Post, new { @class = "formular", id = "form1" }))
+{
+    @Html.HiddenFor(c => c.AdminUserId)
+    <fieldset>
+        <label>
+            <span>@Html.LabelFor(c => c.RoleId)</span>
+            @Html.DropDownListFor(c => c.RoleId, ViewBag.RoleList as List<SelectListItem>, new { @class = "validate[required] text-input" })
+        </label>
+        <label>
+            <span>@Html.LabelFor(c => c.UserName)</span>
+            @Html.TextBoxFor(c => c.UserName, new { @class = "validate[required,custom[onlyLetterNumber]] text-input" })
+        </label>
+        <label>
+            <span>@Html.LabelFor(c => c.Password)</span>
+            @Html.PasswordFor(c => c.Password, new { @class = "validate[required,custom[onlyLetterNumber]] text-input" })
+        </label>
+        <label>
+            <span>确认密码</span>
+            @Html.Password("pass", null, new { @class = "validate[required,equals[Password]] text-input" })
+        </label>
+        <input type="submit" value="保存" class="submit" />
+    </fieldset> 
+}

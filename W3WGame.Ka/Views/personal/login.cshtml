@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>UC帐号登录</title>
+    <meta name="description" content="UC优视是中国领先的移动互联网软件技术及应用服务提供商，提供的核心产品UC浏览器是一款全球领先的智能手机浏览器，拥有独创的U3内核和云端技术，完美地支持HTML5应用，具有智能、极速、安全、易扩展等特性，让您在阅资讯、读小说、看视频、上微博、玩游戏、网上购物等都能享受最流畅的移动互联网体验；UC优视旗下的产品有：UC浏览器,来电通,UC乐园,UC桌面,UC影音,UC迅雷,UC保险箱,UC快拍,UC网盘等。">
+    <meta name="keywords" content="uc,ucweb,uc浏览器,手机浏览器,来电通,uc桌面,uc影音,uc迅雷,uc乐园,uc保险箱,uc快拍,UC网盘,手机上网,手机播放器,手机天气预报软件,手机资讯,手机桌面">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="UC优视" />
+    <meta property="qc:admins" content="244435573016705665363673137" />
+    <link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css" />
+</head>
+<body>
+    <div class="header">
+        <!-- 头部 -->
+        <div id="dHeader" class="header-cont">
+            <!-- 返回首页面链接 -->
+            <div id="dHomeLink" class="btn">
+                <a href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2"
+                    class="btn_home">返回首页</a></div>
+            <!-- logo -->
+            <div id="dLogo">
+                <h1 class="logo">
+                    <a id="logoImg" href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2">
+                        <img src="/img/logo_uc_835043c.gif" width="174" height="72" title="" class="changelogo"
+                            client_id="102" staticresourcebaseuri='/' appname="九游" />
+                    </a>
+                </h1>
+            </div>
+            <div class="header-title">
+                UC帐号是UC各业务通行的帐号。<br />
+                拥有UC帐号，你就可以玩转UC！</div>
+        </div>
+    </div>
+    <div class="main cls">
+        <!-- 第三方登录帐号 -->
+        <div id="dThirdParty">
+            <div class="login-weibo">
+                <p>
+                    使用合作网站帐号登录：</p>
+                <p style="height: 52px">
+                    <a href="https://openauth.alipay.com/oauth2/authorize.htm?grant_type=refresh_token&amp;client_id=2013070800000528&amp;redirect_uri=http%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;view=pc&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.9game.cn%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dalipay">
+                        <img src="/img/ban_ali_3af5a68.gif" width="128" height="32" title="Alipay"></a>
+                </p>
+                <p style="height: 52px">
+                    <a href="https://api.weibo.com/oauth2/authorize?response_type=code&amp;forcelogin=true&amp;display=default&amp;client_id=1232482045&amp;scope=follow_app_official_microblog&amp;redirect_uri=https%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.9game.cn%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dweibo">
+                        <img src="/img/btn_weibo_a68f357.jpg" width="128" height="32" title="新浪微博"></a>
+                </p>
+                <p style="height: 52px">
+                    <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=100468196&amp;redirect_uri=http%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;display=pc&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.9game.cn%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dqq">
+                        <img src="/img/btn_qq_fc245e4.jpg" width="128" height="32" title="QQ"></a>
+                </p>
+                <!-- 第三方帐号公告 -->
+            </div>
+        </div>
+        <!-- 表单 -->
+        <div id="dForm">
+            <form id="dLoginForm" action="https://api.open.uc.cn/cas/login/commit?uc_param_str=einisivelafrpfmibiup"
+            method="post">
+            <!-- 回传参数 -->
+            <input type="hidden" id="client_id" name="client_id" value="102" />
+            <input type="hidden" name="redirect_uri" value="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2" />
+            <input type="hidden" name="target_client_id" value="" />
+            <input type="hidden" name="target_redirect_uri" value="" />
+            <input type="hidden" name="display" id="display" value="pc" />
+            <input type="hidden" name="change_uid" value="0" />
+            <div class="content">
+                <div class="tip1">
+                    提示：如果你没有UC帐号，<a href="http://api.open.uc.cn/cas/register?register_type=mobile&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">马上注册</a></div>
+                <ul class="login">
+                    <!-- 通用错误提示 -->
+                    <div id="dMessageError" style="padding-left: 23px;" class="orange">
+                    </div>
+                    <!-- 帐号 -->
+                    <li id="dLoginName">
+                        <div>
+                            <span class="text">帐&nbsp;&nbsp;&nbsp;&nbsp;号</span> <span class="enter">
+                                <input type="text" onblur="validLoginName('http://api.open.uc.cn/cas/', '/')" id="loginName"
+                                    name="loginName" value="" maxlength="100" class="changetips" placeholder="手机/邮箱/用户名/UC号"
+                                    imagename="input_login_bg_3062c35" imageerrorname="input_login_bg_error_f5a8b8b"
+                                    staticresourcebaseuri="/" autocomplete="off" /></span>
+                        </div>
+                        <!-- 帐号错误提示 -->
+                        <div id="dLoginNameError" class="error-tips">
+                        </div>
+                    </li>
+                    <!-- 密码 -->
+                    <li id="dPassword">
+                        <div>
+                            <span class="text">密&nbsp;&nbsp;&nbsp;&nbsp;码</span> <span class="enter">
+                                <input type="password" onblur="validPwd('/')" maxlength="20" id="password" name="password"
+                                    value="" class="changetips" placeholder="区分大小写" imagename="input_login_bg_3062c35"
+                                    imageerrorname="input_login_bg_error_f5a8b8b" staticresourcebaseuri="/" autocomplete="off" /></span>
+                        </div>
+                        <!-- 密码错误提示 -->
+                        <div id="dPasswordError" class="error-tips">
+                        </div>
+                    </li>
+                    <!-- 验证码 -->
+                    <div id="dCaptcha">
+                        <li class="mar">
+                            <div class="valide-box" style="width: 316px;">
+                                <span class="text">验证码</span> <span class="enter1">
+                                    <input onblur="validCaptcha('http://api.open.uc.cn/cas/', '/')" maxlength="4" size="4"
+                                        type="text" name="captchaVal" id="captchaVal" class="changetips" placeholder="请输入结果"
+                                        imagename="input_login_bg_1_a4a985c" imageerrorname="input_login_bg_1_error_05af09d"
+                                        staticresourcebaseuri="/" autocomplete="off" />
+                                </span><span id="captchaImg">
+                                    <img src="http://api.open.uc.cn/cas/commonjson/captcha?captchaId=917826b4-a650-4e0a-85c7-3638d20d7b1e&uc_param_str=einisivelafrpfmibiup&display=pc"
+                                        alt="验证码" />
+                                    <input type="hidden" id="captchaId" name="captchaId" value="917826b4-a650-4e0a-85c7-3638d20d7b1e" />
+                                </span><span><a style="cursor: pointer" onclick="refreshCatcha('http://api.open.uc.cn/cas/')">
+                                    换一张</a></span>
+                            </div>
+                            <!-- 验证码错误提示 -->
+                            <div id="dCaptchaValError" class="error-tips">
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <!-- 登录注册按钮区 -->
+            <div id="dButton" class="login-f">
+                <input type="button" onclick="submitForm('http://api.open.uc.cn/cas/', '/')" class="btn_reg"
+                    id="submit_btn" alt="登录" value="登录" />
+                <a href="https://id.uc.cn/next/forgotpassword/forgotPassword?uc_param_str=nieisivefrpfbimilaprligiwiut&amp;appId=102&amp;backUrl=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&broswertype=www">
+                    忘记密码？</a> <span>|</span> <a href="http://feedback.uc.cn/feedback/feedback/index?instance=cas&uc_param_str=einibicppfmivesifrutlantcunwss">
+                        反馈</a>
+            </div>
+            </form>
+        </div>
+        <!-- 更多业务 -->
+        <div id="dFooter">
+            <div class="business pd cls">
+                <div class="business-title">
+                    <a href="http://www.uc.cn/product/index.shtml" target="_black">更多&gt;&gt;</a>更多UC业务：</div>
+                <ul class="business-ul cls">
+                    <li>
+                        <img src="/img/icon_ucbrowser_c8bc2c1.jpg" width="50" height="50" title="UC浏览器">
+                        <div>
+                            <h3>
+                                UC浏览器</h3>
+                            登录手机UC浏览器，体验极速、智能的UC服务。</div>
+                    </li>
+                    <li>
+                        <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="九游">
+                        <div>
+                            <h3>
+                                九游</h3>
+                            上九游，玩游戏，尽享游戏带来的无限快乐。</div>
+                    </li>
+                    <li>
+                        <img src="/img/icon_uccloud_2ef2813.jpg" width="50" height="50" title="UC云">
+                        <div>
+                            <h3>
+                                UC云</h3>
+                            云存储，云同步，云下载，UC云服务随时随地伴你行。</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div id="dFooter" class="footer">
+        <p>
+            <a href="http://www.uc.cn" target="_black">UC官网</a> | <a href="http://www.uc.cn/product/index.shtml"
+                target="_black">UC产品</a> | <a href="http://feedback.uc.cn/self_service/web/index"
+                    target="_black">帮助中心</a> | <a href="http://feedback.uc.cn/feedback/web/index?instance=usercenter"
+                        target="_black">意见反馈</a></p>
+        <p>
+            UC优视 2009-2013 © 版权所有</p>
+    </div>
+    <!-- pc登录页面统计 -->
+    <script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/analyticsLoginPc_e660f0c.js"></script>
+</body>
+<script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/lib/jquery-1.6.4.min_526f754.js"></script>
+<script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/common_c1ca1c3.js"></script>
+<script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/lib/lib_2_b11cf09.js"></script>
+<script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/zh/pc/changelogo_093d92f.js"></script>
+<script type="text/javascript" charset="utf-8" src="//img0.u.ucfly.com/uop/sso/public/js/next/language/message_zh_28b08b8.js"></script>
+</html>

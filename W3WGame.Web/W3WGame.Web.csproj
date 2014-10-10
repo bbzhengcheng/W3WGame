@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDC642EE-1B07-431A-B80B-A93829CCB961}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3WGame.Web</RootNamespace>
+    <AssemblyName>W3WGame.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="public\images\pc\mm_g001.jpg" />
+    <Content Include="public\images\pc\pc_9game_public\header_201405\pub_pcheader_icon.png" />
+    <Content Include="public\images\pc\pc_9game_public\template4\logo.png" />
+    <Content Include="public\images\pc\pc_new\game_search_tab.png" />
+    <Content Include="public\images\pc\pc_new\head_bg.jpg" />
+    <Content Include="public\images\pc\pc_new\img_radius.gif" />
+    <Content Include="public\images\pc\pc_new\img_radius.png" />
+    <Content Include="public\images\pc\pc_new\lit_icon.png" />
+    <Content Include="public\images\pc\pc_new\loading.gif" />
+    <Content Include="public\images\pc\pc_new\meng.gif" />
+    <Content Include="public\images\pc\pc_new\meng.png" />
+    <Content Include="public\images\pc\pc_new\meng2.gif" />
+    <Content Include="public\images\pc\pc_new\meng2.png" />
+    <Content Include="public\images\pc\pc_new\newgame_icon.png" />
+    <Content Include="public\images\pc\pc_new\newgame_rank.png" />
+    <Content Include="public\images\pc\pc_new\open_server_day.png" />
+    <Content Include="public\images\pc\pc_new\pcnew_ico.png" />
+    <Content Include="public\images\pc\pc_new\top_classify.png" />
+    <Content Include="public\images\pc\pc_new\wenming.png" />
+    <Content Include="public\javascripts\android_new\module\assistLinkdedb.js" />
+    <Content Include="public\javascripts\common\portal.js" />
+    <Content Include="public\javascripts\common\special\te1\seajs\sea.js" />
+    <Content Include="public\javascripts\common\ucb.js" />
+    <Content Include="public\javascripts\common\xmanlazyload.js" />
+    <Content Include="public\javascripts\jquery.js" />
+    <Content Include="public\javascripts\pc2\art_comment1408.js" />
+    <Content Include="public\javascripts\pc2\art_comment14086e92.js" />
+    <Content Include="public\javascripts\pc2\art_comment1408_26e92.js" />
+    <Content Include="public\javascripts\pc2\common\litt_nav.js" />
+    <Content Include="public\javascripts\pc2\common\litt_navdc27.js" />
+    <Content Include="public\javascripts\pc2\dist\module_enter\e_article_detail.js" />
+    <Content Include="public\javascripts\pc2\dist\module_enter\e_new_index.js" />
+    <Content Include="public\javascripts\pc2\dist\module_enter\e_normal.js" />
+    <Content Include="public\javascripts\pc2\lib\jquery.js" />
+    <Content Include="public\javascripts\pc2\netgame_detail\pub_header.js" />
+    <Content Include="public\javascripts\pc2\netgame_detail\template469c1.js" />
+    <Content Include="public\javascripts\pc2\pcnew20131002d4.js" />
+    <Content Include="public\javascripts\pc2\pcnew2013100351.js" />
+    <Content Include="public\javascripts\pc2\pub_header.js" />
+    <Content Include="public\javascripts\pc2\pub_headerdc27.js" />
+    <Content Include="public\javascripts\pc2\seajs\seajs.js" />
+    <Content Include="public\javascripts\pc2\search_game.js" />
+    <Content Include="public\javascripts\pc2\search_think.js" />
+    <Content Include="public\javascripts\pc2\search_think0351.js" />
+    <Content Include="public\javascripts\pc2\show_game_down02d4.js" />
+    <Content Include="public\javascripts\pc2\show_game_down0351.js" />
+    <Content Include="public\javascripts\pc2\show_win_gamefile_v24e27.js" />
+    <Content Include="public\javascripts\pc2\x_img_viewer.js" />
+    <Content Include="public\javascripts\pc\common\loadmore.js" />
+    <Content Include="public\javascripts\pc\common\public_header.js" />
+    <Content Include="public\javascripts\pc\common\qrcode_min.js" />
+    <Content Include="public\javascripts\pc\common\template2_min.js" />
+    <Content Include="public\javascripts\pc\lscs\x_move.js" />
+    <Content Include="public\stylesheets\common\special\te1\special.css" />
+    <Content Include="public\stylesheets\pc2\article_detail\article_detail4c8e.css" />
+    <Content Include="public\stylesheets\pc2\index\pc_index.css" />
+    <Content Include="public\stylesheets\pc2\netgame\kf\open_server.css" />
+    <Content Include="public\stylesheets\pc2\netgame_detail\pub_header.css" />
+    <Content Include="public\stylesheets\pc2\netgame_detail\template40b26.css" />
+    <Content Include="public\stylesheets\pc2\newgame\new_index\new_index.css" />
+    <Content Include="public\stylesheets\pc2\other\otherc955.css" />
+    <Content Include="public\stylesheets\pc2\pcnew.css" />
+    <Content Include="public\stylesheets\pc2\pcnew_detail.css" />
+    <Content Include="public\stylesheets\pc2\pcnew_ol.css" />
+    <Content Include="public\stylesheets\pc2\pcnew_public.css" />
+    <Content Include="public\stylesheets\pc2\pcnew_public0351.css" />
+    <Content Include="public\stylesheets\pc2\pcnew_search.css" />
+    <Content Include="public\stylesheets\pc2\public\pc_public.css" />
+    <Content Include="public\stylesheets\pc2\public\pc_publicc955.css" />
+    <Content Include="public\stylesheets\pc2\public\pub_header.css" />
+    <Content Include="public\stylesheets\pc2\public\pub_headerc955.css" />
+    <Content Include="public\stylesheets\pc2\public_9game.css" />
+    <Content Include="public\stylesheets\pc2\public_9game0351.css" />
+    <Content Include="public\stylesheets\pc\common\public_9game.css" />
+    <Content Include="public\stylesheets\pc\common\public_9game_201311.css" />
+    <Content Include="public\stylesheets\pc\common\template2.css" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\home\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\kc\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\kf\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\newgame\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\gamestore\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WangFramework\WangFramework\WangFramework.csproj">
+      <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
+      <Name>WangFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Web.Controllers\W3WGame.Web.Controllers.csproj">
+      <Project>{106E3E9E-3E35-439B-BF6C-FD21843CCAAB}</Project>
+      <Name>W3WGame.Web.Controllers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_WebLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ka\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\news\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\category\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\games\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\games\news.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_GameWebLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\GameWebBanner.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\games\newinfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\mainLayout\xiaobian.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\mainLayout\HomeLunBo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\mainLayout\HomeGamesDanner.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3417</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

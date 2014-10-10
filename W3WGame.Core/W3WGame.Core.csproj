@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A87C312-B6FE-4799-961B-5AAAA6F701F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3WGame.Core</RootNamespace>
+    <AssemblyName>W3WGame.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\AdminUserDto.cs" />
+    <Compile Include="Dtos\ArticleDto.cs" />
+    <Compile Include="Dtos\GameServersDto.cs" />
+    <Compile Include="Dtos\UserLoginLogChart.cs" />
+    <Compile Include="Dtos\UserLoginLogsDto.cs" />
+    <Compile Include="Dtos\Web\GameKaDto.cs" />
+    <Compile Include="Dtos\Web\NewsDto.cs" />
+    <Compile Include="Dtos\Web\NewsXmlDto.cs" />
+    <Compile Include="Entities\AccountInfo.cs" />
+    <Compile Include="Entities\ADConfig.cs" />
+    <Compile Include="Entities\AdInfo.cs" />
+    <Compile Include="Entities\AdminMenu.cs" />
+    <Compile Include="Entities\AdminPower.cs" />
+    <Compile Include="Entities\AdminRoleMenu.cs" />
+    <Compile Include="Entities\AdminRolePower.cs" />
+    <Compile Include="Entities\AdminUser.cs" />
+    <Compile Include="Entities\AdminUserRole.cs" />
+    <Compile Include="Entities\FriendLink.cs" />
+    <Compile Include="Entities\GameKa.cs" />
+    <Compile Include="Entities\GameKaDetail.cs" />
+    <Compile Include="Entities\GameNews.cs" />
+    <Compile Include="Entities\GameServers.cs" />
+    <Compile Include="Entities\MobilGame.cs" />
+    <Compile Include="Entities\VoucherHistory.cs" />
+    <Compile Include="Entities\WebLoginLog.cs" />
+    <Compile Include="Enums\ADConfigPlaceEnum.cs" />
+    <Compile Include="Enums\AdTypeEnum.cs" />
+    <Compile Include="Enums\AttrInputType.cs" />
+    <Compile Include="Enums\AttrType.cs" />
+    <Compile Include="Enums\FriendlinkTypeEnum.cs" />
+    <Compile Include="Enums\GameSysEnum.cs" />
+    <Compile Include="Enums\GameTeZhenEnum.cs" />
+    <Compile Include="Enums\GameTypeEnum.cs" />
+    <Compile Include="Enums\KaTypeEnum.cs" />
+    <Compile Include="Enums\NewsTypeEnum.cs" />
+    <Compile Include="Enums\PayStatus.cs" />
+    <Compile Include="Enums\PayType.cs" />
+    <Compile Include="Enums\YunYingStateEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WangFramework\WangFramework\WangFramework.csproj">
+      <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
+      <Name>WangFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dtos\Admin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

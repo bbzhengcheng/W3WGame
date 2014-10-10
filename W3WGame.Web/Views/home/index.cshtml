@@ -1,0 +1,500 @@
+﻿@using W3WGame.Core.Dtos
+@using W3WGame.Core.Dtos.Web
+@using W3WGame.Core.Entities
+@using W3WGame.Core.Enums
+@using WangFramework.Extensions
+@using W3WGame.Web.Controllers.ToolCode
+@using WangFramework.Common
+@{
+    Layout = "~/Views/Shared/_WebLayout.cshtml";
+    var thisweenHotGame = ViewData["thisweenHotGame"] as List<MobilGame>;
+    var qianlibaoGameList = ViewData["qianlibaoGameList"] as List<GameKaDto>;
+    var tuijianGameList = ViewData["tuijianGameList"] as List<MobilGame>;
+    var gametypeGameList = ViewData["gametypeGameList"] as List<MobilGame>;
+    var kaiceServerList = ViewData["kaiceServerList"] as List<GameServersDto>;
+    var xinfuServerList = ViewData["xinfuServerList"] as List<GameServersDto>;
+    var newsHight = ViewData["newsHight"] as List<NewsXmlDto>;
+    var newlist = ViewData["newlist"] as List<NewsDto>;
+    var Activenewslist = ViewData["Activenewslist"] as List<NewsDto>;
+    var cepingList = ViewData["cepingList"] as List<NewsDto>;
+    var newsAdList = ViewData["newsAdList"] as List<ADConfig>;
+    var cePingAdList = ViewData["cePingAdList"] as List<ADConfig>;
+    var friendList = ViewData["friendList"] as List<FriendLink>;
+}
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/index/pc_index.css">
+<div class="main-con">
+    @Html.Action("HomeLunBo", "mainLayout")
+    @Html.Action("HomeGamesDanner", "mainLayout")
+    <div class="box mar-box">
+        <div class="get-gift-con">
+            <div class="box-title">
+                <h2>
+                    <a href="http://ka.9game.cn/" title="抢礼包" data-statis="text:p_index_qlb_more">抢礼包</a></h2>
+                <a href="http://ka.9game.cn/" title="更多抢礼包" class="more" data-statis="text:p_index_qlb_more">
+                    更多</a>
+            </div>
+            <div class="box-text">
+                <ul class="icon-word-list">
+                    @foreach (var item in qianlibaoGameList)
+                    {
+                        <li><a href="#" title="@item.GameName" name="uc_gd_adm" gd_stat="173_5826" data-statis="text:logo_p_index_gds_173_5826">
+                            <div class="pic">
+                                <img alt="@item.GameName" src="@WebHelper.GetImg(item.ImgPath)" class="" style="opacity: 0.94;">
+                                <span class="radius70">@item.KaTitle</span>
+                            </div>
+                        </a>
+                            <div class="right-text">
+                                <p class="tit">
+                                    <a href="#" title="@item.GameName" name="uc_gd_adm" gd_stat="173_5826" data-statis="text:txt_p_index_gds_173_5826">@item.GameName</a></p>
+                                <p class="text">@item.KaTitle</p>
+                                <a href="#" name="uc_gd_adm" gd_stat="173_5826" data-statis="text:lb_p_index_gds_173_5826"
+                                    class="btn">抢礼包</a>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="today-news">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/news/" title="今日新闻">今日新闻</a></h2>
+                <a href="http://www.9game.cn/news/" title="更多新闻" class="more">更多</a>
+            </div>
+            <div class="box-text">
+                <h3 class="big-new">
+                    <a href="@newsHight[0].Href" title="@newsHight[0].Title" data-statis="text:txt_index_jrxw11_po-1_news-265090">@newsHight[0].Title</a></h3>
+                <div class="side-new">
+                    <a href="@newsHight[1].Href" title="@newsHight[0].Title" data-statis="text:txt_index_jrxw33_po-1_news-267567">@newsHight[1].Title</a>
+                    <a href="@newsHight[2].Href" title="@newsHight[2].Title" data-statis="text:txt_index_jrxw33_po-2_news-267577">@newsHight[2].Title</a>
+                </div>
+                <ul class="news-list">
+                    @foreach (var item in newlist)
+                    {
+                        <li><a href="#" title="@item.Title" >@item.Title</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+                <div class="little-tit">
+                    今日活动</div>
+                <ul class="news-list">
+                    @foreach (var item in Activenewslist)
+                    {
+                        <li><a href="#" title="@item.Title" >@item.Title</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+                <div class="today-pic">
+                    @foreach (var item in newsAdList)
+                    {
+                        <a href="@item.Link" title="@item.Title" class="pic-word-con" >
+                            <img class="pic xLazyClass" src="@WebHelper.GetImg(item.AdPath)" alt="@item.Title">
+                            <p class="text">@item.Title</p>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="side-rank pcdex">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/rank/" data-statis="text:p_index_bzrm_more" title="本周热门">
+                        本周热门</a></h2>
+                <a href="http://www.9game.cn/rank/" class="more" data-statis="text:p_index_bzrm_more"
+                    title="更多本周热门">更多</a>
+            </div>
+            <div class="box-text">
+                <ul class="side-rank-list">
+                    @for (int i = 1; i <= thisweenHotGame.Count; i++)
+                    {
+                        var myclass = "";
+                        if (i == 0)
+                        { myclass = "first"; }
+                        else if (i == 1)
+                        { myclass = "second"; }
+                        else if (i == 2)
+                        { myclass = "third"; }
+                        else
+                        {
+                            myclass = "";
+                        }
+                
+                        <text>
+                        <li class="@myclass">
+                            <div class="side-rank-num">@i</div>
+                            <a href="http://www.9game.cn/hdqb/" class="side-rank-info" title="@thisweenHotGame[i - 1].GameName" >
+                                <img src="@WebHelper.GetImg(thisweenHotGame[i - 1].ImgPath)" class="" alt="@thisweenHotGame[i - 1].GameName" style="opacity: 0.94;">
+                                <p>@thisweenHotGame[i - 1].GameName</p>
+                                <span class="radius32"></span></a><a href="http://www.9game.cn/game/downs_539038_2.html?ch=JY_3"
+                                    target="_self" class="btn down" name="uc_gd_adm" gd_stat="174_10928" data-statis="text:btn_p_index_gds_174_10928">
+                                </a></li>
+                        </text>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="box mar-box">
+        <div class="game-con-5">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/category/" title="手机游戏推荐" target="_self">手机游戏推荐</a></h2>
+                <a href="http://www.9game.cn/category/" data-statis="text:p_index_yxtj_more" class="more">
+                    更多</a>
+            </div>
+            <div class="box-text">
+                <ul class="game-ul-list">
+                    @foreach (var item in tuijianGameList)
+                    {
+                        <li><a href="#" class="info"  title="@item.GameName">
+                            <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass"  alt="@item.GameName">
+                            <p>@item.GameName</p>
+                            <span class="radius90"></span></a><a href="http://www.9game.cn/game/downs_539038_2.html?ch=JY_3" target="_self" class="down" name="uc_gd_adm" gd_stat="176_10932" data-statis="text:btn_p_index_gds_176_10932" title="@item.GameName">
+                                立即下载</a> </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="open-test">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/kc/" title="手机网游开测表">手机网游开测表</a></h2>
+                <a href="http://www.9game.cn/kc/" data-statis="text:p_index_kcb_more" class="more">更多</a>
+            </div>
+            <div class="box-text">
+                <table class="current">
+                    <tbody>
+                        <tr>
+                            <th class="time">
+                                时间
+                            </th>
+                            <th class="name">
+                                网游
+                            </th>
+                            <th class="static">
+                                状态
+                            </th>
+                            <th class="down">
+                                礼包
+                            </th>
+                            <th class="down">
+                                下载
+                            </th>
+                        </tr>
+                        @foreach (var item in kaiceServerList)
+                        {
+                            <tr>
+                                <td>@item.OpenTime.ToString("MM-dd")
+                                </td>
+                                <td>
+                                    <a href="#" class="name" data-statis="text:txt_p_index_kcb_544453" title="@item.GameName">@item.GameName</a>
+                                </td>
+                                <td>@(((YunYingStateEnum)item.ServerStat).ToDescriptionName())
+                                </td>
+                                <td>
+                                    <a class="btn gift" href="http://ka.9game.cn/game/544453_-5_1.html" data-statis="text:lb_p_index_kfb_544453">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" class="btn down" target="_self"></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box mar-box">
+        <div class="game-comment">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/news/2_1/" title="手机游戏评测" target="_self">手机游戏评测</a></h2>
+                <a href="http://www.9game.cn/news/2_1/" data-statis="text:p_index_yxpc_more" class="more">
+                    更多</a>
+            </div>
+            <div class="box-text">
+                <div class="today-pic">
+                    @foreach (var item in cePingAdList)
+                    {
+                        <a href="#" class="pic-word-con" title="@item.Title" >
+                            <img class="pic xLazyClass" src="@WebHelper.GetImg(item.AdPath)" alt="@item.Title">
+                            <p class="text">@item.Title</p>
+                        </a>
+                    }
+                </div>
+                <ul class="icon-word-list">
+                    @foreach (var item in cepingList)
+                    {
+                        <li><a href="#" data-statis="text:txt_p_index_yxpc_267461" title="@item.Title">
+                            <div class="pic">
+                                <img src="@item.ShortDesImg" class="xLazyClass" alt="@item.Title">
+                                <span class="radius70"></span>
+                            </div>
+                            <div class="right-text">
+                                <p class="tit">@item.Title</p>
+                                <p class="text">@Utils.LeftString(item.ShortDes, 30)</p>
+                            </div>
+                        </a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="open-test">
+            <div class="box-title">
+                <h2>
+                    <a href="http://www.9game.cn/kf/" title="手机网游新服表">手机网游新服表</a></h2>
+                <a href="http://www.9game.cn/kf/" title="更多手机网游新服表" class="more" data-statis="text:p_index_kfb_more">
+                    更多</a>
+            </div>
+            <div class="box-text">
+                <table class="current">
+                    <tbody>
+                        <tr>
+                            <th class="time">
+                                时间
+                            </th>
+                            <th class="name">
+                                网游
+                            </th>
+                            <th class="static">
+                                状态
+                            </th>
+                            <th class="down">
+                                礼包
+                            </th>
+                            <th class="down">
+                                下载
+                            </th>
+                        </tr>
+                        @foreach (var item in xinfuServerList)
+                        {
+                            <tr>
+                                <td>@item.OpenTime.ToString("MM-dd")
+                                </td>
+                                <td>
+                                    <a href="#" class="name" title="时空猎人">@item.GameName</a>
+                                </td>
+                                <td>@(((YunYingStateEnum)item.ServerStat).ToDescriptionName())
+                                </td>
+                                <td>
+                                    <a class="btn gift" href="#"></a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" class="btn down" target="_self"></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    @*  <div class="box mar-box">
+            <div class="video-ind-con">
+                <div class="box-title">
+                    <h2><a href="http://www.9game.cn/news/4_1/" title="手机游戏视频">手机游戏视频</a></h2>
+                    <a href="http://www.9game.cn/news/4_1/" title="更多手机游戏视频" data-statis="text:p_index_yxsp_more" class="more">更多</a>
+                </div>
+                <div class="box-text">
+                    <div class="left box">
+	                        <div class="today-video">
+			                     <a href="http://touch.9game.cn/news/267549.html" title="《TOUCH舞动全城》震撼公测 开启辣舞时代" class="video-word-con" data-statis="text:logo_index_sjsp16_po-1_news-267549">
+			                     	<img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/17/9918607.jpg" alt="《TOUCH舞动全城》震撼公测 开启辣舞时代">
+			                     	<p class="text"><span class="play"></span><span class="word">《TOUCH舞动全城》震撼公测 开启辣舞时代</span></p>
+			                        <div class="meng"></div>
+			                        <span class="play"></span>
+			                     </a>
+			                </div>
+			      		<div class="today-video2">
+			                        <a href="http://www.9game.cn/zikzinrun/266890.html" title="Zikzin Run张根硕化身角色" class="video-word-con" data-statis="text:logo_index_sjsp32_po-1_news-266890">
+			                            <img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/17/9918610.jpg" alt="Zikzin Run张根硕化身角色">
+			                            <p class="text"><span class="play"></span><span class="word">Zikzin Run张根硕化身角色</span></p>
+			                            <div class="meng"></div>
+			                            <span class="play"></span>
+			                        </a>
+			                        <a href="http://hdzl.9game.cn/news/267069.html" title="手游娱乐播报06：爱情动作宣传片遇上手游?" class="video-word-con" data-statis="text:logo_index_sjsp32_po-1_news-267069">
+			                            <img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/17/9917201.jpg" alt="手游娱乐播报06：爱情动作宣传片遇上手游?">
+			                            <p class="text"><span class="play"></span><span class="word">手游娱乐播报06：爱情动作宣传片遇上手游?</span></p>
+			                            <div class="meng"></div>
+			                            <span class="play"></span>
+			                        </a>
+			            </div>
+                    </div>
+                    <div class="right box">
+                        <ul class="news-list">
+                              <li><a href="http://yxcs.9game.cn/news/267744.html" title="英雄之剑26日不删档来袭 首曝高清视频" data-statis="text:p_index_yxsp_267744">英雄之剑26日不删档来袭 首曝高清视频</a></li>
+                              <li><a href="http://hh.9game.cn/news/267158.html" title="洪荒OL宣传视频 誓重夺天地之位" data-statis="text:p_index_yxsp_267158">洪荒OL宣传视频 誓重夺天地之位</a></li>
+                              <li><a href="http://hh.9game.cn/news/267156.html" title="教学视频：洪荒OL攻略新手引导篇" data-statis="text:p_index_yxsp_267156">教学视频：洪荒OL攻略新手引导篇</a></li>
+                              <li><a href="/xsanguo/267152.html" title="《X三国》经典互动卡牌游戏宣传视频" data-statis="text:p_index_yxsp_267152">《X三国》经典互动卡牌游戏宣传视频</a></li>
+                              <li><a href="http://dtcq.9game.cn/news/266722.html" title="刀塔传奇首曝灵魂守卫CG视频 双刀杀戮" data-statis="text:p_index_yxsp_266722">刀塔传奇首曝灵魂守卫CG视频 双刀杀戮</a></li>
+                              <li><a href="/qfc/265175.html" title="吞风吻雨葬落日《天龙八部3D》评测视频" data-statis="text:p_index_yxsp_265175">吞风吻雨葬落日《天龙八部3D》评测视频</a></li>
+                              <li><a href="/dhhsd5/265176.html" title="大航海时代5游戏视频展示" data-statis="text:p_index_yxsp_265176">大航海时代5游戏视频展示</a></li>
+                              <li><a href="/hr/264605.html" title="最带感动作手游《红刃OL》 女忍者视频曝光" data-statis="text:p_index_yxsp_264605">最带感动作手游《红刃OL》 女忍者视频曝光</a></li>
+                              <li><a href="/hdqb/263270.html" title="《海岛奇兵》恐怖博士10通关视频" data-statis="text:p_index_yxsp_263270">《海岛奇兵》恐怖博士10通关视频</a></li>
+                              <li><a href="/hdqb/263265.html" title="《海岛奇兵》恐怖博士9通关视频" data-statis="text:p_index_yxsp_263265">《海岛奇兵》恐怖博士9通关视频</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="raiders-ind-con">
+                <div class="box-title">
+                    <h2><a href="http://www.9game.cn/news/3_1/" title="手机游戏攻略">手机游戏攻略</a></h2>
+                    <a href="http://www.9game.cn/news/3_1/" title="更多手机游戏攻略" class="more" data-statis="text:p_index_yxgl_more">更多</a>
+                </div>
+                <div class="box-text">
+                    <div class="left box">
+                        <div class="today-pic">
+		                            <a href="http://www.9game.cn/ahlm/265708.html" class="pic-word-con" title="暗黑黎明实录视频彰显打击感" name="uc_gd_adm" gd_stat="179_12719" data-statis="text:logo_p_index_gds_179_12719">
+		                                <img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/15/9911429.jpg" alt="暗黑黎明实录视频彰显打击感">
+		                                <p class="text">暗黑黎明实录视频彰显打击感</p>
+		                            </a>
+		                            <a href="http://www.9game.cn/news/265294.html" class="pic-word-con" title="英雄之剑魔法师副本装掉落大全" name="uc_gd_adm" gd_stat="179_12710" data-statis="text:logo_p_index_gds_179_12710">
+		                                <img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/15/9911214.jpg" alt="英雄之剑魔法师副本装掉落大全">
+		                                <p class="text">英雄之剑魔法师副本装掉落大全</p>
+		                            </a>
+                        </div>
+                    </div>
+                    <div class="right box">
+                        <ul class="news-list">
+                              <li><a href="/htn/267866.html" title="狗血剧情不忍直视 毁童年关卡攻略" data-statis="text:p_index_yxgl_267866">狗血剧情不忍直视 毁童年关卡攻略</a></li>
+                              <li><a href="/lyjl/267846.html" title="龙与精灵玩法多多 PK赏金精灵一个都不能少" data-statis="text:p_index_yxgl_267846">龙与精灵玩法多多 PK赏金精灵一个都不能少</a></li>
+                              <li><a href="http://tz.9game.cn/news/267898.html" title="迎公测 天尊进击之翼，绚丽登场！" data-statis="text:p_index_yxgl_267898">迎公测 天尊进击之翼，绚丽登场！</a></li>
+                              <li><a href="/lyjl/267844.html" title="你不能只是菜 龙与精灵新手入门指导篇" data-statis="text:p_index_yxgl_267844">你不能只是菜 龙与精灵新手入门指导篇</a></li>
+                              <li><a href="/lyjl/267842.html" title="万万没想到 龙与精灵技能竟如此豪华？" data-statis="text:p_index_yxgl_267842">万万没想到 龙与精灵技能竟如此豪华？</a></li>
+                              <li><a href="/kdyh/267853.html" title="​新手必读 口袋银魂1-10级升级须知" data-statis="text:p_index_yxgl_267853">​新手必读 口袋银魂1-10级升级须知</a></li>
+                              <li><a href="/kdyh/267852.html" title="​天天大富翁 口袋银魂委托探索技巧详解" data-statis="text:p_index_yxgl_267852">​天天大富翁 口袋银魂委托探索技巧详解</a></li>
+                              <li><a href="/kdyh/267850.html" title="​口袋银魂谜样的哈哈君——坂本辰马" data-statis="text:p_index_yxgl_267850">​口袋银魂谜样的哈哈君——坂本辰马</a></li>
+                              <li><a href="/kdyh/267848.html" title="​口袋银魂机器中的神器利器——小玉" data-statis="text:p_index_yxgl_267848">​口袋银魂机器中的神器利器——小玉</a></li>
+                              <li><a href="/lyjl/267839.html" title="难度升级 龙与精灵20级副本大挑战" data-statis="text:p_index_yxgl_267839">难度升级 龙与精灵20级副本大挑战</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    <div class="box classify-con">
+        <div class="box-title">
+            <h2>
+                <a href="http://www.9game.cn/category/" title="游戏分类">游戏分类</a></h2>
+            <a href="http://www.9game.cn/category/" title="更多游戏分类" class="more">更多</a>
+        </div>
+        <div class="box-text">
+            <div class="suggest-con box">
+                <div class="pc-game-3">
+                    <div class="little-tit">
+                        <h3>
+                            <a href="http://www.9game.cn/category/2_0_2_0_0_1/" title="卡牌">卡牌</a></h3>
+                        <a href="http://www.9game.cn/category/2_0_2_0_0_1/" title="更多卡牌" data-statis="text:p_index_yxfl_2001894_more"
+                            class="more">更多</a>
+                    </div>
+                    <ul class="game-ul-list">
+                        @foreach (var item in gametypeGameList.Where(c => c.GameTeZhen == (int)GameTeZhenEnum.KaPai))
+                        {
+                            <li><a href="#" class="info"  title="@item.GameName">
+                                <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass" alt="@item.GameName">
+                                <p>@item.GameName</p>
+                                <span class="radius90"></span></a><a href="#" target="_self" class="down">立即下载</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="pc-game-3 sec">
+                    <div class="little-tit">
+                        <h3>
+                            <a href="http://www.9game.cn/category/2_0_10_0_0_1/" title="即时">即时</a></h3>
+                        <a href="http://www.9game.cn/category/2_0_10_0_0_1/" title="更多即时" data-statis="text:p_index_yxfl_2001895_more"
+                            class="more">更多</a>
+                    </div>
+                    <ul class="game-ul-list">
+                        @foreach (var item in gametypeGameList.Where(c => c.GameTeZhen == (int)GameTeZhenEnum.JiShi))
+                        {
+                            <li><a href="#" class="info"  title="@item.GameName">
+                                <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass" alt="@item.GameName">
+                                <p>@item.GameName</p>
+                                <span class="radius90"></span></a><a href="#" target="_self" class="down">立即下载</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="pc-game-3 thir">
+                    <div class="little-tit">
+                        <h3>
+                            <a href="http://www.9game.cn/category/2_0_3_0_0_1/" title="仙侠">仙侠</a></h3>
+                        <a href="http://www.9game.cn/category/2_0_3_0_0_1/" data-statis="text:p_index_yxfl_2001896_more"
+                            title="更多仙侠" class="more">更多</a>
+                    </div>
+                    <ul class="game-ul-list">
+                        @foreach (var item in gametypeGameList.Where(c => c.GameTeZhen == (int)GameTeZhenEnum.XianXia))
+                        {
+                            <li><a href="#" class="info"  title="@item.GameName">
+                                <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass" alt="@item.GameName">
+                                <p>@item.GameName</p>
+                                <span class="radius90"></span></a><a href="#" target="_self" class="down">立即下载</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="pc-game-3 last">
+                    <div class="little-tit">
+                        <h3>
+                            <a href="http://www.9game.cn/category/2_0_1_0_0_1/" title="三国">三国</a></h3>
+                        <a href="http://www.9game.cn/category/2_0_1_0_0_1/" data-statis="text:p_index_yxfl_2001897_more"
+                            title="更多三国" class="more">更多</a>
+                    </div>
+                    <ul class="game-ul-list">
+                        @foreach (var item in gametypeGameList.Where(c => c.GameTeZhen == (int)GameTeZhenEnum.SanGuo))
+                        {
+                            <li><a href="#" class="info"  title="@item.GameName">
+                                <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass" alt="@item.GameName">
+                                <p>@item.GameName</p>
+                                <span class="radius90"></span></a><a href="#" target="_self" class="down">立即下载</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="game-con-6 mar-top20">
+            <div class="box-title-vertical">
+                <h2>
+                    更多分类</h2>
+            </div>
+            <div class="box-con-5">
+                <a href="http://www.9game.cn/category/" data-statis="text:p_index_yxfl_gdfl_1191_6197"
+                    title="全部分类">全部分类</a> <a href="http://www.9game.cn/category/2_1_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6196"
+                        title="角色扮演">角色扮演</a> <a href="http://www.9game.cn/category/2_2_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6195"
+                            title="创意休闲">创意休闲</a> <a href="http://www.9game.cn/category/2_3_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6194"
+                                title="赛车竞速">赛车竞速</a> <a href="http://www.9game.cn/category/2_4_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6193"
+                                    title="策略游戏">策略游戏</a> <a href="http://www.9game.cn/category/2_5_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6192"
+                                        title="音乐游戏">音乐游戏</a> <a href="http://www.9game.cn/category/2_6_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6191"
+                                            title="飞行射击">飞行射击</a> <a href="http://www.9game.cn/category/2_7_0_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6190"
+                                                title="模拟养成">模拟养成</a> <a href="http://www.9game.cn/category/2_0_5_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6189"
+                                                    title="魔幻游戏">魔幻游戏</a> <a href="http://www.9game.cn/category/2_0_8_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6188"
+                                                        title="西游游戏">西游游戏</a> <a href="http://www.9game.cn/category/2_0_11_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6187"
+                                                            title="回合游戏">回合游戏</a> <a href="http://www.9game.cn/category/2_0_9_0_0_1/" data-statis="text:p_index_yxfl_gdfl_1191_6186"
+                                                                title="横版游戏">横版游戏</a>
+            </div>
+        </div>
+    </div>
+    <div class="box friend-link">
+        <div class="tag-tit">
+            <ul class="tag-tit-ul">
+                <li class="current">友情链接</li>
+                <li>热门关注</li>
+            </ul>
+        </div>
+        <div class="box-text">
+            <div class="link-con current">
+                @foreach (var item in friendList.Where(c => c.LinkType == (int)FriendlinkTypeEnum.Friend))
+                {
+                    <a href="@item.LinkUrl" title="@item.LinkName"  class="">@item.LinkName</a>
+                }
+            </div>
+            <div class="link-con">
+                @foreach (var item in friendList.Where(c => c.LinkType == (int)FriendlinkTypeEnum.Hot))
+                {
+                    <a href="@item.LinkUrl" title="@item.LinkName"  class="">@item.LinkName</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/public/javascripts/pc2/pcnew2013100351.js"></script>

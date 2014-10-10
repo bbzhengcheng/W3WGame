@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFC2428F-03CF-4A1A-87E7-CCF40057D3C7}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3WGame.Ka</RootNamespace>
+    <AssemblyName>W3WGame.Ka</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\css-pc_d5bb879.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="img\ban_ali_3af5a68.gif" />
+    <Content Include="img\bg_left_c034be1.gif" />
+    <Content Include="img\btn_code_d713e57.png" />
+    <Content Include="img\btn_qq_fc245e4.jpg" />
+    <Content Include="img\btn_reg_c460456.png" />
+    <Content Include="img\btn_weibo_a68f357.jpg" />
+    <Content Include="img\email_93ecd16.gif" />
+    <Content Include="img\icon_9game_9556470.jpg" />
+    <Content Include="img\icon_home_af46565.jpg" />
+    <Content Include="img\icon_tj_dd1ae11.png" />
+    <Content Include="img\icon_ucbrowser_c8bc2c1.jpg" />
+    <Content Include="img\icon_uccloud_2ef2813.jpg" />
+    <Content Include="img\ico_ok_c953997.jpg" />
+    <Content Include="img\input_login_bg_1_3092112.png" />
+    <Content Include="img\input_login_bg_ac174e3.png" />
+    <Content Include="img\input_register_bg_1_d04b3f7.png" />
+    <Content Include="img\input_register_bg_7d96198.png" />
+    <Content Include="img\level_0_fde4829.png" />
+    <Content Include="img\level_1_7f3ce06.png" />
+    <Content Include="img\level_2_788d4e1.png" />
+    <Content Include="img\level_3_4afe7bc.png" />
+    <Content Include="img\logo_53_ffebf59.gif" />
+    <Content Include="img\logo_6_a59d3ca.gif" />
+    <Content Include="img\logo_84_f9d2d44.gif" />
+    <Content Include="img\logo_86_21ac5a7.gif" />
+    <Content Include="img\logo_uc_835043c.gif" />
+    <Content Include="img\mobile_s_171bc37.gif" />
+    <Content Include="public\images\9gameClient_dimensionPic.png" />
+    <Content Include="public\images\9game_default.jpg" />
+    <Content Include="public\images\back.gif" />
+    <Content Include="public\images\back.png" />
+    <Content Include="public\images\banbg.png" />
+    <Content Include="public\images\bg.png" />
+    <Content Include="public\images\bg_btn.png" />
+    <Content Include="public\images\btn-c.png" />
+    <Content Include="public\images\btn.png" />
+    <Content Include="public\images\btn60.gif" />
+    <Content Include="public\images\btn60.png" />
+    <Content Include="public\images\close.png" />
+    <Content Include="public\images\codea7b0.png" />
+    <Content Include="public\images\code_bg.html" />
+    <Content Include="public\images\dabtn.png" />
+    <Content Include="public\images\detail_btn.png" />
+    <Content Include="public\images\dota7b0.png" />
+    <Content Include="public\images\favicon.ico" />
+    <Content Include="public\images\gpopb.png" />
+    <Content Include="public\images\gpopb_c.png" />
+    <Content Include="public\images\gpopc.png" />
+    <Content Include="public\images\gpopt.png" />
+    <Content Include="public\images\gpopt_c.png" />
+    <Content Include="public\images\green.png" />
+    <Content Include="public\images\help-1.jpg" />
+    <Content Include="public\images\help-2.jpg" />
+    <Content Include="public\images\ico.gif" />
+    <Content Include="public\images\ico.png" />
+    <Content Include="public\images\jion.png" />
+    <Content Include="public\images\ling.png" />
+    <Content Include="public\images\load.png" />
+    <Content Include="public\images\logo-v2.png" />
+    <Content Include="public\images\logobg.png" />
+    <Content Include="public\images\magna7b0.png" />
+    <Content Include="public\images\mod-gifta7b0.png" />
+    <Content Include="public\images\navbg.png" />
+    <Content Include="public\images\navli.png" />
+    <Content Include="public\images\other-ico-se3bbec59e8.png" />
+    <Content Include="public\images\prmpt-ico.png" />
+    <Content Include="public\images\prompt-dowa7b0.png" />
+    <Content Include="public\images\prompt-girlf903.png" />
+    <Content Include="public\images\pub_pcheader_icon.png" />
+    <Content Include="public\images\radius.gif" />
+    <Content Include="public\images\radius.png" />
+    <Content Include="public\images\small-ico-s8805fd81ca.png" />
+    <Content Include="public\images\tag.gif" />
+    <Content Include="public\images\tag.png" />
+    <Content Include="public\images\tagbg.png" />
+    <Content Include="public\images\tao.png" />
+    <Content Include="public\images\title.png" />
+    <Content Include="public\images\top-bga7b0.png" />
+    <Content Include="public\images\topbg.png" />
+    <Content Include="public\images\way-ico.png" />
+    <Content Include="public\images\yu.png" />
+    <Content Include="public\javascripts\ajaxform.js" />
+    <Content Include="public\javascripts\baidu.js" />
+    <Content Include="public\javascripts\change_img.js" />
+    <Content Include="public\javascripts\cookie.js" />
+    <Content Include="public\javascripts\hot_seach.js" />
+    <Content Include="public\javascripts\index.js" />
+    <Content Include="public\javascripts\in_real_time.js" />
+    <Content Include="public\javascripts\jquery-ui-autocomplete.min.js" />
+    <Content Include="public\javascripts\jquery.js" />
+    <Content Include="public\javascripts\seajs\config.js" />
+    <Content Include="public\javascripts\seajs\sea.js" />
+    <Content Include="public\javascripts\tab.js" />
+    <Content Include="public\javascripts\uglib\app\gift-detail.js" />
+    <Content Include="public\javascripts\uglib\app\gift-list.js" />
+    <Content Include="public\javascripts\uglib\litt_nav.js" />
+    <Content Include="public\javascripts\uglib\pub-header.js" />
+    <Content Include="public\pc\back_top.js" />
+    <Content Include="public\pc\follow.js" />
+    <Content Include="public\pc\inbox\kabox.js" />
+    <Content Include="public\pc\personal\detail.js" />
+    <Content Include="public\pc\pop-box.js" />
+    <Content Include="public\pc\verifymobile.js" />
+    <Content Include="public\stylesheets\d5v1_pc.css" />
+    <Content Include="public\stylesheets\fahaoPc_v2.css" />
+    <Content Include="public\stylesheets\header.css" />
+    <Content Include="public\stylesheets\jquery-ui-autocomplete.css" />
+    <Content Include="public\stylesheets\pc.css" />
+    <Content Include="public\stylesheets\pub_header.css" />
+    <Content Include="public\touch\detail\base.js" />
+    <Content Include="public\touch\detail\countdown.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="js\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\game\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\home\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\guild\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\personal\lingqu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_WebLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\weblayout\FriendLink.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WangFramework\WangFramework\WangFramework.csproj">
+      <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
+      <Name>WangFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Ka.Controller\W3WGame.Ka.Controller.csproj">
+      <Project>{EF704A4B-664A-4F4C-ACF5-DE73876AB8FD}</Project>
+      <Name>W3WGame.Ka.Controller</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\help.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\code\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\novice\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\vip\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\help\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\inbox\kabox.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\inbox\bookingbox.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\inbox\myfollow.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\personal\yuding.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\personal\login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\personal\reg.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Thumbs.db" />
+    <Content Include="Views\personal\phonereg.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2467</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

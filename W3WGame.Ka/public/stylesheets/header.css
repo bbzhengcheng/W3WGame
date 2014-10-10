@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+.header {height: 36px;width: 100%;background: #ededed;font-size:12px;font-family:'宋体';}
+	.header a { color: #333333; text-decoration: none; }
+		.header a:hover{ color: #f60; text-decoration: u; }
+.header-wrap {background: #ededed;width: 1000px;margin: 0 auto;overflow:hidden;}
+.logo {width:50px;height: 32px;vertical-align: middle;float: left;
+	margin-top:3px;
+}
+.login { float: right; line-height: 12px; _line-height: 15px; margin: 12px 0 0 0; }
+	.login li { border-right: 1px solid #d5d5d5; float: left; padding: 0 9px 0 8px; }
+		.login li.last { border-right: none; padding-right: 0; }
+		.login li .num { color: #ff0000; font-weight: bold; font-size: 10px; }
+		.login .welcome { float: left; }
+.topnav {height: 20px;border-left: 1px solid #c4c4c4;float: left;padding-left: 5px;margin: 8px 0 0 13px;}
+	.topnav li {border-right: 1px solid #d5d5d5;float: left;margin-top: 3px;padding: 0 9px 0 8px;line-height: 15px;_line-height: 15px;}
+		.topnav a.current {font-weight: bold; color: #f60; }
+		.topnav li.last {border-right: none;}

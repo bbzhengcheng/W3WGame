@@ -1,0 +1,142 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "卡明细表管理";
+}
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Entities.GameKaDetail>
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="../../Scripts/AdminCommon.js" type="text/javascript"></script>
+<script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".box").colorbox({
+            iframe: true,
+            width: 550,
+            height: 550,
+            onClosed: function () {
+                window.location.reload();
+            }
+        });
+         loadServer();
+        $('#serverid').val("@Request["serverid"]");
+       
+        $("#gameid").change(function() {
+            loadServer();
+
+        });
+       
+    });
+    function loadServer() {
+        var gameid = $('#gameid');
+        var serverlist = $('#serverid');
+
+        var gameid = gameid.val();
+        serverlist.empty();
+        $.ajax({
+            async: false,
+            url: "@Url.Action("GetServerList","GameServersManager")",
+            type: "GET",
+            data:{gameid:gameid},
+            success: function(data) {
+                 $.each(data, function (i, item) {
+                $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo(serverlist);
+            });
+            }
+        });
+        
+    });
+</script>
+<div class="right_box_card">
+    <ul>
+        <li class="right_box_card1"><a href="@Url.Action("List", "GameKaDetailManager")">卡明细表管理</a></li>
+    </ul>
+</div>
+<div style="line-height: 40px;">
+    <p class="avatar_btn">
+        <a href="@Url.Action("Save", "GameKaDetailManager")" class="box" id="lnkAdd">新增</a>
+    </p>
+</div>
+<div>
+    @using (Html.BeginForm("List", "GameKaDetailManager", FormMethod.Get))
+    {
+        <table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+            cellpadding="0">
+            <tr height="40px">
+                 <td>
+                
+                     游戏：@Html.DropDownList("gameid", ViewData["gamelist"] as List<SelectListItem>, new { @class = "text-input" })&nbsp;&nbsp;
+                     服务器：@Html.DropDownList("serverid", new List<SelectListItem>())
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr height="40px">
+                <td>
+                    条件：@Html.TextBox("selecttype", ViewData["selecttype"], new { @class = "text-input" })&nbsp;&nbsp;@Html.TextBox("keyword", ViewData["keyword"], new { @class = "text-input" })
+                </td>
+                <td>
+                    <input type="submit" value="查找" class="submit" style="float: left; width: 80px;" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+    cellpadding="0">
+    <tr height="30" class="tab_title">
+        <td>
+            序号
+        </td>
+        <td>
+            卡ID
+        </td>
+        <td>
+            是否使用
+        </td>
+        <td>
+            使用者账号
+        </td>
+        <td>
+            使用日期
+        </td>
+        <td>
+            序列号
+        </td>
+        <td>
+            操作
+        </td>
+    </tr>
+     @for (int i = 0; i < Model.Count;i++ )
+    {
+        var item = Model[i];
+        <tr height="35" class="tab_td1" onmouseover="this.className='tab_td2'" onmouseout="this.className='tab_td1'">
+            <td>
+                @((Model.CurrentPageIndex - 1) * Model.PageSize + i + 1) 
+            </td>
+            <td>
+                @item.KaID
+            </td>
+            <td>
+                @item.IsUser
+            </td>
+            <td>
+                @item.UseAccount
+            </td>
+            <td>
+                @item.UsedDate
+            </td>
+            <td>
+                @item.Code
+            </td>
+            <td>
+               @* @Html.ActionLink("修改", "Save", "GameKaDetailManager", new { id = item.ID }, new { @class = "box" })*@
+                <a href="#" onclick="DeletePost('/GameKaDetailManager/Delete', { id: @item.ID})">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+<div style="padding: 10px;">
+    @Html.Pager(Model)
+</div>

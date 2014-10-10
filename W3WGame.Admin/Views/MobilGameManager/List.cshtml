@@ -1,0 +1,203 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "手游游戏表管理";
+    
+}
+@using W3WGame.Core.Enums
+@using WangFramework.Extensions
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Entities.MobilGame>
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<link href="../../Scripts/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="../../Scripts/AdminCommon.js" type="text/javascript"></script>
+<script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".box").colorbox({
+            iframe: true,
+            width: 650,
+            height: 750,
+            onClosed: function () {
+                window.location.reload();
+            }
+        });
+    });
+</script>
+<div class="right_box_card">
+    <ul>
+        <li class="right_box_card1"><a href="@Url.Action("List", "MobilGameManager")">手游游戏表管理</a></li>
+    </ul>
+</div>
+<div style="line-height: 40px;">
+    <p class="avatar_btn">
+        <a href="@Url.Action("Save", "MobilGameManager")" class="box" id="lnkAdd">新增</a>
+    </p>
+</div>
+<div>
+    @using (Html.BeginForm("List", "MobilGameManager", FormMethod.Get))
+    {
+        <table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+            cellpadding="0">
+            <tr height="40px">
+                <td>
+                    是否安卓：@Html.DropDownList("isAndior", ViewData["isAndiorList"] as List<SelectListItem>)
+
+                   
+                </td>
+                <td>
+                    是否IOS：@Html.DropDownList("isIOS", ViewData["isIOSList"] as List<SelectListItem>)
+                   
+                </td>
+                <td>
+                     是否有礼包：@Html.DropDownList("hasGift", ViewData["hasGiftList"] as List<SelectListItem>)
+                </td>
+                <td>
+                    是否热门(首页)：@Html.DropDownList("isHot", ViewData["isHotList"] as List<SelectListItem>)
+                   
+                </td>
+                <td>
+                    是否最新(首页)：@Html.DropDownList("isNew", ViewData["isNewList"] as List<SelectListItem>)
+                   
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    是否推荐(首页)：@Html.DropDownList("isTuiJian", ViewData["isTuiJianList"] as List<SelectListItem>)
+                </td>
+                <td>
+                     是否抢礼包(首页)：@Html.DropDownList("isQianLiBao", ViewData["isQianLiBaoList"] as List<SelectListItem>) 
+                </td>
+                <td>
+                    是否显示游戏类型(首页)：@Html.DropDownList("gameType", ViewData["gameTypeList"] as List<SelectListItem>)  
+                </td>
+                <td>
+                    是否必玩(首页)：@Html.DropDownList("IsBiWan", ViewData["IsBiWanList"] as List<SelectListItem>) 
+                </td>
+                <td>
+                    
+                    是否抢礼包(首页)：@Html.DropDownList("isQianLiBao", ViewData["isQianLiBaoList"] as List<SelectListItem>) 
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                     是否本周热门(首页)：@Html.DropDownList("isThisAweekHot", ViewData["isThisAweekHotList"] as List<SelectListItem>)
+                </td>
+                <td >
+                    游戏类型：@Html.DropDownList("gameType", ViewData["gameTypeList"] as List<SelectListItem>)
+                  
+                </td>
+                <td>
+                      运营状态：@Html.DropDownList("yunyingState", ViewData["yunyingStateList"] as List<SelectListItem>)
+                </td>
+                <td>
+                    游戏特征：@Html.DropDownList("gameTeZhen", ViewData["gameTeZhenList"] as List<SelectListItem>)
+                </td>
+                <td>
+                      
+                    <input type="submit" value="查找" class="submit" style="float: left; width: 80px;" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<table class="right_box_tab" style="margin-top: 10px;" width="100%" border="0" cellspacing="0"
+    cellpadding="0">
+    <tr height="30" class="tab_title">
+        <td>
+            ID
+        </td>
+        <td>
+            游戏名称
+        </td>
+        <td>
+            图片路径
+        </td>
+        <td>
+            游戏大小
+        </td>
+        <td>
+            是否有卡礼包
+        </td>
+        <td>
+            是否热点
+        </td>
+        <td>
+            是否最新
+        </td>
+        <td>
+            是否必玩
+        </td>
+        <td>
+            游戏类型
+        </td>
+        <td>
+            游戏特征
+        </td>
+        <td>
+            运营状态
+        </td>
+        <td>
+            分数
+        </td>
+        <td>
+            添加时间
+        </td>
+        <td>
+            操作
+        </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr height="35" class="tab_td1">
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.GameName
+            </td>
+            <td>
+                <a href="@item.ImgPath" target="_blank">素材地址</a>
+            </td>
+            <td>
+                @item.Size
+            </td>
+            <td>
+                @item.HasGift
+            </td>
+            <td>
+                @item.IsHot
+            </td>
+            <td>
+                @item.IsNew
+            </td>
+            <td>
+                @item.IsBiWan
+            </td>
+            <td>
+               @(((GameTypeEnum)item.GameType).ToDescriptionName())
+            </td>
+            <td>
+                @(((GameTeZhenEnum)item.GameTeZhen).ToDescriptionName())
+            </td>
+            <td>
+                @(((YunYingStateEnum)item.YunYingState).ToDescriptionName())
+            </td>
+            <td>
+                @item.HotScore
+            </td>
+            <td>
+                @item.CreateDate
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Save", "MobilGameManager", new { id = item.ID }, new { @class = "box" })
+                <a href="#" onclick="DeletePost('/MobilGameManager/Delete', { id: @item.ID})">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+<div style="padding: 10px;">
+    @Html.Pager(Model)
+</div>

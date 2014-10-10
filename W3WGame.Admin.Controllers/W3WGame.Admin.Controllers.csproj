@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70012157-8FA5-425C-9BC1-21FF8996C1A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>W3WGame.Admin.Controllers</RootNamespace>
+    <AssemblyName>W3WGame.Admin.Controllers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\..\libs\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Json.Net\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountInfoManager\AccountInfoManagerController.cs" />
+    <Compile Include="AccountInfoManager\ViewModels\SaveAccountInfo.cs" />
+    <Compile Include="Account\AccountController.cs" />
+    <Compile Include="Account\ViewModels\LogOnModel.cs" />
+    <Compile Include="ADConfigManager\ADConfigManagerController.cs" />
+    <Compile Include="ADConfigManager\ViewModels\SaveADConfig.cs" />
+    <Compile Include="AdminUsers\AdminUsersController.cs" />
+    <Compile Include="AdminUsers\ViewModels\AdminUserModel.cs" />
+    <Compile Include="AdminUsers\ViewModels\ChangePasswordModel.cs" />
+    <Compile Include="AdminUsers\ViewModels\SaveAdminUserModel.cs" />
+    <Compile Include="BaseController.cs" />
+    <Compile Include="FormsAuthService.cs" />
+    <Compile Include="FriendLinkManager\FriendLinkController.cs" />
+    <Compile Include="FriendLinkManager\ViewModels\SaveFriendLink.cs" />
+    <Compile Include="GameKaDetailManager\GameKaDetailController.cs" />
+    <Compile Include="GameKaDetailManager\ViewModels\SaveGameKaDetail.cs" />
+    <Compile Include="GameKaManager\GameKaController.cs" />
+    <Compile Include="GameKaManager\ViewModels\SaveGameKa.cs" />
+    <Compile Include="GameNewsManager\GameNewsController.cs" />
+    <Compile Include="GameNewsManager\ViewModels\SaveGameNews.cs" />
+    <Compile Include="GameServersManager\GameServersController.cs" />
+    <Compile Include="GameServersManager\ViewModels\SaveGameServers.cs" />
+    <Compile Include="Home\HomeController.cs" />
+    <Compile Include="MobilGameManager\MobilGameController.cs" />
+    <Compile Include="MobilGameManager\ViewModels\SaveMobilGame.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlSearch\SqlSearchController.cs" />
+    <Compile Include="SysManage\SysManageController.cs" />
+    <Compile Include="SysManage\ViewModels\MenuModel.cs" />
+    <Compile Include="SysManage\ViewModels\PowerModel.cs" />
+    <Compile Include="SysManage\ViewModels\RoleMenuModel.cs" />
+    <Compile Include="SysManage\ViewModels\RolePowerModel.cs" />
+    <Compile Include="SysManage\ViewModels\SaveMenuModel.cs" />
+    <Compile Include="SysManage\ViewModels\SavePowerModel.cs" />
+    <Compile Include="SysManage\ViewModels\SaveUserRoleModel.cs" />
+    <Compile Include="SysManage\ViewModels\UserRoleModel.cs" />
+    <Compile Include="Uploads\UploadsController.cs" />
+    <Compile Include="Uploads\ViewModels\FileUploadLogModel.cs" />
+    <Compile Include="Uploads\ViewModels\GoodsImgUploadLogModel.cs" />
+    <Compile Include="VoucherHistoryManager\ViewModels\SaveVoucherHistory.cs" />
+    <Compile Include="VoucherHistoryManager\VoucherHistoryController.cs" />
+    <Compile Include="WebLoginLogManager\ViewModels\SaveWebLoginLog.cs" />
+    <Compile Include="WebLoginLogManager\WebLoginLogController.cs" />
+    <Compile Include="XmlConfig\XmlConfigController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WangFramework\WangFramework\WangFramework.csproj">
+      <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
+      <Name>WangFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Core\W3WGame.Core.csproj">
+      <Project>{6A87C312-B6FE-4799-961B-5AAAA6F701F5}</Project>
+      <Name>W3WGame.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Dao\W3WGame.Dao.csproj">
+      <Project>{B2AC62E3-0142-4AB0-863B-EF2DDF47660E}</Project>
+      <Name>W3WGame.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Services\W3WGame.Services.csproj">
+      <Project>{4DEF923D-2647-4516-ADD8-3C1002895402}</Project>
+      <Name>W3WGame.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Task\W3WGame.Task.csproj">
+      <Project>{B3C45B36-1A4E-4D8F-8D0E-E219FF0E4BF5}</Project>
+      <Name>W3WGame.Task</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

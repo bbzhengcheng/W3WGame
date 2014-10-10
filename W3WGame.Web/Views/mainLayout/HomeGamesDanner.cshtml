@@ -1,0 +1,32 @@
+﻿@using W3WGame.Core.Entities
+@{
+    var hostGameList = ViewData["hostGameList"] as List<MobilGame>;
+    var biwanGameList = ViewData["biwanGameList"] as List<MobilGame>;
+    var newestGameList = ViewData["newestGameList"] as List<MobilGame>;
+}
+
+       <div class="box game-recom">
+	<div class="recom-con">
+		<span class="name phone">热 门</span>
+		  @foreach(var item in hostGameList)
+          {
+              <a href="#" class=""  title="@item.GameName">@item.GameName</a>
+          }
+				
+	</div>
+	<div class="recom-con">
+		<span class="name android">最 新</span>
+					  @foreach(var item in newestGameList)
+          {
+              <a href="#" class=""  title="@item.GameName">@item.GameName</a>
+          }
+	</div>
+	<div class="recom-con">
+		<span class="name apple">必 玩</span>
+					  @foreach(var item in biwanGameList)
+          {
+              <a href="#" class=""  title="@item.GameName">@item.GameName</a>
+          }
+	</div>
+</div>
+

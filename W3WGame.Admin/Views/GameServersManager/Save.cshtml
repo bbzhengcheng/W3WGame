@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "保存游戏服务器";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model W3WGame.Admin.Controllers.GameServersManager.ViewModels.SaveGameServers
+<link href="../../Scripts/jquery-validation-engine/css/template.css" rel="stylesheet"
+    type="text/css" />
+<link href="../../Scripts/jquery-validation-engine/css/validationEngine.jquery.css"
+    rel="stylesheet" type="text/css" />
+<link href="../../Scripts/kindeditor-4.1.4/themes/default/default.css" rel="stylesheet"
+    type="text/css" />
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/jquery.validationEngine.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/jquery-validation-engine/js/languages/jquery.validationEngine-zh_CN.js"
+    type="text/javascript"></script>
+<script src="../../Scripts/kindeditor-4.1.4/kindeditor-min.js" type="text/javascript"></script>
+<script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#form1").validationEngine();
+
+
+    })
+</script>
+<div class="wrap">
+    <div class="right_box_card">
+        <ul>
+            <li class="right_box_card1"><a href="#">保存游戏服务器</a></li>
+        </ul>
+    </div>
+    <div>
+        <div style="color: red;">
+        </div>
+        @using (Html.BeginForm("Save", "GameServersManager", FormMethod.Post, new { @class = "formular", id = "form1", enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(c => c.ID)
+            <table class="enter_tab" width="100%" border="0" cellpadding="0" cellspacing="0">
+               
+              <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.GameID)
+                    </td>
+                    <td class="entry_tab_td2">
+                      @Html.DropDownList("GameID", ViewData["gamelist"] as List<SelectListItem>, new { @class = "text-input" })&nbsp;&nbsp;
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.ServerName)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.ServerName, new { @class = "validate[required] text-input", style = "width=240px;" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.ServerID)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.ServerID, new { @class = "validate[required] text-input", style = "width=240px;" })
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.OpenTime)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.TextBoxFor(c => c.OpenTime, new { @class = "validate[required] text-input",  onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})",style = "width=240px;" })
+                    </td>
+                </tr>
+               
+                
+                <tr>
+                    <td>
+                    </td>
+                    <td style="line-height: 30px;">@Html.ValidationSummary()
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="保存" class="submit" style="width: 100px; height: 30px;" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table> 
+        }
+    </div>
+</div>
