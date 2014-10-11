@@ -9,6 +9,79 @@
     <meta name="Copyright" content="UC优视" />
     <meta property="qc:admins" content="244435573016705665363673137" />
     <link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css" />
+    <script type="text/javascript">
+        $(function () {
+            $("#form1").validationEngine();
+
+            $("#UserName").select();
+
+            $("#tblLogOn").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $("#btnlogin").click();
+                }
+            });
+
+
+            $("#btnlogin").click(function () {
+                $("#form1").validationEngine();
+
+                if ($("#form1").validationEngine('validate')) {
+                    var userName = $('#UserName').val();
+                    var password = $('#Password').val();
+                    var validCode = $('#ValidCode').val();
+                    var returnUrl = $("#inputRedirectUrl").val();
+
+                    $.ajax({
+                        url: '@Url.Action("LogOn", "Account")',
+                        type: "POST",
+                        data: { userName: userName, password: password, validCode: validCode },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (data.result) {
+                                if (returnUrl == null || returnUrl == '') {
+                                    window.location.href = '@Url.Action("Index","Home")';
+                                } else {
+                                    window.location.href = returnUrl;
+                                }
+                            } else {
+                                alert(data.message);
+                                $("#UserName").select();
+                                changeValidateCode();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        function checkValidCode() {
+            var validateCode = $("#ValidCode").val();
+
+            if (validateCode == null || validateCode == '')
+                return;
+
+            var isValid = false;
+            $.ajax({
+                url: '@Url.Action("Check", "ValidateCodes")',
+                data: { validateCode: validateCode },
+                type: "GET",
+                async: false,
+                cache: false,
+                success: function (data) {
+                    isValid = data;
+                }
+            });
+
+            if (!isValid) {
+                return "* 验证码不正确";
+            }
+        }
+
+        function changeValidateCode() {
+            $("#imgValidateCode").attr('src', '/ValidateCodes/Create?t=' + Math.random());
+        }
+</script>
 </head>
 <body>
     <div class="header">
@@ -106,10 +179,9 @@
                                         imagename="input_login_bg_1_a4a985c" imageerrorname="input_login_bg_1_error_05af09d"
                                         staticresourcebaseuri="/" autocomplete="off" />
                                 </span><span id="captchaImg">
-                                    <img src="http://api.open.uc.cn/cas/commonjson/captcha?captchaId=917826b4-a650-4e0a-85c7-3638d20d7b1e&uc_param_str=einisivelafrpfmibiup&display=pc"
-                                        alt="验证码" />
+                                    <img src="@Url.Action("Create", "ValidateCodes")" id="imgValidateCode" width="90" height="30" alt="看不清?换一张" style="cursor: pointer" onclick="changeValidateCode();"/>
                                     <input type="hidden" id="captchaId" name="captchaId" value="917826b4-a650-4e0a-85c7-3638d20d7b1e" />
-                                </span><span><a style="cursor: pointer" onclick="refreshCatcha('http://api.open.uc.cn/cas/')">
+                                </span><span><a style="cursor: pointer" onclick="changeValidateCode();">
                                     换一张</a></span>
                             </div>
                             <!-- 验证码错误提示 -->

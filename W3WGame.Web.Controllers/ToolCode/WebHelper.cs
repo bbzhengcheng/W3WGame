@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,6 +15,26 @@ namespace W3WGame.Web.Controllers.ToolCode
         public static string GetImg(string imgpath)
         {
             return string.Format("{0}{1}", ImgDemoin, imgpath);
+        }
+        /// <summary>
+        /// 显示多少个星
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static MvcHtmlString Start(int num)
+        {
+            StringBuilder sb = new StringBuilder("");
+            for (int i = 0; i < num; i++)
+            {
+                sb.Append("<span class='good'></span>");
+            }
+            for (int i = 0; i < 5 - num; i++)
+            {
+                sb.Append("<span class='bad'></span>");
+            }
+           
+            return new MvcHtmlString(sb.ToString());
+
         }
 
     }

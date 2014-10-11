@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountInfoTask.cs" />
+    <Compile Include="AccountLoginLogTask.cs" />
     <Compile Include="ADConfigTask.cs" />
     <Compile Include="AdminMenuTask.cs" />
     <Compile Include="AdminPowerTask.cs" />

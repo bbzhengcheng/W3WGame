@@ -13,7 +13,6 @@ namespace W3WGame.Core.Entities
         public string NickName { get; set; }
         public DateTime RegDate { get; set; }
         public string RegIP { get; set; }
-        public string IPAddress { get; set; }
 
         public string Phone { get; set; }
 

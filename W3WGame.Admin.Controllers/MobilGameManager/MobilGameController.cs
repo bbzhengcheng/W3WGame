@@ -81,7 +81,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
             var GameTypeEnumList = GameTypeEnum.CeLve.ToSelectList();
             GameTypeEnumList.Insert(0,autolist);
             ViewData["GameTypeEnumList"] = GameTypeEnumList;
-
+            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
             var YunYingStateEnumList = YunYingStateEnum.XinFu.ToSelectList();
             YunYingStateEnumList.Insert(0,autolist);
             ViewData["YunYingStateEnumList"] = YunYingStateEnumList;
@@ -102,7 +102,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
         public ActionResult Save(SaveMobilGame savemodel)
         {
 
-
+            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
             if (ModelState.IsValid)
             {
                 string errMsg, savePath = string.Empty;

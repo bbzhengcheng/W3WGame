@@ -49,10 +49,37 @@ namespace W3WGame.Dao.Daos
             }
             return false;
 		}
-		
-				
-	
 
-   
+        public bool Exists(string account)
+        {
+            var sql = Sql.Builder.Where("Account = @0", account);
+            if (FirstOrDefault(sql) != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool ExistsEmail(string email)
+        {
+            var sql = Sql.Builder.Where("Email = @0", email);
+            if (FirstOrDefault(sql) != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+        public AccountInfo GetAccount(string account)
+        {
+            var sql = Sql.Builder.Where("Account = @0", account);
+            return FirstOrDefault(sql);
+        }
+
+
+
+
 	}
 }

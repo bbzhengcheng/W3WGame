@@ -32,7 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -53,8 +56,11 @@
     <Compile Include="inbox\inboxController.cs" />
     <Compile Include="novice\noviceController.cs" />
     <Compile Include="personal\personalController.cs" />
+    <Compile Include="personal\ViewModels\RegisterModel.cs" />
+    <Compile Include="personal\ViewModels\UserLogOnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBaseController.cs" />
+    <Compile Include="ValidateCodes\ValidateCodesController.cs" />
     <Compile Include="vip\vipController.cs" />
     <Compile Include="weblayout\weblayoutController.cs" />
   </ItemGroup>

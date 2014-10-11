@@ -51,6 +51,7 @@
     <Compile Include="Dtos\Web\NewsDto.cs" />
     <Compile Include="Dtos\Web\NewsXmlDto.cs" />
     <Compile Include="Entities\AccountInfo.cs" />
+    <Compile Include="Entities\AccountLoginLog.cs" />
     <Compile Include="Entities\ADConfig.cs" />
     <Compile Include="Entities\AdInfo.cs" />
     <Compile Include="Entities\AdminMenu.cs" />

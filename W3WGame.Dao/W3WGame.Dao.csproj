@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Daos\AccountInfoDao.cs" />
+    <Compile Include="Daos\AccountLoginLogDao.cs" />
     <Compile Include="Daos\ADConfigDao.cs" />
     <Compile Include="Daos\AdminMenuDao.cs" />
     <Compile Include="Daos\AdminPowerDao.cs" />

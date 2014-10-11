@@ -2,6 +2,9 @@
     Layout = "~/Views/Shared/_WebLayout.cshtml";
     
 }
+@using W3WGame.Core.Enums
+@using WangFramework.Extensions
+@using W3WGame.Web.Controllers.ToolCode
 @model List<W3WGame.Core.Dtos.Web.GameDownloadDto>
            
 	<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css">
@@ -340,135 +343,98 @@
             </ul>
             <div class="text-tab-con">
                 <ul class="rank-poker current">
-                    <li><i class="corner" ></i><a href="http://sklr.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_1">
-                        <img src="http://image.game.uc.cn/2013/7/11/9235609.gif" class="" alt="时空猎人" style="opacity: 0.94;">
+                    @foreach(var item in Model.Take(10))
+                    {
+                        <li><i class="corner" ></i><a href="#" class="img" >
+                        <img src="@WebHelper.GetImg(item.ImgPath)" class="" alt="时空猎人" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://sklr.9game.cn/" >时空猎人</a></p>
+                            <a href="#" >@item.GameName</a></p>
                         <p class="type">
-                            公测 | 95.7M</p>
+                             @(((YunYingStateEnum)item.YunYingState).ToDescriptionName()) | @item.Size</p>
                         <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
+                            @WebHelper.Start(item.HotScore)
                         </div>
                         <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
-                    <li><i class="corner" ></i><a href="http://dtcq.9game.cn/"
-                        class="img" >
-                        <img src="http://image.game.uc.cn/2014/7/10/9797218.jpg" class="" alt="刀塔传奇" style="opacity: 0.94;">
-                        <span class="radius120"></span></a>
-                        <p class="name">
-                            <a href="http://dtcq.9game.cn/" >刀塔传奇</a></p>
-                        <p class="type">
-                            公测 | 131.8M</p>
-                        <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
-                        </div>
-                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
-                            立即下载</a> </li>
-                    <li><i class="corner" style="background-position: -110px 0px;"></i><a href="http://www.9game.cn/hdqb/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_3">
-                        <img src="http://image.game.uc.cn/2014/7/8/9791228.png" class="" alt="海岛奇兵" style="opacity: 0.94;">
-                        <span class="radius120"></span></a>
-                        <p class="name">
-                            <a href="http://www.9game.cn/hdqb/" data-statis="text:txt_p_gamestore_rmyx_game_3">海岛奇兵</a></p>
-                        <p class="type">
-                            不删档内测 | 77.7M</p>
-                        <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
-                        </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;539038&quot;,&quot;name&quot;:&quot;海岛奇兵&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_3&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_3">
-                            立即下载</a> </li>
+                    }
+                  
                    
                 </ul>
                 <ul class="rank-poker">
-                    <li><i class="corner" ></i><a href="http://btx.9game.cn/"
-                        class="img" >
-                        <img src="http://image.game.uc.cn/2014/7/30/9826312.png" class="" alt="霸天下" style="opacity: 0.94;">
+                     @foreach(var item in Model.Skip(10).Take(20))
+                    {
+                        <li><i class="corner" ></i><a href="#" class="img" >
+                        <img src="@WebHelper.GetImg(item.ImgPath)" class="" alt="时空猎人" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://btx.9game.cn/" >霸天下</a></p>
+                            <a href="#" >@item.GameName</a></p>
                         <p class="type">
-                            不删档内测 | 86.9M</p>
+                             @(((YunYingStateEnum)item.YunYingState).ToDescriptionName()) | @item.Size</p>
                         <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
+                            @WebHelper.Start(item.HotScore)
                         </div>
                         <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
-                    <li><i class="corner" style="background-position: -55px -55px;"></i><a href="http://szr.9game.cn/"
-                        class="img" >
-                        <img src="http://image.game.uc.cn/2014/9/3/9892347.jpg" class="" alt="神之刃" style="opacity: 0.94;">
-                        <span class="radius120"></span></a>
-                        <p class="name">
-                            <a href="http://szr.9game.cn/" >神之刃</a></p>
-                        <p class="type">
-                            不删档内测 | 44.3M</p>
-                        <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
-                        </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;535727&quot;,&quot;name&quot;:&quot;神之刃&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_12&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_12">
-                            立即下载</a> </li>
+                    }
+                  
+                   
                 
                 </ul>
                 <ul class="rank-poker">
-                    <li><i class="corner" style="background-position: 0px -165px;"></i><a href="http://gcld.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_31">
-                        <img src="http://image.game.uc.cn/2014/8/28/9883951.png" class="" alt="攻城掠地" style="opacity: 0.94;">
+                     @foreach (var item in Model.Skip(20).Take(30))
+                     {
+                         <li><i class="corner" ></i><a href="#" class="img" >
+                        <img src="@WebHelper.GetImg(item.ImgPath)" class="" alt="时空猎人" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://gcld.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_31">攻城掠地</a></p>
+                            <a href="#" >@item.GameName</a></p>
                         <p class="type">
-                            公测 | 63.1M</p>
+                             @(((YunYingStateEnum)item.YunYingState).ToDescriptionName()) | @item.Size</p>
                         <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="bad"></span><span class="bad"></span>
+                            @WebHelper.Start(item.HotScore)
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;537147&quot;,&quot;name&quot;:&quot;攻城掠地&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_31&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_31">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
+                     }
+                  
+                   
                    
                 </ul>
                 <ul class="rank-poker">
-                    <li><i class="corner" style="background-position: 0px -220px;"></i><a href="http://cqzj.9game.cn/"
-                                                                                          class="img" data-statis="text:logo_p_gamestore_rmyx_game_41">
-                                                                                           <img src="http://image.game.uc.cn/2014/6/17/9766452.jpg" class="" alt="苍穹之剑" style="opacity: 0.94;">
-                                                                                           <span class="radius120"></span></a>
+                     @foreach (var item in Model.Skip(30).Take(40))
+                     {
+                        <li><i class="corner" ></i><a href="#" class="img" >
+                        <img src="@WebHelper.GetImg(item.ImgPath)" class="" alt="时空猎人" style="opacity: 0.94;">
+                        <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://cqzj.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_41">苍穹之剑</a></p>
+                            <a href="#" >@item.GameName</a></p>
                         <p class="type">
-                            不删档内测 | 93.2M</p>
+                             @(((YunYingStateEnum)item.YunYingState).ToDescriptionName()) | @item.Size</p>
                         <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                                                                                              class="good"></span><span class="bad"></span>
+                           @WebHelper.Start(item.HotScore)
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;520553&quot;,&quot;name&quot;:&quot;苍穹之剑&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_41&quot;}"
-                           target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_41">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
+                     }
                   
                 </ul>
                 <ul class="rank-poker">
-                    <li><i class="corner" style="background-position: 0px -220px;"></i><a href="http://cqzj.9game.cn/"
-                                                                                          class="img" data-statis="text:logo_p_gamestore_rmyx_game_41">
-                                                                                           <img src="http://image.game.uc.cn/2014/6/17/9766452.jpg" class="" alt="苍穹之剑" style="opacity: 0.94;">
-                                                                                           <span class="radius120"></span></a>
+                    @foreach (var item in Model.Skip(40).Take(50))
+                    {
+                       <li><i class="corner" ></i><a href="#" class="img" >
+                        <img src="@WebHelper.GetImg(item.ImgPath)" class="" alt="时空猎人" style="opacity: 0.94;">
+                        <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://cqzj.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_41">苍穹之剑</a></p>
+                            <a href="#" >@item.GameName</a></p>
                         <p class="type">
-                            不删档内测 | 93.2M</p>
+                             @(((YunYingStateEnum)item.YunYingState).ToDescriptionName()) | @item.Size</p>
                         <div class="fav">
-                            <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                                                                                              class="good"></span><span class="bad"></span>
+                            @WebHelper.Start(item.HotScore)
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;520553&quot;,&quot;name&quot;:&quot;苍穹之剑&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_41&quot;}"
-                           target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_41">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
+                    }
                   
                 </ul>
                

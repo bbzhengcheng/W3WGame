@@ -53,8 +53,8 @@ namespace W3WGame.Dao.Daos
         }
         public List<GameDownloadDto> GetRandTop50()
         {
-            var sql = Sql.Builder.Append(@"SELECT a.*,mg.GameName,mg.ImgPath,mg.HotScore,mg.Size,mg.YunYingState FROM (SELECT top 80 g.GameID,COUNT(g.[Count]) AS [Count] FROM GameDownloadUrls g WITH(NOLOCK) GROUP BY g.GameID) a
-LEFT JOIN MobilGame mg ON mg.ID = a.GameID 
+            var sql = Sql.Builder.Append(@"SELECT a.*,mg.GameName,mg.ImgPath,mg.HotScore,mg.Size,mg.YunYingState FROM MobilGame mg
+LEFT JOIN  (SELECT top 80 g.GameID,COUNT(g.[Count]) AS [Count] FROM GameDownloadUrls g WITH(NOLOCK) GROUP BY g.GameID) a ON mg.ID = a.GameID 
 ORDER BY a.[Count] Desc");
             return Query<GameDownloadDto>(sql).ToList();
         }

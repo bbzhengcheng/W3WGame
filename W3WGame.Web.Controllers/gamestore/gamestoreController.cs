@@ -17,7 +17,7 @@ namespace W3WGame.Web.Controllers.gamestore
         public ActionResult index()
         {
             var model = _gameDownloadUrlsTask.GetRandTop50();
-
+            
             return View(model);
         }
     }
