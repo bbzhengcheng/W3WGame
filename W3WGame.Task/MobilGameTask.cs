@@ -12,11 +12,11 @@ namespace W3WGame.Task
 	public  class MobilGameTask
 	{
 	     private readonly MobilGameDao _dao = new MobilGameDao();
-         public PagedList<MobilGame> GetPagedList(bool? isAndior, bool? isIOS, bool? hasGift,
+         public PagedList<MobilGame> GetPagedList(int? gamesys, bool? hasGift,
              bool? isHot, bool? isNew, bool? IsBiWan, bool? isThisAweekHot, bool? isTuiJian, int? gameType, int? gameTeZhen, int? yunyingState, bool? isQianLiBao, bool? isGameType,
              int pageIndex, int pageSize)
         {
-            return _dao.GetPagedList(isAndior, isIOS, hasGift,
+            return _dao.GetPagedList(gamesys, hasGift,
               isHot, isNew, IsBiWan, isThisAweekHot,isTuiJian, gameType, gameTeZhen, yunyingState,  isQianLiBao, isGameType,
              pageIndex, pageSize);
         }

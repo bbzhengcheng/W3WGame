@@ -66,6 +66,8 @@
     <Compile Include="FormsAuthService.cs" />
     <Compile Include="FriendLinkManager\FriendLinkController.cs" />
     <Compile Include="FriendLinkManager\ViewModels\SaveFriendLink.cs" />
+    <Compile Include="GameDownloadUrlsManager\GameDownloadUrlsManagerController.cs" />
+    <Compile Include="GameDownloadUrlsManager\ViewModels\SaveGameDownloadUrls.cs" />
     <Compile Include="GameKaDetailManager\GameKaDetailController.cs" />
     <Compile Include="GameKaDetailManager\ViewModels\SaveGameKaDetail.cs" />
     <Compile Include="GameKaManager\GameKaController.cs" />

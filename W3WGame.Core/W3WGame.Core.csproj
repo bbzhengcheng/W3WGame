@@ -46,6 +46,7 @@
     <Compile Include="Dtos\GameServersDto.cs" />
     <Compile Include="Dtos\UserLoginLogChart.cs" />
     <Compile Include="Dtos\UserLoginLogsDto.cs" />
+    <Compile Include="Dtos\Web\GameDownloadDto.cs" />
     <Compile Include="Dtos\Web\GameKaDto.cs" />
     <Compile Include="Dtos\Web\NewsDto.cs" />
     <Compile Include="Dtos\Web\NewsXmlDto.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Entities\AdminUser.cs" />
     <Compile Include="Entities\AdminUserRole.cs" />
     <Compile Include="Entities\FriendLink.cs" />
+    <Compile Include="Entities\GameDownloadUrls.cs" />
     <Compile Include="Entities\GameKa.cs" />
     <Compile Include="Entities\GameKaDetail.cs" />
     <Compile Include="Entities\GameNews.cs" />

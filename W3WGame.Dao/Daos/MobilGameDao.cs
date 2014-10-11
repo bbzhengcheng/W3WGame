@@ -11,19 +11,16 @@ namespace W3WGame.Dao.Daos
 	
 	public  class MobilGameDao:BaseDao<MobilGame>
 	{
-	     public PagedList<MobilGame> GetPagedList(bool? isAndior,bool? isIOS,bool? hasGift,
+        public PagedList<MobilGame> GetPagedList(int? gamesys,  bool? hasGift,
              bool? isHot,bool? isNew,bool? IsBiWan,bool? isThisAweekHot,bool? isTuiJian,int? gameType,int? gameTeZhen,int? yunyingState,bool? isQianLiBao,bool? isGameType,
              int pageIndex, int pageSize)
         {
             var sql = Sql.Builder.Where("1=1");
-            if (isAndior !=null)
+            if (gamesys !=null)
             {
-                sql.Where("IsAndior = 1");
+                sql.Where("Sys = @0",gamesys);
             }
-            if (isIOS != null)
-            {
-                sql.Where("isIOS = 1");
-            }
+           
             if (hasGift != null)
             {
                 sql.Where("hasGift = 1");

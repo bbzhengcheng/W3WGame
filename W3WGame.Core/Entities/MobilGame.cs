@@ -10,10 +10,7 @@ namespace W3WGame.Core.Entities
         public int ID { get; set; }
         public string GameName { get; set; }
         public string ImgPath { get; set; }
-        public bool IsAndior { get; set; }
-        public bool IsIOS { get; set; }
-        public string AndiorDownloadUrl { get; set; }
-        public string IOSDownloadUrl { get; set; }
+        public int Sys { get; set; }
         public decimal Size { get; set; }
         public bool HasGift { get; set; }
         public bool IsHot { get; set; }
@@ -30,6 +27,7 @@ namespace W3WGame.Core.Entities
        
         public bool IsGameType { get; set; }
         public int Sort { get; set; }
+
 
     }
 }

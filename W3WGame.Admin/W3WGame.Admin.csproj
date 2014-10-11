@@ -1151,6 +1151,8 @@
     <Content Include="Views\ADConfigManager\Save.cshtml" />
     <Content Include="Views\GameKaManager\AddCode.cshtml" />
     <Content Include="Views\XmlConfig\HomeNews.cshtml" />
+    <Content Include="Views\GameDownloadUrlsManager\List.cshtml" />
+    <Content Include="Views\GameDownloadUrlsManager\Save.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\store\" />

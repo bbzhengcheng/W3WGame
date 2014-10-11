@@ -17,18 +17,6 @@ namespace W3WGame.Admin.Controllers.MobilGameManager.ViewModels
         [Display(Name = "图片路径")]
         public string ImgPath { get; set; }
 
-        [Display(Name = "是否安卓")]
-        public bool IsAndior { get; set; }
-
-        [Display(Name = "是否ios")]
-        public bool IsIOS { get; set; }
-
-        [Display(Name = "安卓下载地址")]
-        public string AndiorDownloadUrl { get; set; }
-
-        [Display(Name = "IOS下载地址")]
-        public string IOSDownloadUrl { get; set; }
-
         [Display(Name = "游戏大小")]
         public decimal Size { get; set; }
 
@@ -70,6 +58,9 @@ namespace W3WGame.Admin.Controllers.MobilGameManager.ViewModels
 
         [Display(Name = "是否首页游戏分类")]
         public bool IsGameType { get; set; }
+
+        [Display(Name = "游戏系统"), Required(ErrorMessage = "请输入！")]
+        public int Sys { get; set; }
 
         [Display(Name = "排序")]
         public int Sort { get; set; }

@@ -21,9 +21,9 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
     {
         private readonly MobilGameTask _mobilgameTask = new MobilGameTask();
 
-        public ActionResult List(bool? isAndior, bool? isIOS, bool? hasGift,bool? isHot, bool? isNew, bool? IsBiWan, bool? isThisAweekHot, bool? isTuiJian, int? gameType, int? gameTeZhen, int? yunyingState, bool? isQianLiBao, bool? isGameType, int pageIndex=1, int pageSize=20)
+        public ActionResult List(int? gamesys, bool? hasGift,bool? isHot, bool? isNew, bool? IsBiWan, bool? isThisAweekHot, bool? isTuiJian, int? gameType, int? gameTeZhen, int? yunyingState, bool? isQianLiBao, bool? isGameType, int pageIndex=1, int pageSize=20)
         {
-            var pagedList = _mobilgameTask.GetPagedList(isAndior,   isIOS,  hasGift,isHot,  isNew,  IsBiWan,  isThisAweekHot,  isTuiJian,  gameType, gameTeZhen,  yunyingState,  isQianLiBao,  isGameType,
+            var pagedList = _mobilgameTask.GetPagedList( gamesys,  hasGift,isHot,  isNew,  IsBiWan,  isThisAweekHot,  isTuiJian,  gameType, gameTeZhen,  yunyingState,  isQianLiBao,  isGameType,
              pageIndex,pageSize);
             var boolselect = new SelectListItem {Selected = true, Text = "全部", Value = string.Empty};
 
@@ -33,8 +33,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                                          new SelectListItem{Selected = false,Text = "是",Value = "True"},
                                          new SelectListItem{Selected = false,Text = "否",Value = "False"},
                                      };
-            ViewData["isAndiorList"] = boolselectlist;
-            ViewData["isIOSList"] = boolselectlist;
+            
             ViewData["hasGiftList"] = boolselectlist;
             ViewData["isHotList"] = boolselectlist;
             ViewData["isNewList"] = boolselectlist;
@@ -47,6 +46,8 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
             gameTypeList.Insert(0,boolselect);
             ViewData["gameTypeList"] = gameTypeList;
             var gameTeZhenList = GameTeZhenEnum.Chongwu.ToSelectList();
+            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
+
             gameTeZhenList.Insert(0,boolselect);
             ViewData["gameTeZhenList"] = gameTeZhenList;
             var yunyingStateList = YunYingStateEnum.XinFu.ToSelectList();
@@ -119,10 +120,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                                     {
                                         GameName = savemodel.GameName,
                                         ImgPath = savePath,
-                                        IsAndior = savemodel.IsAndior,
-                                        IsIOS = savemodel.IsIOS,
-                                        AndiorDownloadUrl = savemodel.AndiorDownloadUrl,
-                                        IOSDownloadUrl = savemodel.IOSDownloadUrl,
+                                        Sys = savemodel.Sys,
                                         Size = savemodel.Size,
                                         HasGift = savemodel.HasGift,
                                         IsHot = savemodel.IsHot,
@@ -159,11 +157,8 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                         return AlertMsg("参数错误", HttpContext.Request.UrlReferrer.PathAndQuery);
 
                     model.GameName = savemodel.GameName;
-                  
-                    model.IsAndior = savemodel.IsAndior;
-                    model.IsIOS = savemodel.IsIOS;
-                    model.AndiorDownloadUrl = savemodel.AndiorDownloadUrl;
-                    model.IOSDownloadUrl = savemodel.IOSDownloadUrl;
+
+                    model.Sys = savemodel.Sys;
                     model.Size = savemodel.Size;
                     model.HasGift = savemodel.HasGift;
                     model.IsHot = savemodel.IsHot;

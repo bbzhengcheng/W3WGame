@@ -53,33 +53,13 @@
                     </td>
                 </tr>
                 <tr height="40">
-                    <td class="entry_tab_td1">@Html.LabelFor(c => c.IsAndior)
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.Sys)
                     </td>
                     <td class="entry_tab_td2">
-                        @Html.CheckBoxFor(c => c.IsAndior)
+                        @Html.DropDownListFor(c => c.Sys, ViewData["syslist"] as List<SelectListItem>)
                     </td>
                 </tr>
-                <tr height="40">
-                    <td class="entry_tab_td1">@Html.LabelFor(c => c.IsIOS)
-                    </td>
-                    <td class="entry_tab_td2">
-                        @Html.CheckBoxFor(c => c.IsIOS)
-                    </td>
-                </tr>
-                <tr height="40">
-                    <td class="entry_tab_td1">@Html.LabelFor(c => c.AndiorDownloadUrl)
-                    </td>
-                    <td class="entry_tab_td2">
-                        @Html.TextBoxFor(c => c.AndiorDownloadUrl, new { @class = " text-input", style = "width=240px;" })
-                    </td>
-                </tr>
-                <tr height="40">
-                    <td class="entry_tab_td1">@Html.LabelFor(c => c.IOSDownloadUrl)
-                    </td>
-                    <td class="entry_tab_td2">
-                        @Html.TextBoxFor(c => c.IOSDownloadUrl)
-                    </td>
-                </tr>
+             
                 <tr height="40">
                     <td class="entry_tab_td1">@Html.LabelFor(c => c.Size)
                     </td>

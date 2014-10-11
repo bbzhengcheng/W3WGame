@@ -50,6 +50,7 @@
     <Compile Include="Daos\AdminUserDao.cs" />
     <Compile Include="Daos\AdminUserRoleDao.cs" />
     <Compile Include="Daos\FriendLinkDao.cs" />
+    <Compile Include="Daos\GameDownloadUrlsDao.cs" />
     <Compile Include="Daos\GameKaDao.cs" />
     <Compile Include="Daos\GameKaDetailDao.cs" />
     <Compile Include="Daos\GameNewsDao.cs" />

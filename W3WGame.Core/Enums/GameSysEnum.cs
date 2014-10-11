@@ -12,6 +12,10 @@ namespace W3WGame.Core.Enums
         Andior = 1,
 
         [Description("苹果")]
-        IOS = 2
+        IOS = 2,
+        [Description("全部")]
+        All = 3,
+
+      
     }
 }

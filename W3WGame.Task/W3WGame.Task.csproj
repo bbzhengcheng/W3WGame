@@ -49,6 +49,7 @@
     <Compile Include="AdminUserRoleTask.cs" />
     <Compile Include="AdminUserTask.cs" />
     <Compile Include="FriendLinkTask.cs" />
+    <Compile Include="GameDownloadUrlsTask.cs" />
     <Compile Include="GameKaTask.cs" />
     <Compile Include="GameKaDetailTask.cs" />
     <Compile Include="GameNewsTask.cs" />

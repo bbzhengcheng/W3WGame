@@ -41,14 +41,11 @@
             cellpadding="0">
             <tr height="40px">
                 <td>
-                    是否安卓：@Html.DropDownList("isAndior", ViewData["isAndiorList"] as List<SelectListItem>)
+                    游戏系统：@Html.DropDownList("isAndior", ViewData["syslist"] as List<SelectListItem>)
 
                    
                 </td>
-                <td>
-                    是否IOS：@Html.DropDownList("isIOS", ViewData["isIOSList"] as List<SelectListItem>)
-                   
-                </td>
+              
                 <td>
                      是否有礼包：@Html.DropDownList("hasGift", ViewData["hasGiftList"] as List<SelectListItem>)
                 </td>
@@ -110,14 +107,15 @@
             ID
         </td>
         <td>
+            游戏系统
+        </td>
+        <td>
             游戏名称
         </td>
         <td>
             图片路径
         </td>
-        <td>
-            游戏大小
-        </td>
+        
         <td>
             是否有卡礼包
         </td>
@@ -156,14 +154,16 @@
                 @item.ID
             </td>
             <td>
+                @(((GameSysEnum)item.Sys).ToDescriptionName())
+            </td>
+
+            <td>
                 @item.GameName
             </td>
             <td>
                 <a href="@item.ImgPath" target="_blank">素材地址</a>
             </td>
-            <td>
-                @item.Size
-            </td>
+            
             <td>
                 @item.HasGift
             </td>

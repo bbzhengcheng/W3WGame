@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_WebLayout.cshtml";
+    
 }
+@model List<W3WGame.Core.Dtos.Web.GameDownloadDto>
+           
 	<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css">
 	<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_public.css">
 	<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_search.css">
@@ -336,35 +339,33 @@
             </ul>
             <div class="text-tab-con">
                 <ul class="rank-poker current">
-                    <li><i class="corner" style="background-position: 0px 0px;"></i><a href="http://sklr.9game.cn/"
+                    <li><i class="corner" ></i><a href="http://sklr.9game.cn/"
                         class="img" data-statis="text:logo_p_gamestore_rmyx_game_1">
                         <img src="http://image.game.uc.cn/2013/7/11/9235609.gif" class="" alt="时空猎人" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://sklr.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_1">时空猎人</a></p>
+                            <a href="http://sklr.9game.cn/" >时空猎人</a></p>
                         <p class="type">
                             公测 | 95.7M</p>
                         <div class="fav">
                             <span class="good"></span><span class="good"></span><span class="good"></span><span
                                 class="good"></span><span class="bad"></span>
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;34950&quot;,&quot;name&quot;:&quot;时空猎人&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_1&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_1">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
-                    <li><i class="corner" style="background-position: -55px 0px;"></i><a href="http://dtcq.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_2">
+                    <li><i class="corner" ></i><a href="http://dtcq.9game.cn/"
+                        class="img" >
                         <img src="http://image.game.uc.cn/2014/7/10/9797218.jpg" class="" alt="刀塔传奇" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://dtcq.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_2">刀塔传奇</a></p>
+                            <a href="http://dtcq.9game.cn/" >刀塔传奇</a></p>
                         <p class="type">
                             公测 | 131.8M</p>
                         <div class="fav">
                             <span class="good"></span><span class="good"></span><span class="good"></span><span
                                 class="good"></span><span class="bad"></span>
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;535733&quot;,&quot;name&quot;:&quot;刀塔传奇&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_2&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_2">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
                     <li><i class="corner" style="background-position: -110px 0px;"></i><a href="http://www.9game.cn/hdqb/"
                         class="img" data-statis="text:logo_p_gamestore_rmyx_game_3">
@@ -384,27 +385,26 @@
                    
                 </ul>
                 <ul class="rank-poker">
-                    <li><i class="corner" style="background-position: 0px -55px;"></i><a href="http://btx.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_11">
+                    <li><i class="corner" ></i><a href="http://btx.9game.cn/"
+                        class="img" >
                         <img src="http://image.game.uc.cn/2014/7/30/9826312.png" class="" alt="霸天下" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://btx.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_11">霸天下</a></p>
+                            <a href="http://btx.9game.cn/" >霸天下</a></p>
                         <p class="type">
                             不删档内测 | 86.9M</p>
                         <div class="fav">
                             <span class="good"></span><span class="good"></span><span class="good"></span><span
                                 class="good"></span><span class="bad"></span>
                         </div>
-                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;540143&quot;,&quot;name&quot;:&quot;霸天下&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_11&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_11">
+                        <a href="javascript:void(0)" target="_self" title="" class="down ajax-down-pop" >
                             立即下载</a> </li>
                     <li><i class="corner" style="background-position: -55px -55px;"></i><a href="http://szr.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_12">
+                        class="img" >
                         <img src="http://image.game.uc.cn/2014/9/3/9892347.jpg" class="" alt="神之刃" style="opacity: 0.94;">
                         <span class="radius120"></span></a>
                         <p class="name">
-                            <a href="http://szr.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_12">神之刃</a></p>
+                            <a href="http://szr.9game.cn/" >神之刃</a></p>
                         <p class="type">
                             不删档内测 | 44.3M</p>
                         <div class="fav">
@@ -436,108 +436,46 @@
                 </ul>
                 <ul class="rank-poker">
                     <li><i class="corner" style="background-position: 0px -220px;"></i><a href="http://cqzj.9game.cn/"
-                        class="img" data-statis="text:logo_p_gamestore_rmyx_game_41">
-                        <img src="http://image.game.uc.cn/2014/6/17/9766452.jpg" class="" alt="苍穹之剑" style="opacity: 0.94;">
-                        <span class="radius120"></span></a>
+                                                                                          class="img" data-statis="text:logo_p_gamestore_rmyx_game_41">
+                                                                                           <img src="http://image.game.uc.cn/2014/6/17/9766452.jpg" class="" alt="苍穹之剑" style="opacity: 0.94;">
+                                                                                           <span class="radius120"></span></a>
                         <p class="name">
                             <a href="http://cqzj.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_41">苍穹之剑</a></p>
                         <p class="type">
                             不删档内测 | 93.2M</p>
                         <div class="fav">
                             <span class="good"></span><span class="good"></span><span class="good"></span><span
-                                class="good"></span><span class="bad"></span>
+                                                                                                              class="good"></span><span class="bad"></span>
                         </div>
                         <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;520553&quot;,&quot;name&quot;:&quot;苍穹之剑&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_41&quot;}"
-                            target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_41">
+                           target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_41">
                             立即下载</a> </li>
                   
                 </ul>
+                <ul class="rank-poker">
+                    <li><i class="corner" style="background-position: 0px -220px;"></i><a href="http://cqzj.9game.cn/"
+                                                                                          class="img" data-statis="text:logo_p_gamestore_rmyx_game_41">
+                                                                                           <img src="http://image.game.uc.cn/2014/6/17/9766452.jpg" class="" alt="苍穹之剑" style="opacity: 0.94;">
+                                                                                           <span class="radius120"></span></a>
+                        <p class="name">
+                            <a href="http://cqzj.9game.cn/" data-statis="text:txt_p_gamestore_rmyx_game_41">苍穹之剑</a></p>
+                        <p class="type">
+                            不删档内测 | 93.2M</p>
+                        <div class="fav">
+                            <span class="good"></span><span class="good"></span><span class="good"></span><span
+                                                                                                              class="good"></span><span class="bad"></span>
+                        </div>
+                        <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;520553&quot;,&quot;name&quot;:&quot;苍穹之剑&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_gamestore_rmyx_game_41&quot;}"
+                           target="_self" title="" class="down ajax-down-pop" data-statis="text:bt_p_gamestore_rmyx_game_41">
+                            立即下载</a> </li>
+                  
+                </ul>
+               
             </div>
         </div>
     </div>
-@*    <div class="game-try-con">
-        <div class="box-title">
-            <h2>
-                新游体验区</h2>
-            <a href="http://www.9game.cn/newgame/" class="more" data-static="p_gamestore_newgame_more">
-                更多</a>
-        </div>
-        <div class="box-text">
-            <ul class="try-text-con">
-                <li>
-                    <div class="t-box-1">
-                        <div class="img">
-                            <a href="http://xqll.9game.cn/" name="uc_gd_adm" gd_stat="191_10613" data-statis="text:logo_p_gamestore_gds_191_10613">
-                                <img src="http://image.game.uc.cn/2014/8/19/9864612.jpg" class="" alt="小倩来了" title="小倩来了"
-                                    style="opacity: 0.94;">
-                                <span class="radius90"></span></a>
-                        </div>
-                        <div class="text-con">
-                            <h3 class="title">
-                                <a href="http://xqll.9game.cn/" name="uc_gd_adm" gd_stat="191_10613" data-statis="text:txt_p_gamestore_gds_191_10613"
-                                    title="小倩来了">小倩来了</a></h3>
-                            <p class="text">
-                                <span class="tit">上线时间：</span>2014-08-13</p>
-                            <p class="text">
-                                <span class="tit">运营状态：</span>删档内测</p>
-                            <p class="text">
-                                <span class="tit">游戏类型：</span>角色</p>
-                        </div>
-                    </div>
-                    <div class="t-box-2">
-                        <div class="gift-con">
-                            <div class="gift">
-                                游戏评分：<span class="ora">3.3</span></div>
-                            <div class="gift">
-                                礼包款数：<span class="ora">1</span></div>
-                        </div>
-                        <div class="btn-con">
-                            <a href="http://xqll.9game.cn/" target="_self" class="btn no">游戏下载</a> <a href="http://ka.9game.cn/game/539192_-5_1.html"
-                                class="btn red" name="uc_gd_adm" gd_stat="191_10613" data-statis="text:lb_p_gamestore_gds_191_10613">
-                                礼包领取</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="t-box-1">
-                        <div class="img">
-                            <a href="http://www.9game.cn/qbpkq/" name="uc_gd_adm" gd_stat="191_10612" data-statis="text:logo_p_gamestore_gds_191_10612">
-                                <img src="http://image.game.uc.cn/2014/6/17/9765932.jpg" class="" alt="去吧皮卡丘" title="去吧皮卡丘"
-                                    style="opacity: 0.94;">
-                                <span class="radius90"></span></a>
-                        </div>
-                        <div class="text-con">
-                            <h3 class="title">
-                                <a href="http://www.9game.cn/qbpkq/" name="uc_gd_adm" gd_stat="191_10612" data-statis="text:txt_p_gamestore_gds_191_10612"
-                                    title="去吧皮卡丘">去吧皮卡丘</a></h3>
-                            <p class="text">
-                                <span class="tit">上线时间：</span>2014-09-12</p>
-                            <p class="text">
-                                <span class="tit">运营状态：</span>不删档内测</p>
-                            <p class="text">
-                                <span class="tit">游戏类型：</span>策略</p>
-                        </div>
-                    </div>
-                    <div class="t-box-2">
-                        <div class="gift-con">
-                            <div class="gift">
-                                游戏评分：<span class="ora">3.9</span></div>
-                            <div class="gift">
-                                礼包款数：<span class="ora">2</span></div>
-                        </div>
-                        <div class="btn-con">
-                            <a href="javascript:void(0)" data-params="{&quot;gameId&quot;:&quot;541807&quot;,&quot;name&quot;:&quot;去吧皮卡丘&quot;,&quot;platformId&quot;:&quot;0&quot;,&quot;statis_text&quot;:&quot;text:bt_p_191_10612&quot;}"
-                                target="_self" title="" class="btn green ajax-down-pop" data-statis="text:bt_p_191_10612">
-                                游戏下载</a> <a href="http://ka.9game.cn/game/541807_-5_1.html" class="btn red" name="uc_gd_adm"
-                                    gd_stat="191_10612" data-statis="text:lb_p_gamestore_gds_191_10612">礼包领取</a>
-                        </div>
-                    </div>
-                </li>
-        
-            </ul>
-        </div>
-    </div>*@
-    <div class="game-adv-con">
+
+@*    <div class="game-adv-con">
         <div class="box-title">
             <h2>
                 精品专题</h2>
@@ -571,7 +509,7 @@
                     围住神经病猫 无节操游戏任你挑</p>
             </a>
         </div>
-    </div>
+    </div>*@
 </div>
 
     <script type="text/javascript" src="/public/javascripts/pc/lscs/x_move.js"></script>    <script type="text/javascript" src="/public/javascripts/pc2/search_game.js"></script>
