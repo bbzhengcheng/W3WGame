@@ -63,7 +63,7 @@ namespace W3WGame.Admin.Controllers.AccountInfoManager
                                         NickName = savemodel.NickName,
                                         RegDate = savemodel.RegDate,
                                         RegIP = savemodel.RegIP,
-                                        IPAddress = savemodel.IPAddress,
+                                       
                                         QQ = savemodel.QQ,
                                         Email = savemodel.Email,
                                         Phone = savemodel.Phone,
@@ -81,7 +81,7 @@ namespace W3WGame.Admin.Controllers.AccountInfoManager
                     model.NickName = savemodel.NickName;
                     model.RegDate = savemodel.RegDate;
                     model.RegIP = savemodel.RegIP;
-                    model.IPAddress = savemodel.IPAddress;
+                  
                     model.QQ = savemodel.QQ;
                     model.Email = savemodel.Email;
                     model.Phone = savemodel.Phone;
