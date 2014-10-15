@@ -1,29 +1,29 @@
-﻿using System.Security.Principal;
-using System.Web;
-using System.Web.Security;
+﻿//using System.Security.Principal;
+//using System.Web;
+//using System.Web.Security;
 
-namespace W3WGame.Ka.Controller
-{
-    public static class FormsAuthService
-    {
-        public static void SignIn(string userName, bool createPersistentCookie)
-        {
-            FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
-        }
+//namespace W3WGame.Ka.Controller
+//{
+//    public static class FormsAuthService
+//    {
+//        public static void SignIn(string userName, bool createPersistentCookie)
+//        {
+//            FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
+//        }
 
-        public static void SignOut()
-        {
-            FormsAuthentication.SignOut();
-        }
+//        public static void SignOut()
+//        {
+//            FormsAuthentication.SignOut();
+//        }
 
-        public static bool IsSignedIn()
-        {
-            return HttpContext.Current.User.Identity.IsAuthenticated;
-        }
+//        public static bool IsSignedIn()
+//        {
+//            return HttpContext.Current.User.Identity.IsAuthenticated;
+//        }
 
-        public static IIdentity GetCurrentIdentity()
-        {
-            return HttpContext.Current.User.Identity;
-        } 
-    }
-}
+//        public static IIdentity GetCurrentIdentity()
+//        {
+//            return HttpContext.Current.User.Identity;
+//        } 
+//    }
+//}

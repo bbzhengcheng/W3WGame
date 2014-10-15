@@ -9,13 +9,17 @@
     <meta name="Copyright" content="UC优视" />
     <meta property="qc:admins" content="244435573016705665363673137" />
     <link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css" />
+    <link rel="stylesheet" href="/Scripts/jquery.validationEngine/validationEngine.jquery.css" />
+    <script src="/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="/Scripts/jquery.validationEngine/jquery.validationEngine-zh_CN.js"></script>
+    <script src="/Scripts/jquery.validationEngine/jquery.validationEngine.min.js"></script>
     <script type="text/javascript">
         $(function () {
-          //  $("#form1").validationEngine();
+            $("#dForm").validationEngine();
 
-            $("#UserName").select();
+            $("#username").select();
 
-            $("#tblLogOn").keydown(function (e) {
+            $("#dForm").keydown(function (e) {
                 if (e.keyCode == 13) {
                     $("#btnlogin").click();
                 }
@@ -23,24 +27,23 @@
 
 
             $("#btnlogin").click(function () {
-                $("#form1").validationEngine();
-
-                if ($("#form1").validationEngine('validate')) {
-                    var userName = $('#UserName').val();
-                    var password = $('#Password').val();
+              
+                if ($("#dForm").validationEngine('validate')) {
+                    var account = $('#username').val();
+                    var password = $('#password').val();
                     var validCode = $('#ValidCode').val();
                     var returnUrl = $("#inputRedirectUrl").val();
-
+                   
                     $.ajax({
                         url: '@Url.Action("login", "personal")',
                         type: "POST",
-                        data: { userName: userName, password: password, validCode: validCode },
+                        data: { account: account, password: password, validCode: validCode },
                         async: false,
                         cache: false,
                         success: function (data) {
                             if (data.result) {
                                 if (returnUrl == null || returnUrl == '') {
-                                    window.location.href = '@Url.Action("Index","Home")';
+                                    window.location.href = '@Url.Action("Index", "Home")';
                                 } else {
                                     window.location.href = returnUrl;
                                 }
@@ -81,7 +84,7 @@
         function changeValidateCode() {
             $("#imgValidateCode").attr('src', '/ValidateCodes/Create?t=' + Math.random());
         }
-</script>
+    </script>
 </head>
 <body>
     <div class="header">
@@ -127,71 +130,52 @@
             </div>
         </div>
         <!-- 表单 -->
-        <div id="dForm">
-             @using (Html.BeginForm("login", "personal", FormMethod.Post, new { @class = "formular", id = "form1", enctype = "multipart/form-data" }))
-             {
-
-                 <div class="content">
-                     <div class="tip1">
-                         提示：如果你没有UC帐号，<a href="http://api.open.uc.cn/cas/register?register_type=mobile&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">马上注册</a></div>
-                     <ul class="login">
-                         <!-- 通用错误提示 -->
-                         <div id="dMessageError" style="padding-left: 23px;" class="orange">
-                         </div>
-                         <!-- 帐号 -->
-                         <li id="dLoginName">
-                             <div>
-                                 <span class="text">帐&nbsp;&nbsp;&nbsp;&nbsp;号</span> <span class="enter">
-                                                                                          <input type="text"  id="loginName"
-                                                                                                 name="account" value="" maxlength="100" class="changetips" placeholder="手机/邮箱/用户名/UC号"
-                                                                                                 
-                                                                                                  autocomplete="off" /></span>
-                             </div>
-                            
-                         </li>
-                         <!-- 密码 -->
-                         <li id="dPassword">
-                             <div>
-                                 <span class="text">密&nbsp;&nbsp;&nbsp;&nbsp;码</span> <span class="enter">
-                                                                                          <input type="password"  maxlength="20" id="password" name="password"
-                                                                                                 value="" class="changetips" placeholder="区分大小写" 
-                                                                                                 autocomplete="off" /></span>
-                             </div>
-                             <!-- 密码错误提示 -->
-                           
-                         </li>
-                         <!-- 验证码 -->
-                         <div id="dCaptcha">
-                             <li class="mar">
-                                 <div class="valide-box" style="width: 316px;">
-                                     <span class="text">验证码</span> <span class="enter1">
-                                                                       <input maxlength="4" size="4"
-                                                                              type="text" name="captchaVal" id="captchaVal" class="changetips" placeholder="请输入结果"
-                                                                              autocomplete="off" />
-                                                                   </span><span id="captchaImg">
-                                                                              <img src="@Url.Action("Create", "ValidateCodes")" id="imgValidateCode" width="90" height="30" alt="看不清?换一张" style="cursor: pointer" onclick="changeValidateCode();"/>
-                                                                              <input type="hidden" id="captchaId" name="captchaId" />
-                                                                          </span><span><a style="cursor: pointer" onclick="changeValidateCode();">
-                                                                                           换一张</a></span>
-                                 </div>
-                                 <!-- 验证码错误提示 -->
-                                 <div id="dCaptchaValError" class="error-tips">
-                                 </div>
-                             </li>
-                         </div>
-                     </ul>
-                 </div>
-                 <!-- 登录注册按钮区 -->
-                 <div id="dButton" class="login-f">
-                     <input type="submit"  class="btn_reg"
-                            id="btnlogin" alt="登录" value="登录" />
-                     <a href="https://id.uc.cn/next/forgotpassword/forgotPassword?uc_param_str=nieisivefrpfbimilaprligiwiut&amp;appId=102&amp;backUrl=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&broswertype=www">
-                         忘记密码？</a> <span>|</span> <a href="http://feedback.uc.cn/feedback/feedback/index?instance=cas&uc_param_str=einibicppfmivesifrutlantcunwss">
-                                                      反馈</a>
-                 </div>
-             }
-          
+        <form id="dForm">
+        <div class="content">
+            <div class="tip1">
+                提示：如果你没有UC帐号，<a href="http://api.open.uc.cn/cas/register?register_type=mobile&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">马上注册</a></div>
+            <ul class="login">
+                <!-- 通用错误提示 -->
+                <div id="dMessageError" style="padding-left: 23px;" class="orange">
+                </div>
+                <!-- 帐号 -->
+                <li id="dLoginName">
+                    <div>
+                        <span class="text">帐&nbsp;&nbsp;&nbsp;&nbsp;号</span> <span class="enter">
+                            <input type="text" id="username" name="username" maxlength="100" class="changetips validate[required,minSize[6],maxSize[20]]"
+                                placeholder="手机/邮箱/用户名/UC号" autocomplete="off" /></span>
+                    </div>
+                </li>
+                <!-- 密码 -->
+                <li id="dPassword">
+                    <div>
+                        <span class="text">密&nbsp;&nbsp;&nbsp;&nbsp;码</span> <span class="enter">
+                            <input type="password" maxlength="20" id="password" name="password" class="changetips validate[required,custom[onlyLetterNumber]],minSize[6],maxSize[20]]"
+                                placeholder="区分大小写" autocomplete="off" /></span>
+                    </div>
+                    <!-- 密码错误提示 -->
+                </li>
+                <!-- 验证码 -->
+                <div id="dCaptcha">
+                    <li class="mar">
+                        <div class="valide-box" style="width: 316px;">
+                            <span class="text">验证码</span> <span class="enter1">
+                                <input maxlength="4" size="4" type="text" name="ValidCode" id="ValidCode" class="changetips"
+                                    placeholder="请输入结果" autocomplete="off" />
+                            </span><span id="captchaImg">
+                                <img src="@Url.Action("Create", "ValidateCodes")" id="imgValidateCode" width="90" height="30" alt="看不清?换一张" style="cursor: pointer" onclick="changeValidateCode();"/>
+                            </span><span><a style="cursor: pointer" onclick="changeValidateCode();">换一张</a></span>
+                        </div>
+                    </li>
+                </div>
+            </ul>
         </div>
+        <!-- 登录注册按钮区 -->
+        <div id="dButton" class="login-f">
+            <input type="button" class="btn_reg" id="btnlogin" alt="登录" value="登录" />
+            <a href="#">忘记密码？</a> <span>|</span> <a href="#">反馈</a>
+        </div>
+        </form>
         <!-- 更多业务 -->
         <div id="dFooter">
             <div class="business pd cls">
@@ -234,7 +218,5 @@
             UC优视 2009-2013 © 版权所有</p>
     </div>
     <!-- pc登录页面统计 -->
-    
 </body>
-
 </html>

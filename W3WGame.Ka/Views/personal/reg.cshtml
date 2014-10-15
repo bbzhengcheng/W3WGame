@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    
+}
+@model SealyStore.Web.Controllers.Account.ViewModels.RegisterModel
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,17 +13,29 @@
 <meta name="Copyright" content="UC优视"/>
 <meta property="qc:admins" content="244435573016705665363673137" />
 <link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css"/>
-</head>
+    <link rel="stylesheet" href="/Scripts/jquery.validationEngine/validationEngine.jquery.css" />
+    <script src="/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="/Scripts/jquery.validationEngine/jquery.validationEngine-zh_CN.js"></script>
+    <script src="/Scripts/jquery.validationEngine/jquery.validationEngine.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#regform").validationEngine();
+        });
+        function changeValidateCode() {
+            $("#imgValidateCode").attr('src', '/ValidateCodes/Create?t=' + Math.random());
+        }
+    </script>
+            </head>
 <body>
 <div class="header">
 	<!-- 头部 -->
 	<div id="dHeader" class="header-cont">
 		<!-- 返回首页面链接 -->
-		<div id="dHomeLink" class="btn"><a href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2" class="btn_home">返回首页</a></div>
+		<div id="dHomeLink" class="btn"><a href="#" class="btn_home">返回首页</a></div>
 		<!-- logo -->
 		<div id="dLogo">
 			<h1 class="logo">
-				<a id="logoImg" href="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2">
+				<a id="logoImg" href="#">
 					<img src="/img/logo_uc_835043c.gif" width="174" height="72" title="" class="changelogo" client_id="102" staticResourceBaseUri='/' appName="九游"/>
 				</a>
 			</h1>
@@ -53,7 +68,7 @@
 	<div class="cont" id="cont">
 		<!-- 登录链接提示 -->
 		<div id="dLoginNotice" class="tip">提示：如果你已有UC帐号，请直接&nbsp;
-				<a href="http://api.open.uc.cn/cas/login?client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.9game.cn%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">登录</a>
+				<a href="#">登录</a>
 	</div>
 		
 		<!-- 通用错误提示 -->
@@ -62,51 +77,37 @@
 	    
 	    <!-- 表单 -->
 	    <div id="dForm">
-		    <form id="dRegisterForm" action="https://api.open.uc.cn/cas/register/commit?register_type=email&uc_param_str=einisivelafrpfmibiup" method="post" autocomplete="off">
-				<!-- 回传参数 -->
-		        <input type="hidden" id="client_id" name="client_id" value="102" />
-			    <input type="hidden" name="redirect_uri" value="http://qj.9game.cn/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2" />
-				<input type="hidden" name="target_client_id" value="" />
-			    <input type="hidden" name="target_redirect_uri" value="" />
-			    <input type="hidden" name="display" id="display" value="pc" />
-	    	
+		    <form id="regform" action="/personal/reg" method="post" autocomplete="off">
+			
 				<ul class="reglist">
 					<!-- 帐号 -->
 					<li id="dRegisterName" class="mar">
 						<div>
 							<span class="text">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
-				      		<span class="enter"><input type="text" onblur="vaildRegisterName('http://api.open.uc.cn/cas/', '/', 'email')" id="registerName" name="registerName" value="" maxlength="100" class="changetips" placeholder="请输入邮箱" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+				      		<span class="enter"><input type="text" onblur="#" id="Email" name="Email" value="" maxlength="100" class="changetips validate[required,minSize[6],maxSize[20],custom[email]]" placeholder="请输入邮箱" /></span> 
 				      	</div>
-				      	
-				      	<!-- 帐号错误提示 -->
-				      	<div id="dRegisterNameError" class="error-tips"></div>
 					</li>
 					
 					<!-- 密码 -->
 					<li id="dPassword" class="mar">
 				      	<div>
 							<span class="text">设置密码</span> 
-				      		<span class="enter"><input type="password" onkeyup="passStrong('/','zh_pc')" onblur="validPwd('/')" maxlength="20" id="password" name="password" value="" class="changetips" placeholder="6-20位,区分大小写" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+				      		<span class="enter"><input type="password"  maxlength="20" id="Password" name="Password" value="" class="changetips validate[required,custom[onlyLetterNumber]],minSize[6],maxSize[20]]" placeholder="6-20位,区分大小写" /></span> 
 				      	</div>
 				      	
-				      	<!-- 密码错误提示 -->
-					    <div id="dPasswordError" class="error-tips"></div>
+				      
 					</li>
 					
-					<!-- 密码安全强度 -->
-					<li id="dPasswordLevel" class="s">
-						<p class="level_0"></p>
-					</li>
+					
 					
 					<!-- 确认密码 -->
 					<li id="dConfirmPassword" class="mar">
 						<div>
 							<span class="text">确认密码</span> 
-				      		<span class="enter"><input type="password" onblur="validConfirmPwd('/')" maxlength="20" id="confirmPassword" name="confirmPassword" value="" class="changetips" placeholder="6-20位,区分大小写" imageName="input_register_bg_692cd57" imageErrorName="input_register_bg_error_79d5ef3" staticResourceBaseUri="/"/></span> 
+				      		<span class="enter"><input type="password"  maxlength="20" id="ConfirmPassword" name="ConfirmPassword" value="" class="changetips validate[[required,equals[Password]]" placeholder="6-20位,区分大小写" /></span> 
 						</div>
 						
-				      	<!-- 确认密码错误提示 -->
-					    <div id="dConfirmPasswordError" class="error-tips"></div>
+				  
 					</li>
 					
 					<!-- 验证码 -->
@@ -114,19 +115,18 @@
 						<span class="text">验&nbsp;证&nbsp;码</span>
 						<div class="valide-box">
 							<span class="enter1"> 
-								<input onblur="validCaptcha('http://api.open.uc.cn/cas/', '/')" maxlength="4" size="4" type="text" name="captchaVal" id="captchaVal" class="changetips" placeholder="请输入结果" imageName="input_register_bg_1_992d8a2" imageErrorName="input_register_bg_1_error_2c08e39" staticResourceBaseUri="/"/>
+								<input  maxlength="4" size="4" type="text" name="ValidCode" id="ValidCode" class="changetips" placeholder="请输入结果" />
 							</span>
 							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span id="captchaImg">
-								<img src="http://api.open.uc.cn/cas/commonjson/captcha?captchaId=14a93c37-d9c0-49cc-8f35-21eda73a212e&uc_param_str=einisivelafrpfmibiup&display=pc"/>
-								<input type="hidden" id="captchaId" name="captchaId" value="14a93c37-d9c0-49cc-8f35-21eda73a212e" />
+								<img src="@Url.Action("Create", "ValidateCodes")"/>
+							
 							</span> 
 							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<span><a style="cursor:pointer" onclick="refreshCatcha('http://api.open.uc.cn/cas/')">换一张</a></span>
+							<span><a style="cursor:pointer" onclick="changeValidateCode()">换一张</a></span>
 						</div>
 						
-				        <!-- 验证码错误提示 -->
-				        <div id="dCaptchaValError" class="error-tips"></div>
+				    
 					</li>
 					
 					<!-- 协议 -->
@@ -146,7 +146,7 @@
 	
 				<!-- 注册按钮区 -->
 				<div id="dButton" class="reg_f">
-					<input type="button" style="cursor:pointer" onclick="submitRegForm('http://api.open.uc.cn/cas/', '/', 'email')" id="submit_btn" class="btn_reg" alt="注册" value="注册"/>
+					<input type="submit" style="cursor:pointer"  id="submit_btn" class="btn_reg" alt="注册" value="注册"/>
 				</div>
 			</form>
 		</div>

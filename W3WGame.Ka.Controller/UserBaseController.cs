@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using W3WGame.Task;
+using W3WGame.Web.Controllers;
 
 namespace W3WGame.Ka.Controller
 {
@@ -10,7 +11,7 @@ namespace W3WGame.Ka.Controller
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
-            if (!FormsAuthService.IsSignedIn())
+            if (!FormsAuthServiceCookie.IsSignedIn())
             {
                 filterContext.HttpContext.Response.Write("<script>window.top.location.href='/Account/LogOn';</script>");
                 filterContext.HttpContext.Response.End();
@@ -24,7 +25,7 @@ namespace W3WGame.Ka.Controller
         {
             get
             {
-                return FormsAuthService.IsSignedIn() ? FormsAuthService.GetCurrentIdentity().Name : string.Empty;
+                return FormsAuthServiceCookie.IsSignedIn() ? FormsAuthServiceCookie.GetCurrentIdentity() : string.Empty;
             }
         }
 

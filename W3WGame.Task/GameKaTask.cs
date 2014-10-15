@@ -58,6 +58,16 @@ namespace W3WGame.Task
             return _dao.GetHomeList();
         }
 
+        public List<NewsKaDto> GetRanKa(int katype, int top)
+        {
+            return _dao.GetRanKa(katype, top);
+        }
+
+        public PagedList<NewsKaDto> GetKaPagedList(string title,int katype, int pageIndex, int pageSize)
+        {
+            return _dao.GetKaPagedList(title,katype, pageIndex, pageSize);
+        }
+
 
 
 	}

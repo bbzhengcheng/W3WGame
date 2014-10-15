@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
+﻿using System.Text;
 using System.Web.Mvc;
 
-namespace W3WGame.Web.Controllers.ToolCode
+namespace W3WGame.Services.ToolCode
 {
     public static class WebHelper
     {

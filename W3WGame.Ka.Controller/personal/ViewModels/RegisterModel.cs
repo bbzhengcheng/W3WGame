@@ -4,9 +4,8 @@ namespace SealyStore.Web.Controllers.Account.ViewModels
 {
     public class RegisterModel
     {
-        [Display(Name = "用户名"),Required]
-        public string Account { get; set; }
-
+       
+       
         [Display(Name = "登录密码"), Required]
         public string Password { get; set; }
 

@@ -13,6 +13,7 @@ namespace W3WGame.Web.Controllers.kf
     {
         public GameServersTask _GameServersTask = new GameServersTask();
         public FriendLinkTask _FriendLinkTask = new FriendLinkTask();
+
         public ActionResult index()
         {
             //今天开服

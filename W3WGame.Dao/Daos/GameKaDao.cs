@@ -28,6 +28,32 @@ LEFT JOIN dbo.MobilGame mg ON gk.GameID = mg.ID
 WHERE gk.IsDisplayHome=1 ORDER BY StartDate Desc");
             return Query<GameKaDto>(sql).ToList();
         }
+
+        public List<NewsKaDto> GetRanKa(int katype,int top )
+        {
+            var sql =
+                Sql.Builder.Append(
+                    @"SELECT TOP "+top.ToString()+ @" mg.GameName,gk.GameID,gk.ID,ServerID,gk.KaTitle ,mg.ImgPath,(gk.[Count]-gk.Shengyu) AS UseNum,gk.Shengyu  FROM dbo.GameKa gk
+LEFT JOIN dbo.MobilGame mg ON gk.GameID = mg.ID Where gk.KaType =@0 
+ ORDER BY UseNum Desc",katype);
+            return Query<NewsKaDto>(sql).ToList();
+        }
+
+        public PagedList<NewsKaDto> GetKaPagedList(string title,int katype, int pageIndex, int pageSize)
+        {
+            var sql =
+                Sql.Builder.Append(
+                    @"SELECT  mg.GameName,gk.GameID,gk.ID,ServerID,gk.KaTitle ,mg.ImgPath,(gk.[Count]-gk.Shengyu) AS UseNum,gk.Shengyu  FROM dbo.GameKa gk
+LEFT JOIN dbo.MobilGame mg ON gk.GameID = mg.ID Where gk.KaType =@0 ",katype);
+            if(!string.IsNullOrEmpty(title))
+            {
+                sql.Append(" AND gk.KaTitle LIKE @0 ", string.Format("%{0}%",title));
+            }
+
+            sql.Append(" ORDER BY gk.CreateDate Desc");
+            return PagedList<NewsKaDto>(pageIndex, pageSize, sql);
+        }
+
         public GameKa GetById(int id)
         {
             var sql = Sql.Builder.Where("id = @0", id);

@@ -212,6 +212,10 @@
       <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
       <Name>WangFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Services\W3WGame.Services.csproj">
+      <Project>{4DEF923D-2647-4516-ADD8-3C1002895402}</Project>
+      <Name>W3WGame.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\W3WGame.Web.Controllers\W3WGame.Web.Controllers.csproj">
       <Project>{106E3E9E-3E35-439B-BF6C-FD21843CCAAB}</Project>
       <Name>W3WGame.Web.Controllers</Name>

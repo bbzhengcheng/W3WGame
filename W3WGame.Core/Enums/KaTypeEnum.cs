@@ -13,6 +13,9 @@ namespace W3WGame.Core.Enums
         [Description("公会卡")]
         GuildCard = 2,
         [Description("特权卡")]
-        SpecialCard = 3
+        SpecialCard = 3,
+        [Description("激活码")]
+        JiHuo = 3
+
     }
 }

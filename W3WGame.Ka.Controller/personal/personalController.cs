@@ -11,6 +11,7 @@ using W3WGame.Core.Enums;
 using W3WGame.Ka.Controller.personal.ViewModels;
 using W3WGame.Services;
 using W3WGame.Task;
+using W3WGame.Web.Controllers;
 using WangFramework.Common;
 using WangFramework.Utility;
 
@@ -39,12 +40,12 @@ namespace W3WGame.Ka.Controller.personal
 
         public ActionResult login(string returnUrl)
         {
-            if (FormsAuthService.IsSignedIn())
-            {
-                return string.IsNullOrEmpty(returnUrl)
-                           ? Redirect(Url.Action("Index", "Home"))
-                           : Redirect(returnUrl);
-            }
+            //if (FormsAuthService.IsSignedIn())
+            //{
+            //    return string.IsNullOrEmpty(returnUrl)
+            //               ? Redirect(Url.Action("Index", "Home"))
+            //               : Redirect(returnUrl);
+            //}
 
             return View();
         }
@@ -74,9 +75,9 @@ namespace W3WGame.Ka.Controller.personal
                                              IP = DNTRequest.GetIP(),
                                          });
             // 更新购物车
-            
 
-            FormsAuthService.SignIn(model.Account, false);
+
+            FormsAuthServiceCookie.SignIn(model.Account, false);
             return Json(new { result = true, message = string.Empty }, JsonRequestBehavior.AllowGet);
         }
 
@@ -97,22 +98,19 @@ namespace W3WGame.Ka.Controller.personal
                 if (!_validateCodeService.CheckCode(model.ValidCode))
                     return AlertMsg("验证码不正确", Request.UrlReferrer.PathAndQuery);
 
-                if (_accountInfoTask.Exists(model.Account))
-                    return AlertMsg("用户名已存在", Request.UrlReferrer.PathAndQuery);
-
+               
                 if (_accountInfoTask.ExistsEmail(model.Email))
                     return AlertMsg("电子邮箱已存在", Request.UrlReferrer.PathAndQuery);
 
                 var ipAddress = DNTRequest.GetIP();
-                //var userInfo = _accountInfoTask.Register(model.Account, model.Password, model.Email, ipAddress);
-                FormsAuthService.SignIn(model.Account, false);
-                //_accountInfoTask.Add(userInfo, userInfo.UserName, DNTRequest.GetIP());
+               var userInfo = _accountInfoTask.Register(model.Email, model.Password, model.Email, ipAddress,"",DNTRequest.GetIP());
+               FormsAuthServiceCookie.SignIn(model.Email, false);
 
                 return string.IsNullOrEmpty(returnUrl)
                           ? Redirect(Url.Action("Index", "Home"))
                           : Redirect(returnUrl);
             }
-            return View(model);
+            return AlertMsg("注册出错，请联系管理员", Request.UrlReferrer.ToString());
         }
 
         #endregion
@@ -121,7 +119,7 @@ namespace W3WGame.Ka.Controller.personal
 
         public ActionResult LogOff()
         {
-            FormsAuthService.SignOut();
+            FormsAuthServiceCookie.SignOut();
             return RedirectToAction("Index", "Home");
         }
 

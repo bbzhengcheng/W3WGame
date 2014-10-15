@@ -108,6 +108,10 @@
     <Content Include="img\logo_86_21ac5a7.gif" />
     <Content Include="img\logo_uc_835043c.gif" />
     <Content Include="img\mobile_s_171bc37.gif" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery.validationEngine\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Scripts\jquery.validationEngine\jquery.validationEngine.js" />
+    <Content Include="Scripts\jquery.validationEngine\jquery.validationEngine.min.js" />
     <Content Include="public\images\9gameClient_dimensionPic.png" />
     <Content Include="public\images\9game_default.jpg" />
     <Content Include="public\images\back.gif" />
@@ -192,6 +196,7 @@
     <Content Include="public\stylesheets\pub_header.css" />
     <Content Include="public\touch\detail\base.js" />
     <Content Include="public\touch\detail\countdown.js" />
+    <Content Include="Scripts\jquery.validationEngine\validationEngine.jquery.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -253,6 +258,10 @@
     <ProjectReference Include="..\W3WGame.Ka.Controller\W3WGame.Ka.Controller.csproj">
       <Project>{EF704A4B-664A-4F4C-ACF5-DE73876AB8FD}</Project>
       <Name>W3WGame.Ka.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Services\W3WGame.Services.csproj">
+      <Project>{4DEF923D-2647-4516-ADD8-3C1002895402}</Project>
+      <Name>W3WGame.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

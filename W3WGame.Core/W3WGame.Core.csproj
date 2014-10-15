@@ -49,6 +49,7 @@
     <Compile Include="Dtos\Web\GameDownloadDto.cs" />
     <Compile Include="Dtos\Web\GameKaDto.cs" />
     <Compile Include="Dtos\Web\NewsDto.cs" />
+    <Compile Include="Dtos\Web\NewsKaDto.cs" />
     <Compile Include="Dtos\Web\NewsXmlDto.cs" />
     <Compile Include="Entities\AccountInfo.cs" />
     <Compile Include="Entities\AccountLoginLog.cs" />
