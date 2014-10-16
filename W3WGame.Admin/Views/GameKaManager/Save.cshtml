@@ -20,6 +20,21 @@
 <script type="text/javascript">
     $(function () {
         $("#form1").validationEngine();
+          var editor = KindEditor.create('textarea[class="box"]', {
+                uploadJson: "@Url.Action("SaveSystemImage", "Uploads")",
+                syncType: '',
+                items: [
+                    'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste', 'plainpaste', 'wordpaste', '|',
+                    'justifyleft', 'justifycenter', 'justifyright', 'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                    'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'strikethrough', 'lineheight',
+                    'removeformat', '|', 'image', 'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'pagebreak', //'multiimage','baidumap'
+                    'anchor', 'link', 'unlink', '|', 'about'
+                ],
+                afterBlur: function() {
+                    editor.sync();
+                }
+            });
+        
        loadServer();
         $('#ServerID').val("@Model.ServerID");
        
@@ -121,9 +136,26 @@
                     <td class="entry_tab_td1">@Html.LabelFor(c => c.IsDisplayHome)
                     </td>
                     <td class="entry_tab_td2">
-                      @Html.DropDownListFor(c => c.IsDisplayHome, true.ToSelectList())
+                        @Html.DropDownListFor(c => c.IsDisplayHome, true.ToSelectList())
                     </td>
                 </tr>
+                
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.KaContent)
+                    </td>
+                    <td class="entry_tab_td2">
+                      @Html.TextAreaFor(c => c.KaContent, new { @class = "box validate[required] text-input", @style = "width:550px;height:300px;" })
+                    </td>
+                </tr>
+                
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.KaUseDes)
+                    </td>
+                    <td class="entry_tab_td2">
+                       @Html.TextAreaFor(c => c.KaUseDes, new { @class = "box validate[required] text-input", @style = "width:550px;height:300px;" })
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                     </td>

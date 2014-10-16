@@ -5,19 +5,23 @@ using System.Text;
 
 namespace W3WGame.Core.Dtos.Web
 {
-    public class NewsKaDto
+   public  class SearchGameKaDto
     {
+       public string GameName { get; set; }
+
+       /// <summary>
+       /// 
+       /// </summary>
+       public int GameID { get; set; }
+
+
         /// <summary>
         /// 卡id
         /// </summary>
         public int ID { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public int GameID { get; set; }
-
-        public string GameName { get; set; }
+      
+     
 
         public int ServerID { get; set; }
 
@@ -29,6 +33,6 @@ namespace W3WGame.Core.Dtos.Web
 
         public int UseNum { get; set; }
 
-    
+        public string KaContent { get; set; }
     }
 }

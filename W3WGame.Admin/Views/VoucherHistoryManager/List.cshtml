@@ -20,7 +20,7 @@
             }
         });
         
-         loadServer();
+       loadServer();
         $('#serverid').val("@Request["serverid"]");
        
         $("#gameid").change(function() {
@@ -29,26 +29,28 @@
         });
        
     });
-    function loadServer() {
-        var gameid = $('#gameid');
-        var serverlist = $('#serverid');
+     function loadServer() {
+         var gameid = $('#gameid');
+         var serverlist = $('#serverid');
 
-        var gameid = gameid.val();
-        serverlist.empty();
-        
-        $.ajax({
-            async: false,
-            url: "@Url.Action("GetServerList","GameServersManager")",
-            type: "GET",
-            data:{gameid:gameid},
-            success: function(data) {
-                 $.each(data, function (i, item) {
-                $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo(serverlist);
-            });
-            }
-        });
-        
-    });
+         var gameid = gameid.val();
+         serverlist.empty();
+
+         $.ajax({
+             async: false,
+             url: "@Url.Action("GetServerList","GameServersManager")",
+             type: "GET",
+             data: { gameid: gameid },
+             success: function(data) {
+                 $.each(data, function(i, item) {
+                     $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo(serverlist);
+                 });
+             }
+         });
+     }
+
+     
+
 </script>
 <div class="right_box_card">
     <ul>

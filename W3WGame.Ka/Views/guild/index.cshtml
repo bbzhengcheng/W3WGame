@@ -22,9 +22,9 @@
                     <h2 class="title-con">
                         <span class="all-ico"></span>全部公会礼包</h2>
                     <div class="sub-seach">
-                        <form action="/search/guild.html">
-                        <input type="text" name="sceneName" id="sceneName" value="" class="seachInputc">
-                        <input type="hidden" name="page" value="1">
+                        <form action="/guild/index">
+                        <input type="text" name="title" id="sceneName" value="" class="seachInputc">
+                        
                         <input type="submit" class="seachbtnc" value="搜索">
                         </form>
                     </div>
@@ -32,10 +32,10 @@
                 <!-- con -->
                 <div class="in-Number">
                     <ul class="sub-tab">
-                        <li class="one"><a href="/guild/all_index_1.html" class="current">全部</a> </li>
-                        <li class="two"><a href="/guild/novice_index_1.html" class="">新服礼包</a> </li>
-                        <li class="two"><a href="/guild/vip_index_1.html" class="">特权礼包</a> </li>
-                        <li class="two"><a href="/guild/code_index_1.html" class="">激活码</a> </li>
+                        <li class="two"><a href="#" class="current">公会卡</a> </li>
+                        <li class="two"><a href="/code/" class="">新服礼包</a> </li>
+                        <li class="two"><a href="/vip/" class="">特权礼包</a> </li>
+                        <li class="two"><a href="/code/" class="">激活码</a> </li>
                     </ul>
                     <ul class="recont-list cf">
                         @foreach (var item in Model)
@@ -71,7 +71,7 @@
                 </div>
                 <ul class="rank-con cf">
                       @foreach (var item in randlist)
-                    {
+                      {
                         <li><span class="num">@(i++)</span> <a href="/personal/1410761537395811760.html"
                             class="matter">[@item.GameName]@item.KaTitle</a> <span class="gift-tao"></span>
                         </li>

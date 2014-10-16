@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/_WebLayout.cshtml";
 }
+@using W3WGame.Services.ToolCode
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Dtos.Web.AcceptKaDetailDto>
 <script type="text/javascript" src="/public/pc/pop-box.js"></script>
 <div class="main-mod">
     <!--页面模块·面包屑-->
@@ -23,35 +25,38 @@
                         <span class="fl-l">我领到的号</span><!-- <a href="" class="clear-case"><em class="clear-ico"></em>清空存号箱</a> --></div>
                     <!-- gift-list -->
                     <ul class="gift-list cf">
-                        <input type="hidden" id="temp">
-                        <li id="li1411091694836151615">
+                        @foreach(var item in Model)
+                        {
+                              <li id="li1411091694836151615">
                             <div class="radius120">
                                 <a href="/personal/1409284742836041991.html">
                                     <img src="http://image.game.uc.cn/2014/9/15/9911543.jpg" alt="">
                                     <span class="radius-mask"></span></a>
                             </div>
                             <div class="g-center cf">
-                                <strong class="g-title"><a href="/personal/1409284742836041991.html">[陆战之王]独家封测登录激活码</a>
+                                <strong class="g-title"><a href="/personal/1409284742836041991.html">[@WebHelper.GetImg(item.ImgPath)]@item.KaTitle</a>
                                 </strong>
                                 <div class="code-box cf">
                                     <div class="code-copy">
-                                        激活码:joakzm</div>
+                                        激活码:@item.KaTitle</div>
                                     <a href="javascript:void(0);" class="y-copy-btn" onclick="codeCopy($(this));return false"
                                         rel="joakzm">复制卡号</a>
                                 </div>
                                 <p>
-                                    使用有效期：2014-09-17 10:00:00 至 2014-09-30 00:00:00</p>
-                                <div class="g-tag">
+                                    使用有效期：@item.StartDate.ToString("yyyy-MM-dd hh:mm:ss") 至 @item.EndDate.ToString("yyyy-MM-dd hh:mm:ss")</p>
+                   @*             <div class="g-tag">
                                     <a href="/personal/1409284742836041991.html" class="frist gift-way">礼包内容</a> <a href="/personal/1409284742836041991.html"
                                         class="gift-way">使用方式</a>
-                                </div>
+                                </div>*@
                             </div>
-                            <div class="t-code">
+                           @* <div class="t-code">
                                 <img src="/qr?kaBoxId=1411091694836151615&amp;content=c1xB8bi5Ays%3D" border="0"
                                     alt="">
                                 <span>号二维码扫描</span>
-                            </div>
+                            </div>*@
                         </li>
+                        }
+                       
                     </ul>
                 </div>
             </div>
@@ -59,10 +64,10 @@
             <div class="sidebar-gray">
                 <div class="center-status">
                     <!-- 三种状态 -->
-                    <a href="/inbox/kabox.html" target="_self" class="btn-status">我领到的号</a>
+                    <a href="/inbox/kabox" target="_self" class="btn-status">我领到的号</a>
                     <input type="hidden" id="backurl" value="/inbox/kabox.html">
-                    <a href="/inbox/bookingbox.html" target="_self" class="gray-status">我预订的号</a> <a
-                        href="/follow/myfollow.html" target="_self" class="gray-status">我的礼包提醒</a>
+                    <a href="/inbox/bookingbox" target="_self" class="gray-status">我预订的号</a> <a
+                        href="/follow/myfollow" target="_self" class="gray-status">我的礼包提醒</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_WebLayout.cshtml";
+}
+@using W3WGame.Services.ToolCode
+@using WangFramework.MvcPager
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Dtos.Web.SearchGameKaDto>
+<div class="con">
+    <!--页面模块·面包屑-->
+    <div class="crumbs">
+        <a href="http://ka.9game.cn/">九游发号中心</a> &gt; 搜索结果
+    </div>
+    <!-- oldWitdh==1表示是老的宽度，在公共部分PC_MAIN.html中使用 -->
+    <!-- breadcrumb end -->
+    <div class="sub-con cf">
+        <div class="recont-title">
+            <h2>
+                搜索结果（305）</h2>
+        </div>
+        <ul class="game-falist cf">
+            @foreach (var item in Model)
+            {
+                <li><a href="/guild/1413272795836784487.html"><strong class="gfa-title">[<span class="high-light-f60">@item.GameName</span>@item.KaTitle</strong>
+                    <div class="game-fdetial">
+                        <div class="gfa-detail">
+                           @MvcHtmlString.Create(item.KaContent)
+                        </div>
+                    </div>
+                    <!-- 领号 -->
+                    <!-- 公会 -->
+                    <span class="h-new"></span>
+                    <div class="peo-box cf">
+                        <span class="btn60-green">领号</span>
+                    </div>
+                </a></li>
+               
+            }
+        </ul>
+        <div class="page page-key">
+            @Html.Pager(Model)
+        </div>
+    </div>
+</div>

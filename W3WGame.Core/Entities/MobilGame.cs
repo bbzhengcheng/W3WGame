@@ -27,7 +27,7 @@ namespace W3WGame.Core.Entities
        
         public bool IsGameType { get; set; }
         public int Sort { get; set; }
-
+        public string Domain { get; set; }
 
     }
 }

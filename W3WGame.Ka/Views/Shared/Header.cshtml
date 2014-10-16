@@ -16,62 +16,62 @@
         <ul class="user-bar-ph">
             @if (FormsAuthServiceCookie.IsSignedIn())
             {
-             <li class="right-li-ph user-site-ph">
-                <div class="site-title">
-                    <a href="http://myspace.9game.cn/?&forceModelType=touch" target="_blank" data-statis="text:bbs_p_gdl_myspace">
-                        @FormsAuthServiceCookie.GetCurrentIdentity()<span class="site-toward"></span></a></div>
-                <div class="user-site-pop">
-                    <div class="user-site-name">
-                        <div class="img">
-                            <a href="http://myspace.9game.cn/" target="_blank" data-statis="text:bbs_p_gdl_myspace_logo">
-                                <img src="http://myspace.9game.cn/customerAvatar?uid=339828678" alt="" /></a></div>
-                        <div class="us-name">
-                            <p class="name">
-                                <a href="http://myspace.9game.cn/?&forceModelType=touch" target="_blank" data-statis="text:bbs_p_gdl_myspace_name">
-                                     @FormsAuthServiceCookie.GetCurrentIdentity()</a></p>
-                            <p class="ctrl">
-                                <a href="http://myspace.9game.cn/wage/getWage?RtnUrl=http%3A%2F%2Fka.9game.cn%2F&forceModelType=touch"
-                                   target="_blank" data-statis="text:bbs_p_gdl_myspace_wage">领工资</a> <a href="http://myspace.9game.cn/user/security"
-                                                                                                        target="_blank" data-statis="text:bbs_p_gdl_myspace_security">账号管理</a> <a href="http://ka.9game.cn/Auth/logout?RtnUrl=http%3A%2F%2Fka.9game.cn%2F"
-                                                                                                                                                                                  class="last" data-statis="text:bbs_p_gdl_myspace_logout">退出</a>
-                            </p>
+                <li class="right-li-ph user-site-ph">
+                    <div class="site-title">
+                        <a href="http://myspace.9game.cn/?&forceModelType=touch" target="_blank" data-statis="text:bbs_p_gdl_myspace">
+                            @FormsAuthServiceCookie.GetCurrentIdentity()<span class="site-toward"></span></a></div>
+                    <div class="user-site-pop">
+                        <div class="user-site-name">
+                            <div class="img">
+                                <a href="http://myspace.9game.cn/" target="_blank" data-statis="text:bbs_p_gdl_myspace_logo">
+                                    <img src="http://myspace.9game.cn/customerAvatar?uid=339828678" alt="" /></a></div>
+                            <div class="us-name">
+                                <p class="name">
+                                    <a href="http://myspace.9game.cn/?&forceModelType=touch" target="_blank" data-statis="text:bbs_p_gdl_myspace_name">
+                                        @FormsAuthServiceCookie.GetCurrentIdentity()</a></p>
+                                <p class="ctrl">
+                                    <a href="http://myspace.9game.cn/wage/getWage?RtnUrl=http%3A%2F%2Fka.9game.cn%2F&forceModelType=touch"
+                                        target="_blank" data-statis="text:bbs_p_gdl_myspace_wage">领工资</a> <a href="http://myspace.9game.cn/user/security"
+                                            target="_blank" data-statis="text:bbs_p_gdl_myspace_security">账号管理</a> <a href="@Url.Action("LogOff", "personal")"
+                                                                                                                                                                                  class="last" >
+                                                退出</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ctrl-btn-ph">
+                            <a href="http://myspace.9game.cn/space/loginedindex" target="_blank" data-statis="text:bbs_p_gdl_myspace_mygame">
+                                我的游戏</a> <a href="http://myspace.9game.cn/space/viewactivities" target="_blank" data-statis="text:bbs_p_gdl_myspace_viewactivities">
+                                    我的帖子</a> <a href="/inbox/kabox.html?uc_param_str=eisidnfrpfbivemiligijbpinwcunicpnt"
+                                        target="_blank" data-statis="text:bbs_p_gdl_myspace_kabox">存号箱</a>
                         </div>
                     </div>
-                    <div class="ctrl-btn-ph">
-                        <a href="http://myspace.9game.cn/space/loginedindex" target="_blank" data-statis="text:bbs_p_gdl_myspace_mygame">
-                            我的游戏</a> <a href="http://myspace.9game.cn/space/viewactivities" target="_blank" data-statis="text:bbs_p_gdl_myspace_viewactivities">
-                                         我的帖子</a> <a href="/inbox/kabox.html?uc_param_str=eisidnfrpfbivemiligijbpinwcunicpnt"
-                                                     target="_blank" data-statis="text:bbs_p_gdl_myspace_kabox">存号箱</a>
-                    </div>
-                </div>
-            </li>
-            <li class="right-li-ph msg-site-ph">
-                <div class="site-title">
-                    <a href="/checkRemind" target="_blank">消息<span class="org">(1)</span><span class="site-toward"></span></a></div>
-                <div class="msg-site-pop">
-                    <ul class="msg-link-list">
-                        <li><a href="http://myspace.9game.cn/message/notice?type=0" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_system">
+                </li>
+                <li class="right-li-ph msg-site-ph">
+                    <div class="site-title">
+                        <a href="/checkRemind" target="_blank">消息<span class="org">(1)</span><span class="site-toward"></span></a></div>
+                    <div class="msg-site-pop">
+                        <ul class="msg-link-list">
+                            <li><a href="http://myspace.9game.cn/message/notice?type=0" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_system">
                                 查看系统信息<span class="num"></span></a></li>
-                        <li><a href="http://myspace.9game.cn/message/notice?type=1" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_activity">
+                            <li><a href="http://myspace.9game.cn/message/notice?type=1" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_activity">
                                 查看活动信息<span class="num"></span></a></li>
-                        <li><a href="http://myspace.9game.cn/message/notice?type=3" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_gh">
+                            <li><a href="http://myspace.9game.cn/message/notice?type=3" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_gh">
                                 查看公会信息<span class="num"></span></a></li>
-                        <li><a href="http://myspace.9game.cn/message/notice?type=4" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_ka">
+                            <li><a href="http://myspace.9game.cn/message/notice?type=4" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_ka">
                                 查看发号信息<span class="num"></span></a></li>
-                        <li><a href="http://myspace.9game.cn/message/notice?type=2" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_bbs">
+                            <li><a href="http://myspace.9game.cn/message/notice?type=2" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_bbs">
                                 查看论坛信息<span class="num">1</span></a></li>
-                        <li><a href="http://myspace.9game.cn/message/dialog" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_person">
+                            <li><a href="http://myspace.9game.cn/message/dialog" target="_blank" data-statis="text:bbs_p_gdl_myspace_message_person">
                                 查看私信<span class="num"></span></a></li>
-                    </ul>
-                </div>
-            </li>
+                        </ul>
+                    </div>
+                </li>
             }
             else
             {
-                <li class="right-li-ph"><a href="http://ka.9game.cn/Auth/login?RtnUrl=http%3A%2F%2Fka.9game.cn%2F" class="ulink">登录</a></li>
-				<li class="right-li-ph"><a href="http://ka.9game.cn/Auth/mobileReg?RtnUrl=http%3A%2F%2Fka.9game.cn%2F" class="ulink">注册</a></li>
+                <li class="right-li-ph"><a href="/personal/login" class="ulink">登录</a></li>
+                <li class="right-li-ph"><a href="/personal/reg" class="ulink">注册</a></li>
             }
-           
             <!-- 网站导航 begin -->
             <li class="right-li-ph web-site-ph">
                 <div class="site-title">
@@ -171,7 +171,7 @@
                             <ul class="site-list">
                                 <li><a href="http://app.9game.cn/" target="_blank">九游游戏中心</a></li>
                                 <li><a href="https://pay.uc.cn/web/index.htm?wp=9game&amp;from=9game&amp;link=upaypc"
-                                       target="_blank">充值中心</a></li>
+                                    target="_blank">充值中心</a></li>
                                 <li><a href="http://gh.9game.cn/" target="_blank">游戏公会</a></li>
                             </ul>
                         </div>
@@ -191,34 +191,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(function () {
-        var notice = GetRowCookie("creditnotice");
-        notice = decodeURIComponent(notice);
-        if (notice != '' && notice != 'null') {
-            var defaultDomain = '';
-            var noticeArray = notice.split('|');
-            if (noticeArray.length > 1) {
-                notice = noticeArray[0] + '<span class=\"key\">' + noticeArray[1] + '</span>';
-            }
-            SetCookie('creditnotice', '', 0, '/', '9game.cn');
-            showTips(notice, 3000);
-        }
-    })
-
-    function showTips(message, timeout) {
-        $(".prompt-mask").html(message);
-        $(".public-mask").show();
-        setTimeout(function () {
-            $(".public-mask").animate({
-                opacity: "0"
-            }, { duration: 900, complete: function () {
-                $(".public-mask").hide();
-            }
-            });
-        }, timeout)
-    }
-</script>
 <!-- top end -->
 <!-- top-con begin -->
 <div class="top-mod">
@@ -230,17 +202,17 @@
         <div class="seach-mod">
             <!-- seach-form -->
             <div class="seach-form">
-                <form action="/search.html">
+                <form action="/search">
                 <input type="text" name="name" id="name" placeholder="请输入游戏关键字" class="input-text"
-                    onfocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;">
+                    onfocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" autocomplete="off">
                 <input type="submit" value="搜 索" class="seach-btn">
                 </form>
             </div>
             <div class="mod-hot-seach">
-                <b class="hot-key-private">搜索热词 :</b> <a href="http://ka.9game.cn/game/535733_-5_1.html"
-                    target="_blank">刀塔传奇</a> <a href="http://ka.9game.cn/game/536434_-5_1.html" target="_blank">
-                        卧虎藏龙</a> <a href="http://ka.9game.cn/game/527432_-5_1.html" target="_blank">放开那三国</a>
-                <a href="http://ka.9game.cn/game/537811_-5_1.html" target="_blank">英雄之剑</a>
+                <b class="hot-key-private">搜索热词 :</b> <a href="/search/index?name=刀塔传奇"
+                    target="_blank">刀塔传奇</a> <a href="/search/index?name=卧虎藏龙" target="_blank">
+                        卧虎藏龙</a> <a href="/search/index?name=放开那三国" target="_blank">放开那三国</a>
+                <a href="/search/index?name=英雄之剑" target="_blank">英雄之剑</a>
             </div>
         </div>
     </div>
@@ -250,15 +222,10 @@
 <div class="nav-mod">
     <div class="main-mod">
         <div class="naved">
-           @* <a href="/" target="_self" class="on">发号首页</a>*@
-            <a href="/code/">激活码</a>
-           
-            <a href="/novice/">新服礼包</a>
-             <a href="/vip/">特权礼包</a>
-            <a href="/guild/">公会礼包</a> 
-            <a href="/help/">新手帮助</a>
+            @* <a href="/" target="_self" class="on">发号首页</a>*@ <a href="/code/">激活码</a> <a href="/novice/">
+                新服礼包</a> <a href="/vip/">特权礼包</a> <a href="/guild/">公会礼包</a> <a href="/help/">新手帮助</a>
         </div>
-        <a href="/inbox/kabox.html" target="_self" class="etty"><i class="etty-ico"></i>存号箱</a>
+        <a href="/inbox/kabox" target="_self" class="etty"><i class="etty-ico"></i>存号箱</a>
     </div>
 </div>
 <!-- nav end -->

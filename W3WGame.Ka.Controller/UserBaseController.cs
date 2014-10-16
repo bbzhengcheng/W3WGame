@@ -13,7 +13,7 @@ namespace W3WGame.Ka.Controller
         {
             if (!FormsAuthServiceCookie.IsSignedIn())
             {
-                filterContext.HttpContext.Response.Write("<script>window.top.location.href='/Account/LogOn';</script>");
+                filterContext.HttpContext.Response.Write("<script>window.top.location.href='/personal/login';</script>");
                 filterContext.HttpContext.Response.End();
                 return;
             }

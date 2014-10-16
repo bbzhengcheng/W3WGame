@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using W3WGame.Task;
+using WangFramework.Web.Mvc.DomainRoute;
 
 namespace W3WGame.Web
 {
@@ -12,6 +14,8 @@ namespace W3WGame.Web
 
     public class MvcApplication : System.Web.HttpApplication
     {
+       
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -19,8 +23,17 @@ namespace W3WGame.Web
 
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+             MobilGameTask mobilGameTask = new MobilGameTask();
 
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            foreach (var item in mobilGameTask.GetAll(null,""))
+            {
+                routes.Add("DomainRouteName"+item.Domain.ToLower(),
+                    new DomainRoute(string.Format("{0}.w3wgame.com",item.Domain.ToLower()),
+                        "{action}/{id}",new {Controller="",action="",id=""}
+                        ));
+            }
+           
             routes.MapRoute(
                 "Default", // 路由名称
                 "{controller}/{action}/{id}", // 带有参数的 URL

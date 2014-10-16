@@ -10,38 +10,11 @@
     <link href="/public/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/public/stylesheets/fahaoPc_v2.css" />
     <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc.css" />
-    <link rel="stylesheet" href="/public/stylesheets/jquery-ui-autocomplete.css" />
+ 
     <link rel="stylesheet" type="text/css" href="/public/stylesheets/d5v1_pc.css" />
     <script type="text/javascript" src="/public/javascripts/jquery.js"></script>
-    <script type="text/javascript" src="/public/javascripts/jquery-ui-autocomplete.min.js"></script>
-    <script src="/public/javascripts/cookie.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#name").autocomplete({
-                source: "/matching.html",
-                delay: 10,
-                focus: function (event, ui) {
-                    var value = ui.item.label.replace(new RegExp("<span class=\"high-light-f60\">", "g"), "");
-                    value = value.replace(new RegExp("</span>", "g"), "");
-                    $('#name').val(value);
-                    return false;
-                },
-                select: function (event, ui) {
-                    var value = ui.item.label.replace(new RegExp("<span class=\"high-light-f60\">", "g"), "");
-                    value = value.replace(new RegExp("</span>", "g"), "");
-                    $('#name').val(value);
-                    return false;
-                },
-                minLength: 1
-            }).data("ui-autocomplete")._renderItem = function (ul, item) {
-                return $("<li></li>").data("item.autocomplete", item)
-		             .append("<a>" + item.label + "</a>")
-		             .appendTo(ul);
-            };
-            //实时播报滚动
-            inRealTime(".new-warp", ".new");
-        });
-    </script>
+    <script type="text/javascript" src="/public/pc/pop-box.js"></script>
+   
     <!--[if IE 6]>
 	<script language="javascript" type="text/javascript" src="/public/javascripts/ie6_png.js"></script>
 	<script language="javascript" type="text/javascript">
@@ -50,47 +23,18 @@
 	<![endif]-->
 </head>
 <body>
-@Html.Partial("Header")
-
+    @Html.Partial("Header")
     <!-- main begin -->
-      @RenderBody()
- 
+    @RenderBody()
     <!-- main end -->
-
     <!-- footer begin -->
-@Html.Partial("Footer")
+    @Html.Partial("Footer")
     <!-- footer end -->
     <!-- 右侧下载客户端、反馈、返回顶部 -->
-    <ul class="pub-littlt-fix-nav" id="pub-littlt-fix-nav">
-        <li class="client"><a href="" class="link">下载<span class="lit">客户端</span></a>
-            <div class="client-code first">
-                <a href="http://9game.cn/outurl.html?linkid=1355">
-                    <img src="/public/images/9gameClient_dimensionPic.png" alt="" class="img">
-                </a>
-                <p class="p">
-                    点击下载或扫一扫，安装九游游戏中心</p>
-                <p class="org">
-                    领礼包，看攻略</p>
-                <span class="close"></span><span class="cor"></span>
-            </div>
-        </li>
-        <li class="suggest"><a href="http://bbs.9game.cn/forum.php?mod=forumdisplay&fid=1667&page=1"
-            target="_blank" class="link">我要反馈</a> </li>
-        <li id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share"><a href="#"
-            class="bds_more link">我要分享</a></li>
-        <li class="to-top"></li>
-    </ul>
-  
 </body>
 <script type="text/javascript" src="/public/javascripts/hot_seach.js"></script>
 <script type="text/javascript" src="/public/javascripts/change_img.js"></script>
 <script type="text/javascript" src="/public/javascripts/tab.js"></script>
 <script type="text/javascript" src="/public/javascripts/index.js"></script>
-<script type="text/javascript" src="/public/javascripts/in_real_time.js"></script>
-<script type="text/javascript" src="/public/pc/back_top.js"></script>
 <script type="text/javascript" src="/public/javascripts/uglib/pub-header.js"></script>
-<script type="text/javascript" src="/public/javascripts/uglib/litt_nav.js"></script>
-<script type="text/javascript" id="bdshare_js" data="img=3&amp;uid=0"></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript" src="/public/javascripts/baidu.js"></script>
 </html>

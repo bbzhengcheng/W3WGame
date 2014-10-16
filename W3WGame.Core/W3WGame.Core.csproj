@@ -46,11 +46,14 @@
     <Compile Include="Dtos\GameServersDto.cs" />
     <Compile Include="Dtos\UserLoginLogChart.cs" />
     <Compile Include="Dtos\UserLoginLogsDto.cs" />
+    <Compile Include="Dtos\Web\AcceptKaDetailDto.cs" />
     <Compile Include="Dtos\Web\GameDownloadDto.cs" />
     <Compile Include="Dtos\Web\GameKaDto.cs" />
     <Compile Include="Dtos\Web\NewsDto.cs" />
     <Compile Include="Dtos\Web\NewsKaDto.cs" />
     <Compile Include="Dtos\Web\NewsXmlDto.cs" />
+    <Compile Include="Dtos\Web\SearchGameKaDto.cs" />
+    <Compile Include="Entities\AcceptKaDetail.cs" />
     <Compile Include="Entities\AccountInfo.cs" />
     <Compile Include="Entities\AccountLoginLog.cs" />
     <Compile Include="Entities\ADConfig.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Entities\MobilGame.cs" />
     <Compile Include="Entities\VoucherHistory.cs" />
     <Compile Include="Entities\WebLoginLog.cs" />
+    <Compile Include="Enums\AcceptKaTypeEnum.cs" />
     <Compile Include="Enums\ADConfigPlaceEnum.cs" />
     <Compile Include="Enums\AdTypeEnum.cs" />
     <Compile Include="Enums\AttrInputType.cs" />

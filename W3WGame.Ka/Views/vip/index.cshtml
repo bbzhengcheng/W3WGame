@@ -23,10 +23,9 @@
                     <h2 class="title-con">
                         <span class="all-ico"></span>特权礼包</h2>
                     <div class="sub-seach">
-                        <form action="/search/personal.html">
-                        <input type="text" name="sceneName" id="sceneName" value="" class="seachInputc">
-                        <input type="hidden" name="tab" value="vip">
-                        <input type="hidden" name="redirect" value="/Personal/index">
+                        <form action="/vip/index">
+                        <input type="text" name="title" id="sceneName" value="" class="seachInputc">
+                        
                         <input type="submit" class="seachbtnc" value="搜索">
                         </form>
                     </div>
@@ -67,7 +66,7 @@
                 </div>
                 <ul class="rank-con cf">
                       @foreach (var item in randlist)
-                    {
+                      {
                         <li><span class="num">@(i++)</span> <a href="/personal/1410761537395811760.html"
                             class="matter">[@item.GameName]@item.KaTitle</a> <span class="gift-tao"></span>
                         </li>

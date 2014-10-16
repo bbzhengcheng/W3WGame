@@ -157,6 +157,8 @@ namespace W3WGame.Admin.Controllers.GameKaManager
                                         StartDate = savemodel.StartDate,
                                         EndDate = savemodel.EndDate,
                                         IsDisplayHome = savemodel.IsDisplayHome,
+                                        KaContent = savemodel.KaContent,
+                                        KaUseDes = savemodel.KaUseDes,
                                         
                                     };
                     _gamekaTask.Add(model);
@@ -174,7 +176,8 @@ namespace W3WGame.Admin.Controllers.GameKaManager
                     model.Count = savemodel.Count;
                     model.GameID = savemodel.GameID;
                     model.ServerID = savemodel.ServerID;
-                   
+                    model.KaContent = savemodel.KaContent;
+                    model.KaUseDes = savemodel.KaUseDes;
                     model.Shengyu = savemodel.Shengyu;
                     model.StartDate = savemodel.StartDate;
                     model.EndDate = savemodel.EndDate;

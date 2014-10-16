@@ -10,7 +10,8 @@ namespace W3WGame.Ka.Controller.home
     {
         public ActionResult index()
         {
-            return View();
+
+            return RedirectToAction("index", "novice");
         }
 
 

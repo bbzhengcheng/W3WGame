@@ -29,17 +29,24 @@ namespace W3WGame.Admin.Controllers.GameKaManager.ViewModels
         [Display(Name = "创建日期"), Required(ErrorMessage = "请输入！")]
         public DateTime CreateDate { get; set; }
 
-         [Display(Name = "是否显示在首页")]
+        [Display(Name = "是否显示在首页")]
         public bool? IsDisplayHome { get; set; }
 
         [Display(Name = "剩余数量")]
         public int Shengyu { get; set; }
-        
+
         [Display(Name = "有效期开始时间"), Required(ErrorMessage = "请输入！")]
         public DateTime StartDate { get; set; }
 
         [Display(Name = "有效期结束时间"), Required(ErrorMessage = "请输入！")]
         public DateTime EndDate { get; set; }
+
+        [Display(Name = "卡内容")]
+        public string KaContent { get; set; }
+
+        [Display(Name = "卡使用方法")]
+        public string KaUseDes { get; set; }
+
 
 
 

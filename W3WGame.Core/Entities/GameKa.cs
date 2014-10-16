@@ -21,5 +21,9 @@ namespace W3WGame.Core.Entities
         public DateTime EndDate { get; set; }
 
         public bool? IsDisplayHome { get; set; }
+
+        public string KaContent { get; set; }
+
+        public string KaUseDes { get; set; }
     }
 }

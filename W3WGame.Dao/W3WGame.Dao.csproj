@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Daos\AcceptKaDetailDao.cs" />
     <Compile Include="Daos\AccountInfoDao.cs" />
     <Compile Include="Daos\AccountLoginLogDao.cs" />
     <Compile Include="Daos\ADConfigDao.cs" />

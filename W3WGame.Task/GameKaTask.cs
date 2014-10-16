@@ -17,8 +17,14 @@ namespace W3WGame.Task
         {
             return _dao.GetPagedList(pageIndex,pageSize);
         }
-        
-         public GameKa GetById(int id)
+
+         public PagedList<SearchGameKaDto> GetSearchPagedList(string title, int pageIndex, int pageSize)
+         {
+             return _dao.GetSearchPagedList(title, pageIndex, pageSize);
+         }
+       
+
+	    public GameKa GetById(int id)
         {
             return _dao.GetById(id);
         }

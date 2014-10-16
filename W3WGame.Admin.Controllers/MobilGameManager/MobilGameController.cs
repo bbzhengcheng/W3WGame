@@ -136,6 +136,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                                         IsGameType = savemodel.IsGameType,
                                         IsQianLiBao = savemodel.IsQianLiBao,
                                         Sort  = savemodel.Sort,
+                                        Domain = savemodel.Domain,
                                       
                                     };
                     _mobilgameTask.Add(model);
@@ -173,7 +174,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                     model.IsGameType = savemodel.IsGameType;
                     model.IsQianLiBao = savemodel.IsQianLiBao;
                     model.Sort = savemodel.Sort;
-
+                    model.Domain = savemodel.Domain;
 
                     _mobilgameTask.Update(model);
                 }

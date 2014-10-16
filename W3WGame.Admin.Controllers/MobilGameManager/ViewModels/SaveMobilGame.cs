@@ -65,7 +65,8 @@ namespace W3WGame.Admin.Controllers.MobilGameManager.ViewModels
         [Display(Name = "排序")]
         public int Sort { get; set; }
 
-
+       [Display(Name = "网站域名"), Required(ErrorMessage = "请输入！")]
+        public string Domain { get; set; }
 
 
 
