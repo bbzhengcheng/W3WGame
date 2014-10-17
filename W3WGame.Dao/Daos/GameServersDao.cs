@@ -55,6 +55,19 @@ namespace W3WGame.Dao.Daos
             return Query<GameServers>(sql).ToList();
         }
 
+        public List<GameServers> GetAll(int? top, string strwhere)
+        {
+            string topselect = top == null ? "" : "TOP " + top.ToString();
+            var sql = Sql.Builder.Select(topselect + "  * ")
+                .From("GameServers WITH(NOLOCK)");
+            if (!string.IsNullOrEmpty(strwhere))
+            {
+                sql.Where(strwhere);
+            }
+            sql.OrderBy("OpenTime DESC");
+            return Query<GameServers>(sql).ToList();
+        }
+
 
 	    public List<GameServersDto> GetHomeServerList(int serverState)
 	    {

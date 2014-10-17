@@ -16,6 +16,7 @@ namespace W3WGame.Core.Entities
         public int AdType { get; set; }
         public DateTime CreateDate { get; set; }
         public string CreatePeople { get; set; }
+        public int GameID { get; set; }
 
     }
 }

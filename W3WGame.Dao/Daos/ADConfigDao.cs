@@ -11,12 +11,16 @@ namespace W3WGame.Dao.Daos
 	
 	public  class ADConfigDao:BaseDao<ADConfig>
 	{
-	     public PagedList<ADConfig> GetPagedList(int? placeid,int pageIndex, int pageSize)
+	     public PagedList<ADConfig> GetPagedList(int? placeid,int? gameid,int pageIndex, int pageSize)
         {
             var sql = Sql.Builder.Where("1=1");
             if(placeid!=null)
             {
                 sql.Where("Place = @0",placeid);
+            }
+            if(gameid!=null)
+            {
+                sql.Where("GameID = @0", gameid);
             }
             return PagedList<ADConfig>(pageIndex, pageSize, sql);
         }

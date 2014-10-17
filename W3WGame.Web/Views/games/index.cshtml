@@ -1,419 +1,426 @@
 ﻿@{
     Layout = "~/Views/Shared/_GameWebLayout.cshtml";
+    var serverlist = ViewData["serverlist"] as List<GameServers>;
+    var gamekalist = ViewData["gamekalist"] as List<GameKa>;
+    var gameinfo = ViewData["gameinfo"] as MobilGame;
+    var friendlist = ViewData["friendlist"] as List<FriendLink>;
+    var centernewslist = Model.Where(c => c.NewsType == (int)NewsTypeEnum.News || c.NewsType == (int)NewsTypeEnum.GongGao);
+    var gameLunBo = ViewData["GameLunBo"] as List<ADConfig>;
+    var gameBLook = ViewData["GameBLook"] as List<ADConfig>;
+    int i = 1;
+    int j = 1;
+    
 }
+@using W3WGame.Core.Entities
+@using W3WGame.Core.Enums
+@using W3WGame.Services.ToolCode
+@using WangFramework.Extensions
+@using WangFramework.Utility
+@model  List<W3WGame.Core.Dtos.Web.GameNewsDto>
 <div class="main-wrap">
-		<div class="box">
-<ul class="main-nav">
-  <li class=" current"><a href="http://qsmy.9game.cn/" data-statis="text:gw_index_dh_qsmy_1">首页</a></li>
-			<li class=""><a href="http://qsmy.9game.cn/newslist/yxxw_0/" data-statis="text:gw_index_dh_qsmy_2">最新动态</a></li>
-			<li class=""><a href="http://qsmy.9game.cn/newslist/yxgl_1/" data-statis="text:gw_index_dh_qsmy_3">攻略评测</a></li>
-			<li class=""><a href="http://qsmy.9game.cn/newslist/rmhd_1/" data-statis="text:gw_index_dh_qsmy_4">有奖活动</a></li>
-			<li class=""><a href="http://ka.9game.cn/game/535529_-5_1.html" data-statis="text:gw_index_dh_qsmy_5">礼包领取</a></li>
-			<li class=""><a href="http://pay.uc.cn/web/index.htm" data-statis="text:gw_index_dh_qsmy_6">充值中心</a></li>
-		<li class="bbs"><a href="http://bbs.9game.cn/forum-1180-1.html" data-statis="text:gw_index_dh_qsmy_7">进入论坛</a></li>
-</ul>
-			<div class="contain main-box">
-	<div class="foucs-con">
-		<ul class="focus-img" x-now-data="1">
-				<li class="current" style="display: none;"><a href="http://qsmy.9game.cn/news/242069.html" data-statis="text:gw_index_jdt_qsmy_0"><img src="http://image.base.9game.cn:8080/2014/7/29/9824181.jpg" alt="​《秦时明月》新版本“龙腾万里”更新公告"></a></li>
-				<li style="display: list-item;"><a href="http://qsmy.9game.cn/news/242084.html" data-statis="text:gw_index_jdt_qsmy_1"><img src="http://image.base.9game.cn:8080/2014/7/29/9824180.jpg" alt="秦时明月新版本新手攻略"></a></li>
-		</ul>
-		<div class="focus-ctrl">
-				<a href="javascript:void(0);" target="_self" class="">1</a>
-				<a href="javascript:void(0);" target="_self" class="current">2</a>
-		</div>
-	</div>
-<div class="hot-news hot-news-yr">
-			<p class="hot-title"><a href="http://qsmy.9game.cn/news/263218.html" data-statis="text:gw_index_jdtt_qsmy_263218">秦时明月9月10日 最强机关觉醒公测来袭</a></p>
-					<ul class="news-list"> 
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/279667.html" data-statis="text:gw_index_jdzx_qsmy_279667">​《秦时明月》10月18日12时欲擒故纵开启</a><span class="date">10-16</span></li>
-						<li><span class="type">活动</span><a href="http://qsmy.9game.cn/news/279568.html" data-statis="text:gw_index_jdzx_qsmy_279568">​秦时明月10.16 鬼谷纵剑少年盖聂活动公告</a><span class="date">10-16</span></li>
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/279717.html" data-statis="text:gw_index_jdzx_qsmy_279717">[秦时明月]蜀山蝶变特权礼包已开放领取</a><span class="date">10-15</span></li>
-						<li><span class="type">活动</span><a href="http://qsmy.9game.cn/news/276509.html" data-statis="text:gw_index_jdzx_qsmy_276509">秦时明月九游独家烤鸡礼包 签到抢先领取</a><span class="date">10-09</span></li>
-						<li><span class="type">活动</span><a href="http://qsmy.9game.cn/news/275150.html" data-statis="text:gw_index_jdzx_qsmy_275150">秦时明月国庆豪礼充值送烤鸡首充100%返</a><span class="date">09-30</span></li>
-					</ul>
-					<ul class="news-list last"> 
-						<li><span class="type">活动</span><a href="http://qsmy.9game.cn/news/275035.html" data-statis="text:gw_index_jdzx_qsmy_275035">秦时明月国庆节新区盛世开启 福利领不停</a><span class="date">09-30</span></li>
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/274738.html" data-statis="text:gw_index_jdzx_qsmy_274738">​《秦时明月》10月3日12时花海梦断开启</a><span class="date">09-30</span></li>
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/274739.html" data-statis="text:gw_index_jdzx_qsmy_274739">​《秦时明月》10月5日12时君子之道开启</a><span class="date">09-30</span></li>
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/274740.html" data-statis="text:gw_index_jdzx_qsmy_274740">​《秦时明月》10月8日12时舍生取义开启</a><span class="date">09-30</span></li>
-						<li><span class="type">新闻</span><a href="http://qsmy.9game.cn/news/274742.html" data-statis="text:gw_index_jdzx_qsmy_274742">​《秦时明月》10月10日12时千机铜盘开启</a><span class="date">09-30</span></li>
-		</ul>
-  <a href="http://qsmy.9game.cn/newslist/yxxw_1/" class="more">查看更多&gt;&gt;</a>
-</div>
-				<div class="box down-yure">
-			<div class="titile-con"><h1>秦时明月官网下载</h1></div>
-	<div class="context-con">
-		<div class="des">
-					<span class="img"><img src="http://image.game.uc.cn/2014/8/19/9864525.png" alt="秦时明月"><i class="radius80"></i></span>
-						《秦时明月》正版授权 ，重现国漫经典。最同步的剧情还原，最给力的画面品质，最真实的原班配音。秦时硝烟已起，亿万秦迷等你来	
-					<span class="more">
-						[详情]
-						<div class="tips">
-							<span class="cor"></span>
-							<p>
-									《秦时明月》正版授权 ，重现国漫经典。最同步的剧情还原，最给力的画面品质，最真实的原班配音。秦时硝烟已起，亿万秦迷等你来战！
-							</p>
-						</div>
-					</span>
-		</div>
-		<ul class="info">
-					<li><span class="type">类型</span>角色</li>
-					<li><span class="type">平台</span>安卓</li>
-					<li class="long"><span class="type">状态</span>运营</li>
-			</ul>
-		<div class="btn-con">
-				<span class="btn green code-show-yr">游戏下载</span>
-					<a href="http://ka.9game.cn/game/535529_-5_1.html" class="btn red" data-statis="text:gw_index_yxxz_qsmy_lqlb">领取礼包</a>
-			</div>
-					<div class="server">4006661551</div>
-	</div>
-</div>
-			</div>
-		</div>
-		<div class="contain float-box">
-		<div class="box atr-list-245">
-			<div class="titile-con"><h2><a href="http://qsmy.9game.cn/newslist/rmhd_0/" data-statis="text:gw_index_rmhd_qsmy">秦时明月活动公告</a></h2><a href="http://qsmy.9game.cn/newslist/rmhd_0/" class="more" data-statis="text:gw_index_rmhd_qsmy_more">更多&gt;&gt;</a></div>
-				<div class="context-con">
-					<ul class="news-list">
-								<li><a href="http://qsmy.9game.cn/news/279568.html" data-statis="text:gw_index_rmhd_qsmy_279568">​秦时明月10.16 鬼谷纵剑少年盖聂活动公告</a><span class="date">10-16</span></li>
-								<li><a href="http://qsmy.9game.cn/news/276509.html" data-statis="text:gw_index_rmhd_qsmy_276509">秦时明月九游独家烤鸡礼包 签到抢先领取</a><span class="date">10-09</span></li>
-								<li><a href="http://qsmy.9game.cn/news/275150.html" data-statis="text:gw_index_rmhd_qsmy_275150">秦时明月国庆豪礼充值送烤鸡首充100%返</a><span class="date">09-30</span></li>
-								<li><a href="http://qsmy.9game.cn/news/275035.html" data-statis="text:gw_index_rmhd_qsmy_275035">秦时明月国庆节新区盛世开启 福利领不停</a><span class="date">09-30</span></li>
-								<li><a href="http://qsmy.9game.cn/news/274500.html" data-statis="text:gw_index_rmhd_qsmy_274500">秦时明月国庆乐翻天 君临天下活动公告</a><span class="date">09-29</span></li>
-								<li><a href="http://qsmy.9game.cn/news/270733.html" data-statis="text:gw_index_rmhd_qsmy_270733">秦时明月手游兑换码 赢取国庆礼包</a><span class="date">09-23</span></li>
-								<li><a href="http://qsmy.9game.cn/news/267573.html" data-statis="text:gw_index_rmhd_qsmy_267573">秦时明月​9月18日嗜杀刺客，残虹盖聂活动</a><span class="date">09-17</span></li>
-								<li class="last"><a href="http://qsmy.9game.cn/news/265341.html" data-statis="text:gw_index_rmhd_qsmy_265341">秦时明月喜迎新版本 史上最丰厚活动合集</a><span class="date">09-12</span></li>
-					</ul>
-				</div>
-			</div>
-		<div class="box game-gift-2 game-gift-yr">
-			<div class="titile-con"><h2><a href="http://ka.9game.cn/game/535529.0_-5_1.html">秦时明月礼包领取</a></h2>
-			<a href="http://ka.9game.cn/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
-			<div class="context-con">
-				<table class="gift-table">
-					<tbody><tr>
-						<th class="name"><span>礼包名称</span></th>
-						<th class="text"><span>礼包状态</span></th>
-						<th class="text"><span>礼包领取</span></th>
-					</tr>
-									<tr>
-										<td><a href="http://ka.9game.cn/personal/1413367046836136048.html" class="name">[秦时明月]蜀山蝶变新手礼包</a>
-											<span class="tips-con">
-												<div class="tips" style="display: none;">
-													<span class="cor"></span>
-													<p class="tip-title">礼包内容：</p>
-						                                  银币*5W、烤山鸡*1、培养丹*3、内力丹*10、战斗加速体验体验券*1
-													<a href="http://ka.9game.cn/personal/1413367046836136048.html" class="tip-more">更多详情&gt;&gt;</a>
-												</div>
-											</span>
-										</td>
-										<td>已被淘号<span class="orange">684</span>次</td>
-										<td><a href="http://ka.9game.cn/personal/1413367046836136048.html" class="btn reget">淘号</a></td>
-									</tr>
-									<tr>
-										<td><a href="http://ka.9game.cn/guild/1413367091763891485.html" class="name">[秦时明月]蜀山蝶变工会礼包</a>
-											<span class="tips-con">
-												<div class="tips">
-													<span class="cor"></span>
-													<p class="tip-title">礼包内容：</p>
-						                                  银币*10W、天灯*5、百家令*15
-													<a href="http://ka.9game.cn/guild/1413367091763891485.html" class="tip-more">更多详情&gt;&gt;</a>
-												</div>
-											</span>
-										</td>
-										<td>已被淘号<span class="orange">0</span>次</td>
-										<td><a href="http://ka.9game.cn/guild/1413367091763891485.html" class="btn reget">淘号</a></td>
-									</tr>
-									<tr>
-										<td><a href="http://ka.9game.cn/personal/1413367056763891449.html" class="name">[秦时明月]蜀山蝶变特权礼包</a>
-											<span class="tips-con">
-												<div class="tips">
-													<span class="cor"></span>
-													<p class="tip-title">礼包内容：</p>
-银币*8W、烤山鸡*1、培养丹*3、内力丹*10、高级传功丹*1
-													<a href="http://ka.9game.cn/personal/1413367056763891449.html" class="tip-more">更多详情&gt;&gt;</a>
-												</div>
-											</span>
-										</td>
-										<td>已被淘号<span class="orange">2353</span>次</td>
-										<td><a href="http://ka.9game.cn/personal/1413367056763891449.html" class="btn reget">淘号</a></td>
-									</tr>
-				</tbody></table>
-			</div>
-		</div>
-<div class="box atr-list-245">
-	<div class="titile-con"><h2><a href="http://qsmy.9game.cn/newslist/yxxw_0/" data-statis="text:gw_index_yxxw_qsmy">秦时明月游戏新闻</a></h2><a href="http://qsmy.9game.cn/newslist/yxxw_0/" class="more" data-statis="text:gw_index_yxxw_qsmy_more">更多&gt;&gt;</a></div>
-	<div class="context-con">
-		<ul class="news-list">
-					<li><a href="http://qsmy.9game.cn/news/279667.html" data-statis="text:gw_index_yxxw_qsmy_279667">​《秦时明月》10月18日12时欲擒故纵开启</a><span class="date">10-16</span></li>
-					<li><a href="http://qsmy.9game.cn/news/279717.html" data-statis="text:gw_index_yxxw_qsmy_279717">[秦时明月]蜀山蝶变特权礼包已开放领取</a><span class="date">10-15</span></li>
-					<li><a href="http://qsmy.9game.cn/news/274738.html" data-statis="text:gw_index_yxxw_qsmy_274738">​《秦时明月》10月3日12时花海梦断开启</a><span class="date">09-30</span></li>
-					<li><a href="http://qsmy.9game.cn/news/274739.html" data-statis="text:gw_index_yxxw_qsmy_274739">​《秦时明月》10月5日12时君子之道开启</a><span class="date">09-30</span></li>
-					<li><a href="http://qsmy.9game.cn/news/274740.html" data-statis="text:gw_index_yxxw_qsmy_274740">​《秦时明月》10月8日12时舍生取义开启</a><span class="date">09-30</span></li>
-					<li><a href="http://qsmy.9game.cn/news/274742.html" data-statis="text:gw_index_yxxw_qsmy_274742">​《秦时明月》10月10日12时千机铜盘开启</a><span class="date">09-30</span></li>
-					<li><a href="http://qsmy.9game.cn/news/274743.html" data-statis="text:gw_index_yxxw_qsmy_274743">​《秦时明月》10月13日12时逸尘凌虚开启</a><span class="date">09-30</span></li>
-					<li class="last"><a href="http://qsmy.9game.cn/news/273197.html" data-statis="text:gw_index_yxxw_qsmy_273197">​《秦时明月》10月1日12时韩梦寒梦开启</a><span class="date">09-28</span></li>
-		</ul>
-	</div>
-</div>
-		<div class="box game-raiders-yr">
-			<div class="titile-con"><h2><a href="http://qsmy.9game.cn/newslist/yxgl_0/" data-stais="text:gw_index_yxgl_qsmy">秦时明月游戏攻略</a></h2><a href="http://qsmy.9game.cn/newslist/yxgl_0/" class="more" data-stais="text:gw_index_yxgl_qsmy_more">更多&gt;&gt;</a></div>
-			<div class="context-con">
-				<ul class="tag-title">
-							<li class="" style="width: 160px;">综合篇</li>
-							<li class="" style="width: 160px;">职业篇</li>
-							<li class="last current" style="width: 160px;">新手篇</li>
-				</ul>
-				<div class="list-con" x-now-data="2">
-							<ul class="news-list" style="display: none;">
-										<li><a href="http://qsmy.9game.cn/news/264021.html" data-stais="text:gw_index_yxgl_qsmy_264021">秦时明月全新版本九种机关兽属性详解一</a><span class="date">09-14</span></li>
-										<li><a href="http://qsmy.9game.cn/news/264791.html" data-stais="text:gw_index_yxgl_qsmy_264791">秦时明月新版本机关觉醒 快速升级秘籍</a><span class="date">09-11</span></li>
-										<li><a href="http://qsmy.9game.cn/news/246349.html" data-stais="text:gw_index_yxgl_qsmy_246349">秦时明月手游蜃楼东渡攻略 高积分攻略</a><span class="date">09-08</span></li>
-										<li><a href="http://qsmy.9game.cn/news/247355.html" data-stais="text:gw_index_yxgl_qsmy_247355">秦时明月手游新版本新手攻略</a><span class="date">09-06</span></li>
-										<li><a href="http://qsmy.9game.cn/news/248326.html" data-stais="text:gw_index_yxgl_qsmy_248326">秦时明月元宝免费获取途径一览</a><span class="date">09-06</span></li>
-										<li><a href="http://qsmy.9game.cn/news/261478.html" data-stais="text:gw_index_yxgl_qsmy_261478">秦时明月手游超强刷元宝攻略</a><span class="date">09-04</span></li>
-										<li class="last"><a href="http://qsmy.9game.cn/news/258681.html" data-stais="text:gw_index_yxgl_qsmy_258681">秦时明月魔化卫庄弟子布阵培养攻略</a><span class="date">08-31</span></li>
-							</ul>
-							<ul class="news-list" style="display: none;">
-										<li><a href="http://qsmy.9game.cn/news/266857.html" data-stais="text:gw_index_yxgl_qsmy_266857">秦时明月新版本求学刷元宝攻略</a><span class="date">09-16</span></li>
-										<li><a href="http://qsmy.9game.cn/news/257505.html" data-stais="text:gw_index_yxgl_qsmy_257505">秦时明月大电影阵型推荐 弟子攻略全解析</a><span class="date">08-28</span></li>
-										<li class="last"><a href="http://qsmy.9game.cn/news/252870.html" data-stais="text:gw_index_yxgl_qsmy_252870">秦时明月月神如何获取？快速获取月神攻略</a><span class="date">08-19</span></li>
-							</ul>
-							<ul class="news-list" style="display: block;">
-										<li><a href="http://qsmy.9game.cn/news/233460.html" data-stais="text:gw_index_yxgl_qsmy_233460">秦时明月手游弟子级别攻略</a><span class="date">07-09</span></li>
-										<li><a href="http://qsmy.9game.cn/news/229571.html" data-stais="text:gw_index_yxgl_qsmy_229571">秦时明月怎么传功 秦时明月手游传功攻略</a><span class="date">07-01</span></li>
-										<li><a href="http://qsmy.9game.cn/news/154055.html" data-stais="text:gw_index_yxgl_qsmy_154055">秦时明月手游 重口味情侣之第2名揭晓</a><span class="date">12-17</span></li>
-										<li><a href="http://qsmy.9game.cn/news/145222.html" data-stais="text:gw_index_yxgl_qsmy_145222">秦时明月手游 关于阵形和各职业研究</a><span class="date">11-22</span></li>
-										<li><a href="http://qsmy.9game.cn/news/145220.html" data-stais="text:gw_index_yxgl_qsmy_145220">秦时明月手游 颜路属性详解</a><span class="date">11-22</span></li>
-										<li><a href="http://qsmy.9game.cn/news/145218.html" data-stais="text:gw_index_yxgl_qsmy_145218">秦时明月手游 断水属性展示</a><span class="date">11-22</span></li>
-										<li class="last"><a href="http://qsmy.9game.cn/news/145216.html" data-stais="text:gw_index_yxgl_qsmy_145216">秦时明月手游 真刚属性详解</a><span class="date">11-22</span></li>
-							</ul>
-				</div>
-			</div>
-		</div>
-		<div class="box atr-list-245">
-				<div class="titile-con"><h2><a href="http://qsmy.9game.cn/newslist/cjwt_0/" data-statis="text:gw_index_cjwt_qsmy">秦时明月常见问题</a></h2><a href="http://qsmy.9game.cn/newslist/cjwt_0/" class="more" data-statis="text:gw_index_cjwt_qsmy_more">更多&gt;&gt;</a></div>
-				<div class="context-con">
-					<ul class="news-list">
-								<li><a href="http://qsmy.9game.cn/news/268856.html" data-statis="text:gw_index_cjwt_qsmy_268856">秦时明月招募弟子技巧?</a><span class="date">09-19</span></li>
-								<li><a href="http://qsmy.9game.cn/news/268850.html" data-statis="text:gw_index_cjwt_qsmy_268850">秦时明月怎么邀请好友？</a><span class="date">09-19</span></li>
-								<li><a href="http://qsmy.9game.cn/news/268831.html" data-statis="text:gw_index_cjwt_qsmy_268831">秦时明月剑谱排名 前十冷剑削铁如泥</a><span class="date">09-19</span></li>
-								<li><a href="http://qsmy.9game.cn/news/268798.html" data-statis="text:gw_index_cjwt_qsmy_268798">秦时明月手游兑换码 秦时明月礼包哪儿领</a><span class="date">09-19</span></li>
-								<li><a href="http://qsmy.9game.cn/news/244621.html" data-statis="text:gw_index_cjwt_qsmy_244621">秦时明月名剑排行前六名剑是什么？</a><span class="date">08-01</span></li>
-								<li><a href="http://qsmy.9game.cn/news/244519.html" data-statis="text:gw_index_cjwt_qsmy_244519">秦时明月实力排行榜前十英雄介绍</a><span class="date">08-01</span></li>
-								<li><a href="http://qsmy.9game.cn/news/244470.html" data-statis="text:gw_index_cjwt_qsmy_244470">秦时明月怎么刷元宝？</a><span class="date">08-01</span></li>
-								<li class="last"><a href="http://qsmy.9game.cn/news/232203.html" data-statis="text:gw_index_cjwt_qsmy_232203">秦时明月怎么邀请好友？秦时明月手游攻略</a><span class="date">07-07</span></li>
-					</ul>
-				</div>
-			</div>
-	<div class="box atr-list-245">
-		<div class="titile-con"><h2><a href="http://bbs.9game.cn/forum-1180-1.html">秦时明月游戏论坛</a></h2><a href="http://bbs.9game.cn/forum-1180-1.html" class="more">更多&gt;&gt;</a></div>
-		<div class="context-con">
-			<ul class="news-list">
-						<li><a href="http://bbs.9game.cn/thread-7127127-1-1.html">鬼谷传人《秦时明月》手游少年盖聂率先登场</a><span class="date">10-16</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7116598-1-1.html">10·16“鬼谷纵剑，少年盖聂”活动公告</a><span class="date">10-15</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7106602-1-1.html">完结！ 时代的眼泪！——细数秦时那些辉煌过的组合与弟子</a><span class="date">10-14</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7089907-1-1.html">棋局攻略必看</a><span class="date">10-13</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7089264-1-1.html">[秦时明月水寒独家解析] 医仙的价值</a><span class="date">10-13</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7070316-1-1.html">秦时明月手游感恩回馈：盖楼送手办元宝烤山鸡！</a><span class="date">10-11</span></li>
-						<li><a href="http://bbs.9game.cn/thread-7047104-1-1.html">[秦时明月]九游独家烤鸡礼包 签到抢先领取（更新为烤鸡x2）</a><span class="date">10-09</span></li>
-						<li class="last"><a href="http://bbs.9game.cn/thread-7008625-1-1.html">秦时明月攻略-论剑，十连，禁地，求学，心态技巧</a><span class="date">10-05</span></li>
-			</ul>
-		</div>
-	</div>
-		</div>
-		<div class="contain box game-pic-yr style2">
-			<div class="titile-con"><h2>秦时明月游戏截图</h2></div>
-			<div class="context-con">
-				<ul class="pic-con">
-                          <li style="display: none;">
-                              <img src="http://image.game.uc.cn/2014/10/11/9981213_.jpg">
-                          </li>
-                          <li style="left: 0px; top: 80px; width: 195px; height: 300px; z-index: 5;">
-                              <img src="http://image.game.uc.cn/2014/10/11/9981212_.jpg">
-                          </li>
-                          <li class="current" style="left: 164px; top: 0px; width: 327px; height: 480px; z-index: 10;">
-                              <img src="http://image.game.uc.cn/2014/10/11/9981211_.jpg">
-                          </li>
-                          <li style="left: 470px; top: 80px; width: 195px; height: 300px; z-index: 5;">
-                              <img src="http://image.game.uc.cn/2014/10/11/9981210_.jpg">
-                          </li>
-                          <li style="display: none;">
-                              <img src="http://image.game.uc.cn/2014/10/11/9981209_.jpg">
-                          </li>
-				</ul>
-				<div class="meng-con">
-					<div class="meng-l"></div>
-					<div class="meng-r"></div>
-					<div class="meng-b"></div>
-				</div>
-				<span class="ctrl next"></span>
-				<span class="ctrl prev"></span>
-			</div>
-		</div>
-<input type="hidden" value="{&quot;count&quot;:5.0, &quot;total&quot;:21.0, &quot;gameId&quot;:535529.0,&quot;newsPlatformId&quot;:&quot;[2]&quot;,&quot;yxwd_ids&quot;:&quot;[69]&quot; }" id="param">
-<div class="box contain game-qa-con">
-            <div class="titile-con"><h2>有问必答</h2></div>
-            <div class="context-con">
-                <div class="qa-info">
-                    <div class="qa-des">
-                        <a href="http://bbs.9game.cn/forum.php?mod=forumdisplay&amp;fid=1180&amp;filter=typeid&amp;typeid=5832&amp;from=jy_p_wenda_qinshi" class="qa-btn">我要提问</a>
-                        <div class="des">
-                            <p class="tit">提问小贴士：</p>
-                            <p class="text">因每位咨询者提问情况，提问时间等不同。为此，小编会3天内给提问者回复，其他网友仅供参考！给您带来的不便还请谅解，谢谢！</p>
-                        </div>
+    <div class="box">
+       @Html.Action("GameDanner","mainLayout")
+        <div class="contain main-box">
+            <div class="foucs-con">
+                <ul class="focus-img" x-now-data="1">
+                 @foreach(var item in gameLunBo)
+                 {
+                     <li class="@(j==1?"current":"")" d="@(j++)"><a href="@item.Link">
+                             <img src="@WebHelper.GetImg(item.AdPath)" alt="​@item.Title"></a></li>
+                    
+                 }
+                </ul>
+                <div class="focus-ctrl">
+                    @foreach(var item in gameLunBo)
+                    {
+                          <a href="javascript:void(0);" target="_self" class="@(i==1?"current":"")">@(i++)</a>
+                    }
+                </div>
+            </div>
+            <div class="hot-news hot-news-yr">
+                <p class="hot-title">
+                    <a href="http://qsmy.9game.cn/news/263218.html" >
+                        秦时明月9月10日 最强机关觉醒公测来袭</a></p>
+                <ul class="news-list">
+                    @foreach (var item in centernewslist.Take(5))
+                    {
+                        <li><span class="type">@(((NewsTypeEnum)item.NewsType).ToDescriptionName())</span><a
+                            href="http://qsmy.9game.cn/news/279667.html" >
+                            @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+                <ul class="news-list last">
+                    @foreach (var item in centernewslist.Skip(5).Take(5))
+                    {
+                        <li><span class="type">@(((NewsTypeEnum)item.NewsType).ToDescriptionName())</span><a
+                            href="http://qsmy.9game.cn/news/279667.html" >
+                            @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+                <a href="/news?tid=1" class="more">查看更多&gt;&gt;</a>
+            </div>
+            <div class="box down-yure">
+                <div class="titile-con">
+                    <h1>@gameinfo.GameName 官网下载</h1>
+                </div>
+                <div class="context-con">
+                    <div class="des">
+                        <span class="img">
+                            <img src="http://image.game.uc.cn/2014/8/19/9864525.png" alt="秦时明月"><i class="radius80"></i></span>
+                        @gameinfo.GameDes <span class="more">[详情]
+                            <div class="tips">
+                                <span class="cor"></span>
+                                <p>
+                                    @gameinfo.GameDes
+                                </p>
+                            </div>
+                        </span>
                     </div>
-             <div id="comment_list">
-                                <div class="qa-detail odd">
-                                <p class="name">玩家：九游用户<span class="time">2014-8-19 12:23:20</span></p>
-                                <p class="q-con">问题：秦时明月招募弟子技巧?</p>
-                                <div class="a-con">
-                                     <span class="cor"></span>
-                                     <p class="text">小编回复：<span class="time">2014-8-19 15:10:0</span> </p>
-                                     <p class="text">秦时明月招募弟子技巧?
-在秦时明月中，招募弟子根本没有所谓的技巧，招募弟子完全是根据系统自动抽取的。招募弟子会根据百里挑一、千载难逢、万众瞩目、十连抽万众瞩目里面系统自动抽取相同等级与颜色的弟子。其中百里挑一是蓝卡，千载难逢是紫卡，万众瞩目是橙卡(最高等级)。</p>
-                                </div>
-                                </div>
-                                <div class="qa-detail">
-                                <p class="name">玩家：九游用户<span class="time">2014-8-19 12:11:20</span></p>
-                                <p class="q-con">问题：秦时明月怎么邀请好友？</p>
-                                <div class="a-con">
-                                     <span class="cor"></span>
-                                     <p class="text">小编回复：<span class="time">2014-8-19 14:58:0</span> </p>
-                                     <p class="text">秦时明月怎么邀请好友？
-点击游戏主页右上角活动，在里面找到邀请好友就行了，把显示的邀请码发给别人填写，人家的码你也可以填在里面，只能填写一个人，对方通过即可获得188元宝。</p>
-                                </div>
-                                </div>
-                                <div class="qa-detail odd">
-                                <p class="name">玩家：九游用户<span class="time">2014-8-19 11:43:20</span></p>
-                                <p class="q-con">问题：秦时明月剑谱排名 前十冷剑削铁如泥</p>
-                                <div class="a-con">
-                                     <span class="cor"></span>
-                                     <p class="text">小编回复：<span class="time">2014-8-19 14:30:0</span> </p>
-                                     <p class="text">秦时明月剑谱排名？
-【第一名：天问】
-【第二名：渊虹】
-【第三名：太阿】
-【第四名：干将】
-【第五名：莫邪】
-【第六名：雪霁】
-【第七名：水寒】
-【第八名：湛卢】
-【第九名：赤霄】
-【第十名：凌虚】</p>
-                                </div>
-                                </div>
-                                <div class="qa-detail">
-                                <p class="name">玩家：九游用户<span class="time">2014-8-19 11:33:20</span></p>
-                                <p class="q-con">问题：秦时明月手游兑换码 秦时明月礼包哪儿领</p>
-                                <div class="a-con">
-                                     <span class="cor"></span>
-                                     <p class="text">小编回复：<span class="time">2014-8-19 14:20:0</span> </p>
-                                     <p class="text">秦时明月手游兑换码 秦时明月礼包哪儿领？
-复制http://ka.9game.cn/game/535529_-5_1.html 这里有全网最丰富的秦时明月手游礼包兑换码！</p>
-                                </div>
-                                </div>
-                                <div class="qa-detail odd">
-                                <p class="name">玩家：九游用户<span class="time">2014-7-1 15:44:20</span></p>
-                                <p class="q-con">问题：秦时明月名剑排行前六名剑是什么？</p>
-                                <div class="a-con">
-                                     <span class="cor"></span>
-                                     <p class="text">小编回复：<span class="time">2014-7-1 18:31:0</span> </p>
-                                     <p class="text">秦时明月名剑排行前七名剑是什么？
-第一名：天问，出自楚国，现为秦始皇剑
-第二名：渊虹，前身为残虹
-第三名：太阿，儒家掌门伏念佩剑
-第四名：雪霁，道家宝物
-第五名：水寒，高渐离佩剑
-第六名：巨阙。</p>
-                                </div>
-                                </div>
-                </div>
-                </div>
-                <div class="page-unload" id="page_reload" style="display: block;">
-                    <a href="javascript:void(0);" target="_self" class="page-reload">点击查看更多加载</a>
-                </div>
-                <div class="page-load" id="page_load" style="display: none;">
-                    <img src="" alt="">正在加载，请稍后...
+                    <ul class="info">
+                        <li><span class="type">类型</span> @(((GameTypeEnum)gameinfo.GameType).ToDescriptionName())</li>
+                        <li><span class="type">平台</span> @(((GameSysEnum)gameinfo.Sys).ToDescriptionName())</li>
+                        <li class="long"><span class="type">状态</span>@(((YunYingStateEnum)gameinfo.YunYingState).ToDescriptionName())</li>
+                    </ul>
+                    <div class="btn-con">
+                        <span class="btn green code-show-yr">游戏下载</span> <a href="http://ka.9game.cn/game/535529_-5_1.html"
+                            class="btn red" data-statis="text:gw_index_yxxz_qsmy_lqlb">领取礼包</a>
+                    </div>
+                    <div class="server">
+                        4006661551</div>
                 </div>
             </div>
         </div>
-		<div class="box contain game-detail">
+    </div>
+    <div class="contain float-box">
+        <div class="box atr-list-245">
+            <div class="titile-con">
+                <h2>
+                    <a href="http://qsmy.9game.cn/newslist/rmhd_0/">@gameinfo.GameName
+                        活动公告</a></h2>
+                <a href="/news?tid=2" class="more">更多&gt;&gt;</a></div>
+            <div class="context-con">
+                <ul class="news-list">
+                    @foreach (var item in Model.Where(c => c.NewsType == (int)NewsTypeEnum.GongGao))
+                    {
+                        <li><a href="http://qsmy.9game.cn/news/279667.html" data-statis="text:gw_index_yxxw_qsmy_279667">
+                            @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="box game-gift-2 game-gift-yr">
+            <div class="titile-con">
+                <h2>
+                    <a href="http://ka.9game.cn/game/535529.0_-5_1.html">秦时明月礼包领取</a></h2>
+                <a href="http://ka.9game.cn/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
+            <div class="context-con">
+                <table class="gift-table">
+                    <tbody>
+                        <tr>
+                            <th class="name">
+                                <span>礼包名称</span>
+                            </th>
+                            <th class="text">
+                                <span>礼包状态</span>
+                            </th>
+                            <th class="text">
+                                <span>礼包领取</span>
+                            </th>
+                        </tr>
+                        @foreach (var item in gamekalist)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="#" class="name">@item.KaTitle</a>
+                                    <span class="tips-con">
+                                        <div class="tips" style="display: none;">
+                                            <span class="cor"></span>
+                                            <p class="tip-title">
+                                                礼包内容：</p>
+                                            @MvcHtmlString.Create(item.KaContent) <a href="http://ka.9game.cn/personal/1413367046836136048.html"
+                                                class="tip-more">更多详情&gt;&gt;</a>
+                                        </div>
+                                    </span>
+                                </td>
+                                @*   <td>
+                                    已被淘号<span class="orange">684</span>次
+                                </td>
+                                <td>
+                                    <a href="http://ka.9game.cn/personal/1413367046836136048.html" class="btn reget">淘号</a>
+                                </td>*@
+                                <td>
+                                    剩余<span class="orange">@item.Shengyu</span>个
+                                </td>
+                                <td>
+                                    <a href="http://ka.9game.cn/personal/1413367046836136048.html" class="btn reget">领取</a>
+                                </td>
+                            </tr>
+                         
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="contain float-box">
+        <div class="box atr-list-245">
+            <div class="titile-con">
+                <h2>
+                    <a href="/news?tid=1">@gameinfo.GameName
+                        游戏新闻</a></h2>
+                <a href="/news?tid=1" class="more">更多&gt;&gt;</a></div>
+            <div class="context-con">
+                <ul class="news-list">
+                    @foreach (var item in Model.Where(c => c.NewsType == (int)NewsTypeEnum.News))
+                    {
+                        <li><a href="@WebHelper.GetGameNews(item.ID)" data-statis="text:gw_index_yxxw_qsmy_279667">
+                            @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="box game-gift-2 game-gift-yr">
+            <div class="titile-con">
+                <h2>
+                    <a href="http://ka.9game.cn/game/535529.0_-5_1.html">@gameinfo.GameName 游戏开服</a></h2>
+                <a href="http://ka.9game.cn/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
+            <div class="context-con">
+                <table class="gift-table">
+                    <tbody>
+                        <tr>
+                            <th class="name">
+                                <span>区服</span>
+                            </th>
+                            <th class="text">
+                                <span>状态</span>
+                            </th>
+                            <th class="text">
+                                <span>开服时间</span>
+                            </th>
+                        </tr>
+                        @foreach (var item in serverlist)
+                        {
+                            <tr>
+                                <td>
+                                    @gameinfo.GameName @(item.ServerName)
+                                </td>
+                                <td>
+                                    <span class="orange">@(((YunYingStateEnum)item.ServerStat).ToDescriptionName())</span>
+                                </td>
+                                <td>
+                                    @item.CreateDate.ToString("mm-dd hh:mm:ss")
+                                </td>
+                            </tr>
+                         
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="contain box game-pic-yr style2">
+        <div class="titile-con">
+            <h2>
+                @gameinfo.GameName 游戏截图</h2>
+        </div>
+        <div class="context-con">
+            <ul class="pic-con">
+               @foreach(var item in gameBLook)
+               {
+                    <li >
+                    <img src="@WebHelper.GetImg(item.AdPath)">
+                </li>
+               }
+               
+            </ul>
+            <div class="meng-con">
+                <div class="meng-l">
+                </div>
+                <div class="meng-r">
+                </div>
+                <div class="meng-b">
+                </div>
+            </div>
+            <span class="ctrl next"></span><span class="ctrl prev"></span>
+        </div>
+    </div>
+    @*       <div class="box contain game-qa-con">
+        <div class="titile-con">
+            <h2>
+                有问必答</h2>
+        </div>
+        <div class="context-con">
+            <div class="qa-info">
+                <div class="qa-des">
+                    <a href="http://bbs.9game.cn/forum.php?mod=forumdisplay&amp;fid=1180&amp;filter=typeid&amp;typeid=5832&amp;from=jy_p_wenda_qinshi"
+                        class="qa-btn">我要提问</a>
+                    <div class="des">
+                        <p class="tit">
+                            提问小贴士：</p>
+                        <p class="text">
+                            因每位咨询者提问情况，提问时间等不同。为此，小编会3天内给提问者回复，其他网友仅供参考！给您带来的不便还请谅解，谢谢！</p>
+                    </div>
+                </div>
+                <div id="comment_list">
+                    <div class="qa-detail odd">
+                        <p class="name">
+                            玩家：九游用户<span class="time">2014-8-19 12:23:20</span></p>
+                        <p class="q-con">
+                            问题：秦时明月招募弟子技巧?</p>
+                        <div class="a-con">
+                            <span class="cor"></span>
+                            <p class="text">
+                                小编回复：<span class="time">2014-8-19 15:10:0</span>
+                            </p>
+                            <p class="text">
+                                秦时明月招募弟子技巧? 在秦时明月中，招募弟子根本没有所谓的技巧，招募弟子完全是根据系统自动抽取的。招募弟子会根据百里挑一、千载难逢、万众瞩目、十连抽万众瞩目里面系统自动抽取相同等级与颜色的弟子。其中百里挑一是蓝卡，千载难逢是紫卡，万众瞩目是橙卡(最高等级)。</p>
+                        </div>
+                    </div>
+                    <div class="qa-detail">
+                        <p class="name">
+                            玩家：九游用户<span class="time">2014-8-19 12:11:20</span></p>
+                        <p class="q-con">
+                            问题：秦时明月怎么邀请好友？</p>
+                        <div class="a-con">
+                            <span class="cor"></span>
+                            <p class="text">
+                                小编回复：<span class="time">2014-8-19 14:58:0</span>
+                            </p>
+                            <p class="text">
+                                秦时明月怎么邀请好友？ 点击游戏主页右上角活动，在里面找到邀请好友就行了，把显示的邀请码发给别人填写，人家的码你也可以填在里面，只能填写一个人，对方通过即可获得188元宝。</p>
+                        </div>
+                    </div>
+                    <div class="qa-detail odd">
+                        <p class="name">
+                            玩家：九游用户<span class="time">2014-8-19 11:43:20</span></p>
+                        <p class="q-con">
+                            问题：秦时明月剑谱排名 前十冷剑削铁如泥</p>
+                        <div class="a-con">
+                            <span class="cor"></span>
+                            <p class="text">
+                                小编回复：<span class="time">2014-8-19 14:30:0</span>
+                            </p>
+                            <p class="text">
+                                秦时明月剑谱排名？ 【第一名：天问】 【第二名：渊虹】 【第三名：太阿】 【第四名：干将】 【第五名：莫邪】 【第六名：雪霁】 【第七名：水寒】 【第八名：湛卢】
+                                【第九名：赤霄】 【第十名：凌虚】</p>
+                        </div>
+                    </div>
+                    <div class="qa-detail">
+                        <p class="name">
+                            玩家：九游用户<span class="time">2014-8-19 11:33:20</span></p>
+                        <p class="q-con">
+                            问题：秦时明月手游兑换码 秦时明月礼包哪儿领</p>
+                        <div class="a-con">
+                            <span class="cor"></span>
+                            <p class="text">
+                                小编回复：<span class="time">2014-8-19 14:20:0</span>
+                            </p>
+                            <p class="text">
+                                秦时明月手游兑换码 秦时明月礼包哪儿领？ 复制http://ka.9game.cn/game/535529_-5_1.html 这里有全网最丰富的秦时明月手游礼包兑换码！</p>
+                        </div>
+                    </div>
+                    <div class="qa-detail odd">
+                        <p class="name">
+                            玩家：九游用户<span class="time">2014-7-1 15:44:20</span></p>
+                        <p class="q-con">
+                            问题：秦时明月名剑排行前六名剑是什么？</p>
+                        <div class="a-con">
+                            <span class="cor"></span>
+                            <p class="text">
+                                小编回复：<span class="time">2014-7-1 18:31:0</span>
+                            </p>
+                            <p class="text">
+                                秦时明月名剑排行前七名剑是什么？ 第一名：天问，出自楚国，现为秦始皇剑 第二名：渊虹，前身为残虹 第三名：太阿，儒家掌门伏念佩剑 第四名：雪霁，道家宝物 第五名：水寒，高渐离佩剑
+                                第六名：巨阙。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-unload" id="page_reload" style="display: block;">
+                <a href="javascript:void(0);" target="_self" class="page-reload">点击查看更多加载</a>
+            </div>
+            <div class="page-load" id="page_load" style="display: none;">
+                <img src="" alt="">正在加载，请稍后...
+            </div>
+        </div>
+    </div>
+    <div class="box contain game-detail">
+    </div>
+    <div class="box contain game-recom">
+        <div class="titile-con">
+            <h2>
+                猜你喜欢</h2>
+        </div>
+        <div class="context-con">
+            <div class="game-recom-con">
+                <a href="http://rxgd.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540542">
+                    <img src="http://image.game.uc.cn/2014/8/26/9878641_.gif" alt="热血格斗OL">
+                    <p>
+                        热血格斗OL</p>
+                    <span class="radius60"></span></a><a href="http://dlnw.9game.cn/" class="recom-con "
+                        data-statis="text:gw_index_guess_qsmy_539350">
+                        <img src="http://image.game.uc.cn/2014/10/11/9981088_.gif" alt="地牢女王">
+                        <p>
+                            地牢女王</p>
+                        <span class="radius60"></span></a><a href="http://btx.9game.cn/" class="recom-con "
+                            data-statis="text:gw_index_guess_qsmy_540143">
+                            <img src="http://image.game.uc.cn/2014/7/30/9826312_.png" alt="霸天下">
+                            <p>
+                                霸天下</p>
+                            <span class="radius60"></span></a><a href="http://dtcq.9game.cn/" class="recom-con "
+                                data-statis="text:gw_index_guess_qsmy_535733">
+                                <img src="http://image.game.uc.cn/2014/7/10/9797218_.jpg" alt="刀塔传奇">
+                                <p>
+                                    刀塔传奇</p>
+                                <span class="radius60"></span></a><a href="http://www.9game.cn/bbzs/" class="recom-con "
+                                    data-statis="text:gw_index_guess_qsmy_538597">
+                                    <img src="http://image.game.uc.cn/2014/9/16/9914051_.png" alt="不败战神">
+                                    <p>
+                                        不败战神</p>
+                                    <span class="radius60"></span></a><a href="http://fknsg.9game.cn/" class="recom-con "
+                                        data-statis="text:gw_index_guess_qsmy_527432">
+                                        <img src="http://image.game.uc.cn/2014/9/2/9891091_.gif" alt="放开那三国">
+                                        <p>
+                                            放开那三国</p>
+                                        <span class="radius60"></span></a><a href="http://jhzr.9game.cn/" class="recom-con "
+                                            data-statis="text:gw_index_guess_qsmy_537595">
+                                            <img src="http://image.game.uc.cn/2014/9/12/9908590_.jpg" alt="剑魂之刃">
+                                            <p>
+                                                剑魂之刃</p>
+                                            <span class="radius60"></span></a><a href="http://gddh.9game.cn/" class="recom-con "
+                                                data-statis="text:gw_index_guess_qsmy_538780">
+                                                <img src="http://image.game.uc.cn/2014/7/13/9800152_.jpg" alt="格斗刀魂Online">
+                                                <p>
+                                                    格斗刀魂Online</p>
+                                                <span class="radius60"></span></a><a href="http://www.9game.cn/csxy2/" class="recom-con "
+                                                    data-statis="text:gw_index_guess_qsmy_540516">
+                                                    <img src="http://image.game.uc.cn/2014/6/26/9776727_.jpg" alt="超神学院">
+                                                    <p>
+                                                        超神学院</p>
+                                                    <span class="radius60"></span></a><a href="http://www.9game.cn/bydr3/" class="recom-con "
+                                                        data-statis="text:gw_index_guess_qsmy_536689">
+                                                        <img src="http://image.game.uc.cn/2014/7/21/9811700_.gif" alt="捕鱼达人3">
+                                                        <p>
+                                                            捕鱼达人3</p>
+                                                        <span class="radius60"></span></a><a href="http://txhd.9game.cn/" class="recom-con last"
+                                                            data-statis="text:gw_index_guess_qsmy_535356">
+                                                            <img src="http://image.game.uc.cn/2014/9/17/9919017_.png" alt="天下HD">
+                                                            <p>
+                                                                天下HD</p>
+                                                            <span class="radius60"></span></a>
+            </div>
+        </div>
+    </div>*@
+    <div class="box contain fri-link">
+        <div class="titile-con">
+            <h2>
+                友情链接</h2>
+        </div>
+        <div class="context-con">
+            @foreach (var item in friendlist.Where(c => c.LinkType == (int)FriendlinkTypeEnum.Friend))
+            {
+                <a href="@item.LinkUrl">@item.LinkName</a> 
+            }
+        </div>
+    </div>
 </div>
-          <div class="box contain game-recom">
-              <div class="titile-con"><h2>猜你喜欢</h2></div>
-              <div class="context-con">
-                  <div class="game-recom-con">
-                      <a href="http://rxgd.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540542">
-                          <img src="http://image.game.uc.cn/2014/8/26/9878641_.gif" alt="热血格斗OL">
-                        <p>热血格斗OL</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://dlnw.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_539350">
-                          <img src="http://image.game.uc.cn/2014/10/11/9981088_.gif" alt="地牢女王">
-                        <p>地牢女王</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://btx.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540143">
-                          <img src="http://image.game.uc.cn/2014/7/30/9826312_.png" alt="霸天下">
-                        <p>霸天下</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://dtcq.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_535733">
-                          <img src="http://image.game.uc.cn/2014/7/10/9797218_.jpg" alt="刀塔传奇">
-                        <p>刀塔传奇</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://www.9game.cn/bbzs/" class="recom-con " data-statis="text:gw_index_guess_qsmy_538597">
-                          <img src="http://image.game.uc.cn/2014/9/16/9914051_.png" alt="不败战神">
-                        <p>不败战神</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://fknsg.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_527432">
-                          <img src="http://image.game.uc.cn/2014/9/2/9891091_.gif" alt="放开那三国">
-                        <p>放开那三国</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://jhzr.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_537595">
-                          <img src="http://image.game.uc.cn/2014/9/12/9908590_.jpg" alt="剑魂之刃">
-                        <p>剑魂之刃</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://gddh.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_538780">
-                          <img src="http://image.game.uc.cn/2014/7/13/9800152_.jpg" alt="格斗刀魂Online">
-                        <p>格斗刀魂Online</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://www.9game.cn/csxy2/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540516">
-                          <img src="http://image.game.uc.cn/2014/6/26/9776727_.jpg" alt="超神学院">
-                        <p>超神学院</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://www.9game.cn/bydr3/" class="recom-con " data-statis="text:gw_index_guess_qsmy_536689">
-                          <img src="http://image.game.uc.cn/2014/7/21/9811700_.gif" alt="捕鱼达人3">
-                        <p>捕鱼达人3</p>
-                          <span class="radius60"></span>
-                      </a>
-                      <a href="http://txhd.9game.cn/" class="recom-con last" data-statis="text:gw_index_guess_qsmy_535356">
-                          <img src="http://image.game.uc.cn/2014/9/17/9919017_.png" alt="天下HD">
-                        <p>天下HD</p>
-                          <span class="radius60"></span>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="box contain fri-link">
-              <div class="titile-con"><h2>友情链接</h2></div>
-              <div class="context-con">
-                      <a href="http://sdxl.9game.cn/">神雕侠侣手游</a>
-                      <a href="http://wx.9game.cn/">忘仙</a>
-                      <a href="http://jw2.9game.cn/">君王2</a>
-                      <a href="http://zg.9game.cn/">战谷</a>
-                      <a href="http://ppsg.9game.cn/">啪啪三国</a>
-                      <a href="http://wshy.9game.cn/">我是火影</a>
-                      <a href="http://wz.9game.cn/">武尊手游</a>
-                      <a href="http://app.9game.cn/">九游游戏中心</a>
-              </div>
-          </div>
-	</div>

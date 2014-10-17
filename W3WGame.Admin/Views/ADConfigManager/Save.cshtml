@@ -45,7 +45,14 @@
                         @Html.DropDownListFor(c => c.AdType, ViewData["AdTypeList"] as List<SelectListItem>)
                     </td>
                 </tr>
-
+                <tr height="40">
+                    <td class="entry_tab_td1">@Html.LabelFor(c => c.GameID)
+                    </td>
+                    <td class="entry_tab_td2">
+                        @Html.DropDownListFor(c => c.GameID, ViewData["gamelist"] as List<SelectListItem>)
+                    </td>
+                </tr>
+               
                 <tr height="40">
                     <td class="entry_tab_td1">@Html.LabelFor(c => c.Place)
                     </td>

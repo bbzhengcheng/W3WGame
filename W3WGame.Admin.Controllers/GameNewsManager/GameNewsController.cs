@@ -45,8 +45,19 @@ namespace W3WGame.Admin.Controllers.GameNewsManager
         {
             ViewData["newstypelist"] = NewsTypeEnum.Active.ToSelectListAddDefault();
 
-            ViewData["gamelist"] = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
-            var model = new SaveGameNews();
+            var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            gamelist.Insert(0,new SelectListItem
+                                  {
+                                      Selected = true,
+                                      Text = "平台",
+                                      Value = "0"
+                                  });
+            ViewData["gamelist"] = gamelist;
+            var model = new SaveGameNews
+                            {
+                                ClickCount = 0,
+                                CreateDate = DateTime.Now,
+                            };
 
             if (id != null)
             {
@@ -63,7 +74,15 @@ namespace W3WGame.Admin.Controllers.GameNewsManager
         [ValidateInput(false)]
         public ActionResult Save(SaveGameNews savemodel)
         {
-            ViewData["gamelist"] = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            gamelist.Insert(0, new SelectListItem
+            {
+                Selected = true,
+                Text = "平台",
+                Value = "0"
+            });
+            ViewData["gamelist"] = gamelist;
+            ViewData["newstypelist"] = NewsTypeEnum.Active.ToSelectListAddDefault();
             if (ModelState.IsValid)
             {
                 if (savemodel.ID == null)
@@ -75,7 +94,7 @@ namespace W3WGame.Admin.Controllers.GameNewsManager
                                         Title = savemodel.Title,
                                         Content = savemodel.Content,
                                         ShortDes = savemodel.ShortDes,
-                                        ShortDesImg = savemodel.ShortDesImg,
+                                        ShortDesImg = "",
                                         IsDisplayHomePage = savemodel.IsDisplayHomePage,
                                         ClickCount = savemodel.ClickCount,
                                         CreateDate = savemodel.CreateDate,
@@ -96,7 +115,7 @@ namespace W3WGame.Admin.Controllers.GameNewsManager
                     model.Title = savemodel.Title;
                     model.Content = savemodel.Content;
                     model.ShortDes = savemodel.ShortDes;
-                    model.ShortDesImg = savemodel.ShortDesImg;
+                    model.ShortDesImg ="";
                     model.IsDisplayHomePage = savemodel.IsDisplayHomePage;
                     model.ClickCount = savemodel.ClickCount;
                     model.CreateDate = savemodel.CreateDate;

@@ -29,5 +29,7 @@ namespace W3WGame.Core.Entities
         public int Sort { get; set; }
         public string Domain { get; set; }
 
+        public string GameDes { get; set; }
+
     }
 }

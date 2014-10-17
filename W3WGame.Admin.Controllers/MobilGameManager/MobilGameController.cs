@@ -85,7 +85,11 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
             var YunYingStateEnumList = YunYingStateEnum.XinFu.ToSelectList();
             YunYingStateEnumList.Insert(0,autolist);
             ViewData["YunYingStateEnumList"] = YunYingStateEnumList;
-            var model = new SaveMobilGame();
+            var model = new SaveMobilGame
+                            {
+                                GameDes = string.Empty,
+
+                            };
 
             if (id != null)
             {
@@ -137,6 +141,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                                         IsQianLiBao = savemodel.IsQianLiBao,
                                         Sort  = savemodel.Sort,
                                         Domain = savemodel.Domain,
+                                        GameDes = savemodel.GameDes,
                                       
                                     };
                     _mobilgameTask.Add(model);
@@ -175,7 +180,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                     model.IsQianLiBao = savemodel.IsQianLiBao;
                     model.Sort = savemodel.Sort;
                     model.Domain = savemodel.Domain;
-
+                    model.GameDes = savemodel.GameDes;
                     _mobilgameTask.Update(model);
                 }
                 return AlertMsg("保存成功", HttpContext.Request.UrlReferrer.PathAndQuery);

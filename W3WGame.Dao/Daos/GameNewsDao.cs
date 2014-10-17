@@ -12,22 +12,22 @@ namespace W3WGame.Dao.Daos
 
     public class GameNewsDao : BaseDao<GameNews>
     {
-        public PagedList<GameNews> GetPagedList(int? platId, int? newstype, bool? isWeb, bool? isDisplayHome,int pageIndex, int pageSize)
+        public PagedList<GameNews> GetPagedList(int? platId, int? newstype, bool? isWeb, bool? isDisplayHome, int pageIndex, int pageSize)
         {
             var sql = Sql.Builder.Where("1=1");
-            if(platId!=null)
+            if (platId != null)
             {
                 sql.Where("GameID = @0", platId);
             }
-            if(newstype !=null)
+            if (newstype != null)
             {
                 sql.Where("NewsType = @0", newstype);
             }
-            if(isWeb !=null)
+            if (isWeb != null)
             {
                 sql.Where("IsWeb = @0", isWeb);
             }
-            if(isDisplayHome !=null)
+            if (isDisplayHome != null)
             {
                 sql.Where("IsDisplayHomePage = 1");
             }
@@ -57,12 +57,12 @@ namespace W3WGame.Dao.Daos
             return false;
         }
 
-        public List<NewsDto> GetAll(int? top,string strwhere)
+        public List<NewsDto> GetAll(int? top, string strwhere)
         {
             string topselect = top == null ? "" : "TOP " + top.ToString();
             var sql = Sql.Builder.Select(topselect + " ID,GameID,NewsType,Title,ShortDes,ShortDesImg,CreateDate ")
                 .From("GameNews WITH(NOLOCK)");
-            if(!string.IsNullOrEmpty(strwhere))
+            if (!string.IsNullOrEmpty(strwhere))
             {
                 sql.Where(strwhere);
             }
@@ -70,7 +70,14 @@ namespace W3WGame.Dao.Daos
             return Query<NewsDto>(sql).ToList();
         }
 
-
+        public List<GameNewsDto> GetGameNewsList(int gameid)
+        {
+            var sql = Sql.Builder.Select("ID,[NewsType] ,[Title],[CreateDate]")
+                .From("gamenews a with(nolock)")
+                .Where(" a.GameID =@0 AND (SELECT count(*) FROM gamenews b WHERE b.[NewsType]=a.[NewsType] AND b.ID>a.ID)<10 ",gameid);
+            sql.OrderBy("CreateDate Desc");
+            return Query<GameNewsDto>(sql).ToList();
+        }
 
     }
 }

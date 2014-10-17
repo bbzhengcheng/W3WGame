@@ -1060,6 +1060,29 @@
     <Content Include="Scripts\zTree-3.5\js\jquery.ztree.exedit-3.5.min.js" />
     <Content Include="Scripts\zTree-3.5\js\jquery.ztree.exhide-3.5.js" />
     <Content Include="Scripts\zTree-3.5\js\jquery.ztree.exhide-3.5.min.js" />
+    <Content Include="Upload\File\201409\web平台对联广告118X260.jpg" />
+    <Content Include="Upload\File\201409\web平台推荐游戏图215x65.jpg" />
+    <Content Include="Upload\File\201409\web平台轮播图689x223.jpg" />
+    <Content Include="Upload\File\201410\20141009055759.png" />
+    <Content Include="Upload\File\201410\20141009060138.jpg" />
+    <Content Include="Upload\File\201410\20141010040534.jpg" />
+    <Content Include="Upload\File\201410\20141010040549.jpg" />
+    <Content Include="Upload\File\201410\20141010040605.jpg" />
+    <Content Include="Upload\File\201410\20141010040628.jpg" />
+    <Content Include="Upload\File\201410\20141010090504.jpg" />
+    <Content Include="Upload\File\201410\20141010090634.jpg" />
+    <Content Include="Upload\File\201410\20141010090711.jpg" />
+    <Content Include="Upload\File\201410\20141010090729.jpg" />
+    <Content Include="Upload\File\201410\20141010090749.jpg" />
+    <Content Include="Upload\File\201410\20141010090814.jpg" />
+    <Content Include="Upload\File\201410\20141010090831.jpg" />
+    <Content Include="Upload\File\201410\20141017025921.jpg" />
+    <Content Include="Upload\File\201410\20141017025938.jpg" />
+    <Content Include="Upload\File\201410\20141017030022.jpg" />
+    <Content Include="Upload\File\201410\20141017030454.jpg" />
+    <Content Include="Upload\File\201410\20141017030504.jpg" />
+    <Content Include="Upload\File\201410\9772669.png" />
+    <Content Include="Upload\File\201410\9807288.jpg" />
     <Content Include="Upload\GoodsImage\201212\20121230170950781.png" />
     <Content Include="Upload\GoodsImage\201212\20121230170950781_Big.png" />
     <Content Include="Upload\GoodsImage\201212\20121230170950781_Small.png" />
@@ -1153,6 +1176,7 @@
     <Content Include="Views\XmlConfig\HomeNews.cshtml" />
     <Content Include="Views\GameDownloadUrlsManager\List.cshtml" />
     <Content Include="Views\GameDownloadUrlsManager\Save.cshtml" />
+    <None Include="Upload\File\201410\20141009055546" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\store\" />

@@ -14,6 +14,10 @@ namespace W3WGame.Core.Enums
          HomeNews = 2,
          [Description("手机游戏测评广告图180*135")]
          HomeCePing = 3,
+         [Description("游戏官网轮播340*340")]
+         GameLunBo = 4,
+         [Description("游戏官网底部游戏展示327*480")]
+         GameBLook = 5,
 
 
     }

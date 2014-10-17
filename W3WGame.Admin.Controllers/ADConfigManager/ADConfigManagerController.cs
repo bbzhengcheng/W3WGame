@@ -19,9 +19,25 @@ namespace W3WGame.Admin.Controllers.ADConfigManager
 	public  class ADConfigManagerController:BaseController
 	{
         private readonly ADConfigTask _lunBoAdTask = new ADConfigTask();
+	    private readonly MobilGameTask _mobilGameTask = new MobilGameTask();
 
-        public ActionResult List(int? placeid, int pageIndex = 1, int pageSize = 10)
+        public ActionResult List(int? placeid, int? gameid,int pageIndex = 1, int pageSize = 10)
         {
+            var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            gamelist.Insert(1, new SelectListItem
+            {
+                Selected = false,
+                Text = "不属于任何游戏",
+                Value = "0"
+            });
+            gamelist.Insert(0, new SelectListItem
+            {
+                Selected = true,
+                Text = "请选择",
+                Value = string.Empty
+            });
+            ViewData["gamelist"] = gamelist;
+
             var placelist = ADConfigPlaceEnum.HomeLunBo.ToSelectList();
             placelist.Insert(0,new SelectListItem
                                    {
@@ -30,7 +46,7 @@ namespace W3WGame.Admin.Controllers.ADConfigManager
                                        Value = string.Empty,
                                    });
             ViewData["adconfiglist"] = placelist;
-            var list = _lunBoAdTask.GetPagedList(placeid,pageIndex, pageSize);
+            var list = _lunBoAdTask.GetPagedList(placeid,gameid,pageIndex, pageSize);
             var model = new PagedList<ADConfig>(list.ToList(), pageIndex, pageSize, list.TotalItemCount);
 
             return View(model);
@@ -40,13 +56,22 @@ namespace W3WGame.Admin.Controllers.ADConfigManager
         {
             ViewData["AdTypeList"] = AdTypeEnum.Flash.ToSelectList();
             var placelist = ADConfigPlaceEnum.HomeLunBo.ToSelectList();
-            //placelist.Insert(0, new SelectListItem
-            //{
-            //    Selected = true,
-            //    Text = "请选择",
-            //    Value = string.Empty,
-            //});
             ViewData["placelist"] = placelist;
+            var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            gamelist.Insert(1, new SelectListItem
+            {
+                Selected = false,
+                Text = "不属于任何游戏",
+                Value = "0"
+            }); 
+            gamelist.Insert(0, new SelectListItem
+            {
+                Selected = true,
+                Text = "请选择",
+                Value = string.Empty
+            });
+            ViewData["gamelist"] = gamelist;
+
             var model = new SaveADConfig
             {
                 CreateDate = DateTime.Now,
@@ -67,6 +92,20 @@ namespace W3WGame.Admin.Controllers.ADConfigManager
         [ValidateInput(false)]
         public ActionResult Save(SaveADConfig savemodel)
         {
+            var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
+            gamelist.Insert(1, new SelectListItem
+            {
+                Selected = false,
+                Text = "不属于任何游戏",
+                Value = "0"
+            });
+            gamelist.Insert(0, new SelectListItem
+            {
+                Selected = true,
+                Text = "请选择",
+                Value = string.Empty
+            });
+            ViewData["gamelist"] = gamelist;
             ViewData["AdType"] = AdTypeEnum.Flash.ToSelectList();
             var placelist = ADConfigPlaceEnum.HomeLunBo.ToSelectList();
             placelist.Insert(0, new SelectListItem

@@ -51,7 +51,12 @@ namespace W3WGame.Task
             return _dao.GetAll(gameid);
         }
 
-        public List<GameServersDto> GetHomeServerList(int ServerState )
+        public List<GameServers> GetAll(int? top, string strwhere)
+        {
+            return _dao.GetAll(top, strwhere);
+        }
+
+	    public List<GameServersDto> GetHomeServerList(int ServerState )
         {
             return _dao.GetHomeServerList(ServerState);
         }

@@ -12,9 +12,9 @@ namespace W3WGame.Task
 	public  class ADConfigTask
 	{
 	     private readonly ADConfigDao _dao = new ADConfigDao();
-	     public PagedList<ADConfig> GetPagedList(int? placeid,int pageIndex, int pageSize)
+	     public PagedList<ADConfig> GetPagedList(int? placeid,int? gameid,int pageIndex, int pageSize)
         {
-            return _dao.GetPagedList(placeid,pageIndex,pageSize);
+            return _dao.GetPagedList(placeid,gameid,pageIndex,pageSize);
         }
         
          public ADConfig GetById(int id)

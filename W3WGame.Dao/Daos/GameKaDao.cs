@@ -103,7 +103,7 @@ Inner JOIN dbo.MobilGame mg ON gk.GameID = mg.ID ");
             {
                 sqltop = " * ";
             }
-            var sql = Sql.Builder.Select(sqltop).From("MobilGame WITH(NOLOCK)");
+            var sql = Sql.Builder.Select(sqltop).From("GameKa WITH(NOLOCK)");
             if (!string.IsNullOrEmpty(strwhere))
             {
                 sql.Where(strwhere);

@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Web.Mvc;
+using W3WGame.Task;
 
 namespace W3WGame.Services.ToolCode
 {
@@ -8,6 +9,8 @@ namespace W3WGame.Services.ToolCode
         //
         // GET: /WebHelper/
         private const string ImgDemoin = "http://localhost:2459";
+        private readonly static MobilGameTask _mobilGameTask = new MobilGameTask();
+
         public static string GetImg(string imgpath)
         {
             return string.Format("{0}{1}", ImgDemoin, imgpath);
@@ -31,6 +34,16 @@ namespace W3WGame.Services.ToolCode
            
             return new MvcHtmlString(sb.ToString());
 
+        }
+
+        public static string GetGameUrl(int gameid)
+        {
+            return string.Format("http://{0}.w3wgame.com", _mobilGameTask.GetById(gameid).Domain);
+        }
+
+        public static string GetGameNews(int id)
+        {
+            return string.Format("http://{0}.w3wgame.com/newinfo", id);
         }
 
     }

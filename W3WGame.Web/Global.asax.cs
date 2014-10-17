@@ -30,7 +30,7 @@ namespace W3WGame.Web
             {
                 routes.Add("DomainRouteName"+item.Domain.ToLower(),
                     new DomainRoute(string.Format("{0}.w3wgame.com",item.Domain.ToLower()),
-                        "{action}/{id}",new {Controller="",action="",id=""}
+                        "{action}/{id}", new { Controller = "games", action = "index", id = "" }
                         ));
             }
            

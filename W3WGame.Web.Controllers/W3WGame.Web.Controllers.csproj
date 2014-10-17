@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BaseController.cs" />
     <Compile Include="category\categoryController.cs" />
+    <Compile Include="Code\GameHelper.cs" />
     <Compile Include="download\downloadController.cs" />
     <Compile Include="FormsAuthService.cs" />
     <Compile Include="FormsAuthServiceCookie.cs" />
@@ -73,6 +74,7 @@
       <Name>W3WGame.Task</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -35,7 +35,8 @@ namespace W3WGame.Admin.Controllers.ADConfigManager.ViewModels
        
         public string CreatePeople { get; set; }
 
-
+        [Display(Name = "游戏ID"), Required(ErrorMessage = "请输入！")]
+        public int GameID { get; set; }
 
 
     }

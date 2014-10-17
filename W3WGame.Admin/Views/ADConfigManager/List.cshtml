@@ -43,7 +43,9 @@
                 <td>
                     位置:@Html.DropDownList("placeid", ViewData["adconfiglist"] as List<SelectListItem>)
                 </td>
-               
+                <td>
+                    所属:@Html.DropDownList("gameid", ViewData["gamelist"] as List<SelectListItem>)
+                </td>
                 <td>
                     <input type="submit" value="查找" class="submit" style="float: left; width: 80px;" />
                 </td>
@@ -58,6 +60,9 @@
         <td>序号</td>
         <td>
             ID
+        </td>
+        <td>
+            游戏id
         </td>
         <td>
             位置

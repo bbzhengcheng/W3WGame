@@ -1,0 +1,120 @@
+﻿@using W3WGame.Core.Dtos.Web
+@using W3WGame.Core.Enums
+@using WangFramework.Common
+@using WangFramework.Extensions
+@using W3WGame.Services.ToolCode
+@using W3WGame.Core.Entities
+@{
+    ViewBag.Title = "GameRight";
+    var serverlist = ViewData["serverlist"] as List<GameServers>;
+    var gamekalist = ViewData["gamekalist"] as List<GameKa>;
+    var gameinfo = ViewData["gameinfo"] as MobilGame;
+    var newlist = ViewData["newlist"] as List<NewsDto>;
+    int i = 1;
+}
+
+    <div class="right-con">
+            <div class="box down-yure">
+                <div class="titile-con">
+                    <h1>
+                        @gameinfo.GameName 官网下载</h1>
+                </div>
+                <div class="context-con">
+                    <div class="des">
+                        <span class="img">
+                            <img src="@WebHelper.GetImg(gameinfo.ImgPath)" alt="@gameinfo.GameName"><i class="radius80"></i></span>
+                        @gameinfo.GameDes<span class="more">[详情]
+                            <div class="tips">
+                                <span class="cor"></span>
+                                <p>
+                                   @gameinfo.GameDes
+                                </p>
+                            </div>
+                        </span>
+                    </div>
+                   <ul class="info">
+                        <li><span class="type">类型</span> @(((GameTypeEnum)gameinfo.GameType).ToDescriptionName())</li>
+                        <li><span class="type">平台</span> @(((GameSysEnum)gameinfo.Sys).ToDescriptionName())</li>
+                        <li class="long"><span class="type">状态</span>@(((YunYingStateEnum)gameinfo.YunYingState).ToDescriptionName())</li>
+                    </ul>
+                    <div class="btn-con">
+                        <span class="btn green code-show-yr">游戏下载</span> <a href="http://ka.9game.cn/game/537595_-5_1.html"
+                            class="btn red" data-statis="text:gw_list_yxxz_jhzr_lqlb">领取礼包</a>
+                    </div>
+                    <div class="server">
+                        010-85070333</div>
+                </div>
+            </div>
+            <div class="box rank side-ctrl">
+                <div class="titile-con">
+                    <h2>
+                        游戏攻略</h2>
+                </div>
+                <div class="context-con">
+                   
+                    <div class="contain" x-now-data="0">
+                        <ul class="news-list current" style="display: block;">
+                            @foreach(var item in newlist)
+                           {
+                                <li><a href="/games/newinfo/@item.ID" title="@item.Title" data-statis="text:gw_list_yxgl_xs_jhzr_261628">
+                                 @Utils.LeftString(item.Title, 15)</a></li>
+                           }
+                        </ul>
+                        
+                    </div>
+                </div>
+
+              
+            </div>
+            <div class="box right-gift marbtm10">
+                <div class="titile-con">
+                    <h2>
+                        游戏礼包</h2>
+                </div>
+                <div class="context-con">
+                    <ul class="right-gift-detail">
+                       @foreach(var item in gamekalist)
+                       {
+                           <li><span class="num @(i<4?"num"+i.ToString():"")">@i</span><p class="name" a="@(i++)">
+                            <a href="http://ka.9game.cn/personal/1410775535395892296.html">@item.KaTitle</a></p>
+                            <a href="http://ka.9game.cn/personal/1410775535395892296.html" class="fun ling">领</a></li>
+
+                           }
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="box right-server marbtm10">
+                <div class="titile-con">
+                    <h2>
+                        开服信息</h2>
+                </div>
+                <div class="context-con">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="name">
+                                    服务器名称
+                                </th>
+                                <th>
+                                    时间
+                                </th>
+                            </tr>
+                            @foreach(var item in serverlist)
+                            {
+                                <tr>
+                                <td class="name">
+                                    @item.ServerName
+                                </td>
+                                <td>
+                                    @item.OpenTime.ToString("MM-dd")
+                                </td>
+                            </tr>
+                            }
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+        </div>

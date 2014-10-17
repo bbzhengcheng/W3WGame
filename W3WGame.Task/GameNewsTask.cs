@@ -51,7 +51,10 @@ namespace W3WGame.Task
         {
             return _dao.GetAll(top, strwhere);
         }
-
+        public List<GameNewsDto> GetGameNewsList(int gameid)
+        {
+            return _dao.GetGameNewsList(gameid);
+        }
 
 	}
 }
