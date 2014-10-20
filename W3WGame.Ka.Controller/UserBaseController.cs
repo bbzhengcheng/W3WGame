@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
+using W3WGame.Services.web;
 using W3WGame.Task;
-using W3WGame.Web.Controllers;
 
 namespace W3WGame.Ka.Controller
 {

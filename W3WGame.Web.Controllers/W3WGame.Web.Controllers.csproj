@@ -44,10 +44,8 @@
   <ItemGroup>
     <Compile Include="BaseController.cs" />
     <Compile Include="category\categoryController.cs" />
-    <Compile Include="Code\GameHelper.cs" />
     <Compile Include="download\downloadController.cs" />
     <Compile Include="FormsAuthService.cs" />
-    <Compile Include="FormsAuthServiceCookie.cs" />
     <Compile Include="gamestore\gamestoreController.cs" />
     <Compile Include="games\gamesController.cs" />
     <Compile Include="home\homeController.cs" />

@@ -29,8 +29,8 @@ namespace W3WGame.Web.Controllers.games
             }
             //新闻列表
             var newlist = _gameNewsTask.GetGameNewsList(gid);
-            ViewData["serverlist"] = _gameServersTask.GetAll(7, "GameID = " + id.ToString());
-            ViewData["gamekalist"] = _gameKaTask.GetAll(7, "GameID = " + id.ToString());
+            ViewData["serverlist"] = _gameServersTask.GetAll(7, "GameID = " + gid.ToString());
+            ViewData["gamekalist"] = _gameKaTask.GetAll(7, "GameID = " + gid.ToString());
             ViewData["friendlist"] = _friendLinkTask.GetAll();
 
             //广告图

@@ -65,7 +65,7 @@ namespace W3WGame.Admin.Controllers.GameDownloadUrlsManager
         [HttpPost]
         public ActionResult Save(SaveGameDownloadUrls savemodel)
         {
-            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
+            ViewData["syslist"] = GameSysEnum.Andior.ToSelectListAddDefault();
             var gamelist = _mobilGameTask.GetAll(null, "").ToSelectList(c => c.ID.ToString(), c => c.GameName);
             gamelist.Insert(0, new SelectListItem
             {

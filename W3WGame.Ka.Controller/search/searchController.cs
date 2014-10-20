@@ -9,7 +9,6 @@ using W3WGame.Core.Enums;
 using W3WGame.Ka.Controller.personal.ViewModels;
 using W3WGame.Services;
 using W3WGame.Task;
-using W3WGame.Web.Controllers;
 using WangFramework.Common;
 using WangFramework.MvcPager;
 using WangFramework.Utility;

@@ -1,432 +1,165 @@
 ﻿@{
     Layout = "~/Views/Shared/_WebLayout.cshtml";
+
+    var gamesyslist = ViewData["gamesyslist"] as List<SelectListItem>;
+    var gametypelist = ViewData["gametypelist"] as List<SelectListItem>;
+    var gameTeZhenlist = ViewData["gameTeZhenlist"] as List<SelectListItem>;
+    var yunyingStatelist = ViewData["yunyingStatelist"] as List<SelectListItem>;
+    
+           
 }
-	<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css?ver=20140327">
+@using W3WGame.Core.Enums
+@using W3WGame.Services.ToolCode
+@using WangFramework.Extensions
+@using WangFramework.MvcPager
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Entities.MobilGame>
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css?ver=20140327">
 <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_public.css?ver=20140327">
 <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public/pub_header.css">
-    <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_ol.css">
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_ol.css">
+<script type="text/javascript">
+    $(function () {
+         var csys = '@Request["gamesys"]';
+         var cgameType = '@Request["gameType"]';
+        var cte = '@Request["gameTeZhen"]';
+        var cy = '@Request["yunyingState"]';
+        
+    if (csys != "")
+    {
+        
+     $("#gamesys a").removeClass("current");
+     $("#gamesys a[sys='@Request["gamesys"]']").addClass("current");
 
-    <div class="main-con">
-		<div class="page-break padding">
-				<a href="http://www.9game.cn" title="手机游戏">手机游戏</a> &gt;<a href="http://www.9game.cn/category" title="手机网游分类">手机网游分类</a> &gt;<h1>最热安卓android休闲类手机网游下载</h1>
-		</div>
-		<div class="game-classify">
-			<div class="box-title">
-				<h2>网游分类</h2>
-				<a href="http://www.9game.cn/danji/" target="_self" class="server-more" title="单机分类">单机分类</a>
-			</div>
-			<div class="classify">
-				<div class="name">游戏平台：</div>
-				<div class="type">
-						<a href="http://www.9game.cn/category/2_2_0_0_0_1/" class="current" target="_self" data-statis="text:p_ng_category_cg_pt_2" title="安卓">安卓</a>
-					<a href="http://www.9game.cn/category/3_2_0_0_0_1/" class="last" target="_self" data-statis="text:p_ng_category_cg_pt_3" title="苹果">苹果</a>
-				</div>
-			</div>
-			<div class="classify last">
-				<div class="name">游戏分类：</div>
-				<div class="type">
-		        		<a href="http://www.9game.cn/category/" class="title=&quot;全部&quot;" target="_self" data-statis="text:p_ng_category_cg_fl_0">全部</a>
-			               <a href="http://www.9game.cn/category/2_1_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_1" target="_self" title="角色" class="">角色</a>
-			               <a href="http://www.9game.cn/category/2_2_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_2" target="_self" title="休闲" class="current">休闲</a>
-			               <a href="http://www.9game.cn/category/2_3_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_3" target="_self" title="竞速" class="">竞速</a>
-			               <a href="http://www.9game.cn/category/2_4_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_4" target="_self" title="策略" class="">策略</a>
-			               <a href="http://www.9game.cn/category/2_5_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_5" target="_self" title="音乐" class="">音乐</a>
-			               <a href="http://www.9game.cn/category/2_6_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_6" target="_self" title="射击" class="">射击</a>
-			               <a href="http://www.9game.cn/category/2_7_0_0_0_1/" data-statis="text:p_ng_category_cg_fl_7" target="_self" title="模拟" class="">模拟</a>
-			               <a href="http://www.9game.cn/category/2_8_0_0_0_1/" class="last " data-statis="text:p_ng_category_cg_fl_8" title="其他" target="_self">其他</a>
-				</div>
-			</div>
-			<div class="classify last">
-			    <div class="name">游戏特征：</div>
-			    <div class="type">
-			    		<a href="http://www.9game.cn/category/2_2_0_0_0_1/" class="current" title="全部" target="_self" data-statis="text:p_ng_category_cg_tz_0">全部</a>
-					               <a href="http://www.9game.cn/category/2_2_1_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_1" title="三国" class="">三国</a>
-					               <a href="http://www.9game.cn/category/2_2_2_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_2" title="卡牌" class="">卡牌</a>
-					               <a href="http://www.9game.cn/category/2_2_3_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_3" title="仙侠" class="">仙侠</a>
-					               <a href="http://www.9game.cn/category/2_2_4_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_4" title="武侠" class="">武侠</a>
-					               <a href="http://www.9game.cn/category/2_2_5_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_5" title="魔幻" class="">魔幻</a>
-					               <a href="http://www.9game.cn/category/2_2_6_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_6" title="塔防" class="">塔防</a>
-					               <a href="http://www.9game.cn/category/2_2_8_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_8" title="西游" class="">西游</a>
-					               <a href="http://www.9game.cn/category/2_2_9_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_9" title="横版" class="">横版</a>
-					               <a href="http://www.9game.cn/category/2_2_10_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_10" title="即时" class="">即时</a>
-					               <a href="http://www.9game.cn/category/2_2_11_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_11" title="回合" class="">回合</a>
-					               <a href="http://www.9game.cn/category/2_2_12_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_12" title="宠物" class="">宠物</a>
-					               <a href="http://www.9game.cn/category/2_2_13_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_13" title="男生" class="">男生</a>
-					               <a href="http://www.9game.cn/category/2_2_14_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_14" title="女生" class="">女生</a>
-					               <a href="http://www.9game.cn/category/2_2_15_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_15" title="历史" class="">历史</a>
-					               <a href="http://www.9game.cn/category/2_2_16_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_16" title="封神" class="">封神</a>
-					               <a href="http://www.9game.cn/category/2_2_17_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_17" title="玄幻" class="">玄幻</a>
-					               <a href="http://www.9game.cn/category/2_2_18_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_18" title="都市" class="">都市</a>
-					               <a href="http://www.9game.cn/category/2_2_19_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_19" title="动漫" class="">动漫</a>
-					               <a href="http://www.9game.cn/category/2_2_20_0_0_1/" target="_self" data-statis="text:p_ng_category_cg_tz_20" title="养成" class="">养成</a>
-					               <a href="http://www.9game.cn/category/2_2_21_0_0_1/" class="last " target="_self" data-statis="text:p_ng_category_cg_tz_21" title="格斗">格斗</a>
-			    </div>
-			</div>
-			<div class="classify last">
-			    <div class="name">运营状态：</div>
-			    <div class="type">
-			    		<a href="http://www.9game.cn/category/2_2_0_0_0_1/" class="current" title="全部" target="_self" data-statis="text:p_ng_category_cg_yyzt_0">全部</a>
-				               <a href="http://www.9game.cn/category/2_2_0_1_0_1/" target="_self" data-statis="text:p_ng_category_cg_yyzt_1" title="封测" class="">封测</a>
-				               <a href="http://www.9game.cn/category/2_2_0_2_0_1/" target="_self" data-statis="text:p_ng_category_cg_yyzt_2" title="内测" class="">内测</a>
-				               <a href="http://www.9game.cn/category/2_2_0_3_0_1/" class="last " target="_self" data-statis="text:p_ng_category_cg_yyzt_3" title="公测">公测</a>
-			    </div>
-			</div>
-		</div>
-		<div class="box-text">
-			<div class="tag-tit">
-				<ul class="tag-tit-ul">
-					 	<li class="current"><a href="http://www.9game.cn/category/2_2_0_0_0_1/" data-statis="text:p_ng_category_order_zr" title="最热" target="_self">最热</a></li>
-					 <li class=""><a href="http://www.9game.cn/category/2_2_0_0_1_1/" data-statis="text:p_ng_category_order_zx" title="最新" target="_self">最新</a></li>
-				</ul>
-			</div>
-			<div class="game-poker-con">
-				<ul class="game-poker" id="ajax_loading_con">
-		<li class="">
-			<a href="http://ttkp.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_519910" title="天天酷跑">
-				<img src="http://image.game.uc.cn/2014/3/25/9677785.jpg" alt="天天酷跑">
-				<p>天天酷跑</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 64.9M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
+    } else {
+  $("#gamesys a:first").addClass("current");
+    }
+      if (cgameType != "")
+    {
+       
+     $("#cgametype a").removeClass("current");
+     $("#cgametype a[gametype='@Request["gameType"]']").addClass("current");
+
+    } else {
+     $("#cgametype a:first").addClass("current");
+      }
+      if (cte != "")
+    {
+       
+     $("#ctezhen a").removeClass("current");
+     $("#ctezhen a[tezhen='@Request["gameTeZhen"]']").addClass("current");
+
+    } else {
+   $("#ctezhen a:first").addClass("current");
+      }
+      if (cy != "")
+    {
+       
+     $("#cyunying a").removeClass("current");
+     $("#cyunying a[yunying='@Request["yunyingState"]']").addClass("current");
+
+    } else {
+   $("#cyunying a:first").addClass("current");
+      }
+   
+    }
+    );
+</script>
+<div class="main-con">
+
+    <div class="page-break padding">
+        <a href="#" title="手机游戏">手机游戏</a> &gt;<a href="#" title="手机网游分类">手机网游分类</a> &gt;<h1>
+                                                                                            最热安卓android休闲类手机网游下载</h1>
+    </div>
+    <div class="game-classify">
+        <div class="box-title">
+            <h2>
+                网游分类</h2>
+            <a href="/category/" target="_self" class="server-more" title="单机分类">单机分类</a>
+        </div>
+        <div class="classify">
+            <div class="name">
+                游戏平台：</div>
+            <div class="type" id="gamesys">
+                <a href="@Url.Action("index", "category", new {  gametype = Request["gametype"], gameTeZhen = Request["gameTeZhen"], yunyingState = Request["yunyingState"] })"   target="_self" >
+                    全部</a>
+                @for (int i = 0; i < gamesyslist.Count; i++)
+                {
+                    <a href="@Url.Action("index", "category", new { gamesys = gamesyslist[i].Value, gametype = Request["gametype"], gameTeZhen = Request["gameTeZhen"], yunyingState = Request["yunyingState"] })"
+                       class="@(i == gamesyslist.Count - 1 ? "last" : "")" sys="@gamesyslist[i].Value" target="_self"  title="@gamesyslist[i].Text">@gamesyslist[i].Text</a>
+                }
             </div>
-        <a href="http://www.9game.cn/game/downs_519910_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_519910">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/ttkpxgb/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_538091" title="天天酷跑（修改版）">
-				<img src="http://image.game.uc.cn/2013/10/31/9606879.jpg" alt="天天酷跑（修改版）">
-				<p>天天酷跑</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 42.7M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
+        </div>
+        <div class="classify last">
+            <div class="name">
+                游戏分类：</div>
+            <div class="type" id="cgametype">
+                <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"],  gameTeZhen = Request["gameTeZhen"], yunyingState = Request["yunyingState"] })"   target="_self" >
+                    全部</a>
+                @for (int i = 0; i < gametypelist.Count; i++)
+                {
+                    <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"], gametype = gametypelist[i].Value, gameTeZhen = Request["gameTeZhen"], yunyingState = Request["yunyingState"] })"
+                       class="@(i == gametypelist.Count - 1 ? "last" : "")" gametype="@gametypelist[i].Value" target="_self"  title="@gametypelist[i].Text">@gametypelist[i].Text</a>
+                }
             </div>
-        <a href="http://www.9game.cn/game/downs_538091_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_538091">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://ttaxc.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_520869" title="天天爱消除">
-				<img src="http://image.game.uc.cn/2013/11/4/9623618.jpg" alt="天天爱消除">
-				<p>天天爱消除</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 29.3M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
+        </div>
+        <div class="classify last">
+            <div class="name">
+                游戏特征：</div>
+            <div class="type" id="ctezhen">
+                <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"], gametype = Request["gametype"], yunyingState = Request["yunyingState"] })" class="current" title="全部" target="_self"
+                    >全部</a>
+                @for (int i = 0; i < gameTeZhenlist.Count; i++)
+                {
+                    <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"], gametype = Request["gametype"], gameTeZhen = gameTeZhenlist[i].Value, yunyingState = Request["yunyingState"] })"
+                       class="@(i == gameTeZhenlist.Count - 1 ? "last" : "")" tezhen="@gameTeZhenlist[i].Value" target="_self"  title="@gameTeZhenlist[i].Text">@gameTeZhenlist[i].Text</a>
+                }
             </div>
-        <a href="http://www.9game.cn/game/downs_520869_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_520869">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://ttfw.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_537180" title="天天富翁">
-				<img src="http://image.game.uc.cn/2014/3/11/9662439.jpg" alt="天天富翁">
-				<p>天天富翁</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 84.8M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
+        </div>
+        <div class="classify last">
+            <div class="name">
+                运营状态：</div>
+            <div class="type" id="cyunying">
+                <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"], gametype = Request["gametype"],gameTeZhen=Request["gameTeZhen"] })"  title="全部" target="_self"
+                   data-statis="text:p_ng_category_cg_yyzt_0">全部</a>
+                @for (int i = 0; i < yunyingStatelist.Count; i++)
+                {
+                    <a href="@Url.Action("index", "category", new { gamesys = Request["gamesys"], gametype = Request["gametype"], gameTeZhen = Request["gameTeZhen"], yunyingState = yunyingStatelist[i].Value })"
+                       class="@(i == yunyingStatelist.Count - 1 ? "last" : "")" yunying="@yunyingStatelist[i].Value" target="_self"  title="@yunyingStatelist[i].Text">@yunyingStatelist[i].Text</a>
+                }
             </div>
-        <a href="http://www.9game.cn/game/downs_537180_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_537180">立即下载</a>
-		</li> 
-		<li class="last">
-			<a href="http://hlmj.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_537207" title="欢乐麻将">
-				<img src="http://image.game.uc.cn/2014/1/10/9595000.jpg" alt="欢乐麻将">
-				<p>欢乐麻将</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 32.9M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
+        </div>
+    </div>
+    <div class="box-text">
+        <div class="tag-tit">
+            <ul class="tag-tit-ul">
+                <li class="current"><a href="#" 
+                                       title="最热" target="_self">最热</a></li>
+                
+            </ul>
+        </div>
+        <div class="game-poker-con">
+            <ul class="game-poker" id="ajax_loading_con">
+                @foreach (var item in Model)
+                {
+                    <li class=""><a href="@WebHelper.GetGameUrl(item.Domain)" class="info"  title="@item.GameName">
+                                     <img src="@WebHelper.GetImg(item.ImgPath)" alt="@item.GameName">
+                                     <p>
+                                         @item.GameName</p>
+                                     <span class="radius120"></span></a>
+                        <p class="type">
+                            @(((GameTypeEnum)item.GameType).ToDescriptionName())
+                            | @item.Size<text>M</text></p>
+                        <div class="fav">
+                            <span class="good"></span><span class="good"></span><span class="good"></span><span
+                                                                                                              class="good"></span><span class="bad"></span>
+                        </div>
+                        <a href="http://www.9game.cn/game/downs_519910_2.html?ch=JY_3" target="_self" class="down">
+                            立即下载</a> </li>
+                }
+            </ul>
+            <div class="page-change" id="page_change" style="display: block;">
+                @Html.Pager(Model)
             </div>
-        <a href="http://www.9game.cn/game/downs_537207_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_537207">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://qmfjdz.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_537017" title="全民飞机大战">
-				<img src="http://image.game.uc.cn/2014/5/31/9741257.jpg" alt="全民飞机大战">
-				<p>全民飞机大战</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 51.0M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="javascript:void(0)" target="_self" class="down" onclick="show_win_gamefile(537017,2,'全民飞机大战','2014-05-09 16:06:00',0,19,'text:bt_p_ng_category_2_2_0_0_0_537017');" title="全民飞机大战" data-statis="text:bt_p_ng_category_2_2_0_0_0_537017">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://3dtksj.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_536757" title="3D坦克争霸">
-				<img src="http://image.game.uc.cn/2014/1/10/9595358.jpg" alt="3D坦克争霸">
-				<p>3D坦克争霸</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 55.0M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_536757_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_536757">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/lzddz/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_78212" title="癞子斗地主">
-				<img src="http://image.game.uc.cn/2014/7/1/9780755.png" alt="癞子斗地主">
-				<p>癞子斗地主</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 12.3M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_78212_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_78212">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://lw.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_502444" title="恋舞OL">
-				<img src="http://image.game.uc.cn/2013/9/10/9383188.png" alt="恋舞OL">
-				<p>恋舞OL</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 134.8M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_502444_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_502444">立即下载</a>
-		</li> 
-		<li class="last">
-			<a href="http://ddt.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_517358" title="弹弹堂口袋版">
-				<img src="http://image.game.uc.cn/2014/6/18/9766895.jpg" alt="弹弹堂口袋版">
-				<p>弹弹堂</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 73.6M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_517358_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_517358">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://ttxw.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_537598" title="天天炫舞">
-				<img src="http://image.game.uc.cn/2014/8/21/9869442.gif" alt="天天炫舞">
-				<p>天天炫舞</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 132.7M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_537598_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_537598">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/fkwwj/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_505985" title="疯狂娃娃机">
-				<img src="http://image.game.uc.cn/2013/4/27/9125155.jpg" alt="疯狂娃娃机">
-				<p>疯狂娃娃机</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 27.2M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_505985_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_505985">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/qmnc/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_539460" title="全民农场">
-				<img src="http://image.game.uc.cn/2014/4/17/9696995.jpg" alt="全民农场">
-				<p>全民农场</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 59.6M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_539460_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_539460">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/ttjh/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_539304" title="天天金花">
-				<img src="http://image.game.uc.cn/2014/4/11/9692336.gif" alt="天天金花">
-				<p>天天金花</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 9.0M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_539304_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_539304">立即下载</a>
-		</li> 
-		<li class="last">
-			<a href="http://www.9game.cn/byonline/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_522637" title="捕鱼online">
-				<img src="http://image.game.uc.cn/2013/10/9/9473543.jpg" alt="捕鱼online">
-				<p>捕鱼onli</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 21.1M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_522637_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_522637">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://ssdz.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_65565" title="松鼠大战">
-				<img src="http://image.game.uc.cn/2013/4/16/9111681.jpg" alt="松鼠大战">
-				<p>松鼠大战</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 70.5M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_65565_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_65565">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/qmjl/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_539080" title="全民精灵">
-				<img src="http://image.game.uc.cn/2014/3/31/9682513.jpg" alt="全民精灵">
-				<p>全民精灵</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 41.0M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_539080_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_539080">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://ttlm.9game.cn/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_517311" title="天天星连萌">
-				<img src="http://image.game.uc.cn/2014/3/25/9677662.jpg" alt="天天星连萌">
-				<p>天天连萌</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 38.6M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_517311_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_517311">立即下载</a>
-		</li> 
-		<li class="">
-			<a href="http://www.9game.cn/thxq/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_540360" title="土豪象棋">
-				<img src="http://image.game.uc.cn/2014/5/16/9727218.png" alt="土豪象棋">
-				<p>土豪象棋</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 22.2M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_540360_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_540360">立即下载</a>
-		</li> 
-		<li class="last">
-			<a href="http://www.9game.cn/bydrolwlb/" class="info" data-statis="text:logo_p_ng_category_2_2_0_0_0_542505" title="捕鱼达人OL（网络版）">
-				<img src="http://image.game.uc.cn/2014/7/23/9814971.jpg" alt="捕鱼达人OL（网络版）">
-				<p>捕鱼达人OL</p>
-				<span class="radius120"></span>
-			</a>
-			<p class="type">休闲 | 32.6M</p>
-			<div class="fav">
-                    <span class="good"></span>
-                    <span class="good"></span>
-                    <span class="good"></span>
-                	<span class="bad"></span>
-                	<span class="bad"></span>
-            </div>
-        <a href="http://www.9game.cn/game/downs_542505_2.html?ch=JY_3" target="_self" class="down" data-statis="text:bt_p_ng_category_2_2_0_0_0_542505">立即下载</a>
-		</li> 
-				</ul>
-<div class="page-change" id="page_change" style="display: block;">
-		<span class="change" data-statis="text:p_ng_category_page_before">上一页</span>
-	<span class="now">第 1 页<i></i></span>
-		<a href="http://www.9game.cn/category/2_2_0_0_0_2/" target="_self" class="change" title="下一页" data-statis="text:p_ng_category_page_after">下一页</a>
-	<ul class="page-change-list">
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_1/" target="_self" title="第 1页" data-statis="text:p_ng_category_page_1">第 1页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_2/" target="_self" title="第 2页" data-statis="text:p_ng_category_page_2">第 2页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_3/" target="_self" title="第 3页" data-statis="text:p_ng_category_page_3">第 3页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_4/" target="_self" title="第 4页" data-statis="text:p_ng_category_page_4">第 4页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_5/" target="_self" title="第 5页" data-statis="text:p_ng_category_page_5">第 5页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_6/" target="_self" title="第 6页" data-statis="text:p_ng_category_page_6">第 6页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_7/" target="_self" title="第 7页" data-statis="text:p_ng_category_page_7">第 7页</a></li>
-			<li><a href="http://www.9game.cn/category/2_2_0_0_0_8/" target="_self" title="第 8页" data-statis="text:p_ng_category_page_8">第 8页</a></li>
-	</ul>
+        </div>
+    </div>
 </div>
-				<div class="page-load" id="page_load" style="display: none; opacity: 0.13821511040577533;">
-					<img src="/public/images/pc/pc_new/loading.gif" alt="">正在加载，请稍后...
-				</div>
-				<div class="page-unload" id="page_unload" style="display: none;">
-					加载失败,<a href="javascript:void(0);" class="page-reload">点击重新加载</a>
-				</div>
-				<div class="page-unload" id="page_loaded" style="display: none;">
-					以上是全部数据
-				</div>
-			</div>
-		</div>
-	</div>
-

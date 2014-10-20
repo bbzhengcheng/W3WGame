@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using WangFramework.Common;
 
-namespace W3WGame.Web.Controllers
+namespace W3WGame.Services.web
 {
    public static class FormsAuthServiceCookie
    {

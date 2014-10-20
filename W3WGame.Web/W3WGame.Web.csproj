@@ -126,7 +126,7 @@
     <Content Include="public\javascripts\pc2\search_think.js" />
     <Content Include="public\javascripts\pc2\search_think0351.js" />
     <Content Include="public\javascripts\pc2\show_game_down02d4.js" />
-    <Content Include="public\javascripts\pc2\show_game_down0351.js" />
+    <Content Include="public\javascripts\pc2\show_game_down.js" />
     <Content Include="public\javascripts\pc2\show_win_gamefile_v24e27.js" />
     <Content Include="public\javascripts\pc2\x_img_viewer.js" />
     <Content Include="public\javascripts\pc\common\loadmore.js" />

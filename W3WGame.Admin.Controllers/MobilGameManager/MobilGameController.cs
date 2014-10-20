@@ -33,7 +33,8 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
                                          new SelectListItem{Selected = false,Text = "是",Value = "True"},
                                          new SelectListItem{Selected = false,Text = "否",Value = "False"},
                                      };
-            
+           
+
             ViewData["hasGiftList"] = boolselectlist;
             ViewData["isHotList"] = boolselectlist;
             ViewData["isNewList"] = boolselectlist;
@@ -46,7 +47,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
             gameTypeList.Insert(0,boolselect);
             ViewData["gameTypeList"] = gameTypeList;
             var gameTeZhenList = GameTeZhenEnum.Chongwu.ToSelectList();
-            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
+            ViewData["syslist"] = GameSysEnum.Andior.ToSelectListAddDefault();
 
             gameTeZhenList.Insert(0,boolselect);
             ViewData["gameTeZhenList"] = gameTeZhenList;
@@ -81,7 +82,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
             var GameTypeEnumList = GameTypeEnum.CeLve.ToSelectList();
             GameTypeEnumList.Insert(0,autolist);
             ViewData["GameTypeEnumList"] = GameTypeEnumList;
-            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
+            ViewData["syslist"] = GameSysEnum.Andior.ToSelectListAddDefault();
             var YunYingStateEnumList = YunYingStateEnum.XinFu.ToSelectList();
             YunYingStateEnumList.Insert(0,autolist);
             ViewData["YunYingStateEnumList"] = YunYingStateEnumList;
@@ -106,7 +107,7 @@ namespace W3WGame.Admin.Controllers.MobilGameManager
         public ActionResult Save(SaveMobilGame savemodel)
         {
 
-            ViewData["syslist"] = GameSysEnum.All.ToSelectListAddDefault();
+            ViewData["syslist"] = GameSysEnum.Andior.ToSelectListAddDefault();
             if (ModelState.IsValid)
             {
                 string errMsg, savePath = string.Empty;
