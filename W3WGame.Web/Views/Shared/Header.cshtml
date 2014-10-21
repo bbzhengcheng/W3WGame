@@ -1,11 +1,17 @@
 ﻿@using W3WGame.Services.web
+<script type="text/javascript">
+    
+    $(function() {
+        $("#gamewebnav a:eq(@ViewBag.Tag)").addClass("active");
+    });
+</script>
 <div class="pub_9pcheader" id="pub_9pcheader">
     <div class="top-bar-ph" id="toTop">
         <ul class="contorl-ph">
-            <li><a href="/" name="totop" data-statis="text:txt_p_gdl_home" class="link">九游门户</a></li>
-            <li><a href="/ka/" data-statis="text:txt_p_gdl_ka" class="link">发号中心</a></li>
-            <li><a href="#" data-statis="text:txt_p_gdl_bbs" class="link">玩家论坛</a></li>
-            <li><a href="#" data-statis="text:txt_p_gdl_gh" class="link last">游戏公会</a></li>
+            <li><a href="/" name="totop"  class="link">九游门户</a></li>
+            <li><a href="/ka/" class="link">发号中心</a></li>
+            <li><a href="#" d class="link">玩家论坛</a></li>
+            <li><a href="#"  class="link last">游戏公会</a></li>
         </ul>
         <ul class="user-bar-ph">
             @if (FormsAuthServiceCookie.IsSignedIn())
@@ -232,10 +238,10 @@
 </div>
 <div class="sub-nav-con">
     <div class="sub-nav">
-        <div class="ol-nav">
-            <a href="/" class="active" target='_self' title="首页">首页</a> <a href="/category/"
+        <div class="ol-nav" id="gamewebnav">
+            <a href="/" class="" target='_self' title="首页">首页</a> <a href="/category/"
                 class="" target='_self' title="找游戏">找游戏</a> <a href="#" class="" target='_self' title="新游">
-                    新游</a> <a href="/ka/" title="发号中心">发号中心</a> <a href="/kc/" class="" target='_self'
+                    新游</a> <a href="#" title="发号中心">发号中心</a> <a href="/kc/" class="" target='_self'
                         title="开测表">开测表</a> <a href="/kf/" class="" target='_self' title="新服表">新服表</a>
             <a href="/news/" class="" target='_self' title="网游资讯">网游资讯</a> <a href="#" class="last"
                 title="玩家论坛">玩家论坛</a>

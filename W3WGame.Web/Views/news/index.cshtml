@@ -1,281 +1,142 @@
 ﻿@{
     Layout = "~/Views/Shared/_WebLayout.cshtml";
+
+
+    var gameinfolist = ViewData["gameinfolist"] as List<MobilGame>;
+    var newlist = ViewData["newlist"] as List<NewsDto>;
+    var adinfo = ViewData["adinfo"] as ADConfig;
+    var activeadinfo = ViewData["adinfoactive"] as ADConfig;
+    int i = 1;
+    ViewBag.Tag = 6;
 }
-     <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css?ver=20140327">
+@using W3WGame.Core.Dtos.Web
+@using W3WGame.Core.Entities
+@using W3WGame.Services.ToolCode
+@using WangFramework.Common
+@using WangFramework.MvcPager
+@model WangFramework.MvcPager.PagedList<W3WGame.Core.Entities.GameNews>
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public_9game.css?ver=20140327">
 <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_public.css?ver=20140327">
 <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/public/pub_header.css">
-    <link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_detail.css">
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/pc2/pcnew_detail.css">
+<script type="text/javascript">
+    $(function () {
+        var newstag = '@Request["tid"]';
+       if(newstag !='') {
+           
+           $("#mynewslist li[tag='@Request["tid"]']").addClass("current");
+       } else {
+        $("#mynewslist li:first").addClass("current");
+       }
+       
+    });
+</script>
+<div class="main-con">
+    <div class="page-break">
+        <a href="http://www.9game.cn" title="手机游戏">手机游戏</a>&gt;<span>网游资讯</span>
+    </div>
+    <div class="box ol-list-con">
+        <div class="info-con-730">
+            <div class="tag-tit tag-tit-6" >
+                <ul class="tag-tit-ul2 ol-list-page"  id="mynewslist">
+                    <li class=""  tag="0">
+                        <h2>
+                            <a href="/news/" target="_self" class="name">最热</a></h2>
+                    </li>
+                    <li class="" tag="1">
+                        <h2>
+                            <a href="/news/?tid=1" target="_self"  class="name" title="网游新闻">网游新闻</a></h2>
+                    </li>
+                    <li class=""  tag="2">
+                        <h2>
+                            <a href="/news/?tid=2" target="_self" class="name" title="网游评测">网游公告</a></h2>
+                    </li>
+                    <li class="" tag="4">
+                        <h2>
+                            <a href="/news/?tid=4" target="_self"  class="name" title="网游攻略">网游攻略</a></h2>
+                    </li>
+                    <li class="last" tag="3">
+                        <h2>
+                            <a href="/news/?tid=3" class="name"  target="_self" title="新游资讯">新游活动</a></h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-text">
+                <ul class="news-list-con">
+                    @foreach (var item in Model)
+                    {
+                        <li class="">
+                            <div class="title">
+                                <h2 class="name">
+                                    <a href="@WebHelper.GetGameNews(item.ID)"  title="@item.Title">
+                                        @item.Title</a></h2>
+                                <span class="time">@item.CreateDate.ToString() 发表</span>
+                            </div>
+                            <p class="text">
+                                @Utils.LeftString(item.ShortDes, 30)</p>
+                        </li>
 
-    <div class="main-con">
-        <div class="page-break">
-            <a href="http://www.9game.cn" title="手机游戏" data-statis="text:p_news_mbx_index">手机游戏</a>&gt;<span>网游资讯</span>
-        </div>
-        <div class="box ol-list-con">
-            <div class="info-con-730">
-                <div class="tag-tit tag-tit-6">
-                    <ul class="tag-tit-ul2 ol-list-page">
-                        <li class="current"><h2><a href="http://www.9game.cn/news/" data-statis="text:p_news_zdh_0" target="_self" class="name">最热</a></h2></li>
-                        <li class=""><h2><a href="http://www.9game.cn/news/1_1/" target="_self" data-statis="text:p_news_zdh_1" class="name" title="网游新闻">网游新闻</a></h2></li>
-                        <li class=""><h2><a href="http://www.9game.cn/news/2_1/" target="_self" data-statis="text:p_news_zdh_2" class="name" title="网游评测">网游评测</a></h2></li>
-                        <li class=""><h2><a href="http://www.9game.cn/news/3_1/" target="_self" data-statis="text:p_news_zdh_3" class="name" title="网游攻略">网游攻略</a></h2></li>
-                        <li class=""><h2><a href="http://www.9game.cn/news/4_1/" target="_self" data-statis="text:p_news_zdh_4" class="name" title="网游视频">网游视频</a></h2></li>
-                        <li class="last"><h2><a href="http://www.9game.cn/news/13_1/" class="name" data-statis="text:p_news_zdh_13" title="新游资讯">新游资讯</a></h2></li>
-                    </ul>
-                </div>
-                <div class="box-text">
-                    <ul class="news-list-con">
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/wqcjh/267879.html" data-statis="text:p_news_total_0_267879" title="我去闯江湖9月18日开测 30万交友卡将全网上线">我去闯江湖9月18日开测 30万交友卡将全网上线</a></h2>
-                                <span class="time">2014-09-18 11:44:00  发表</span>
-                            </div>
-                            <p class="text">
-	《我去闯江湖》将于9月18日进行iOS越狱测试，据了解，为助力封测，《我去闯江湖》牵手国际糖果巨头及全家(Family Mart)，在广州地区将会出现全家的《我去闯江湖》游戏主题店，只要购买箭牌产品即可获得游戏交友卡，届时，30万交友...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/ttgl/267893.html" data-statis="text:p_news_total_0_267893" title="天天灌篮新手篇 好友系统介绍">天天灌篮新手篇 好友系统介绍</a></h2>
-                                <span class="time">2014-09-18 11:43:00  发表</span>
-                            </div>
-                            <p class="text">
-	《天天灌篮》是一款以高中篮球为题材的竞技卡牌手游，秉承漫画中热血励志的风格，樱木花道、流川枫、仙道彰、泽北荣治等众多经典角色将在玩家带领下以“全国制霸”为目标谱写篮球场上的青春热血故事。游戏以卡牌收集培养刺激的...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="http://lzsh.9game.cn/news/267985.html" data-statis="text:p_news_total_0_267985" title="​神力附体劲到爆 玩转龙之守护魔灵系统">​神力附体劲到爆 玩转龙之守护魔灵系统</a></h2>
-                                <span class="time">2014-09-18 11:42:00  发表</span>
-                            </div>
-                            <p class="text">
-	手游《龙之守护》最新资料片“魔宠奇缘”已于日前开启，全新魔宠系统闪亮登场，注魂、升级、领悟、进化、觉醒等众多特色玩法引爆养宠热潮，为玩家带来更多游戏乐趣。魔灵作为游戏内一种特殊宝物，自然有其独到之处，今天就来看...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/fshx/267881.html" data-statis="text:p_news_total_0_267881" title="《封神幻想》境界系统攻略">《封神幻想》境界系统攻略</a></h2>
-                                <span class="time">2014-09-18 11:41:00  发表</span>
-                            </div>
-                            <p class="text">游戏中的境界系统是指主角或弟子通过挑战属性高于自己的心魔，提高境界。
-境界提升可以增加卡牌的星级，属性。
-挑战前可以使用天材地宝来进行攻击、防御、血量的属性加成，以增加境界提升的成功率。
-</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/qzlr3d/267940.html" data-statis="text:p_news_total_0_267940" title="全职猎人3D英雄曝光 不知火舞火辣登场">全职猎人3D英雄曝光 不知火舞火辣登场</a></h2>
-                                <span class="time">2014-09-18 11:40:00  发表</span>
-                            </div>
-                            <p class="text">
-	继上次的八神阉曝光之后，小编接到不少玩家要求制作不知火舞的要求哦- -(看来乃们都是喜欢大bo妹的!臭色狼!)熟不知我们已经做出来了吗?啊哈哈哈哈!尤其是你们想要看的小编都会满足你们的!废话不说，上图吧!
-	...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/qzlr3d/267930.html" data-statis="text:p_news_total_0_267930" title="全职猎人3D英雄曝光 八神庵是你的爱吗">全职猎人3D英雄曝光 八神庵是你的爱吗</a></h2>
-                                <span class="time">2014-09-18 11:40:00  发表</span>
-                            </div>
-                            <p class="text">
-	还记得当年街机横行，拳皇97中八神阉狂傲的贱笑吗?无论是三连下后拳、紫色火焰、大招炒菜，都会在《全职猎人3D》中原风呈现哦!动作还原度99%，技能特效还原度99.9%!快快下载《全职猎人3D》猛戳八神阉笑给你听吧!
-	...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="/fshx/267880.html" data-statis="text:p_news_total_0_267880" title="《封神幻想》装备系统攻略">《封神幻想》装备系统攻略</a></h2>
-                                <span class="time">2014-09-18 11:40:00  发表</span>
-                            </div>
-                            <p class="text">游戏中装备分为3种，分别是武器、防具、饰品。
-武器 ：增加装备者的攻击能力，强化可增加攻击能力。
-防具 ：增加装备者的防御能力，强化可增加防御能力。
-饰品 ：增加装备者的生命能力，强化可增加生命能力。
-装备品...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="http://jw3.9game.cn/news/267901.html" data-statis="text:p_news_total_0_267901" title="君王3不可告人的秘密 时装设计时装多元素化">君王3不可告人的秘密 时装设计时装多元素化</a></h2>
-                                <span class="time">2014-09-18 11:39:00  发表</span>
-                            </div>
-                            <p class="text">
-	当女神脱下红装，换上了威武的军装，在军训中完成了从软妹到军人华丽的转身，不一样的美，惊艳了时光，完美诠释了“衣装改变性格”的理念。而换上了时装，战神也会化身为天使，这就是《君王3》与众不同的秘密。
-...</p>
-                        </li>
-                           <li class="">
-                            <div class="title">
-                                <h2 class="name"><a href="http://cbxw.9game.cn/news/267818.html" data-statis="text:p_news_total_0_267818" title="追随音乐疯子 唱吧炫舞雷帝嘎嘎时装造型">追随音乐疯子 唱吧炫舞雷帝嘎嘎时装造型</a></h2>
-                                <span class="time">2014-09-18 11:39:00  发表</span>
-                            </div>
-                            <p class="text">
-	震惊世界乐坛的疯子女歌手lady gaga一直以来都以其不拘一格的行事作风而被广泛关注，尤其是她大胆的着装风格，使她无论在场上场下，都是大家注目的焦点，而回到《唱吧炫舞》，我相信在我们的玩家群中，这样的音乐疯子也不在少数，今天强推《唱...</p>
-                        </li>
-                           <li class="last">
-                            <div class="title">
-                                <h2 class="name"><a href="http://jw3.9game.cn/news/267905.html" data-statis="text:p_news_total_0_267905" title="《君王3》团结就是力量 世界BOSS军团攻略">《君王3》团结就是力量 世界BOSS军团攻略</a></h2>
-                                <span class="time">2014-09-18 11:38:00  发表</span>
-                            </div>
-                            <p class="text">
-	世界BOSS对军团来说，相当的重要，通过打boss，军团的成员可以得到军团贡献和极品奖励，它们出现的时间比较固定，BOSS每晚21：30就会出现。从周1到周六都会出现，周一周三周五会出现3只，周二周四周六出现2自后，地点的话可能就不一...</p>
-                        </li>
-                    </ul>
-                    <div class="page-change">
-                        <span class="change">上一页</span>
-                        <span class="now">第 1 页<i></i></span>
-                        <a href="http://www.9game.cn/news/0_2/" target="_self" data-statis="text:p_news_total_0_page_after" class="change">下一页</a>
-                        <ul class="page-change-list">
-                                  <li><span>第 1 页</span></li>
-                                   <li><a href="http://www.9game.cn/news/0_2/" target="_self" data-statis="text:p_news_total_0_page_2">第2 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_3/" target="_self" data-statis="text:p_news_total_0_page_3">第3 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_4/" target="_self" data-statis="text:p_news_total_0_page_4">第4 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_5/" target="_self" data-statis="text:p_news_total_0_page_5">第5 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_6/" target="_self" data-statis="text:p_news_total_0_page_6">第6 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_7/" target="_self" data-statis="text:p_news_total_0_page_7">第7 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_8/" target="_self" data-statis="text:p_news_total_0_page_8">第8 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_9/" target="_self" data-statis="text:p_news_total_0_page_9">第9 页</a></li>
-                                   <li><a href="http://www.9game.cn/news/0_10/" target="_self" data-statis="text:p_news_total_0_page_10">第10 页</a></li>
-                        </ul>
-                    </div>
+                    }
+                </ul>
+                <div class="page-change">
+                    @Html.Pager(Model)
                 </div>
             </div>
-            <div class="info-con-250">
-                <div class="right-banner">
-                    <a href="http://app.9game.cn/" title="九游客户端下载" data-statis="text:p_news_jykhd"><img src="http://image.game.uc.cn/2013/12/25/9578461.png" class="" alt="九游客户端下载" style="opacity: 0.94;"></a>
-                </div>
-                <div class="right-recom">
-                    <div class="box-title">
-                        <h3>
+        </div>
+        <div class="info-con-250">
+            <div class="right-banner">
+                <a href="@adinfo.Link" title="@adinfo.Title" data-statis="text:p_news_jykhd">
+                    <img src="@WebHelper.GetImg(adinfo.AdPath)" class="" alt="@adinfo.Title"
+                        style="opacity: 0.94;"></a>
+            </div>
+            <div class="right-recom">
+                <div class="box-title">
+                    <h3>
                         <a href="javascript:void(0);" target="_self">热门活动</a>
-                        </h3>
-                    </div>
-                    <div class="box-text">
-	                      <a href="http://bbs.9game.cn/thread-6788212-1-1.html" title="格斗宝贝对对碰 海量U点等你拿" class="pic-word-con" name="uc_gd_adm" gd_stat="205_13057" data-statis="text:logo_p_news_gds_205_13057">
-	                            <img class="pic" src="http://image.game.uc.cn/2014/9/18/9919820.jpg" alt="格斗宝贝对对碰 海量U点等你拿" style="opacity: 1;">
-	                            <p class="text">格斗宝贝对对碰 海量U点等你拿</p>
-	                      </a>
-                        <ul class="news-list">
-                                <li><a href="http://tjxm.9game.cn/news/267805.html" data-statis="text:p_news_total_2001875_267805" title="庆太极熊猫安卓首测 礼包、U点大放送">庆太极熊猫安卓首测 礼包、U点大放送</a></li>
-                                <li><a href="http://touch.9game.cn/news/267775.html" data-statis="text:p_news_total_2001875_267775" title="TOUCH舞动全城社团冲榜争霸赛送三星手机+R币充值卡">TOUCH舞动全城社团冲榜争霸赛送三星手机+R币充值卡</a></li>
-                                <li><a href="/qfc/267758.html" data-statis="text:p_news_total_2001875_267758" title="天龙八部3D豪送千U点!回顾你的武侠江湖路">天龙八部3D豪送千U点!回顾你的武侠江湖路</a></li>
-                                <li><a href="/ahlm/267483.html" data-statis="text:p_news_total_2001875_267483" title="《暗黑黎明》首测狂欢 百万豪礼助阵">《暗黑黎明》首测狂欢 百万豪礼助阵</a></li>
-                                <li><a href="http://sgzs.9game.cn/news/267381.html" data-statis="text:p_news_total_2001875_267381" title="三国战神公测再延期 跳票是否值得由你定">三国战神公测再延期 跳票是否值得由你定</a></li>
-                        </ul>
-                    </div>
+                    </h3>
                 </div>
-                <div class="right-recom right-recom-video">
-                    <div class="box-title">
-                        <h3><a href="javascript:void(0);" target="_self">热门视频</a></h3>
-                    </div>
-                    <div class="box-text">
-                            <a href="http://www.9game.cn/jojodqmmx/267543.html" class="video-word-con" title="《JOJO的奇妙冒险》广告片" name="uc_gd_adm" gd_stat="206_12994" data-statis="text:logo_p_news_gds_206_12994">
-	                            <img class="pic xLazyClass" src="http://image.game.uc.cn/2014/4/23/9702256.jpg" xlazyimg="http://image.game.uc.cn/2014/9/17/9918690.jpg" alt="《JOJO的奇妙冒险》广告片">
-	                            <p class="text"><span class="play"></span><span class="word">《JOJO的奇妙冒险》广告片</span></p>
-	                            <div class="meng"></div>
-	                            <span class="play"></span>
-                        	</a>
-                        <ul class="news-list">
-                                <li><a href="/douhun/267657.html" data-statis="text:p_news_total_2001877_267657" title="斗魂高清视频首曝 各大英雄大招怒甩杀敌">斗魂高清视频首曝 各大英雄大招怒甩杀敌</a></li>
-                                <li><a href="http://mlbb.9game.cn/news/265248.html" data-statis="text:p_news_total_2001877_265248" title="安蕾尔献唱 魔力宝贝手游爆笑视频MV">安蕾尔献唱 魔力宝贝手游爆笑视频MV</a></li>
-                                <li><a href="/wsjj/265686.html" data-statis="text:p_news_total_2001877_265686" title="无双剑姬技能搭配之多段连击详解 视频曝光">无双剑姬技能搭配之多段连击详解 视频曝光</a></li>
-                                <li><a href="/ahlm/265653.html" data-statis="text:p_news_total_2001877_265653" title="暗黑手游S级大作《暗黑黎明》宣传视频">暗黑手游S级大作《暗黑黎明》宣传视频</a></li>
-                                <li><a href="/hzws/265493.html" data-statis="text:p_news_total_2001877_265493" title="海贼无双独家游戏 打斗视频劲爆出走">海贼无双独家游戏 打斗视频劲爆出走</a></li>
-                        </ul>
-                    </div>
+                <div class="box-text">
+                    <a href="@activeadinfo.Link" title="@activeadinfo.Title" class="pic-word-con"
+                         >
+                        <img class="pic" src="@WebHelper.GetImg(activeadinfo.AdPath)" alt="@activeadinfo.Title"
+                            style="opacity: 1;">
+                        <p class="text">
+                            @activeadinfo.Title</p>
+                    </a>
+                    <ul class="news-list">
+                        @foreach (var item in newlist)
+                        {
+                            <li><a href="@WebHelper.GetGameNews(item.ID)" 
+                            title="@item.Title">@Utils.LeftString(item.Title, 18)</a></li>
+                        }
+                    </ul>
                 </div>
-                <div class="side-rank">
-                    <div class="box-title">
-                        <h3><a href="http://www.9game.cn/rank/">网游排行榜</a></h3>
-                        <a href="http://www.9game.cn/rank/" data-statis="text:p_news_rank_more" title="更多网游排行榜" class="more">更多</a>
-                    </div>
-                    <div class="box-text">
-                        <ul class="side-rank-list">
+            </div>
+            <div class="side-rank">
+                <div class="box-title">
+                    <h3>
+                        <a href="http://www.9game.cn/rank/">网游排行榜</a></h3>
+                    <a href="http://www.9game.cn/rank/" data-statis="text:p_news_rank_more" title="更多网游排行榜"
+                        class="more">更多</a>
+                </div>
+                <div class="box-text">
+                    <ul class="side-rank-list">
+                        @foreach (var item in gameinfolist)
+                        {
                             <li class="first">
-                            <div class="side-rank-num">1</div>
-                            <a href="http://ttkp.9game.cn/" title="天天酷跑" class="side-rank-info" data-statis="text:logo_p_news_rank_519910">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/3/25/9677785.jpg" alt="天天酷跑">
-                                <p>天天酷跑</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(519910,2,'天天酷跑','2014-05-19 10:30:00',1,19,'text:bt_p_news_rank_519910');" title="天天酷跑" data-statis="text:bt_p_news_rank_519910"></a>
-                        </li>
-                            <li class="second">
-                            <div class="side-rank-num">2</div>
-                            <a href="http://sklr.9game.cn/" title="时空猎人" class="side-rank-info" data-statis="text:logo_p_news_rank_34950">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2013/7/11/9235609.gif" alt="时空猎人">
-                                <p>时空猎人</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(34950,2,'时空猎人','2014-09-11 18:00:02',1,15,'text:bt_p_news_rank_34950');" title="时空猎人" data-statis="text:bt_p_news_rank_34950"></a>
-                        </li>
-                            <li class="third">
-                            <div class="side-rank-num">3</div>
-                            <a href="http://dtcq.9game.cn/" title="刀塔传奇" class="side-rank-info" data-statis="text:logo_p_news_rank_535733">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/7/10/9797218.jpg" alt="刀塔传奇">
-                                <p>刀塔传奇</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(535733,2,'刀塔传奇','2014-09-16 23:55:02',1,15,'text:bt_p_news_rank_535733');" title="刀塔传奇" data-statis="text:bt_p_news_rank_535733"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">4</div>
-                            <a href="http://www.9game.cn/ttkpxgb/" title="天天酷跑（修改版）" class="side-rank-info" data-statis="text:logo_p_news_rank_538091">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2013/10/31/9606879.jpg" alt="天天酷跑（修改版）">
-                                <p>天天酷跑</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="http://www.9game.cn/game/downs_538091_2.html?ch=JY_3" target="_self" class="btn down" data-statis="text:bt_p_news_rank_538091"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">5</div>
-                            <a href="http://shenmo.9game.cn/" title="神魔" class="side-rank-info" data-statis="text:logo_p_news_rank_520420">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/8/7/9842971.png" alt="神魔">
-                                <p>神魔</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(520420,2,'神魔','2014-09-18 06:05:02',1,15,'text:bt_p_news_rank_520420');" title="神魔" data-statis="text:bt_p_news_rank_520420"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">6</div>
-                            <a href="http://jzds.9game.cn/" title="节奏大师" class="side-rank-info" data-statis="text:logo_p_news_rank_77491">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/8/18/9862661.jpg" alt="节奏大师">
-                                <p>节奏大师</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(77491,2,'节奏大师','2014-04-02 06:01:00',1,19,'text:bt_p_news_rank_77491');" title="节奏大师" data-statis="text:bt_p_news_rank_77491"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">7</div>
-                            <a href="http://szr.9game.cn/" title="神之刃" class="side-rank-info" data-statis="text:logo_p_news_rank_535727">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/9/3/9892347.jpg" alt="神之刃">
-                                <p>神之刃</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(535727,2,'神之刃','2014-09-12 09:50:02',1,15,'text:bt_p_news_rank_535727');" title="神之刃" data-statis="text:bt_p_news_rank_535727"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">8</div>
-                            <a href="http://fknsg.9game.cn/" title="放开那三国" class="side-rank-info" data-statis="text:logo_p_news_rank_527432">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/9/2/9891091.gif" alt="放开那三国">
-                                <p>放开那三国</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(527432,2,'放开那三国','2014-09-15 15:55:02',1,15,'text:bt_p_news_rank_527432');" title="放开那三国" data-statis="text:bt_p_news_rank_527432"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">9</div>
-                            <a href="http://qmfjdz.9game.cn/" title="全民飞机大战" class="side-rank-info" data-statis="text:logo_p_news_rank_537017">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/5/31/9741257.jpg" alt="全民飞机大战">
-                                <p>全民飞机大战</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(537017,2,'全民飞机大战','2014-05-09 16:06:00',1,19,'text:bt_p_news_rank_537017');" title="全民飞机大战" data-statis="text:bt_p_news_rank_537017"></a>
-                        </li>
-                            <li class="">
-                            <div class="side-rank-num">10</div>
-                            <a href="http://cqzj.9game.cn/" title="苍穹之剑" class="side-rank-info" data-statis="text:logo_p_news_rank_520553">
-                                <img src="http://image.game.uc.cn/2014/4/23/9702256.jpg" class="xLazyClass" xlazyimg="http://image.game.uc.cn/2014/6/17/9766452.jpg" alt="苍穹之剑">
-                                <p>苍穹之剑</p>
-                                <span class="radius32"></span>
-                            </a>
-        <a href="javascript:void(0)" class="btn down" target="_self" onclick="show_win_gamefile(520553,2,'苍穹之剑','2014-07-10 18:55:02',1,15,'text:bt_p_news_rank_520553');" title="苍穹之剑" data-statis="text:bt_p_news_rank_520553"></a>
-                        </li>
-                        </ul>
-                    </div>
+                                <div class="side-rank-num">
+                                    1</div>
+                                <a href="@WebHelper.GetGameUrl(item.ID)" title="" class="side-rank-info" data-statis="text:logo_p_news_rank_519910">
+                                    <img src="@WebHelper.GetImg(item.ImgPath)" class="xLazyClass" xlazyimg="@WebHelper.GetImg(item.ImgPath)"
+                                    alt="@item.GameName">
+                                    <p>
+                                        @item.GameName</p>
+                                    <span class="radius32"></span></a><a href="javascript:void(0)" class="btn down" target="_self" onclick="javascript:void (0);"
+                                    title="@item.GameName" ></a></li>
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>

@@ -18,6 +18,12 @@ namespace W3WGame.Core.Enums
          GameLunBo = 4,
          [Description("游戏官网底部游戏展示327*480")]
          GameBLook = 5,
+         [Description("平台网游资讯右侧广告248*147")]
+         PlatformNewsRight = 6,
+         [Description("平台网游资讯右侧广告热门活动230*130")]
+         PlatformNewsRightActive = 7,
+
+
 
 
     }

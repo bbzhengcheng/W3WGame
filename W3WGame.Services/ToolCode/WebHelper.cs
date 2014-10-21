@@ -39,7 +39,10 @@ namespace W3WGame.Services.ToolCode
         {
             return string.Format("http://{0}.w3wgame.com", domain);
         }
-
+        public static string GetGameUrl(int id)
+        {
+            return string.Format("http://{0}.w3wgame.com", id);
+        }
         public static string GetGameNews(int id)
         {
             return string.Format("http://{0}.w3wgame.com/newinfo", id);
