@@ -81,6 +81,8 @@
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\pcnew_ico.png" />
+    <Content Include="Images\wenming.png" />
     <Content Include="public\images\pc\mm_g001.jpg" />
     <Content Include="public\images\pc\pc_9game_public\header_201405\pub_pcheader_icon.png" />
     <Content Include="public\images\pc\pc_9game_public\template4\logo.png" />
@@ -293,8 +295,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3417</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>9002</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

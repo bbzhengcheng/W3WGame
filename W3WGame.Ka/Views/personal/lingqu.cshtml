@@ -30,7 +30,7 @@
                 if (noticeArray.length > 1) {
                     notice = noticeArray[0] + '<span class=\"key\">' + noticeArray[1] + '</span>';
                 }
-                SetCookie('creditnotice', '', 0, '/', '9game.cn');
+                SetCookie('creditnotice', '', 0, '/', 'w3wgame.com');
                 showTips(notice, 3000);
             }
         })
@@ -54,7 +54,7 @@
     <div class="main-mod">
         <!--页面模块·面包屑-->
         <div class="crumbs">
-            <a href="http://ka.9game.cn/">九游发号中心</a> &gt; <a href="/game/index_1.html">全部游戏发号</a>
+            <a href="http://ka.w3wgame.com/">w3w游戏发号中心</a> &gt; <a href="/game/index_1.html">全部游戏发号</a>
             &gt; <a href="/game/544266_-5_1.html ">陆战之王</a> &gt; [陆战之王]独家封测登录激活码
         </div>
         <script type="text/javascript" src="/public/pc/verifymobile.js"></script>
@@ -72,7 +72,7 @@
             var getSuccess = false; //领号成功标记	
             var bookSuccess = false; //预号成功标记
 
-            var pc_app_url = "http://app.9game.cn/"; //提供给detail.js中领号成功弹窗使用
+            var pc_app_url = "http://app.w3wgame.com/"; //提供给detail.js中领号成功弹窗使用
             $(function () {
 
                 //验证码相关事件
@@ -121,7 +121,7 @@
                                     var gameId = document.getElementById('gameId').value;
                                     var clientMsg = "";
                                     if (gameId != null && gameId != "" && gameId > 0) {
-                                        clientMsg = "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
+                                        clientMsg = "<p>• 领到的号仅适用于w3w游戏游戏客户端，请先下载游戏</p>";
                                     }
 
 
@@ -133,11 +133,11 @@
                                     var gameId = document.getElementById('gameId').value;
                                     var clientMsg = "";
                                     if (gameId != null && gameId != "" && gameId > 0) {
-                                        clientMsg = "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
-                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>" +
+                                        clientMsg = "<p>• 领到的号仅适用于w3w游戏游戏客户端，请先下载游戏</p>";
+                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.w3wgame.com/?ch=KD_59' target='_blank'>" +
 									"<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
                                     } else {
-                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'></a>";
+                                        client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL=http://app.w3wgame.com/?ch=KD_59' target='_blank'></a>";
                                     }
 
 
@@ -317,7 +317,7 @@
                                 var msg = "预订成功！您将拥有提前30分钟领号的特权，并可在第一时间获取站内消息";
                                 //qq提醒url
                                 var qqClockUrl = "http://qzs.qq.com/snsapp/app/bee/widget/open.htm";
-                                qqClockUrl += "#content=" + encodeURIComponent("您好，" + resJson.sceneName + "即将开始领取，请前往九游获取礼包");
+                                qqClockUrl += "#content=" + encodeURIComponent("您好，" + resJson.sceneName + "即将开始领取，请前往w3w游戏获取礼包");
                                 qqClockUrl += "&time=" + resJson.qqClockTime;
                                 qqClockUrl += "&advance=15";
                                 qqClockUrl += "&&url=" + resJson.qqClockTargetUrl;
@@ -334,7 +334,7 @@
 
                                     var gameId = document.getElementById('gameId').value;
                                     if (gameId != null && gameId != "" && gameId > 0) {
-                                        msg += "<p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p>";
+                                        msg += "<p>• 领到的号仅适用于w3w游戏游戏客户端，请先下载游戏</p>";
 
                                         var client9 = "<a href='###' onclick='javascript:download9game();'>"
 								+ "<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
@@ -344,18 +344,18 @@
                                     $("#clientbookPopBox").show();
                                 } else { //其他场景
                                     var msg = "<p>• 您已获得提前30分钟领号的特权，抢号快人一步！</p>";
-                                    msg += "<p>• 使用九游游戏中心，礼包上架早知道，更有专属福利等着你</p>";
-                                    var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>"
-							+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
+                                    msg += "<p>• 使用w3w游戏游戏中心，礼包上架早知道，更有专属福利等着你</p>";
+                                    var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.w3wgame.com/?ch=KD_59' target='_blank'>"
+							+ "<span class='l-org'></span><span class='c-org'>下载w3w游戏游戏中心</span><span class='r-org'></span></a>";
                                     $("#clientbookPopTitle").html(msg);
                                     $("#9clientDowload").html(client9);
                                     $("#clientbookPopBox").show();
                                 }
                             } else {
                                 var msg = "• 恭喜您获得提前30分钟领号的特权！该号";
-                                var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank'>"
-						+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
-                                msg += "<span><em class='org'>需要使用九游游戏中心进行领取</em>，</span>";
+                                var client9 = "<a href='/redirect?a3=pc_book_hint&type=9clientDown&redirectURL=http://app.w3wgame.com/?ch=KD_59' target='_blank'>"
+						+ "<span class='l-org'></span><span class='c-org'>下载w3w游戏游戏中心</span><span class='r-org'></span></a>";
+                                msg += "<span><em class='org'>需要使用w3w游戏游戏中心进行领取</em>，</span>";
                                 msg += "提前下载和安装，抢号可以快人一步哦！";
                                 bookSuccess = true;
                                 $("#clientbookPopTitle").html(msg);
@@ -424,13 +424,13 @@
                                     var isCopy = resJson.isCopy;
                                     if (isCopy == "true") {
                                         var gameId = resJson.gameId;
-                                        $("#taoIsCopy").html("• 淘号太烦？！加入九游公会，即有资格领取该款发号！<a href='http://gh.9game.cn/SearchList.aspx?searchType=3&keyword=" + gameId + "&text=ka_lbth_jr' class='link' target='_blank'>点击这里>></a>");
+                                        $("#taoIsCopy").html("• 淘号太烦？！加入w3w游戏公会，即有资格领取该款发号！<a href='http://gh.w3wgame.com/SearchList.aspx?searchType=3&keyword=" + gameId + "&text=ka_lbth_jr' class='link' target='_blank'>点击这里>></a>");
                                     }
 
                                     var taoagain = "<a href='###' onclick='javascript:taoagain();'>"
 								+ "<span class='l-gray'></span><span class='c-gray'>再淘一次</span><span class='r-gray'></span></a>";
-                                    var client9tao = "<a href='/redirect?a3=pc_tao_hint&type=9clientDown&redirectURL=http://app.9game.cn/?ch=KD_59' target='_blank' class='closeLink'>"
-									+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
+                                    var client9tao = "<a href='/redirect?a3=pc_tao_hint&type=9clientDown&redirectURL=http://app.w3wgame.com/?ch=KD_59' target='_blank' class='closeLink'>"
+									+ "<span class='l-org'></span><span class='c-org'>下载w3w游戏游戏中心</span><span class='r-org'></span></a>";
                                     $("#taoagain").html(taoagain);
                                     $("#9clientDowloadtao").html(client9tao);
 
@@ -462,7 +462,7 @@
                 //下载游戏链接点击
                 $("[data-tag='downloadLink']").click(function (event) {
                     $.ajax({
-                        url: "http://ka.9game.cn/game/download.html?gameId=544266&amp;?requestType=ajax&currentPageUrl=" + currentPageUrl,
+                        url: "http://ka.w3wgame.com/game/download.html?gameId=544266&amp;?requestType=ajax&currentPageUrl=" + currentPageUrl,
                         type: 'GET',
                         success: function (result) {
                             var length = result.length;
@@ -721,7 +721,7 @@
                     id="followLink" class="btn-white-high"><i class="add-ico"></i>礼包提醒</a> </span>
                 </span>
                 <div class="game-list-way">
-                    <a href="http://www.9game.cn/lzzw/" target="_blank">进入专区</a>| <a href="http://bbs.9game.cn/forum-2976-1.html"
+                    <a href="http://www.w3wgame.com/lzzw/" target="_blank">进入专区</a>| <a href="http://bbs.w3wgame.com/forum-2976-1.html"
                         target="_blank">进入论坛</a>| <a href="javascript:void(0)" data-tag="downloadLink"><i
                             class="down-ico"></i>下载游戏 </a>
                 </div>
@@ -751,7 +751,7 @@
             <i class="down-cute"></i><i class="down-cute"></i>
             <div>
                 <strong>下载</strong> <a href="javascript:void(0)" data-tag="downloadLink" class="org">
-                    九游《陆战之王》游戏客户端</a>，礼包领取更方便！快下一个吧~~\(≧▽≦)/~ <a href="javascript:void(0)" data-tag="downloadLink"
+                    w3w游戏《陆战之王》游戏客户端</a>，礼包领取更方便！快下一个吧~~\(≧▽≦)/~ <a href="javascript:void(0)" data-tag="downloadLink"
                         class="game-down-btn"><i class="down-white-ico"></i>立即下载</a>
             </div>
         </div>
@@ -775,7 +775,7 @@
                                         <div>
                                             <font face="Arial, Verdana" size="2">正式开测后，使用激活码可登录《陆战之王》优先体验游戏。</font></div>
                                         <div>
-                                            <font face="Arial, Verdana" size="2">开测时间：</font><span style="font-size: small;">9月17日开启九游独家删档封测！</span></div>
+                                            <font face="Arial, Verdana" size="2">开测时间：</font><span style="font-size: small;">9月17日开启w3w游戏独家删档封测！</span></div>
                                     </div>
                                     <div style="font-family: Arial, Verdana; font-size: 10pt; font-style: normal; font-variant: normal;
                                         font-weight: normal; line-height: normal;">
@@ -814,7 +814,7 @@
                             <div class="tab-main fn-none">
                                 <div class="info">
                                     <p>
-                                        该激活码只能用于九游版《陆战之王》，请先 <a href="javascript:void(0)" data-tag="downloadLink">下载游戏</a>
+                                        该激活码只能用于w3w游戏版《陆战之王》，请先 <a href="javascript:void(0)" data-tag="downloadLink">下载游戏</a>
                                     </p>
                                     <p>
                                         成功安装游戏可使用激活码登录游戏！</p>
@@ -825,12 +825,12 @@
                             <div class="title-way">
                                 <h3 class="title-subs">
                                     热门推荐</h3>
-                                <a href="http://www.9game.cn/lzzw/" class="more-col" target="_blank">更多</a>
+                                <a href="http://www.w3wgame.com/lzzw/" class="more-col" target="_blank">更多</a>
                             </div>
                             <div class="title-way">
                                 <h3 class="title-subs">
                                     论坛热帖</h3>
-                                <a href="http://bbs.9game.cn/forum-2976-1.html" class="more-col" target="_blank">更多</a>
+                                <a href="http://bbs.w3wgame.com/forum-2976-1.html" class="more-col" target="_blank">更多</a>
                             </div>
                         </div>
                         <div class="list-clean">
@@ -838,11 +838,11 @@
                                 哎呀，公告还在路上</div>
                             <!-- 没数据的情况下 -->
                             <ul class="mod-game-list">
-                                <li><a href="http://bbs.9game.cn/thread-6796002-1-1.html" target="_blank">【陆战闪退问题收集专贴】</a>
+                                <li><a href="http://bbs.w3wgame.com/thread-6796002-1-1.html" target="_blank">【陆战闪退问题收集专贴】</a>
                                 </li>
-                                <li><a href="http://bbs.9game.cn/thread-6793049-1-1.html" target="_blank">【陆战之王】独家封测送充值卡千U点！截图秀出你的坦克战</a>
+                                <li><a href="http://bbs.w3wgame.com/thread-6793049-1-1.html" target="_blank">【陆战之王】独家封测送充值卡千U点！截图秀出你的坦克战</a>
                                 </li>
-                                <li><a href="http://bbs.9game.cn/thread-6785429-1-1.html" target="_blank">《陆战之王》公会争霸
+                                <li><a href="http://bbs.w3wgame.com/thread-6785429-1-1.html" target="_blank">《陆战之王》公会争霸
                                     送10000U点+充值卡</a> </li>
                             </ul>
                         </div>
@@ -877,7 +877,7 @@
                         <ul id="nowIssue" class="hot-gift-list">
                             <li>
                                 <div class="name-box">
-                                    <a href="javascript:void(0)">&nbsp;&quot;九游玩家372254246&quot;</a> <span class="times">
+                                    <a href="javascript:void(0)">&nbsp;&quot;w3w游戏玩家372254246&quot;</a> <span class="times">
                                         &nbsp;刚刚</span>
                                 </div>
                                 <p class="gfit-info">
@@ -894,7 +894,7 @@
                             </li>
                             <li>
                                 <div class="name-box">
-                                    <a href="javascript:void(0)">&nbsp;&quot;九游玩家363069987&quot;</a> <span class="times">
+                                    <a href="javascript:void(0)">&nbsp;&quot;w3w游戏玩家363069987&quot;</a> <span class="times">
                                         &nbsp;5分钟前</span>
                                 </div>
                                 <p class="gfit-info">
@@ -1108,7 +1108,7 @@
                         <p>
                             • 淘到的号不保证一定能兑换，请多尝试。</p>
                         <p>
-                            • 使用九游游戏中心可保存淘号记录，用号更便捷。</p>
+                            • 使用w3w游戏游戏中心可保存淘号记录，用号更便捷。</p>
                         <p>
                             <span id="taoIsCopy"></span>
                         </p>

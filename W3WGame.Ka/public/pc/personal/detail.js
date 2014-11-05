@@ -70,12 +70,12 @@ function _postCode(event){
 				  if(resJson.gameDownloadUrl != null){
 				  	client9ling = "<a href='###' onclick='javascript:download9game();'>"
 						+ "<span class='l-org'></span><span class='c-org'>下载游戏</span><span class='r-org'></span></a>";
-				  	lingcontent = "<div><p>• 请尽快使用，否则会进入淘号</p><p>• 领到的号仅适用于九游游戏客户端，请先下载游戏</p></div>";	  
+				  	lingcontent = "<div><p>• 请尽快使用，否则会进入淘号</p><p>• 领到的号仅适用于w3w游戏游戏客户端，请先下载游戏</p></div>";	  
 				  }
 				  else{
 					  client9ling = "<a href='/redirect?a3=pc_get_hint&type=9clientDown&redirectURL="+ pc_app_url +"?ch=KD_59' target='_blank'>"
-							+ "<span class='l-org'></span><span class='c-org'>下载九游游戏中心</span><span class='r-org'></span></a>";
-					  	lingcontent = "<div><p>• 请尽快使用，否则会进入淘号</p><p>• 使用九游游戏中心，礼包上架早知道，更有专属福利等职你</p></div>";	
+							+ "<span class='l-org'></span><span class='c-org'>下载w3w游戏游戏中心</span><span class='r-org'></span></a>";
+					  	lingcontent = "<div><p>• 请尽快使用，否则会进入淘号</p><p>• 使用w3w游戏游戏中心，礼包上架早知道，更有专属福利等职你</p></div>";	
 				  }
 				  $("#9clientDowloadling").html(client9ling);
 				  $("#lingcontent").html(lingcontent);

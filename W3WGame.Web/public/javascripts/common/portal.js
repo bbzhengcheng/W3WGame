@@ -34,7 +34,7 @@ portal.Statis = portal.Statis || {};
         if (null != statis && undefined != statis && statis.length >= 1) {
             ucb.Cookie.set("statis", statis, {
                 path : "/",
-                domain : ".9game.cn" // 揪心
+                domain : ".w3wgame.com" // 揪心
             });
         } else {
             ucb.Cookie.remove("statis");

@@ -39,13 +39,13 @@
             </div>
             <div class="hot-news hot-news-yr">
                 <p class="hot-title">
-                    <a href="http://qsmy.9game.cn/news/263218.html" >
+                    <a href="http://qsmy.w3wgame.com/news/263218.html" >
                         秦时明月9月10日 最强机关觉醒公测来袭</a></p>
                 <ul class="news-list">
                     @foreach (var item in centernewslist.Take(5))
                     {
                         <li><span class="type">@(((NewsTypeEnum)item.NewsType).ToDescriptionName())</span><a
-                            href="http://qsmy.9game.cn/news/279667.html" >
+                            href="http://qsmy.w3wgame.com/news/279667.html" >
                             @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
                     }
                 </ul>
@@ -53,7 +53,7 @@
                     @foreach (var item in centernewslist.Skip(5).Take(5))
                     {
                         <li><span class="type">@(((NewsTypeEnum)item.NewsType).ToDescriptionName())</span><a
-                            href="http://qsmy.9game.cn/news/279667.html" >
+                            href="http://qsmy.w3wgame.com/news/279667.html" >
                             @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
                     }
                 </ul>
@@ -82,7 +82,7 @@
                         <li class="long"><span class="type">状态</span>@(((YunYingStateEnum)gameinfo.YunYingState).ToDescriptionName())</li>
                     </ul>
                     <div class="btn-con">
-                        <span class="btn green code-show-yr">游戏下载</span> <a href="http://ka.9game.cn/game/535529_-5_1.html"
+                        <span class="btn green code-show-yr">游戏下载</span> <a href="http://ka.w3wgame.com/game/535529_-5_1.html"
                             class="btn red" data-statis="text:gw_index_yxxz_qsmy_lqlb">领取礼包</a>
                     </div>
                     <div class="server">
@@ -95,14 +95,14 @@
         <div class="box atr-list-245">
             <div class="titile-con">
                 <h2>
-                    <a href="http://qsmy.9game.cn/newslist/rmhd_0/">@gameinfo.GameName
+                    <a href="http://qsmy.w3wgame.com/newslist/rmhd_0/">@gameinfo.GameName
                         活动公告</a></h2>
                 <a href="/news?tid=2" class="more">更多&gt;&gt;</a></div>
             <div class="context-con">
                 <ul class="news-list">
                     @foreach (var item in Model.Where(c => c.NewsType == (int)NewsTypeEnum.GongGao))
                     {
-                        <li><a href="http://qsmy.9game.cn/news/279667.html" data-statis="text:gw_index_yxxw_qsmy_279667">
+                        <li><a href="http://qsmy.w3wgame.com/news/279667.html" data-statis="text:gw_index_yxxw_qsmy_279667">
                             @Utils.LeftString(item.Title, 15)</a><span class="date">@item.CreateDate.ToString("MM-dd")</span></li>
                     }
                 </ul>
@@ -111,8 +111,8 @@
         <div class="box game-gift-2 game-gift-yr">
             <div class="titile-con">
                 <h2>
-                    <a href="http://ka.9game.cn/game/535529.0_-5_1.html">秦时明月礼包领取</a></h2>
-                <a href="http://ka.9game.cn/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
+                    <a href="http://ka.w3wgame.com/game/535529.0_-5_1.html">秦时明月礼包领取</a></h2>
+                <a href="http://ka.w3wgame.com/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
             <div class="context-con">
                 <table class="gift-table">
                     <tbody>
@@ -137,7 +137,7 @@
                                             <span class="cor"></span>
                                             <p class="tip-title">
                                                 礼包内容：</p>
-                                            @MvcHtmlString.Create(item.KaContent) <a href="http://ka.9game.cn/personal/1413367046836136048.html"
+                                            @MvcHtmlString.Create(item.KaContent) <a href="http://ka.w3wgame.com/personal/1413367046836136048.html"
                                                 class="tip-more">更多详情&gt;&gt;</a>
                                         </div>
                                     </span>
@@ -146,13 +146,13 @@
                                     已被淘号<span class="orange">684</span>次
                                 </td>
                                 <td>
-                                    <a href="http://ka.9game.cn/personal/1413367046836136048.html" class="btn reget">淘号</a>
+                                    <a href="http://ka.w3wgame.com/personal/1413367046836136048.html" class="btn reget">淘号</a>
                                 </td>*@
                                 <td>
                                     剩余<span class="orange">@item.Shengyu</span>个
                                 </td>
                                 <td>
-                                    <a href="http://ka.9game.cn/personal/1413367046836136048.html" class="btn reget">领取</a>
+                                    <a href="http://ka.w3wgame.com/personal/1413367046836136048.html" class="btn reget">领取</a>
                                 </td>
                             </tr>
                          
@@ -182,8 +182,8 @@
         <div class="box game-gift-2 game-gift-yr">
             <div class="titile-con">
                 <h2>
-                    <a href="http://ka.9game.cn/game/535529.0_-5_1.html">@gameinfo.GameName 游戏开服</a></h2>
-                <a href="http://ka.9game.cn/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
+                    <a href="http://ka.w3wgame.com/game/535529.0_-5_1.html">@gameinfo.GameName 游戏开服</a></h2>
+                <a href="http://ka.w3wgame.com/game/535529.0_-5_1.html" class="more">更多&gt;&gt;</a></div>
             <div class="context-con">
                 <table class="gift-table">
                     <tbody>
@@ -252,7 +252,7 @@
         <div class="context-con">
             <div class="qa-info">
                 <div class="qa-des">
-                    <a href="http://bbs.9game.cn/forum.php?mod=forumdisplay&amp;fid=1180&amp;filter=typeid&amp;typeid=5832&amp;from=jy_p_wenda_qinshi"
+                    <a href="http://bbs.w3wgame.com/forum.php?mod=forumdisplay&amp;fid=1180&amp;filter=typeid&amp;typeid=5832&amp;from=jy_p_wenda_qinshi"
                         class="qa-btn">我要提问</a>
                     <div class="des">
                         <p class="tit">
@@ -264,7 +264,7 @@
                 <div id="comment_list">
                     <div class="qa-detail odd">
                         <p class="name">
-                            玩家：九游用户<span class="time">2014-8-19 12:23:20</span></p>
+                            玩家：w3w游戏用户<span class="time">2014-8-19 12:23:20</span></p>
                         <p class="q-con">
                             问题：秦时明月招募弟子技巧?</p>
                         <div class="a-con">
@@ -278,7 +278,7 @@
                     </div>
                     <div class="qa-detail">
                         <p class="name">
-                            玩家：九游用户<span class="time">2014-8-19 12:11:20</span></p>
+                            玩家：w3w游戏用户<span class="time">2014-8-19 12:11:20</span></p>
                         <p class="q-con">
                             问题：秦时明月怎么邀请好友？</p>
                         <div class="a-con">
@@ -292,7 +292,7 @@
                     </div>
                     <div class="qa-detail odd">
                         <p class="name">
-                            玩家：九游用户<span class="time">2014-8-19 11:43:20</span></p>
+                            玩家：w3w游戏用户<span class="time">2014-8-19 11:43:20</span></p>
                         <p class="q-con">
                             问题：秦时明月剑谱排名 前十冷剑削铁如泥</p>
                         <div class="a-con">
@@ -307,7 +307,7 @@
                     </div>
                     <div class="qa-detail">
                         <p class="name">
-                            玩家：九游用户<span class="time">2014-8-19 11:33:20</span></p>
+                            玩家：w3w游戏用户<span class="time">2014-8-19 11:33:20</span></p>
                         <p class="q-con">
                             问题：秦时明月手游兑换码 秦时明月礼包哪儿领</p>
                         <div class="a-con">
@@ -316,12 +316,12 @@
                                 小编回复：<span class="time">2014-8-19 14:20:0</span>
                             </p>
                             <p class="text">
-                                秦时明月手游兑换码 秦时明月礼包哪儿领？ 复制http://ka.9game.cn/game/535529_-5_1.html 这里有全网最丰富的秦时明月手游礼包兑换码！</p>
+                                秦时明月手游兑换码 秦时明月礼包哪儿领？ 复制http://ka.w3wgame.com/game/535529_-5_1.html 这里有全网最丰富的秦时明月手游礼包兑换码！</p>
                         </div>
                     </div>
                     <div class="qa-detail odd">
                         <p class="name">
-                            玩家：九游用户<span class="time">2014-7-1 15:44:20</span></p>
+                            玩家：w3w游戏用户<span class="time">2014-7-1 15:44:20</span></p>
                         <p class="q-con">
                             问题：秦时明月名剑排行前六名剑是什么？</p>
                         <div class="a-con">
@@ -353,56 +353,56 @@
         </div>
         <div class="context-con">
             <div class="game-recom-con">
-                <a href="http://rxgd.9game.cn/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540542">
+                <a href="http://rxgd.w3wgame.com/" class="recom-con " data-statis="text:gw_index_guess_qsmy_540542">
                     <img src="http://image.game.uc.cn/2014/8/26/9878641_.gif" alt="热血格斗OL">
                     <p>
                         热血格斗OL</p>
-                    <span class="radius60"></span></a><a href="http://dlnw.9game.cn/" class="recom-con "
+                    <span class="radius60"></span></a><a href="http://dlnw.w3wgame.com/" class="recom-con "
                         data-statis="text:gw_index_guess_qsmy_539350">
                         <img src="http://image.game.uc.cn/2014/10/11/9981088_.gif" alt="地牢女王">
                         <p>
                             地牢女王</p>
-                        <span class="radius60"></span></a><a href="http://btx.9game.cn/" class="recom-con "
+                        <span class="radius60"></span></a><a href="http://btx.w3wgame.com/" class="recom-con "
                             data-statis="text:gw_index_guess_qsmy_540143">
                             <img src="http://image.game.uc.cn/2014/7/30/9826312_.png" alt="霸天下">
                             <p>
                                 霸天下</p>
-                            <span class="radius60"></span></a><a href="http://dtcq.9game.cn/" class="recom-con "
+                            <span class="radius60"></span></a><a href="http://dtcq.w3wgame.com/" class="recom-con "
                                 data-statis="text:gw_index_guess_qsmy_535733">
                                 <img src="http://image.game.uc.cn/2014/7/10/9797218_.jpg" alt="刀塔传奇">
                                 <p>
                                     刀塔传奇</p>
-                                <span class="radius60"></span></a><a href="http://www.9game.cn/bbzs/" class="recom-con "
+                                <span class="radius60"></span></a><a href="http://www.w3wgame.com/bbzs/" class="recom-con "
                                     data-statis="text:gw_index_guess_qsmy_538597">
                                     <img src="http://image.game.uc.cn/2014/9/16/9914051_.png" alt="不败战神">
                                     <p>
                                         不败战神</p>
-                                    <span class="radius60"></span></a><a href="http://fknsg.9game.cn/" class="recom-con "
+                                    <span class="radius60"></span></a><a href="http://fknsg.w3wgame.com/" class="recom-con "
                                         data-statis="text:gw_index_guess_qsmy_527432">
                                         <img src="http://image.game.uc.cn/2014/9/2/9891091_.gif" alt="放开那三国">
                                         <p>
                                             放开那三国</p>
-                                        <span class="radius60"></span></a><a href="http://jhzr.9game.cn/" class="recom-con "
+                                        <span class="radius60"></span></a><a href="http://jhzr.w3wgame.com/" class="recom-con "
                                             data-statis="text:gw_index_guess_qsmy_537595">
                                             <img src="http://image.game.uc.cn/2014/9/12/9908590_.jpg" alt="剑魂之刃">
                                             <p>
                                                 剑魂之刃</p>
-                                            <span class="radius60"></span></a><a href="http://gddh.9game.cn/" class="recom-con "
+                                            <span class="radius60"></span></a><a href="http://gddh.w3wgame.com/" class="recom-con "
                                                 data-statis="text:gw_index_guess_qsmy_538780">
                                                 <img src="http://image.game.uc.cn/2014/7/13/9800152_.jpg" alt="格斗刀魂Online">
                                                 <p>
                                                     格斗刀魂Online</p>
-                                                <span class="radius60"></span></a><a href="http://www.9game.cn/csxy2/" class="recom-con "
+                                                <span class="radius60"></span></a><a href="http://www.w3wgame.com/csxy2/" class="recom-con "
                                                     data-statis="text:gw_index_guess_qsmy_540516">
                                                     <img src="http://image.game.uc.cn/2014/6/26/9776727_.jpg" alt="超神学院">
                                                     <p>
                                                         超神学院</p>
-                                                    <span class="radius60"></span></a><a href="http://www.9game.cn/bydr3/" class="recom-con "
+                                                    <span class="radius60"></span></a><a href="http://www.w3wgame.com/bydr3/" class="recom-con "
                                                         data-statis="text:gw_index_guess_qsmy_536689">
                                                         <img src="http://image.game.uc.cn/2014/7/21/9811700_.gif" alt="捕鱼达人3">
                                                         <p>
                                                             捕鱼达人3</p>
-                                                        <span class="radius60"></span></a><a href="http://txhd.9game.cn/" class="recom-con last"
+                                                        <span class="radius60"></span></a><a href="http://txhd.w3wgame.com/" class="recom-con last"
                                                             data-statis="text:gw_index_guess_qsmy_535356">
                                                             <img src="http://image.game.uc.cn/2014/9/17/9919017_.png" alt="天下HD">
                                                             <p>

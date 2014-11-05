@@ -24,7 +24,7 @@
                            for(i=0;i<fp.length;i++) {
                             var p = fp[i];
                             lis += "<div class=\"down-con\">";
-                            lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+                            lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
                             lis += " data-statis=\"" + parm.statis_text+ "\"";
                             lis+= " class=\"popup-down\">"
                             lis+= "<p class=\"name\">"+p.name+"</p>";
@@ -44,7 +44,7 @@
                            p=fp[0]; 
                           lis="";
                           lis += "<div class=\"down-con\">";
-                          lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/downs_" + gameId+"_3.html\"";
+                          lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/downs_" + gameId+"_3.html\"";
                           lis += " data-statis=\"" + parm.statis_text+ "\"";
                           lis+= " class=\"popup-down\">"
                           lis+= "<p class=\"name\">"+p.name+"</p>";

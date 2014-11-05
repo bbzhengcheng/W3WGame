@@ -2,7 +2,7 @@
 /* 今日开服 */
 .today-new-server { padding-top: 10px; border-top: 1px solid #ebebeb; }
 .today-new-server .box-title .time { position: absolute; left: 105px; bottom: 6px; font-size: 14px; color: #f60; }
-.today-new-server .box-title .server-more { position: absolute; right: 0; top: 3px; display: block; width: 80px; height: 26px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 64px -248px; _background: url(http://www.9game.cn/public/images/pc/pc_new/lit_icon.gif) no-repeat 64px -248px; background-color: #ff8a00; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; line-height: 25px; color: #fff; text-indent: 5px; font-size: 14px; }
+.today-new-server .box-title .server-more { position: absolute; right: 0; top: 3px; display: block; width: 80px; height: 26px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 64px -248px; _background: url(/public/images/pc/pc_new/lit_icon.gif) no-repeat 64px -248px; background-color: #ff8a00; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; line-height: 25px; color: #fff; text-indent: 5px; font-size: 14px; }
 .today-new-server .box-title .server-more:hover { text-decoration: underline; }
 
 .today-server-list { margin-bottom: 25px; border-left: 1px solid #f5f5f5; border-bottom: 1px dotted #f5f5f5; background: #fdfdfd; padding-left: 4px; }
@@ -24,8 +24,8 @@
 .today-server-list .right-text .type .type-con { margin-right: 20px; }
 .today-server-list .right-text .type .org { color: #f80; font-style: normal; }
 .today-server-list .right-text .type .na { color: #666; }
-.today-server-list .right-text .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; }
-.today-server-list .right-text .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; }
+.today-server-list .right-text .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; }
+.today-server-list .right-text .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; }
 .today-server-list .other-btn { width: 310px; height: 36px; overflow: hidden; position: absolute; top: 58px; right: 0; }
 .today-server-list .other-btn .btn { width: 88px; height: 34px; display: block; margin-right: 10px; border: 1px solid #ccc; line-height: 34px; text-align: center; font-size: 16px; float: left; background: #fafafa; background: -moz-linear-gradient(top, white, #fafafa); background: -webkit-linear-gradient(top, white, #fafafa); background: -ms-linear-gradient(top, white, #fafafa); background: -o-linear-gradient(top, white, #fafafa); -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .today-server-list .other-btn .btn:hover { color: #fff; }
@@ -68,11 +68,11 @@
 .open-test-con table .hot .up { padding-right: 14px; margin-right: 4px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right 4px; }
 .open-test-con table .hot .mid { margin-right: 4px; padding-right: 14px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right -35px; }
 .open-test-con table .hot .low { margin-right: 4px; padding-right: 14px; background: url(../../../../images/pc/pc_new/newgame_rank.png) no-repeat right -69px; }
-.open-test-con table .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; float: left; margin-top: 19px; }
-.open-test-con table .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; float: left; margin-top: 19px; }
+.open-test-con table .android { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -111px -320px; float: left; margin-top: 19px; }
+.open-test-con table .ios { display: inline-block; width: 14px; height: 12px; background: url(../../../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px; _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px; margin-left: 3px; background-position: -138px -320px; float: left; margin-top: 19px; }
 .open-test-con table td a { width: 196px; display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 .open-test-con table td a:hover { text-decoration: underline; }
-.open-test-con table .sbtn { display: inline-block; width: 76px; height: 23px; margin-top: 3px; line-height: 24px; text-indent: 18px; font-size: 12px; color: #666; text-decoration: none; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 100px 100px; _background: url(http://www.9game.cn/public/images/pc/pc_new/lit_icon.gif) no-repeat 100px 100px; background-color: #f2f2f2; }
+.open-test-con table .sbtn { display: inline-block; width: 76px; height: 23px; margin-top: 3px; line-height: 24px; text-indent: 18px; font-size: 12px; color: #666; text-decoration: none; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: url(../../../../images/pc/pc_new/lit_icon.png) no-repeat 100px 100px; _background: url(/public/images/pc/pc_new/lit_icon.gif) no-repeat 100px 100px; background-color: #f2f2f2; }
 .open-test-con table .sbtn:hover { text-decoration: none; }
 .open-test-con table .icon-gift { background-position: 4px -52px; }
 .open-test-con table .icon-gift:hover { background-position: 4px -25px; background-color: #ff622b; color: #fff; }

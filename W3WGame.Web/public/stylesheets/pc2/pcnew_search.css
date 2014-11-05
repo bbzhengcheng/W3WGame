@@ -559,7 +559,7 @@
     height: 15px;
     margin: 0 2px;
     background: url(../../images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-    _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+    _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
 }
 .game-rank-con .rank-poker .bad
 {
@@ -636,8 +636,8 @@
 {
     width: 55px;
     height: 55px;
-    background: url(http://www.9game.cn/public/images/pc/pc_new/corner_bg.png) no-repeat 100px 100px;
-    _background: url(http://www.9game.cn/public/images/pc/pc_new/corner_bg.gif) no-repeat 100px 100px;
+    background: url(/public/images/pc/pc_new/corner_bg.png) no-repeat 100px 100px;
+    _background: url(/public/images/pc/pc_new/corner_bg.gif) no-repeat 100px 100px;
     position: absolute;
     top: -4px;
     left: -4px;

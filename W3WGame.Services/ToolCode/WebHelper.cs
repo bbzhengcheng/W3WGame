@@ -8,7 +8,7 @@ namespace W3WGame.Services.ToolCode
     {
         //
         // GET: /WebHelper/
-        private const string ImgDemoin = "http://localhost:2459";
+        private const string ImgDemoin = "http://localhost:9001";
        
         public static string GetImg(string imgpath)
         {

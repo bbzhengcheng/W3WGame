@@ -27,18 +27,19 @@ namespace W3WGame.Web.Controllers.home
             ViewData["cePingAdList"] = _adConfigTask.GetListBy((int)ADConfigPlaceEnum.HomeCePing);
 
             //今日新闻
-            XElement root = XElement.Load("http://localhost:2459/config/HomeConfig.xml");
-            var todayxe = root.Element("TodayNews").Element("HotNews").Elements("li");
             var newsHight = new List<NewsXmlDto>();
-            foreach (var xe in todayxe)
-            {
-               newsHight.Add(new NewsXmlDto
-                                 {
-                                     Href = xe.Attribute("href").Value,
-                                     Title = xe.Value,
-                                 });
+            //XElement root = XElement.Load("http://admin.w3wgame.com/config/HomeConfig.xml");
+            //var todayxe = root.Element("TodayNews").Element("HotNews").Elements("li");
+            
+            //foreach (var xe in todayxe)
+            //{
+            //   newsHight.Add(new NewsXmlDto
+            //                     {
+            //                         Href = xe.Attribute("href").Value,
+            //                         Title = xe.Value,
+            //                     });
 
-            }
+            //}
             ViewData["newsHight"] = newsHight;
             //新闻列表
             ViewData["newlist"] = _gameNewsTask.GetAll(4,

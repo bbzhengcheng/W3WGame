@@ -68,9 +68,9 @@ function sizeFormat(fileSize){
 							
 							lis += "<div class=\"down-con\">";
 							 if(isNetGame(typeId))
-							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 							   if(typeId==17||typeId==18)
-							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 							if(statis_page != null){
 								lis += " data-statis=\"" + statis_page+ "\"";
 							}
@@ -100,9 +100,9 @@ function sizeFormat(fileSize){
 							
 							lis += "<div class=\"down-con\">";
 							 if(isNetGame(typeId))
-							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 							   if(typeId==17||typeId==18)
-							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+							lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 							if(statis_page != null){
 								//lis += " data-statis=\"text:bd_" + statis_page+ "_" + platformname + statis_prefix + gameId+ "\"";
 								lis += " data-statis=\"" + statis_page+ "\"";
@@ -134,9 +134,9 @@ function sizeFormat(fileSize){
 					
 					lis += "<div class=\"down-con\">";
 					 if(isNetGame(typeId))
-					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 					   if(typeId==17||typeId==18)
-					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/down_" + gameId + "_" + p.id + ".html\"";
+					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/down_" + gameId + "_" + p.id + ".html\"";
 					if(statis_page != null){
 						//lis += " data-statis=\"text:bd_" + statis_page+ "_" + platformname + statis_prefix + gameId+ "\"";
 						lis += " data-statis=\"" + statis_page+ "\"";
@@ -161,9 +161,9 @@ function sizeFormat(fileSize){
 					
 					lis += "<div class=\"down-con\">";
 					 if(isNetGame(typeId))
-					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/downs_" + gameId+"_3.html\"";
+					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/downs_" + gameId+"_3.html\"";
 					   if(typeId==17||typeId==18)
-					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.9game.cn/game/downs_" + gameId+"_3.html\"";
+					lis += "<a id=\"index_pop_furl\"  target=\"_self\" href=\"http://www.w3wgame.com/game/downs_" + gameId+"_3.html\"";
 					if(statis_page != null){
 						//lis += " data-statis=\"text:bd_" + statis_page+ "_" + platformname + statis_prefix + gameId+ "\"";
 					 lis += " data-statis=\"" + statis_page+ "\"";

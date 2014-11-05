@@ -28,14 +28,14 @@ audio,canvas,video {display:inline-block;*display:inline;*zoom:1;}
 .pub_9pcheader .user-bar-ph .ulink{padding:0 10px;line-height:33px;border-right:1px solid #c6c6c6;color:#1a71d1;}
 .pub_9pcheader .user-bar-ph .ulink:hover{color:#f60;text-decoration:none;}
 .pub_9pcheader .web-site-ph{width:100px;height:33px;position:relative;}
-.pub_9pcheader .user-site-ph{_width:150px;text-indent:10px;background:url('http://www.9game.cn/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 113px -137px;}
-.pub_9pcheader .msg-site-ph{width:100px;height:33px;position:relative;background:url('http://www.9game.cn/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 98px -137px;}
+.pub_9pcheader .user-site-ph{_width:150px;text-indent:10px;background:url('http://www.w3wgame.com/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 113px -137px;}
+.pub_9pcheader .msg-site-ph{width:100px;height:33px;position:relative;background:url('http://www.w3wgame.com/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 98px -137px;}
 .pub_9pcheader .msg-site-ph .org{color:#f80;}
 .pub_9pcheader .site-title{height:32px;line-height:32px;position:relative;border:1px solid #e9e9e9;border-bottom:0;text-align:center;text-indent:22px;cursor:pointer;}
-.pub_9pcheader .web-site-ph .site-title{background:url('http://www.9game.cn/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 9px 11px;}
-.pub_9pcheader .msg-site-ph .site-title{background:url('http://www.9game.cn/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 9px -29px;}
+.pub_9pcheader .web-site-ph .site-title{background:url('http://www.w3wgame.com/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 9px 11px;}
+.pub_9pcheader .msg-site-ph .site-title{background:url('http://www.w3wgame.com/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 9px -29px;}
 .pub_9pcheader .user-site-ph .site-title{text-indent:10px;padding-right:10px;}
-.pub_9pcheader .site-toward-ph{width:13px;height:10px;display:inline-block;_display:none;margin-left:4px;background:url('http://www.9game.cn/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 0 -77px;}
+.pub_9pcheader .site-toward-ph{width:13px;height:10px;display:inline-block;_display:none;margin-left:4px;background:url('http://www.w3wgame.com/public/images/pc/pc_9game_public/header_201405/pub_pcheader_icon.png') no-repeat 0 -77px;}
 .pub_9pcheader .web-site-pop,.pub_9pcheader .user-site-pop,.pub_9pcheader .msg-site-pop{z-index:5;border:1px solid #c6c6c6;position:absolute;top:33px;background:#fff;display:none;}
 .pub_9pcheader .user-site-pop{width:322px;height:148px;left:0;text-indent:0;}
 .pub_9pcheader .user-site-name{width:300px;height:75px;padding-top:15px;margin:0 auto 15px;border-bottom:1px solid #e6e6e6;}

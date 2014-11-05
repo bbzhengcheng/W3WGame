@@ -4,10 +4,10 @@
 	var $search_text=$('.search-text:eq(0)');
 	var $result_list=$('#result_list');
 	var $search_type=$('#search_type');
-	var andriudHtml='http://android.9game.cn/game/downs_';
-	var iosHtml='http://ios.9game.cn/game/downs_';
-	var wwwHtml='http://www.9game.cn/game/downs_';
-	var detailHtml='http://ng.9game.cn/game/detail_';
+	var andriudHtml='http://android.w3wgame.com/game/downs_';
+	var iosHtml='http://ios.w3wgame.com/game/downs_';
+	var wwwHtml='http://www.w3wgame.com/game/downs_';
+	var detailHtml='http://ng.w3wgame.com/game/detail_';
 	var initWord=$.trim($search_text.val());
 	var lock=0;
 	var blur=1;

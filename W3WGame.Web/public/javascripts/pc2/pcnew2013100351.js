@@ -55,7 +55,7 @@
 	/* 搜索提示弹窗 */
 	if(!cookie.getRaw('sr_cookies') && $('#search_popup').length){
 		var pop=$('#search_popup');
-		var domain = ".9game.cn";
+		var domain = ".w3wgame.com";
 		pop.show();
 		$('body').addClass('popup_of');
 		$(".sr-close").click(function(){

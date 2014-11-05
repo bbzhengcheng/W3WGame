@@ -180,9 +180,9 @@
 				comment = com;
 			
 			html+='<li>';
-			html+='<div class="img-con"><img src="http://image.base.9game.cn:8080/2014/6/25/9774681.jpg" alt=""/></div>';
+			html+='<div class="img-con"><img src="http://image.base.w3wgame.com:8080/2014/6/25/9774681.jpg" alt=""/></div>';
 			html+='<div class="detail">';
-			html+='<p class="from"><span class="name">'+nickname+'</span>来自于<a href="" class="jiu">九游网页版</a><span class="time">'+date+'</span></p>';
+			html+='<p class="from"><span class="name">'+nickname+'</span>来自于<a href="" class="jiu">w3w游戏网页版</a><span class="time">'+date+'</span></p>';
 			html+='<p class="text">'+tools.escape(comment)+'</p>';
 			html+='</div>';
 			html+='</li>';

@@ -27,7 +27,7 @@ audio,canvas,video {display:inline-block;*display:inline;*zoom:1;}
 .header .contorl li .h-con {margin:0 8px;color:#000;display:inline;}
 .header .contorl li h1 {font-size:12px;line-height:33px;display:inline;font-weight:400;}
 .header .share {right:0;position:absolute;z-index:11;}
-.header .share li {font-size:12px;float:left;line-height:31px;color:#c6c6c6;background:url(http://www.9game.cn/public/images/pc/pc_9game_public/public_header.png) no-repeat 100px 100px;_background:url(http://www.9game.cn/public/images/pc/pc_9game_public/public_header.gif) no-repeat 100px 100px;}
+.header .share li {font-size:12px;float:left;line-height:31px;color:#c6c6c6;background:url(http://www.w3wgame.com/public/images/pc/pc_9game_public/public_header.png) no-repeat 100px 100px;_background:url(http://www.w3wgame.com/public/images/pc/pc_9game_public/public_header.gif) no-repeat 100px 100px;}
 .header .share li.seo-nav {background-position:0 100px;position:relative;width:54px;}
 .header .share li.seo-nav a {padding:0 12px;border:1px solid #e9e9e9;position:relative;z-index:1000;}
 .header .share li.seo-nav a.current, .header .share li.seo-nav a:hover {background:#fff;border-color:#d9d9d9;border-bottom-color:#fff;height:32px;}

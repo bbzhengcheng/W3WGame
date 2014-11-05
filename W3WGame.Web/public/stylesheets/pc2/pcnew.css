@@ -70,8 +70,8 @@ body {
   float: left;
   line-height: 31px;
   color: #c6c6c6;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
 }
 .header .share li.seo-nav {
   background-position: 0 100px;
@@ -199,7 +199,7 @@ body {
 /* 主导航 */
 .nav {
   height: 90px;
-  background: url("http://www.9game.cn/public/images/pc/pc_new/head_bg.jpg") repeat 0 0;
+  background: url("/public/images/pc/pc_new/head_bg.jpg") repeat 0 0;
   min-width: 990px;
 }
 .nav .nav-main {
@@ -235,8 +235,8 @@ body {
   color: #979797;
   text-align: center;
   font-weight: 700;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
 }
 .nav .nav-list a.android p {
   background-position: 22px -100px;
@@ -251,13 +251,13 @@ body {
   margin-right: 0;
 }
 .nav .nav-list a.bbs p {
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -145px -176px;
 }
 .nav .nav-list a:hover {
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -63px -108px;
 }
 .nav .nav-list a:hover p {
@@ -291,8 +291,8 @@ body {
   float: left;
   position: relative;
   color: #666;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #ebebeb;
   background-position: 63px -241px;
   text-indent: 15px;
@@ -352,8 +352,8 @@ body {
   letter-spacing: 4px;
   text-align: left;
   text-indent: 30px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #f60;
   background-position: -82px -193px;
 }
@@ -714,8 +714,8 @@ h1.index {
   width: 90px;
   height: 90px;
   display: block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background: url(/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -726,8 +726,8 @@ h1.index {
   width: 120px;
   height: 120px;
   display: block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background: url(/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
   background-repeat: no-repeat;
   background-position: 0 -330px;
   position: absolute;
@@ -739,8 +739,8 @@ h1.index {
   width: 140px;
   height: 140px;
   display: block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
+  background: url(/public/images/pc/pc_new/img_radius.png) no-repeat 0 0;
+  _background: url(/public/images/pc/pc_new/img_radius.gif) no-repeat 0 0;
   background-repeat: no-repeat;
   background-position: 0 -185px;
   position: absolute;
@@ -802,8 +802,8 @@ h1.index {
   position: absolute;
   bottom: -100%;
   left: 0;
-  background: url("http://www.9game.cn/public/images/pc/pc_new/meng.png") repeat-x left bottom;
-  _background: url("http://www.9game.cn/public/images/pc/pc_new/meng.gif") repeat-x left bottom;
+  background: url("/public/images/pc/pc_new/meng.png") repeat-x left bottom;
+  _background: url("/public/images/pc/pc_new/meng.gif") repeat-x left bottom;
   z-index: 200;
   cursor: pointer;
 }
@@ -835,8 +835,8 @@ h1.index {
   text-indent: 2em;
 }
 .speard-con a .meng.meng2 {
-  background: url("http://www.9game.cn/public/images/pc/pc_new/meng2.png") repeat-x left bottom;
-  _background: url("http://www.9game.cn/public/images/pc/pc_new/meng2.gif") repeat-x left bottom;
+  background: url("/public/images/pc/pc_new/meng2.png") repeat-x left bottom;
+  _background: url("/public/images/pc/pc_new/meng2.gif") repeat-x left bottom;
 }
 
 /* 副导航 */
@@ -881,8 +881,8 @@ h1.index {
   display: inline-block;
   width: 80px;
   height: 26px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   color: #fff;
   font-size: 14px;
   line-height: 26px;
@@ -931,8 +931,8 @@ h1.index {
   color: #333;
   font-weight: 700;
   cursor: default;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: 0 -424px;
 }
 
@@ -1010,8 +1010,8 @@ h1.index {
   -khtml-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #f2f2f2;
 }
 .open-test table td a.name {
@@ -1168,8 +1168,8 @@ h1.index {
   *line-height: 25px;
   _line-height: 28px;
   overflow: hidden;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -196px -284px;
 }
 .news-list li a {
@@ -1202,8 +1202,8 @@ h1.index {
   text-decoration: none;
   float: right;
   margin-right: 2px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -88px -426px;
   background-color: #f2f2f2;
   -moz-border-radius: 4px;
@@ -1321,8 +1321,8 @@ html {
 .close {
   width: 35px;
   height: 35px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -144px -273px;
   position: absolute;
   right: 0;
@@ -1513,8 +1513,8 @@ html, body {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
 }
 .game-poker li .fav .good {
   background-position: -23px -283px;
@@ -1614,8 +1614,8 @@ html, body {
   position: absolute;
   right: 4px;
   top: 8px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -191px -252px;
 }
 .page-change .page-change-list {
@@ -1720,8 +1720,8 @@ html, body {
   width: 14px;
   height: 14px;
   display: inline-block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   margin-left: 5px;
   vertical-align: middle;
   _margin-top: 12px;
@@ -1806,8 +1806,8 @@ html, body {
   left: 50%;
   margin-left: 505px;
   bottom: 20px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #fdfdfd;
   background-position: -38px -303px;
 }
@@ -1902,7 +1902,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* 九游客户端下载 */
+/* w3w游戏客户端下载 */
 .right-banner {
   margin-bottom: 15px;
 }
@@ -2043,8 +2043,8 @@ html, body {
   cursor: pointer;
 }
 .focus-con .focus-ctrl-con .focus-ctrl li.current a, .focus-con .focus-ctrl-con .focus-ctrl li a:hover {
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -48px -475px;
 }
 .focus-con .focus-ctrl-con .focus-ctrl li.current img, .focus-con .focus-ctrl-con .focus-ctrl li a:hover img {
@@ -2061,8 +2061,8 @@ html, body {
   display: block;
   position: absolute;
   bottom: 0;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #999;
 }
 .focus-con .focus-ctrl-con .btn:hover {
@@ -2261,8 +2261,8 @@ a.ol-topbg-link img {
   font-size: 18px;
   line-height: 45px;
   color: #fff;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   -moz-border-radius: 4px;
   -khtml-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -2366,8 +2366,8 @@ a.ol-topbg-link img {
 .info-con-730 .little-notice .name {
   padding-left: 30px;
   color: #f60;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -178px -495px;
 }
 
@@ -2430,8 +2430,8 @@ a.ol-topbg-link img {
   height: 100px;
   display: block;
   position: absolute;
-  background: url("http://www.9game.cn/public/images/pc/pc_new/pic_btn.png") no-repeat 100px 100px;
-  _background: url("http://www.9game.cn/public/images/pc/pc_new/pic_btn.gif") no-repeat 100px 100px;
+  background: url("/public/images/pc/pc_new/pic_btn.png") no-repeat 100px 100px;
+  _background: url("/public/images/pc/pc_new/pic_btn.gif") no-repeat 100px 100px;
   cursor: pointer;
 }
 
@@ -2592,8 +2592,8 @@ a.ol-topbg-link img {
   display: inline-block;
   margin-right: 5px;
   float: left;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
 }
 .comment-con .comment-data .star-scroe-con .good {
   background-position: 0 -281px;
@@ -2703,8 +2703,8 @@ a.ol-topbg-link img {
   position: absolute;
   right: 4px;
   top: 15px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: 0 -546px;
   cursor: pointer;
 }
@@ -2823,8 +2823,8 @@ a.ol-topbg-link img {
   display: inline-block;
   width: 19px;
   height: 19px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -160px -315px;
 }
 
@@ -3009,8 +3009,8 @@ a.ol-topbg-link img {
 .side-rank-list li .radius32 {
   width: 32px;
   height: 32px;
-  background: url("http://www.9game.cn/public/images/pc/pc_new/img_radius.png") no-repeat 0 -150px;
-  _background: url("http://www.9game.cn/public/images/pc/pc_new/img_radius.gif") no-repeat 0 -150px;
+  background: url("/public/images/pc/pc_new/img_radius.png") no-repeat 0 -150px;
+  _background: url("/public/images/pc/pc_new/img_radius.gif") no-repeat 0 -150px;
   position: absolute;
   top: 10px;
   left: 0;
@@ -3023,8 +3023,8 @@ a.ol-topbg-link img {
   height: 23px;
   margin-top: 15px;
   border-radius: 3px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #f2f2f2;
 }
 .side-rank-list li a.down {
@@ -3121,8 +3121,8 @@ a.ol-topbg-link img {
 .corner-first, .corner-second, .corner-third {
   width: 55px;
   height: 55px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   position: absolute;
   top: -3px;
   left: -3px;
@@ -3168,7 +3168,7 @@ a.ol-topbg-link img {
 .noresult-con {
   width: 440px;
   margin: 10% auto 10% auto;
-  background: url("http://www.9game.cn/public/images/pc/pc_new/no_result.png") left top no-repeat;
+  background: url("/public/images/pc/pc_new/no_result.png") left top no-repeat;
 }
 .noresult-con h4, .noresult-con p {
   font-size: 14px;
@@ -3256,8 +3256,8 @@ a.ol-topbg-link img {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-color: #f2f2f2;
 }
 .open-test-con table tbody td a.icon-home {
@@ -3298,8 +3298,8 @@ a.ol-topbg-link img {
   left: 50%;
   margin: 5% 0 0 -200px;
   text-align: center;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/404.png) center no-repeat;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/404.gif) center no-repeat;
+  background: url(/public/images/pc/pc_new/404.png) center no-repeat;
+  _background: url(/public/images/pc/pc_new/404.gif) center no-repeat;
 }
 .con-404 p {
   margin-top: 270px;
@@ -3310,8 +3310,8 @@ a.ol-topbg-link img {
 .con-404 .home {
   display: inline-block;
   margin-top: 45px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: 0 -486px;
   padding: 0 0 0 20px;
   margin-right: 22px;
@@ -3322,8 +3322,8 @@ a.ol-topbg-link img {
 .con-404 .goback {
   margin-top: 45px;
   display: inline-block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: -72px -486px;
   padding: 0 0 0 20px;
 }
@@ -3439,8 +3439,8 @@ a.ol-topbg-link img {
 .icon-share-qq, .icon-share-sina, .icon-share-qqweibo {
   display: inline-block;
   padding-left: 20px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: 0 -610px;
   line-height: 16px;
   margin-right: 12px;
@@ -3491,8 +3491,8 @@ a.ol-topbg-link img {
   margin-right: 35px;
   line-height: 39px;
   padding-left: 8px;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
+  background: url(/public/images/pc/pc_new/pcnew_ico.png) no-repeat 100px 100px;
+  _background: url(/public/images/pc/pc_new/pcnew_ico.gif) no-repeat 100px 100px;
   background-position: 0 -654px;
   border-bottom: 1px dotted #ebebeb;
   zoom: 1;
@@ -3607,8 +3607,8 @@ a.ol-topbg-link img {
   width: 32px;
   height: 32px;
   display: block;
-  background: url(http://www.9game.cn/public/images/pc/pc_new/close.png) no-repeat 0 0;
-  _background: url(http://www.9game.cn/public/images/pc/pc_new/close.gif) no-repeat 0 0;
+  background: url(/public/images/pc/pc_new/close.png) no-repeat 0 0;
+  _background: url(/public/images/pc/pc_new/close.gif) no-repeat 0 0;
   position: absolute;
   top: 0px;
   right: 0px;
