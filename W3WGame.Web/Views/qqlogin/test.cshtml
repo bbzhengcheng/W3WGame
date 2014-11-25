@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "test";
+}
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"  data-appid="101172605" data-redirecturi="http://www.w3wgame.com/qqlogin/reply" charset="utf-8"></script>
+    <span id="qqLoginBtn"></span>
+    <script type="text/javascript">
+        function kkk() {
+            QC.Login({
+                btnId: "qqLoginBtn"    //插入按钮的节点id
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        click <a id="qqLoginBtn" onclick="kkk();">aaaa </a>
+    </div>
+</body>
+</html>

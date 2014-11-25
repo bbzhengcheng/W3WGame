@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "reply";
+}
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>reply</title>
+        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+                charset="utf-8" data-callback="true"></script>
+        <script type="text/javascript">
+            QC.Login.showPopup({
+                appId: "101172605",
+                redirectURI: "http://ka.w3wgame.com/reply"
+            });
+
+          
+        </script>
+    </head>
+<body>
+    <div>
+       <input type="button" value="login out" onclick="javascript:QC.Login.signOut();"/>
+    </div>
+    <div>
+          <input type="button" value="login out" onclick="javascript:QC.Login.check();"/>
+    </div>
+</body>
+</html>

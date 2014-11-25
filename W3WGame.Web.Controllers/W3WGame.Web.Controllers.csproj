@@ -56,6 +56,7 @@
     <Compile Include="newgame\newgameController.cs" />
     <Compile Include="news\newsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qqlogin\qqloginController.cs" />
     <Compile Include="UserBaseController.cs" />
   </ItemGroup>
   <ItemGroup>

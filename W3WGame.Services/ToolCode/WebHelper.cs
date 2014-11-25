@@ -8,11 +8,11 @@ namespace W3WGame.Services.ToolCode
     {
         //
         // GET: /WebHelper/
-        private const string ImgDemoin = "http://localhost:9001";
+        private const string ImgDemoin = "http://img.w3wgame.com";
        
         public static string GetImg(string imgpath)
         {
-            return string.Format("{0}{1}", ImgDemoin, imgpath);
+            return string.Format("{0}{1}", ImgDemoin, imgpath.Replace("/Upload",""));
         }
         /// <summary>
         /// 显示多少个星

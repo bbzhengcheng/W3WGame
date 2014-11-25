@@ -104,6 +104,7 @@
     <Content Include="img\level_3_4afe7bc.png" />
     <Content Include="img\logo_53_ffebf59.gif" />
     <Content Include="img\logo_6_a59d3ca.gif" />
+    <Content Include="img\logo_7.png" />
     <Content Include="img\logo_84_f9d2d44.gif" />
     <Content Include="img\logo_86_21ac5a7.gif" />
     <Content Include="img\logo_uc_835043c.gif" />
@@ -307,6 +308,8 @@
     <None Include="img\Thumbs.db" />
     <Content Include="Views\personal\phonereg.cshtml" />
     <Content Include="Views\search\index.cshtml" />
+    <Content Include="Views\qqlogin\test.cshtml" />
+    <Content Include="Views\qqlogin\reply.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
