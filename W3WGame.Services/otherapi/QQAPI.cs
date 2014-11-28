@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using W3WGame.Core.Dtos;
 using WangFramework.Common;
 
 namespace W3WGame.Services.otherapi
@@ -14,6 +15,7 @@ namespace W3WGame.Services.otherapi
 
         private const string DOMAIN = "https://graph.qq.com/oauth2.0";
 
+        private const string USERDOMAIN = "https://graph.qq.com/user";
         private const string CALLBACK_URL = "http://ka.w3wgame.com/otherlogin/qqcallback";
         //：获取Authorization Code
 
@@ -27,7 +29,7 @@ namespace W3WGame.Services.otherapi
                                        "&state={4}" +
                                        "&scope={5}" +
                                        "&display={6}" +
-                                       "&g_ut={7}", DOMAIN, "code", APP_ID, CALLBACK_URL, state, scope,"","");
+                                       "&g_ut={7}", DOMAIN, "code", APP_ID, CALLBACK_URL, state, scope, "", "");
             return url;
         }
 
@@ -41,9 +43,9 @@ namespace W3WGame.Services.otherapi
                                        "&client_id={2}" +
                                        "&client_secret={3}" +
                                        "&code={4}" +
-                                       "&redirect_uri={5}",DOMAIN, "authorization_code", APP_ID,APP_KEY, authorizationCode,CALLBACK_URL);
+                                       "&redirect_uri={5}", DOMAIN, "authorization_code", APP_ID, APP_KEY, authorizationCode, CALLBACK_URL);
             var returnValue = WebUtils.DoGet(url);
-           
+
             var list = returnValue.Split('&');
             var dict = new Dictionary<string, string>();
             foreach (var s in list)
@@ -53,7 +55,7 @@ namespace W3WGame.Services.otherapi
             }
             refreshToken = dict["refresh_token"];
             return dict["access_token"];
-           
+
         }
 
         //通过Authorization Code获取Access Token
@@ -63,12 +65,26 @@ namespace W3WGame.Services.otherapi
 
             string url = string.Format("{0}/me?access_token={1}", DOMAIN, accessToken);
             var returnValue = WebUtils.DoGet(url);
-            string str = returnValue.Replace("callback(","").Replace(");","");
-           
+            string str = returnValue.Replace("callback(", "").Replace(");", "");
+
             QQJson info = JsonConvert.DeserializeObject<QQJson>(str);
 
             return info.openid;
         }
+
+        public static GetUserInfoJson GetUserInfoToNickName(string accessToken, string openID)
+        {
+            string url = string.Format("{0}/get_user_info?access_token={1}&oauth_consumer_key={2}&openid={3}"
+                                       , USERDOMAIN, accessToken, APP_ID, openID);
+            var returnValue = WebUtils.DoGet(url);
+            
+            GetUserInfoJson info = JsonConvert.DeserializeObject<GetUserInfoJson>(returnValue);
+
+            return info;
+
+        }
+
+
     }
 
     public class QQJson
@@ -77,4 +93,6 @@ namespace W3WGame.Services.otherapi
 
         public string openid { get; set; }
     }
+
+  
 }

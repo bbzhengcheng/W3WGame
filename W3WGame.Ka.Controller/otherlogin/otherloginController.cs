@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using W3WGame.Core.Dtos;
 using W3WGame.Services.otherapi;
 using W3WGame.Task.ServicesTask;
 
 namespace W3WGame.Ka.Controller.otherlogin
 {
-    public class otherloginController:BaseController
+    public class otherloginController : BaseController
     {
         private static Random RndSeed = new Random();
         public ActionResult qqlogin()
@@ -23,15 +24,25 @@ namespace W3WGame.Ka.Controller.otherlogin
             string state = Request.QueryString["state"];
             string accessToken = string.Empty;
             string openid = string.Empty;
-            if(QQLoginTask.GetAccessTokenAndOpenID(code,state,out accessToken,out openid))
+            if (QQLoginTask.GetAccessTokenAndOpenID(code, state, out accessToken, out openid))
             {
                 //登录成功逻辑
+                Session["accessToken"] = accessToken;
+                Session["openid"] = openid;
             }
             else
             {
                 //登录失败逻辑
             }
             return Content(string.Format("accessToken={0}&openid={1}", accessToken, openid));
+        }
+
+        public ActionResult GetUserInfo()
+        {
+
+            GetUserInfoJson info = QQAPI.GetUserInfoToNickName(Session["accessToken"].ToString(), Session["openid"].ToString());
+            return Content(info.nickname);
+
         }
     }
 }

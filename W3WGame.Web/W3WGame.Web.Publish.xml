@@ -7,16 +7,15 @@
     <file relUrl="public/javascripts/pc2/art_comment14086e92.js" publishTime="11/05/2014 15:23:48" />
     <file relUrl="public/images/pc/mm_g001.jpg" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/images/pc/pc_new/newgame_icon.png" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="Views/Shared/Header.cshtml" publishTime="11/27/2014 10:35:49" />
+    <file relUrl="Views/Shared/Header.cshtml" publishTime="11/28/2014 14:29:46" />
     <file relUrl="public/javascripts/pc/common/loadmore.js" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="bin/W3WGame.Task.pdb" publishTime="11/27/2014 10:38:51" />
+    <file relUrl="bin/W3WGame.Task.pdb" publishTime="11/28/2014 14:09:49" />
     <file relUrl="Web.config" publishTime="11/04/2014 18:29:55" />
     <file relUrl="public/images/pc/pc_new/newgame_rank.png" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/images/pc/pc_new/img_radius.png" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="bin/W3WGame.Web.Controllers.pdb" publishTime="11/27/2014 10:38:51" />
+    <file relUrl="bin/W3WGame.Web.Controllers.pdb" publishTime="11/28/2014 14:09:51" />
     <file relUrl="Scripts/jquery.validate.js" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="Scripts/jquery-ui.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/images/pc/pc_new/meng2.png" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/pc2/dist/module_enter/e_normal.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Views/home/index.cshtml" publishTime="11/05/2014 14:56:56" />
@@ -32,7 +31,7 @@
     <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/stylesheets/pc/common/public_9game_201311.css" publishTime="11/05/2014 14:56:26" />
     <file relUrl="Content/themes/base/jquery-ui.css" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="bin/W3WGame.Core.pdb" publishTime="11/27/2014 10:38:49" />
+    <file relUrl="bin/W3WGame.Core.pdb" publishTime="11/28/2014 14:09:47" />
     <file relUrl="public/javascripts/pc2/search_think0351.js" publishTime="11/05/2014 14:56:26" />
     <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="10/11/2014 09:00:43" />
@@ -42,6 +41,7 @@
     <file relUrl="Scripts/jquery-1.4.4-vsdoc.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/javascripts/pc2/pcnew2013100351.js" publishTime="11/05/2014 14:56:55" />
     <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="10/11/2014 09:00:43" />
+    <file relUrl="Views/games/index.cshtml" publishTime="11/05/2014 15:23:48" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="05/29/2013 18:16:34" />
     <file relUrl="Views/newgame/index.cshtml" publishTime="11/05/2014 15:23:48" />
     <file relUrl="Scripts/jquery-1.4.4.min.js" publishTime="10/11/2014 09:00:43" />
@@ -51,7 +51,7 @@
     <file relUrl="public/stylesheets/pc2/pcnew_search.css" publishTime="11/05/2014 15:38:41" />
     <file relUrl="public/javascripts/pc/common/qrcode_min.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/images/pc/pc_new/pcnew_ico.png" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="bin/W3WGame.Web.pdb" publishTime="11/27/2014 10:38:54" />
+    <file relUrl="bin/W3WGame.Web.pdb" publishTime="11/28/2014 14:09:53" />
     <file relUrl="public/javascripts/pc2/pub_headerdc27.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/pc2/common/litt_navdc27.js" publishTime="11/05/2014 14:56:25" />
     <file relUrl="bin/EmitMapper.dll" publishTime="05/29/2013 18:16:34" />
@@ -60,7 +60,7 @@
     <file relUrl="public/images/pc/pc_new/open_server_day.png" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="Images/logo.png" publishTime="11/25/2014 09:09:04" />
-    <file relUrl="bin/W3WGame.Web.Controllers.dll" publishTime="11/27/2014 10:38:52" />
+    <file relUrl="bin/W3WGame.Web.Controllers.dll" publishTime="11/28/2014 14:09:51" />
     <file relUrl="public/images/pc/pc_9game_public/template4/logo.png" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/pc2/dist/module_enter/e_new_index.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/stylesheets/pc2/newgame/new_index/new_index.css" publishTime="11/05/2014 15:38:40" />
@@ -84,7 +84,7 @@
     <file relUrl="public/images/pc/pc_new/game_search_tab.png" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/images/pc/pc_new/loading.gif" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/pc2/show_game_down.js" publishTime="11/05/2014 14:56:26" />
-    <file relUrl="bin/W3WGame.Dao.dll" publishTime="11/27/2014 10:38:50" />
+    <file relUrl="bin/W3WGame.Dao.dll" publishTime="11/28/2014 14:09:48" />
     <file relUrl="public/javascripts/pc2/dist/module_enter/e_article_detail.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="10/11/2014 09:00:43" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="10/11/2014 09:00:43" />
@@ -94,7 +94,7 @@
     <file relUrl="public/javascripts/pc2/common/litt_nav.js" publishTime="11/05/2014 14:56:55" />
     <file relUrl="Views/Shared/Error.cshtml" publishTime="10/11/2014 09:00:44" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="bin/W3WGame.Services.dll" publishTime="11/27/2014 10:38:50" />
+    <file relUrl="bin/W3WGame.Services.dll" publishTime="11/28/2014 14:09:47" />
     <file relUrl="Views/mainLayout/HomeLunBo.cshtml" publishTime="10/15/2014 17:33:00" />
     <file relUrl="public/stylesheets/common/special/te1/special.css" publishTime="11/05/2014 14:56:26" />
     <file relUrl="public/images/pc/pc_new/img_radius.gif" publishTime="10/11/2014 09:00:45" />
@@ -106,21 +106,22 @@
     <file relUrl="public/stylesheets/pc2/netgame/kf/open_server.css" publishTime="11/05/2014 15:38:40" />
     <file relUrl="Views/Shared/_WebLayout.cshtml" publishTime="11/27/2014 11:10:10" />
     <file relUrl="public/javascripts/common/special/te1/seajs/sea.js" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="bin/WangFramework.pdb" publishTime="11/27/2014 10:38:48" />
+    <file relUrl="bin/WangFramework.pdb" publishTime="11/28/2014 10:25:22" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="11/05/2014 14:33:40" />
+    <file relUrl="Views/Shared/GameWebBanner.cshtml" publishTime="11/05/2014 14:56:28" />
     <file relUrl="Views/Web.config" publishTime="10/11/2014 09:00:44" />
-    <file relUrl="bin/W3WGame.Web.dll" publishTime="11/27/2014 10:38:54" />
+    <file relUrl="bin/W3WGame.Web.dll" publishTime="11/28/2014 14:09:53" />
     <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/javascripts/pc2/pub_header.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/javascripts/pc/common/public_header.js" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="bin/W3WGame.Task.dll" publishTime="11/27/2014 10:38:51" />
+    <file relUrl="bin/W3WGame.Task.dll" publishTime="11/28/2014 14:09:49" />
     <file relUrl="Images/wenming.png" publishTime="11/05/2014 15:26:49" />
     <file relUrl="public/javascripts/pc2/seajs/seajs.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/jquery.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/pc2/netgame_detail/pub_header.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="bin/W3WGame.Core.dll" publishTime="11/27/2014 10:38:49" />
+    <file relUrl="bin/W3WGame.Core.dll" publishTime="11/28/2014 14:09:47" />
     <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="10/11/2014 09:00:43" />
     <file relUrl="public/stylesheets/pc2/public/pub_headerc955.css" publishTime="11/05/2014 14:56:27" />
     <file relUrl="Content/Site.css" publishTime="10/11/2014 09:00:43" />
@@ -133,7 +134,6 @@
     <file relUrl="Views/qqlogin/test.cshtml" publishTime="11/25/2014 14:02:03" />
     <file relUrl="public/javascripts/common/ucb.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="public/javascripts/common/xmanlazyload.js" publishTime="10/11/2014 09:00:45" />
-    <file relUrl="public/javascripts/pc/lscs/x_move.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="05/29/2013 18:16:34" />
     <file relUrl="public/javascripts/pc2/search_game.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Views/ka/index.cshtml" publishTime="10/11/2014 09:00:44" />
@@ -149,17 +149,17 @@
     <file relUrl="public/stylesheets/pc2/pcnew_public.css" publishTime="11/05/2014 15:38:41" />
     <file relUrl="public/javascripts/pc2/search_think.js" publishTime="11/05/2014 14:56:26" />
     <file relUrl="Views/category/index.cshtml" publishTime="11/05/2014 14:56:27" />
-    <file relUrl="bin/W3WGame.Services.pdb" publishTime="11/27/2014 10:38:50" />
+    <file relUrl="bin/W3WGame.Services.pdb" publishTime="11/28/2014 14:09:47" />
     <file relUrl="public/stylesheets/pc2/netgame_detail/template40b26.css" publishTime="11/05/2014 15:38:40" />
     <file relUrl="public/stylesheets/pc2/public/pc_publicc955.css" publishTime="11/05/2014 15:38:41" />
     <file relUrl="Scripts/jquery.validate.min.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="Views/gamestore/index.cshtml" publishTime="11/05/2014 15:23:48" />
-    <file relUrl="bin/W3WGame.Dao.pdb" publishTime="11/27/2014 10:38:50" />
-    <file relUrl="Views/Shared/GameWebBanner.cshtml" publishTime="11/05/2014 14:56:28" />
+    <file relUrl="bin/W3WGame.Dao.pdb" publishTime="11/28/2014 14:09:48" />
+    <file relUrl="Scripts/jquery-ui.js" publishTime="10/11/2014 09:00:43" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="Views/games/index.cshtml" publishTime="11/05/2014 15:23:48" />
+    <file relUrl="public/javascripts/pc/lscs/x_move.js" publishTime="10/11/2014 09:00:45" />
     <file relUrl="Scripts/jquery-1.4.4.js" publishTime="10/11/2014 09:00:43" />
-    <file relUrl="bin/WangFramework.dll" publishTime="11/27/2014 10:38:48" />
+    <file relUrl="bin/WangFramework.dll" publishTime="11/28/2014 10:25:22" />
     <file relUrl="public/javascripts/common/portal.js" publishTime="11/05/2014 14:56:56" />
   </publishProfile>
 </publishData>

@@ -75,6 +75,10 @@
       <Project>{4D71156E-2A43-4E53-BD2E-8D41389D1376}</Project>
       <Name>WangFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Core\W3WGame.Core.csproj">
+      <Project>{6A87C312-B6FE-4799-961B-5AAAA6F701F5}</Project>
+      <Name>W3WGame.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
