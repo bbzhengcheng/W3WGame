@@ -13,16 +13,15 @@ namespace W3WGame.Services.otherapi
         private const string APP_ID = "101172605";
         private const string APP_KEY = "6d7f2ff693d35bc7c2e185d91a71bcb7";
 
-        private const string DOMAIN = "https://graph.qq.com/oauth2.0";
+        private const string DOMAIN = "https://graph.qq.com";
 
-        private const string USERDOMAIN = "https://graph.qq.com/user";
         private const string CALLBACK_URL = "http://ka.w3wgame.com/otherlogin/qqcallback";
         //：获取Authorization Code
 
         public static string GetLoginUrl(string state)
         {
             string scope = "get_user_info";
-            string url = string.Format("{0}/authorize?" +
+            string url = string.Format("{0}/oauth2.0/authorize?" +
                                        "response_type={1}" +
                                        "&client_id={2}" +
                                        "&redirect_uri={3}" +
@@ -38,7 +37,7 @@ namespace W3WGame.Services.otherapi
         public static string GetAccessToken(string authorizationCode, out string refreshToken)
         {
             refreshToken = string.Empty;
-            string url = string.Format("{0}/token?" +
+            string url = string.Format("{0}/oauth2.0/token?" +
                                        "grant_type={1}" +
                                        "&client_id={2}" +
                                        "&client_secret={3}" +
@@ -63,7 +62,7 @@ namespace W3WGame.Services.otherapi
         public static string GetOpenID(string accessToken)
         {
 
-            string url = string.Format("{0}/me?access_token={1}", DOMAIN, accessToken);
+            string url = string.Format("{0}/oauth2.0/me?access_token={1}", DOMAIN, accessToken);
             var returnValue = WebUtils.DoGet(url);
             string str = returnValue.Replace("callback(", "").Replace(");", "");
 
@@ -72,10 +71,16 @@ namespace W3WGame.Services.otherapi
             return info.openid;
         }
 
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <param name="openID"></param>
+        /// <returns></returns>
         public static GetUserInfoJson GetUserInfoToNickName(string accessToken, string openID)
         {
-            string url = string.Format("{0}/get_user_info?access_token={1}&oauth_consumer_key={2}&openid={3}"
-                                       , USERDOMAIN, accessToken, APP_ID, openID);
+            string url = string.Format("{0}/user/get_user_info?access_token={1}&oauth_consumer_key={2}&openid={3}"
+                                       , DOMAIN, accessToken, APP_ID, openID);
             var returnValue = WebUtils.DoGet(url);
             
             GetUserInfoJson info = JsonConvert.DeserializeObject<GetUserInfoJson>(returnValue);
@@ -83,6 +88,19 @@ namespace W3WGame.Services.otherapi
             return info;
 
         }
+
+        public static string ListAlbum(string accessToken, string openID)
+        {
+            string url = string.Format("{0}//photo/list_album?access_token={1}&oauth_consumer_key={2}&openid={3}&format={4}"
+                                     , DOMAIN, accessToken, APP_ID, openID,"json");
+            var returnValue = WebUtils.DoGet(url);
+
+            return returnValue;
+
+
+        }
+
+
 
 
     }

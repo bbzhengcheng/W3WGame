@@ -44,5 +44,13 @@ namespace W3WGame.Ka.Controller.otherlogin
             return Content(info.nickname);
 
         }
+        public ActionResult ListAlbum()
+        {
+
+            var str = QQAPI.ListAlbum(Session["accessToken"].ToString(), Session["openid"].ToString());
+            return Content(str);
+
+        }
+
     }
 }
