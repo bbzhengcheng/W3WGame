@@ -109,6 +109,7 @@
     <Content Include="img\logo_86_21ac5a7.gif" />
     <Content Include="img\logo_uc_835043c.gif" />
     <Content Include="img\mobile_s_171bc37.gif" />
+    <Content Include="img\w3w_logo.png" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery.validationEngine\jquery.validationEngine-zh_CN.js" />
     <Content Include="Scripts\jquery.validationEngine\jquery.validationEngine.js" />
@@ -310,6 +311,7 @@
     <Content Include="Views\search\index.cshtml" />
     <Content Include="Views\qqlogin\test.cshtml" />
     <Content Include="Views\qqlogin\reply.cshtml" />
+    <Content Include="Views\Shared\_PersonalLayout.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -3,25 +3,63 @@
 }
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <title>reply</title>
-        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
-                charset="utf-8" data-callback="true"></script>
-        <script type="text/javascript">
+<head>
+    <title>reply</title>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+            charset="utf-8" data-callback="true"></script>
+    <script type="text/javascript" src="/Scripts/jquery-1.7.2.min.js">
+      
+    </script>
+   
+    <script type="text/javascript">
+        function qqloin() {
             QC.Login.showPopup({
                 appId: "101172605",
-                redirectURI: "http://ka.w3wgame.com/reply"
+                redirectURI: "http://ka.w3wgame.com/qqlogin/reply?v=abc" + Math.random()
             });
 
+        }
+
+        ;
+
+        function loginout() {
+            QC.Login.signOut();
+            window.location.reload();
+        }
           
-        </script>
-    </head>
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            if (QC.Login.check()) {
+                $("#dispan").html("had login!");
+                QC.Login.getMe(function (openId, accessToken) {
+                    $("#userinfo").html(openId + "--" + accessToken);
+                });
+
+            } else {
+                $("#dispan").html("no login!");
+            }
+        });
+    </script>
+
+</head>
 <body>
     <div>
-       <input type="button" value="login out" onclick="javascript:QC.Login.signOut();"/>
+        da kai qq login :<a id="openlogin" onclick="qqloin();">qqlogin</a>
     </div>
     <div>
-          <input type="button" value="login out" onclick="javascript:QC.Login.check();"/>
+        is login? <span id="dispan"></span>
+    </div>
+    <div>
+        zhuxiao   <input type="button" value="login out" onclick="loginout();" />
+    </div>
+    <div>
+        current user <span id="userinfo"></span>
+    </div>
+    <div>
+        response:<div>
+                     @ViewBag.Acc
+                 </div>
     </div>
 </body>
 </html>

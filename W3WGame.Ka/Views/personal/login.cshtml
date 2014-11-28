@@ -92,14 +92,14 @@
         <div id="dHeader" class="header-cont">
             <!-- 返回首页面链接 -->
             <div id="dHomeLink" class="btn">
-                <a href="http://qj.w3wgame.com/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2"
+                <a href="/"
                     class="btn_home">返回首页</a></div>
             <!-- logo -->
             <div id="dLogo">
                 <h1 class="logo">
-                    <a id="logoImg" href="http://qj.w3wgame.com/accountsdk.openPltfrmCallBack?request_id=14120405529180759&amp;operation=2">
-                        <img src="/img/logo_uc_835043c.gif" width="174" height="72" title="" class="changelogo"
-                            client_id="102" staticresourcebaseuri='/' appname="w3w游戏" />
+                    <a id="logoImg" href="/">
+                        <img src="/img/w3w_logo.png" width="174" height="72" title="" class="changelogo"
+                             s appname="w3w游戏" />
                     </a>
                 </h1>
             </div>
@@ -114,16 +114,16 @@
             <div class="login-weibo">
                 <p>
                     使用合作网站帐号登录：</p>
-                <p style="height: 52px">
-                    <a href="https://openauth.alipay.com/oauth2/authorize.htm?grant_type=refresh_token&amp;client_id=2013070800000528&amp;redirect_uri=http%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;view=pc&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.w3wgame.com%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dalipay">
+               @* <p style="height: 52px">
+                    <a href="/">
                         <img src="/img/ban_ali_3af5a68.gif" width="128" height="32" title="Alipay"></a>
                 </p>
                 <p style="height: 52px">
-                    <a href="https://api.weibo.com/oauth2/authorize?response_type=code&amp;forcelogin=true&amp;display=default&amp;client_id=1232482045&amp;scope=follow_app_official_microblog&amp;redirect_uri=https%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.w3wgame.com%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dweibo">
+                    <a href="/">
                         <img src="/img/btn_weibo_a68f357.jpg" width="128" height="32" title="新浪微博"></a>
-                </p>
+                </p>*@
                 <p style="height: 52px">
-                    <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=100468196&amp;redirect_uri=http%3A%2F%2Fapi.open.uc.cn%2Fcas%2Fthirdparty%2Fauthorize&amp;display=pc&amp;state=client_id%3D102%26redirect_uri%3Dhttp%253A%252F%252Fqj.w3wgame.com%252Faccountsdk.openPltfrmCallBack%253Frequest_id%253D14120405529180759%2526operation%253D2%26display%3Dpc%26third_party_name%3Dqq">
+                    <a href="/otherlogin/qqlogin">
                         <img src="/img/btn_qq_fc245e4.jpg" width="128" height="32" title="QQ"></a>
                 </p>
                 <!-- 第三方帐号公告 -->
@@ -133,7 +133,7 @@
         <form id="dForm">
         <div class="content">
             <div class="tip1">
-                提示：如果你没有w3w帐号，<a href="http://api.open.uc.cn/cas/register?register_type=mobile&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.w3wgame.com%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc">马上注册</a></div>
+                提示：如果你没有w3w帐号，<a href="/personal/reg">马上注册</a></div>
             <ul class="login">
                 <!-- 通用错误提示 -->
                 <div id="dMessageError" style="padding-left: 23px;" class="orange">
@@ -143,7 +143,7 @@
                     <div>
                         <span class="text">帐&nbsp;&nbsp;&nbsp;&nbsp;号</span> <span class="enter">
                             <input type="text" id="username" name="username" maxlength="100" class="changetips validate[required,minSize[6],maxSize[20]]"
-                                placeholder="手机/邮箱/用户名/UC号" autocomplete="off" /></span>
+                                placeholder="手机/邮箱/用户名" autocomplete="off" /></span>
                     </div>
                 </li>
                 <!-- 密码 -->
@@ -180,13 +180,9 @@
         <div id="dFooter">
             <div class="business pd cls">
                 <div class="business-title">
-                    <a href="http://www.uc.cn/product/index.shtml" target="_black">更多&gt;&gt;</a>更多w3w业务：</div>
+                    <a href="javascript:void(0)" target="_black">更多&gt;&gt;</a>更多w3w业务：</div>
                 <ul class="business-ul cls">
-                    <li>
-                        <img src="/img/icon_ucbrowser_c8bc2c1.jpg" width="50" height="50" title="UC浏览器">
-                        <div>
-                          </div>
-                    </li>
+                    
                     <li>
                         <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
                         <div>
@@ -195,10 +191,20 @@
                             上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
                     </li>
                     <li>
-                        <img src="/img/icon_uccloud_2ef2813.jpg" width="50" height="50" title="UC云">
+                        <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
                         <div>
-                            </div>
+                            <h3>
+                                w3w游戏</h3>
+                            上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
                     </li>
+                     <li>
+                        <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
+                        <div>
+                            <h3>
+                                w3w游戏</h3>
+                            上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
+                    </li>
+                   
                 </ul>
             </div>
         </div>

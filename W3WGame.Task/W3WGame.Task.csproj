@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,7 @@
     <Compile Include="GameServersTask.cs" />
     <Compile Include="MobilGameTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesTask\QQLoginTask.cs" />
     <Compile Include="VoucherHistoryTask.cs" />
     <Compile Include="WebLoginLogTask.cs" />
   </ItemGroup>
@@ -73,6 +75,10 @@
     <ProjectReference Include="..\W3WGame.Dao\W3WGame.Dao.csproj">
       <Project>{B2AC62E3-0142-4AB0-863B-EF2DDF47660E}</Project>
       <Name>W3WGame.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\W3WGame.Services\W3WGame.Services.csproj">
+      <Project>{4DEF923D-2647-4516-ADD8-3C1002895402}</Project>
+      <Name>W3WGame.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

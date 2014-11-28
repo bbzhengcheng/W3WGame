@@ -5,188 +5,178 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>w3w帐号注册</title>
- <meta name="description" content="手机网游,手机游戏,手机游戏下载,手机游戏免费下载,好玩的手机游戏,好玩的手机网游,手机游戏排行榜,手机网游排行,w3w游戏,w3wgame">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>w3w帐号注册</title>
+    <meta name="description" content="手机网游,手机游戏,手机游戏下载,手机游戏免费下载,好玩的手机游戏,好玩的手机网游,手机游戏排行榜,手机网游排行,w3w游戏,w3wgame">
     <meta name="keywords" content="手机网游,手机游戏,手机游戏下载,手机游戏免费下载,好玩的手机游戏,好玩的手机网游,手机游戏排行榜,手机网游排行,w3w游戏,w3wgame">
     <meta name="robots" content="all" />
     <meta name="Copyright" content="w3wgame" />
-<meta property="qc:admins" content="244435573016705665363673137" />
-<link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css"/>
+    <meta property="qc:admins" content="244435573016705665363673137" />
+    <link type="text/css" rel="stylesheet" href="/Css/css-pc_d5bb879.css" />
     <link rel="stylesheet" href="/Scripts/jquery.validationEngine/validationEngine.jquery.css" />
     <script src="/Scripts/jquery-1.7.2.min.js"></script>
     <script src="/Scripts/jquery.validationEngine/jquery.validationEngine-zh_CN.js"></script>
     <script src="/Scripts/jquery.validationEngine/jquery.validationEngine.min.js"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             $("#regform").validationEngine();
         });
         function changeValidateCode() {
             $("#imgValidateCode").attr('src', '/ValidateCodes/Create?t=' + Math.random());
         }
     </script>
-            </head>
+</head>
 <body>
-<div class="header">
-	<!-- 头部 -->
-	<div id="dHeader" class="header-cont">
-		<!-- 返回首页面链接 -->
-		<div id="dHomeLink" class="btn"><a href="#" class="btn_home">返回首页</a></div>
-		<!-- logo -->
-		<div id="dLogo">
-			<h1 class="logo">
-				<a id="logoImg" href="#">
-					<img src="/img/logo_uc_835043c.gif" width="174" height="72" title="" class="changelogo" client_id="102" staticResourceBaseUri='/' appName="w3w游戏"/>
-				</a>
-			</h1>
-		</div>
-	  	<div class="header-title">w3w帐号是w3w各业务通行的帐号。<br/></div>
-	</div>
-</div>
-
-
-<div class="wrap cls">
-	<!--左边菜单-->
-	<div class="menu" id="menu">
-		<ul class="menulist">
-			<li id="mobileTab" onclick="javascript:location.href='http://api.open.uc.cn/cas/register?register_type=mobile&client_id=102&amp;redirect_uri=http%3A%2F%2Fqj.w3wgame.com%2Faccountsdk.openPltfrmCallBack%3Frequest_id%3D14120405529180759%26operation%3D2&amp;display=pc&display=pc'">
-				<div class="reg">
-					<img src="/img/mobile_s_171bc37.gif">
-					手机注册<img src="/img/icon_tj_dd1ae11.png" align="middle" noselect="true"/>
-				</div>
-			</li>
-			<li id="emailTab" class="on">
-				<div class="reg">
-					<img src="/img/email_93ecd16.gif"> 
-					邮箱注册
-				</div>
-			</li>
-		</ul>
-	</div>
-	<!--左边菜单end-->
-	
-	<div class="cont" id="cont">
-		<!-- 登录链接提示 -->
-		<div id="dLoginNotice" class="tip">提示：如果你已有UC帐号，请直接&nbsp;
-				<a href="#">登录</a>
-	</div>
-		
-		<!-- 通用错误提示 -->
-	 	<div id="dMessageError" style="padding:0px 0px 15px 78px">
-      		      	</div>	
-	    
-	    <!-- 表单 -->
-	    <div id="dForm">
-		    <form id="regform" action="/personal/reg" method="post" autocomplete="off">
-			
-				<ul class="reglist">
-					<!-- 帐号 -->
-					<li id="dRegisterName" class="mar">
-						<div>
-							<span class="text">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
-				      		<span class="enter"><input type="text" onblur="#" id="Email" name="Email" value="" maxlength="100" class="changetips validate[required,minSize[6],maxSize[20],custom[email]]" placeholder="请输入邮箱" /></span> 
-				      	</div>
-					</li>
-					
-					<!-- 密码 -->
-					<li id="dPassword" class="mar">
-				      	<div>
-							<span class="text">设置密码</span> 
-				      		<span class="enter"><input type="password"  maxlength="20" id="Password" name="Password" value="" class="changetips validate[required,custom[onlyLetterNumber]],minSize[6],maxSize[20]]" placeholder="6-20位,区分大小写" /></span> 
-				      	</div>
-				      	
-				      
-					</li>
-					
-					
-					
-					<!-- 确认密码 -->
-					<li id="dConfirmPassword" class="mar">
-						<div>
-							<span class="text">确认密码</span> 
-				      		<span class="enter"><input type="password"  maxlength="20" id="ConfirmPassword" name="ConfirmPassword" value="" class="changetips validate[[required,equals[Password]]" placeholder="6-20位,区分大小写" /></span> 
-						</div>
-						
-				  
-					</li>
-					
-					<!-- 验证码 -->
-					<li id="dCaptcha" class="mar cls">
-						<span class="text">验&nbsp;证&nbsp;码</span>
-						<div class="valide-box">
-							<span class="enter1"> 
-								<input  maxlength="4" size="4" type="text" name="ValidCode" id="ValidCode" class="changetips" placeholder="请输入结果" />
-							</span>
-							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<span id="captchaImg">
-								<img src="@Url.Action("Create", "ValidateCodes")"/>
-							
-							</span> 
-							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<span><a style="cursor:pointer" onclick="changeValidateCode()">换一张</a></span>
-						</div>
-						
-				    
-					</li>
-					
-					<!-- 协议 -->
-					<li id="dAgreement" class="s">
-	<p>
-		<span class="check">
-			<input type="checkbox" id="agreement" name="agreement" checked="checked" value="1" onclick="validAgreement('/')"/>
-		</span>
-		<span>
-			&nbsp;我已阅读并同意
-						<a href="//img0.u.ucfly.com/uop/sso/public/html/terms_zh.html">w3w帐号服务协议</a>
-											</span>
-	</p>
-	<!-- 确认密码错误提示 -->
-	<div id="dAgreementError" class="error-tips" style="margin: -30px 0px 10px 329px"></div>
-</li>				</ul>
-	
-				<!-- 注册按钮区 -->
-				<div id="dButton" class="reg_f">
-					<input type="submit" style="cursor:pointer"  id="submit_btn" class="btn_reg" alt="注册" value="注册"/>
-				</div>
-			</form>
-		</div>
-		
-  		<!-- 更多业务 -->
-<div id="dFooter">
-	<div class="business pd cls">
-	  <div class="business-title"><a href="#" target="_black">更多&gt;&gt;</a>更多UC业务：</div>
-	  <ul class="business-ul cls">
-	    <li><img src="/img/icon_ucbrowser_c8bc2c1.jpg" width="50" height="50" title="UC浏览器">
-	      <div>
-	        </div>
-	    </li>
-	    <li><img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
-	      <div>
-	        <h3>w3w游戏</h3>
-	        上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
-	    </li>
-	    <li><img src="/img/icon_uccloud_2ef2813.jpg" width="50" height="50" title="UC云">
-	      <div>
-	        </div>
-	    </li>
-	  </ul>
-	</div>
-	
-</div>	</div>	
-</div>
-   <div id="dFooter" class="footer">
+    <div class="header">
+        <!-- 头部 -->
+        <div id="dHeader" class="header-cont">
+            <!-- 返回首页面链接 -->
+            <div id="dHomeLink" class="btn">
+                <a href="#" class="btn_home">返回首页</a></div>
+            <!-- logo -->
+            <div id="dLogo">
+                <h1 class="logo">
+                    <a id="logoImg" href="#">
+                        <img src="/img/w3w_logo.png" width="174" height="72" title="" class="changelogo"
+                            client_id="102"  appname="w3w游戏" />
+                    </a>
+                </h1>
+            </div>
+            <div class="header-title">
+                w3w帐号是w3w各业务通行的帐号。<br />
+            </div>
+        </div>
+    </div>
+    <div class="wrap cls">
+        <!--左边菜单-->
+        <div class="menu" id="menu">
+            <ul class="menulist">
+                <li id="mobileTab">
+                    <div class="reg">
+                        <img src="/img/mobile_s_171bc37.gif">
+                        <a href="/personal/phonereg">手机注册</a><img src="/img/icon_tj_dd1ae11.png" align="middle"
+                            noselect="true" />
+                    </div>
+                </li>
+                <li id="emailTab" class="on">
+                    <div class="reg">
+                        <img src="/img/email_93ecd16.gif">
+                        <a href="/personal/reg">邮箱注册</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--左边菜单end-->
+        <div class="cont" id="cont">
+            <!-- 登录链接提示 -->
+            <div id="dLoginNotice" class="tip">
+                提示：如果你已有w3w帐号，请直接&nbsp; <a href="#">登录</a>
+            </div>
+            <!-- 通用错误提示 -->
+            <div id="dMessageError" style="padding: 0px 0px 15px 78px">
+            </div>
+            <!-- 表单 -->
+            <div id="dForm">
+                <form id="regform" action="/personal/reg" method="post" autocomplete="off">
+                <ul class="reglist">
+                    <!-- 帐号 -->
+                    <li id="dRegisterName" class="mar">
+                        <div>
+                            <span class="text">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span> <span class="enter">
+                                <input type="text" onblur="#" id="Email" name="Email" value="" maxlength="100" class="changetips validate[required,minSize[6],maxSize[20],custom[email]]"
+                                    placeholder="请输入邮箱" /></span>
+                        </div>
+                    </li>
+                    <!-- 密码 -->
+                    <li id="dPassword" class="mar">
+                        <div>
+                            <span class="text">设置密码</span> <span class="enter">
+                                <input type="password" maxlength="20" id="Password" name="Password" value="" class="changetips validate[required,custom[onlyLetterNumber]],minSize[6],maxSize[20]]"
+                                    placeholder="6-20位,区分大小写" /></span>
+                        </div>
+                    </li>
+                    <!-- 确认密码 -->
+                    <li id="dConfirmPassword" class="mar">
+                        <div>
+                            <span class="text">确认密码</span> <span class="enter">
+                                <input type="password" maxlength="20" id="ConfirmPassword" name="ConfirmPassword"
+                                    value="" class="changetips validate[[required,equals[Password]]" placeholder="6-20位,区分大小写" /></span>
+                        </div>
+                    </li>
+                    <!-- 验证码 -->
+                    <li id="dCaptcha" class="mar cls"><span class="text">验&nbsp;证&nbsp;码</span>
+                        <div class="valide-box">
+                            <span class="enter1">
+                                <input maxlength="4" size="4" type="text" name="ValidCode" id="ValidCode" class="changetips"
+                                    placeholder="请输入结果" />
+                            </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span id="captchaImg">
+                                <img src="@Url.Action("Create", "ValidateCodes")"/>
+                            </span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span><a style="cursor: pointer"
+                                onclick="changeValidateCode()">换一张</a></span>
+                        </div>
+                    </li>
+                    <!-- 协议 -->
+                    <li id="dAgreement" class="s">
+                        <p>
+                            <span class="check">
+                                <input type="checkbox" id="agreement" name="agreement" checked="checked" value="1"
+                                    onclick="validAgreement('/')" />
+                            </span><span>&nbsp;我已阅读并同意 <a href="//img0.u.ucfly.com/uop/sso/public/html/terms_zh.html">
+                                w3w帐号服务协议</a> </span>
+                        </p>
+                        <!-- 确认密码错误提示 -->
+                        <div id="dAgreementError" class="error-tips" style="margin: -30px 0px 10px 329px">
+                        </div>
+                    </li>
+                </ul>
+                <!-- 注册按钮区 -->
+                <div id="dButton" class="reg_f">
+                    <input type="submit" style="cursor: pointer" id="submit_btn" class="btn_reg" alt="注册"
+                        value="注册" />
+                </div>
+                </form>
+            </div>
+            <!-- 更多业务 -->
+            <div id="dFooter">
+                <div class="business pd cls">
+                    <div class="business-title">
+                        <a href="#" target="_black">更多&gt;&gt;</a>更多w3w业务：</div>
+                    <ul class="business-ul cls">
+                        <li>
+                            <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
+                            <div>
+                                <h3>
+                                    w3w游戏</h3>
+                                上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
+                        </li>
+                        <li>
+                            <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
+                            <div>
+                                <h3>
+                                    w3w游戏</h3>
+                                上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
+                        </li>
+                        <li>
+                            <img src="/img/icon_9game_9556470.jpg" width="50" height="50" title="w3w游戏">
+                            <div>
+                                <h3>
+                                    w3w游戏</h3>
+                                上w3w游戏，玩游戏，尽享游戏带来的无限快乐。</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div id="dFooter" class="footer">
         <p>
             <a href="http://www.w3wgame.com" target="_black">w3w官网</a> | <a href="http://ka.w3wgame.com"
-                target="_black">w3w发卡中心</a> | <a href="#"
-                    target="_black">帮助中心</a> | <a href="#"
-                        target="_black">意见反馈</a></p>
+                target="_black">w3w发卡中心</a> | <a href="#" target="_black">帮助中心</a> | <a href="#"
+                    target="_black">意见反馈</a></p>
         <p>
-           Copyright @@ 2014 - 2017 www.w3wgame.com All Rights Reserved	[备案]粤ICP备14089348号</p>
+            Copyright @@ 2014 - 2017 www.w3wgame.com All Rights Reserved [备案]粤ICP备14089348号</p>
     </div>
-
-<!-- pc手机注册页面统计 -->
-
-
+    <!-- pc手机注册页面统计 -->
+    
 </body>
-
 </html>
